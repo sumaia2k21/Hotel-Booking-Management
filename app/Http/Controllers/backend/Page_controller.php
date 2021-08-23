@@ -9,7 +9,7 @@ class Page_controller extends Controller
 {
     public function about_us()
     {
-         return view('backend.layouts.manage_catagory');
+         return view('backend.layouts.about_us');
     }
     public function contact_us()
     {

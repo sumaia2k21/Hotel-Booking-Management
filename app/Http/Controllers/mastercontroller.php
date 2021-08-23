@@ -14,4 +14,12 @@ class mastercontroller extends Controller
     {
          return view('backend.layouts.home');
     }
+    public function profilecreate()
+    {
+         return view('backend.layouts.profile');
+    }
+    public function login()
+    {
+         return view('backend.layouts.login');
+    }
 }

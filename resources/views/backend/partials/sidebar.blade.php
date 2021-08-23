@@ -4,15 +4,13 @@
                 <ul class="metismenu" id="menu">
                     
                     <li>
-                        <a class="has-arrow" href="{{route('home')}}" aria-expanded="false">
+                        <a  href="{{route('home')}}" aria-expanded="false">
                         <i class="fa fa-home" aria-hidden="true"></i>
                             <span class="nav-text">Home</span>
                         </a>
-                        <!-- <ul aria-expanded="false">
-                            <li><a href="./index.html">Home 1</a></li>
-                            <li><a href="./index-2.html">Home 2</a></li>
-                        </ul> -->
+                        
                     </li>
+                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
@@ -26,7 +24,7 @@
                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i>
+                        <i class="fa fa-h-square" aria-hidden="true"></i>
                              <span class="nav-text">Facilities</span>
                         </a>
                         <ul aria-expanded="false">
@@ -37,40 +35,63 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-bed" aria-hidden="true"></i>
+                        <!-- <i class="fa fa-bed" aria-hidden="true"></i> -->
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                             <span class="nav-text">New Room</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('add_room')}}">Add Room</a></li>
                             <li><a href="{{route('manage_room')}}">Manage Room</a></li>
                         </ul>
-                    <li class="mega-menu mega-menu-sm">
-                    <li class="mega-menu mega-menu-sm">
+                    </li>
+                   
+                    <!-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-file-text" aria-hidden="true"></i>
-                         <span class="nav-text">Page</span>
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Page</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('contact_us')}}">About Us</a></li>
-                            <li><a href="{{route('contact_us')}}">Contact Us</a></li>
-                            
+                            <li><a href="{{route('about_us')}}" aria-expanded="false">About Us</a></li>
+                            <li><a href="{{route('contact_us')}}" aria-expanded="false">ontact us</a></li>
                         </ul>
-                    </li>
-                    
-                    
+                    </li> -->
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">Pages</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('about_us')}}">About_us</a></li>
+                            <li><a href="{{route('contact_us')}}">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                             <span class="nav-text">Staff</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Add Employee</a></li>
+                            <li><a href="">Manage Facilities</a></li>
+                           
+                        </ul>
+                    </li> -->
+                    
+                    
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-book" aria-hidden="true"></i>
                             <span class="nav-text">Booking</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('all_booking')}}">All Booking</a></li>
                             <li><a href="{{route('new_booking')}}">New Booking</a></li>
-                            <li><a href="{{route('manage_catagory')}}">Approve Booking</a></li>
-                            <li><a href="{{route('add_catagory')}}">Cancel Booking</a></li>
+                            <li><a href="{{route('all_booking')}}">Approve Booking</a></li>
+                            <li><a href="{{route('all_booking')}}">Cancel Booking</a></li>
+                           
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
+                    <!-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-users" aria-hidden="true"></i>
                             <span class="nav-text">Reg User</span>
@@ -81,7 +102,7 @@
                             <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
                             <li><a href="./uc-toastr.html">Toastr</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -93,6 +114,25 @@
                             <li><a href="./form-validation.html">Unread Enquiry</a></li>
                             
                         </ul>
+                    </li>
+                    <!-- <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                            <span class="nav-text">Staff</span>
+                            <ul aria-expanded="false">
+                            <li><a href="./uc-nestedable.html">Add Employee</a></li>
+                            <li><a href="./uc-noui-slider.html"></a>Manage Employee</li>
+                            
+                        </ul>
+                        </a>
+                        
+                    </li> -->
+                    <li class="mega-menu mega-menu-sm">
+                        <a  href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                            <span class="nav-text">Reports </span>
+                        </a>
+                        
                     </li>
                    
                     <!-- <li>
