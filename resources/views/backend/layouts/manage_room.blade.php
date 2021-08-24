@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 @section('content')
 <h4 style="background: #f5c842;">Manage Room</h4>
 <div class="card">

@@ -6,6 +6,10 @@ use App\Http\Controllers\backend\Facilities_controller;
 use App\Http\Controllers\backend\Page_controller;
 use App\Http\Controllers\backend\Reg_user_controller;
 use App\Http\Controllers\backend\Room_controller;
+use App\Http\Controllers\frontend\About_controller;
+use App\Http\Controllers\frontend\Contact_controller;
+use App\Http\Controllers\frontend\indexcontroller;
+use App\Http\Controllers\frontend\Service_controller;
 use App\Http\Controllers\mastercontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -59,7 +63,7 @@ Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
 //page start
  Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
 Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
-Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
+// Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
 
 //page end
 
@@ -83,5 +87,27 @@ Route::get('/newbooking',[Booking_controller::class,'newbooking'])->name('newboo
 //Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
 
 //Enquiry end
+
+
+
+//forntend
+Route::get('/index',[indexcontroller::class,'index'])->name('index');
+//home
+Route::get('/home',[indexcontroller::class,'home'])->name('home');
+//about
+Route::get('/about',[About_controller::class,'about'])->name('about');
+//contact
+Route::get('/contact',[Contact_controller::class,'contact'])->name('contact');
+// read quiray
+Route::get('/read_enquiry',[Contact_controller::class,'read_enquiry'])->name('read_enquiry');
+// read quiray
+//db contact us start
+Route::post('/readenquiry',[Contact_controller::class,'readenquiry'])->name('readenquiry');
+//db end contact
+//survice
+Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
+
+
+
 
 

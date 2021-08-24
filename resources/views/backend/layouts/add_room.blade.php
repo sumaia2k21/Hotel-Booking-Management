@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 @section('content')
 <div>
     <h2"><strong>Hotel Booking Management System/</strong>new room</h2>

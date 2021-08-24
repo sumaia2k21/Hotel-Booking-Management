@@ -8,7 +8,7 @@ class mastercontroller extends Controller
 {
     public function master()
     {
-         return view('master');
+         return view('backend.master');
     }
     public function home()
     {

@@ -16,8 +16,5 @@ class Page_controller extends Controller
          return view('backend.layouts.contact_us');
     }
     
-    public function read_enquiry()
-    {
-         return view('backend.layouts.read_enquiry');
-    }
+   
 }
