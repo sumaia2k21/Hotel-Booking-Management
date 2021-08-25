@@ -16,16 +16,16 @@ class Booking_controller extends Controller
          return view('backend.layouts.all_booking');
     }
    // newbooking
-   public function catagory_list(Request $catagorylist){
-     //dd($catagorylist->all());
-     Book::Create([
-          'name'=>$catagorylist->name,
-               'email'=>$catagorylist->email,
-              'catagory_title'=>$catagorylist->catagory_title
+//    public function catagory_list(Request $catagorylist){
+//      //dd($catagorylist->all());
+//      Book::Create([
+//           'name'=>$catagorylist->name,
+//                'email'=>$catagorylist->email,
+//               'catagory_title'=>$catagorylist->catagory_title
 
 
-     ]);
-     return redirect()->route('manage_catagory');
-}
+//      ]);
+//      return redirect()->route('manage_catagory');
+// }
 
 }

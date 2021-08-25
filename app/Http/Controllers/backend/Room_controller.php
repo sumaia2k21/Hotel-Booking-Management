@@ -12,9 +12,11 @@ class Room_controller extends Controller
     {
          return view('backend.layouts.add_room');
     }
+    
+
      public function manage_room()
      {
-          $newroomlist=Room::all();
+          $newroomlist=Room::paginate(3);
 
 
      return view('backend.layouts.manage_room',compact('newroomlist'));
@@ -35,4 +37,11 @@ public function roomlist(Request $newroomlist){
      ]);
      return redirect()->route('manage_room');
 }
+//frontent room page view
+
+     public function room()
+     {
+          return view('frontend.layouts.room.room');
+     }
+
 }

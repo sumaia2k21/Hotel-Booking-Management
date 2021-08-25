@@ -11,8 +11,8 @@
 										</div> -->
 
     <div class="card-body">
-        <form>
-        <form action ="{{route('catagory_list')}}" method="post">
+       
+        <form action="{{route('catagory_list')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="largeSelect">Catagory Title</label>
@@ -36,7 +36,7 @@
 
 
             <div class="card-action">
-                <button class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success">Add</button>
 
             </div>
             </form>

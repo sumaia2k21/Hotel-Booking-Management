@@ -23,15 +23,14 @@
         <tbody>
             @foreach($catagorylist as $cat)
             <tr>
-                
-                <td>{{$cat->sl}}</td>
+                <td>{{$loop->iteration}}</td>
                 <td>{{$cat->catagory_title}}</td>
                 <td>{{$cat->description}}</td>
                 <td>{{$cat->price}}</td>
                 
                 <td>
-                    <a type="button" class="btn btn-warning">view</a>
-                    <a type="button" class="btn btn-success">edit</a>
+                 
+                    <a type="button" class="btn btn-success">view</a>
                     <a type="button" class="btn btn-danger">delect</a>
 
                 </td>
@@ -42,6 +41,7 @@
             @endforeach();
         </tbody>
     </table>
+   {{$catagorylist->links('pagination::bootstrap-4')}} 
 </div>
 
 @endsection

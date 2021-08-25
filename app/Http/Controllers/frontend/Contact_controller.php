@@ -15,7 +15,7 @@ class Contact_controller extends Controller
     }
     public function read_enquiry()
     {
-        $enquirylist=Contact::all();
+        $enquirylist=Contact::paginate(4);
          return view('backend.layouts.read_enquiry',compact('enquirylist'));
     }
     //db

@@ -39,6 +39,7 @@
             @endforeach();
         </tbody>
             </table>
+            {{$enquirylist->links('pagination::bootstrap-4')}} 
         </div>
 
         @endsection

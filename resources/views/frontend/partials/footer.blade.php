@@ -1,8 +1,8 @@
 <section class="w3l-footer-29-main w3l-copyright">
   <div class="container">
     <div class="row bottom-copies">
-      <p class="col-lg-8 copy-footer-29">© 2020 Hotels. All rights reserved | Designed by <a
-          href="https://w3layouts.com">W3layouts</a></p>
+      <!-- <p class="col-lg-8 copy-footer-29">© 2020 Hotels. All rights reserved | Designed by <a
+          href="https://w3layouts.com">W3layouts</a></p> -->
 
       <div class="col-lg-4 main-social-footer-29">
         <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>

@@ -36,6 +36,7 @@
             @endforeach();
         </tbody>
     </table>
+    {{$facilitylist->links('pagination::bootstrap-4')}} 
 </div>
 
 @endsection

@@ -38,7 +38,7 @@ Route::get('/login',[mastercontroller ::class,'login'])->name('login');
 //Catagory start
  Route::get('/add_catagory',[Catagory_Controller::class,'add_catagory'])->name('add_catagory');
  //db add_catagory
- Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
+Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
 //end db add_catagory
  Route::get('/manage_catagory',[Catagory_Controller::class,'manage_catagory'])->name('manage_catagory');
 //catagory end
@@ -58,6 +58,7 @@ Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
 //db end
 
  Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
+ 
 //room end
 
 //page start
@@ -69,9 +70,7 @@ Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_u
 
 //booking start
 Route::get('/new_booking',[Booking_controller::class,'new_booking'])->name('new_booking');
-//db new booking start
-Route::get('/newbooking',[Booking_controller::class,'newbooking'])->name('newbooking');
-//end db
+
  
  Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
 // //booking end
@@ -104,8 +103,13 @@ Route::get('/read_enquiry',[Contact_controller::class,'read_enquiry'])->name('re
 //db contact us start
 Route::post('/readenquiry',[Contact_controller::class,'readenquiry'])->name('readenquiry');
 //db end contact
-//survice
+//service start
 Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
+//service end
+
+//room satrt
+Route::get('/room',[Room_controller::class,'room'])->name('room');
+//room end
 
 
 

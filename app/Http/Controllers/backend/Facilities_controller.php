@@ -14,7 +14,7 @@ class Facilities_controller extends Controller
     }
     public function manage_facilities()
     {
-     $facilitylist=Facility::all();
+     $facilitylist=Facility::paginate(4);
      
 
      return view('backend.layouts.manage_facilities',compact('facilitylist'));

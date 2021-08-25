@@ -16,7 +16,7 @@ class Catagory_Controller extends Controller
 
     public function manage_catagory( )
     {
-         $catagorylist=Catagory::all();
+         $catagorylist=Catagory::paginate(4);
      
 
          return view('backend.layouts.manage_catagory',compact('catagorylist'));
@@ -24,7 +24,7 @@ class Catagory_Controller extends Controller
     
 
 public function catagory_list(Request $catagorylist){
-     //dd($catagorylist->all());
+     // dd($catagorylist->all());
      Catagory::Create([
           'catagory_title'=>$catagorylist->catagory_title,
                'description'=>$catagorylist->description,

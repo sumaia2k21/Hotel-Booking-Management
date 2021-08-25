@@ -46,6 +46,7 @@
             @endforeach();
         </tbody>
     </table>
+    {{$newroomlist->links('pagination::bootstrap-4')}} 
 </div>
 
 @endsection

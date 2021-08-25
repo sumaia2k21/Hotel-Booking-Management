@@ -16,7 +16,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Mobile Number</th>
 
-                   
+
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                     </tr>
@@ -29,7 +29,7 @@
                         <td>Thornton</td>
                         <td>@fat</td>
                         <td>@fat</td>
-                   
+
                         <td>@fat</td>
                         <td>
                             <a type="button" class="btn btn-warning">view</a>
@@ -38,7 +38,7 @@
 
                         </td>
 
-                        <!-- <a type="button" class="btn btn-primary">Primary</a> -->
+
 
                     </tr>
                 </tbody>
