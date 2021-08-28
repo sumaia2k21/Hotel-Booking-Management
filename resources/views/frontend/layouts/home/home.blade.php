@@ -131,7 +131,7 @@
 	<div class="container py-sm-4">
 		<div class="row">
 			<div class="col-lg-6 about-left mb-md-0 mb-5">
-				<h3 class="title-big">Relax in our Resort</h3>
+				<h3 class="title-big">Relax in our Hotel</h3>
 				<h5>We make the best for all our customers.</h5>
 				<p class="mt-3">Duis nisi sapien, elementum finibus fermentum eget, aliquet leo. Mauris hendrerit vel ex.
 					Quisque vitae luctus massa. Phasellus sed aliquam leo. Vestibulum ullamcorper a massa eu fringilla.
@@ -239,7 +239,7 @@
         </div>
     </div>
 </div>
-<section class="w3l-index3">
+<!-- <section class="w3l-index3">
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-3">
             <div class="row">
@@ -251,7 +251,7 @@
                                 <span class="fa fa-play"></span>
                             </span>
                         </a>
-                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                      
                         <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
                             <iframe src="https://player.vimeo.com/video/246941769" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
                         </div>
@@ -274,7 +274,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- quotation -->
 <div class="quotation py-5">
 	<div class="container py-xl-5 py-lg-3">

@@ -1,9 +1,9 @@
 @extends('backend.master')
 @section('content')
-<h4 style="background: #f5c842;">Read Enquiry<h4>
+<h4 style="background: #f5c842">Read Enquiry<h4>
         <div class="card">
-            <table class="table table-bordered">
-                <thead>
+        <table class="table table-striped table-hover">
+        <thead class="thead-dark">
 
                     <th scope="col">sl</th>
                     <th scope="col">Name</th>
@@ -19,8 +19,8 @@
                 <tbody>
             @foreach($enquirylist as $enquiry)
             <tr>
-                
-                <td>{{$enquiry->sl}}</td>
+            <td>{{$loop->iteration}}</td>
+                <!-- <td>{{$enquiry->sl}}</td> -->
                 <td>{{$enquiry->name}}</td>
                 <td>{{$enquiry->email}}</td>
                 <td>{{$enquiry->mobile_no}}</td>
@@ -36,7 +36,7 @@
                 <!-- <a type="button" class="btn btn-primary">Primary</a> -->
 
             </tr>
-            @endforeach();
+            @endforeach()
         </tbody>
             </table>
             {{$enquirylist->links('pagination::bootstrap-4')}} 

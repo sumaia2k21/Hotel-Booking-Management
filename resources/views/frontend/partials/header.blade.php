@@ -36,8 +36,13 @@
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Gallary</a>
 					</li>
-                    <li class="nav-item @@services__active">
+					<li class="nav-item @@services__active">
 						<a class="nav-link" href="">My Account</a>
+						<a class="nav-link" href="{{route('user_login')}}">login</a>
+						<a class="nav-link" href="">view profile</a>
+						
+						
+					
 					</li>
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Admin</a>

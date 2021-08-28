@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\Room_controller;
 use App\Http\Controllers\frontend\About_controller;
 use App\Http\Controllers\frontend\Contact_controller;
 use App\Http\Controllers\frontend\indexcontroller;
+use App\Http\Controllers\frontend\Main_controller;
 use App\Http\Controllers\frontend\Service_controller;
 use App\Http\Controllers\mastercontroller;
 use Illuminate\Support\Facades\Route;
@@ -110,6 +111,31 @@ Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
 //room satrt
 Route::get('/room',[Room_controller::class,'room'])->name('room');
 //room end
+
+//frontend end
+
+
+//guest start
+Route::get('/main',[Main_controller::class,'main'])->name('main');
+//end guest
+
+
+//hotelinfo form start
+Route::get('/hotelinfo',[mastercontroller::class,'hotelinfo'])->name('hotelinfo');
+//hotelinfolist
+Route::get('/hotelinfo_list',[mastercontroller::class,'hotelinfo_list'])->name('hotelinfo_list');
+
+
+// frontend user login
+//user-login
+Route::get('/user_login',[Main_controller::class,'user_login'])->name('user_login');
+//registration form start
+Route::get('/user_reg',[Main_controller::class,'user_reg'])->name('user_reg');
+//registration form end
+//view profile start
+Route::get('/viewprofile',[Main_controller::class,'viewprofile'])->name('viewprofile');
+//view profile end
+
 
 
 

@@ -2,7 +2,7 @@
 @section('content')
 <h4 style="background: #f5c842;">Manage Room</h4>
 <div class="card">
-    <table class="table table-bordered">
+    <table class="table table-dark">
         <thead>
 
             <th scope="col">sl</th>
@@ -21,8 +21,9 @@
         </thead>
         <tbody>
             @foreach($newroomlist as $newroom)
-            <tr>            
-                    <td>{{$newroom->sl}}</td>
+            <tr>  
+            <td>{{$loop->iteration}}</td>        
+                <!-- <td>{{$newroom->sl}}</td> -->
                 <td>{{$newroom->catagory_title}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
@@ -43,7 +44,7 @@
                 <!-- <a type="button" class="btn btn-primary">Primary</a> -->
 
             </tr>
-            @endforeach();
+            @endforeach()
         </tbody>
     </table>
     {{$newroomlist->links('pagination::bootstrap-4')}} 

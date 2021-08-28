@@ -8,8 +8,8 @@
 <h1 style="background: #f5c842;">Manage Catagory</h1>
 
 <div class="card">
-    <table class="table table-bordered">
-        <thead>
+<table class="table table-bordered">
+  <thead class="thead-light">
 
             <th scope="col">sl</th>
             <th scope="col">Catagory Title</th>
@@ -38,7 +38,7 @@
                 <!-- <a type="button" class="btn btn-primary">Primary</a> -->
 
             </tr>
-            @endforeach();
+            @endforeach()
         </tbody>
     </table>
    {{$catagorylist->links('pagination::bootstrap-4')}} 

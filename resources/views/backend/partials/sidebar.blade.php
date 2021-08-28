@@ -44,7 +44,7 @@
                             <li><a href="{{route('manage_room')}}">Manage Room</a></li>
                         </ul>
                     </li>
-                   
+                  
                     <!-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Page</span>
@@ -65,17 +65,7 @@
                         </ul>
                     </li>
                     
-                    <!-- <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                             <span class="nav-text">Staff</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="">Add Employee</a></li>
-                            <li><a href="">Manage Facilities</a></li>
-                           
-                        </ul>
-                    </li> -->
+                  
                     
                     
                     <li class="mega-menu mega-menu-sm">
@@ -91,18 +81,17 @@
                            
                         </ul>
                     </li>
-                    <!-- <li class="mega-menu mega-menu-sm">
+                 <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                            <span class="nav-text">Reg User</span>
+                        <i class="fa fa-h-square" aria-hidden="true"></i>
+                            <span class="nav-text">Hotel Information</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./uc-nestedable.html">Nestedable</a></li>
-                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="./uc-toastr.html">Toastr</a></li>
+                            <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li>
+                            <li><a href="{{route('hotelinfo_list')}}">Manage hotel info list</a></li>
+                            
                         </ul>
-                    </li> -->
+                    </li> 
                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
