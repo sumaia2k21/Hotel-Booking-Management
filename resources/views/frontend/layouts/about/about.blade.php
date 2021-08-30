@@ -7,6 +7,7 @@ Author URL: http://w3layouts.com
 
 
 
+
 <section class="w3l-breadcrumb">
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
@@ -143,89 +144,7 @@ Author URL: http://w3layouts.com
     </div>
 </section>
 <!-- team -->
-<section class="team py-5" id="team">
-	<div class="container py-lg-4 py-sm-3">
-        <h3 class="title-big text-center mb-md-5 mb-4">Our Team</h3>
-		<div class="row inner-sec-w3layouts-w3pvt-lauinfo">
-			<div class="col-md-3 col-6">
-				<div class="team-grids text-center">
-					<img src="assets/images/team1.jpg" class="img-fluid" alt="">
-					<div class="team-info">
-						<div class="caption">
-							<h4>John Doe</h4>
-							<h6>Founder and CEO</h6>
-						</div>
-					</div>
-				</div>
-				<div class="social-icons-section text-center">
-					<a class="fac" href="#url">
-						<i class="fa fa-facebook"></i>
-					</a>
-					<a class="twitter" href="#url">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3 col-6">
-				<div class="team-grids text-center">
-					<img src="assets/images/team2.jpg" class="img-fluid" alt="">
-					<div class="team-info">
-						<div class="caption">
-							<h4>Alexander</h4>
-							<h6>Partner & co-founder</h6>
-						</div>
-					</div>
-				</div>
-				<div class="social-icons-section text-center">
-					<a class="fac" href="#url">
-						<i class="fa fa-facebook"></i>
-					</a>
-					<a class="twitter" href="#url">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3 col-6 mt-md-0 mt-4">
-				<div class="team-grids text-center">
-					<img src="assets/images/team3.jpg" class="img-fluid" alt="">
-					<div class="team-info">
-						<div class="caption">
-							<h4>Martin ker </h4>
-							<h6>Chairmen</h6>
-						</div>
-					</div>
-				</div>
-				<div class="social-icons-section text-center">
-					<a class="fac" href="#url">
-						<i class="fa fa-facebook"></i>
-					</a>
-					<a class="twitter" href="#url">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-3 col-6 mt-md-0 mt-4">
-				<div class="team-grids text-center">
-					<img src="assets/images/team4.jpg" class="img-fluid" alt="">
-					<div class="team-info">
-						<div class="caption">
-							<h4>Elizabeth </h4>
-							<h6>Manager</h6>
-						</div>
-					</div>
-				</div>
-				<div class="social-icons-section text-center">
-					<a class="fac" href="#url">
-						<i class="fa fa-facebook"></i>
-					</a>
-					<a class="twitter" href="#url">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
 <!-- team -->
 <section class="w3l-stats">
     <div class="main-w3 py-5">
@@ -342,5 +261,8 @@ Author URL: http://w3layouts.com
     </div>
     <!-- /main-slider -->
 </section>
+
+
+
 
 @endsection

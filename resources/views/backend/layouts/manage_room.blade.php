@@ -6,7 +6,7 @@
         <thead>
 
             <th scope="col">sl</th>
-            <th scope="col">catagory_title</th>
+            <th scope="col">catagory_id</th>
             <th scope="col">Dmax_adult</th>
             <th scope="col">max_child</th>
             <th scope="col">no_of_bed</th>
@@ -24,13 +24,13 @@
             <tr>  
             <td>{{$loop->iteration}}</td>        
                 <!-- <td>{{$newroom->sl}}</td> -->
-                <td>{{$newroom->catagory_title}}</td>
+                <td>{{$newroom->catagory_id}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>
                 <td>{{$newroom->room_description}}</td>
                 <td>{{$newroom->imaje}}</td>
-                <td>{{$newroom->price}}</td>
+                <td>{{$newroom->Price}}</td>
                 
                 
                 

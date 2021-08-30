@@ -24,4 +24,9 @@ class Main_controller extends Controller
     {
         return view('frontend.layouts.account.viewprofile');
     }
+    //test
+    public function testroom()
+    {
+        return view('testroom');
+    }
 }

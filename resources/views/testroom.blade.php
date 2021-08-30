@@ -1,7 +1,10 @@
-
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,12 +16,19 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{url('/css/style-starter.css')}}">
     <link rel="stylesheet" href="{{url('/css/book.css')}}">
-
+  <!-- form css link -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- end form css link -->
 
 
 
   </head>
-  <header class="w3l-header-nav">
+  <body>
+<!--w3l-header-->
+
+<header class="w3l-header-nav">
 	<!--/nav-->
 	<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
 		<div class="container">
@@ -457,6 +467,10 @@
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
+</script>
+<!-- /move top -->
+</section>
+
 <!-- Template JavaScript -->
 <script src="{{url('/js/jquery-3.3.1.min.js')}}"></script>
 
@@ -530,7 +544,7 @@
   })
 </script>
 <!-- //script for owlcarousel -->
-<script src="{{url('/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{url('js/jquery.magnific-popup.min.js')}}"></script>
 <script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({

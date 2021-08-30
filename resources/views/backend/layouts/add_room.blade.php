@@ -18,14 +18,17 @@
                     <div class="form-group">
                         <label for="largeSelect">Catagory Title</label>
                         <select class="form-control form-control-lg"name="catagory_title" id="Catagory Title">
-                            <option>Standard </option>
-                            <option>Deluxe</option>
-                            <option>Superior Deluxe </option>
-                            <option>Single</option>
-                            <option>Premier Deluxe</option>
+                            @foreach($catagory as $cat)
+                            <option value="{{$cat->id}}">{{$cat->catagory_title}} </option>
+                            @endforeach
                         </select>
 
                     </div>
+                    <div class="form-group">
+                        <label for="largeInput">Room name</label>
+                        <input type="text" class="form-control form-control"name="room_name" id="Description" placeholder="Room Name">
+                    </div>
+
 
                     <div class="form-group">
                         <label for="squareSelect">Max Adults</label>

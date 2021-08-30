@@ -19,7 +19,7 @@
 						<a class="nav-link" href="{{route('home')}}">Home</a>
 					</li>
 					<li class="nav-item @@about__active">
-						<a class="nav-link" href="{{route('contact')}}">About</a>
+						<a class="nav-link" href="{{route('about')}}">About</a>
 					</li>
 					<li class="nav-item @@services__active">
 						<a class="nav-link" href="{{route('survice')}}">Services</a>
@@ -31,7 +31,7 @@
 						<a class="nav-link" href="">Facilities</a>
 					</li>
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="">Room</a>
+						<a class="nav-link" href="{{route('room')}}">Room</a>
 					</li>
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Gallary</a>
@@ -39,7 +39,7 @@
 					<li class="nav-item @@services__active">
 						<a class="nav-link" href="">My Account</a>
 						<a class="nav-link" href="{{route('user_login')}}">login</a>
-						<a class="nav-link" href="">view profile</a>
+						<a class="nav-link" href="{{route('viewprofile')}}">view profile</a>
 						
 						
 					

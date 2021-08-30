@@ -1,6 +1,9 @@
 @extends('backend.master')
 @section('content')
-<h4 style="background: #f5c842;">Manage Facility</h4>
+<!-- <h4 style="background: #f5c842;">Manage Facility</h4> -->
+<div>
+    <h2"><strong>Facilities/</strong>manage facilities</h2>
+</div>
 <div class="card">
 <table class="table table-striped table-hover">
     <thead class="thead-dark">

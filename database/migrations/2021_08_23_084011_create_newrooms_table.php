@@ -15,7 +15,8 @@ class CreateNewroomsTable extends Migration
     {
         Schema::create('newrooms', function (Blueprint $table) {
             $table->id();
-            $table->string('catagory_title');
+            $table->string('catagory_id');
+            $table->string('room_name');
             $table->string('max_adult');
             $table->string('max_child');
             $table->string('room_description');

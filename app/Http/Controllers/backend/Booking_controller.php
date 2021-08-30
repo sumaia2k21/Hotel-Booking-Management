@@ -28,4 +28,9 @@ class Booking_controller extends Controller
 //      return redirect()->route('manage_catagory');
 // }
 
+public function bookingform()
+    {
+         return view('frontend.layouts.bookingform');
+    }
+
 }

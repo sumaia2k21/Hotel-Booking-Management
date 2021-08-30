@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Catagory;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,9 @@ class Room_controller extends Controller
 {
     public function add_room()
     {
-         return view('backend.layouts.add_room');
+         $catagory=Catagory::all();
+//     dd($catagory->all());
+         return view('backend.layouts.add_room',compact('catagory'));
     }
     
 
@@ -23,9 +26,10 @@ class Room_controller extends Controller
 }
 
 public function roomlist(Request $newroomlist){
-     //dd($catagorylist->all());
+     // dd($newroomlist->all());
      Room::Create([
-          'catagory_title'=>$newroomlist->catagory_title,
+          'catagory_id'=>$newroomlist->catagory_title,
+          'room_name'=>$newroomlist->room_name,
                'max_adult'=>$newroomlist->max_adult,
               'max_child'=>$newroomlist->max_child,
               'room_description'=>$newroomlist->room_description,

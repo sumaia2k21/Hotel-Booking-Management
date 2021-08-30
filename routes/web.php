@@ -136,6 +136,12 @@ Route::get('/user_reg',[Main_controller::class,'user_reg'])->name('user_reg');
 Route::get('/viewprofile',[Main_controller::class,'viewprofile'])->name('viewprofile');
 //view profile end
 
+//booking form start
+Route::get('/bookingform',[Booking_controller::class,'bookingform'])->name('bookingform');
+//booking form end
+
+Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');
+
 
 
 
