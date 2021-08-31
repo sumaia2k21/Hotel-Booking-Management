@@ -1,5 +1,3 @@
-@extends('frontend.index')
-@section('content')
 
 
 
@@ -8,15 +6,15 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-
+<div class="modal-dialog modal-dialog-scrollable">
 <div class="container">
     <br>
     <br>
     <div class="row" id="main">
-        <div class="col-md-4 well" id="leftPanel">
+        <!-- <div class="col-md-4 well" id="leftPanel">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <div>
+                    <div>
                         <img src="http://lorempixel.com/200/200/abstract/1/" alt="Texto Alternativo"
                             class="img-circle img-thumbnail">
                         <h2>Gopinath Perumal</h2>
@@ -35,10 +33,10 @@
                                 <li><a href="#">Github</a></li>
                             </ul>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-md-8 well" id="rightPanel">
             <div class="row">
                 <div class="col-md-12">
@@ -55,7 +53,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="last_name" id="last_name" class="form-control input-lg"
-                                        placeholder="Country" tabindex="2">
+                                        placeholder="Mobile No" tabindex="2">
                                        
                                 </div>
                             </div>
@@ -132,6 +130,7 @@
     </div>
 </div>
 </div>
+</div>
 
 
 <style>
@@ -168,4 +167,4 @@
 
 
 
-@endsection
+

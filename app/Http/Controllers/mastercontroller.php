@@ -22,15 +22,7 @@ class mastercontroller extends Controller
     {
          return view('backend.layouts.login');
     }
-    //     hotelinfo form
-    public function hotelinfo()
-    {
-         return view('backend.layouts.hotelinfo');
-    }
-     //     hotelinfo_list
-     public function  hotelinfo_list()
-     {
-          return view('backend.layouts.hotelinfo_list');
-     }
+    
+     
     
 }

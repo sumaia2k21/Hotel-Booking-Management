@@ -1,12 +1,13 @@
 @extends('backend.master')
 @section('content')
-<h4 style="background: #f5c842;">Manage Room</h4>
+<h3 style="background: #f5c842;">Manage Room</h3>
 <div class="card">
-    <table class="table table-dark">
+    <table class="table table-border">
         <thead>
 
             <th scope="col">sl</th>
             <th scope="col">catagory_id</th>
+            <th scope="col">room_name</th>
             <th scope="col">Dmax_adult</th>
             <th scope="col">max_child</th>
             <th scope="col">no_of_bed</th>
@@ -23,8 +24,9 @@
             @foreach($newroomlist as $newroom)
             <tr>  
             <td>{{$loop->iteration}}</td>        
-                <!-- <td>{{$newroom->sl}}</td> -->
-                <td>{{$newroom->catagory_id}}</td>
+               
+                <td>{{$newroom->catagory->catagory_title}}</td>
+                <td>{{$newroom->room_name}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>

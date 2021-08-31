@@ -152,13 +152,13 @@
     <div class="container py-lg-5 py-sm-4">
         <h3 class="title-big text-center">Best Rooms</h3>
         <div class="ban-content-inf row py-lg-3">
-        @foreach($addroom as $room)
+             @foreach($addroom as $room)
             <div class="maghny-gd-1 col-lg-6">
 
 
                 <div class="maghny-grid">
-              
-                <figure class="effect-lily">
+
+                    <figure class="effect-lily">
                         <img class="img-fluid" src="assets/images/room1.jpg" alt="">
                         <figcaption class="w3set-hny">
                             <div>
@@ -168,25 +168,117 @@
                             </div>
                         </figcaption>
                     </figure>
-                    
+
 
                     <div class="room-info">
-                    
+
 
                         <h3 class="room-title"><a href="room-single.html">
-                            {{$room->room_name}}
-                        </a></h3>
+                                {{$room->catagory_id}}
+                            </a></h3>
                         <ul class="mb-3">
-                           <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->max_child}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->no_of_bed}}</li> 
+                            <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
+                            <li><span class="fa fa-users"></span> {{$room->max_child}}</li>
+                            <li><span class="fa fa-bed"></span> {{$room->no_of_bed}}</li>
                             <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
                         </ul>
                         <h5>{{$room->room_description}}</h5>
-                        
-                        <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
+
+                        <!-- <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a> -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Book Now
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Book Your Room</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="firstName" placeholder="Full Name"
+                                                        class="form-control" autofocus>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="firstName" placeholder="Mobile_no"
+                                                        class="form-control" autofocus>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="email" id="email" placeholder="Email"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="address" placeholder="Address"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="date" id="address" placeholder="Address"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-9">
+                                                    <input type="date" id="address" placeholder="Address"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gender">Gender</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                                        id="exampleRadios1" value="option1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        Male
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                                        id="exampleRadios2" value="option2">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        Femal
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <br>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  
+
                 </div>
 
             </div>

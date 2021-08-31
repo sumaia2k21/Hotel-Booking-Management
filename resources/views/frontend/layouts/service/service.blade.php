@@ -20,84 +20,48 @@
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
+        
             <div class="features-with-17-top_sur">
+                
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 align-self">
+                
+                    <!-- <div class="col-lg-4 col-md-6 align-self">
                         <h3 class="title-small">Luxury Hotel Services</h3>
                         <p>Our rooms are beautifully designed and comfortable and can accommodate various groups of
                             travelers. All rooms have private bathrooms, a flat-screen TV and a safe.</p>
-                    </div>
+                    </div> -->
+                    @foreach($facility as $survic)
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                         <div class="features-with-17-right-tp_sur">
                             <div class="features-with-17-left1">
                                 <span class="fa fa-bed" aria-hidden="true"></span>
                             </div>
                             <div class="features-with-17-left2">
-                                <h5>Fitness Zone</h5>
-                                <h6><a href="#url">Swimming Pool</a></h6>
+                           
+                                <!-- <h5>Fitness Zone</h5> -->
+                                <h6><a href="#url">{{$survic->facility_title}}</a></h6>
+                                
+                                
                                 <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
                                     distracted by the readable.</p>
+                                    <h6><a href="#url">{{$survic->imaje}}</a></h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mt-lg-0 mt-sm-5 mt-4">
-                        <div class="features-with-17-right-tp_sur">
-                            <div class="features-with-17-left1">
-                                <span class="fa fa-beer" aria-hidden="true"></span>
-                            </div>
-                            <div class="features-with-17-left2">
-                                <h5>Food & Drinks</h5>
-                                <h6><a href="#url">Restaurant and Bar</a></h6>
-                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
-                                    distracted by the readable.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
-                        <div class="features-with-17-right-tp_sur">
-                            <div class="features-with-17-left1">
-                                <span class="fa fa-wifi" aria-hidden="true"></span>
-                            </div>
-                            <div class="features-with-17-left2">
-                                <h5>Accommodation</h5>
-                                <h6><a href="#url">High speed WiFi</a> </h6>
-                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
-                                    distracted by the readable.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
-                        <div class="features-with-17-right-tp_sur">
-                            <div class="features-with-17-left1">
-                                <span class="fa fa-bed" aria-hidden="true"></span>
-                            </div>
-                            <div class="features-with-17-left2">
-                                <h5>Comfort & Relax</h5>
-                                <h6><a href="#url">SPA & Wellness</a> </h6>
-                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
-                                    distracted by the readable.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
-                        <div class="features-with-17-right-tp_sur">
-                            <div class="features-with-17-left1">
-                                <span class="fa fa-headphones" aria-hidden="true"></span>
-                            </div>
-                            <div class="features-with-17-left2">
-                                <h5>Safe & Secure </h5>
-                                <h6><a href="#url">Staff 24/7</a> </h6>
-                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
-                                    distracted by the readable.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                   
+                    
                 </div>
+                
+               
             </div>
+            
+            
         </div>
+        
     </div>
 </section>
-<section class="w3l-stats">
+<!-- <section class="w3l-stats">
     <div class="main-w3 py-5">
         <div class="container py-lg-3">
             <div class="row align-items-center">
@@ -141,7 +105,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 <section class="w3l-feature-2">
     <div class="grid top-bottom py-5">
         <div class="container py-md-5">

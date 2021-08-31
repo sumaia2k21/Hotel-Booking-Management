@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\Booking_controller;
 use App\Http\Controllers\backend\Catagory_Controller;
 use App\Http\Controllers\backend\Facilities_controller;
+use App\Http\Controllers\backend\Hotel_Controller;
 use App\Http\Controllers\backend\Page_controller;
 use App\Http\Controllers\backend\Reg_user_controller;
 use App\Http\Controllers\backend\Room_controller;
@@ -11,6 +12,7 @@ use App\Http\Controllers\frontend\Contact_controller;
 use App\Http\Controllers\frontend\indexcontroller;
 use App\Http\Controllers\frontend\Main_controller;
 use App\Http\Controllers\frontend\Service_controller;
+use App\Http\Controllers\frontend\User_Controller;
 use App\Http\Controllers\mastercontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -121,21 +123,25 @@ Route::get('/main',[Main_controller::class,'main'])->name('main');
 
 
 //hotelinfo form start
-Route::get('/hotelinfo',[mastercontroller::class,'hotelinfo'])->name('hotelinfo');
+Route::get('/hotelinfo',[Hotel_Controller::class,'hotelinfo'])->name('hotelinfo');
+Route::post('/hotelinfo/store',[Hotel_Controller::class,'hotelinfopost'])->name('hotelinfo.store');
 //hotelinfolist
-Route::get('/hotelinfo_list',[mastercontroller::class,'hotelinfo_list'])->name('hotelinfo_list');
+Route::get('/hotelinfo_list',[Hotel_Controller::class,'hotelinfo_list'])->name('hotelinfo_list');
 
 
 // frontend user login
 //user-login
-Route::get('/user_login',[Main_controller::class,'user_login'])->name('user_login');
+Route::get('/user_login',[User_Controller::class,'user_login'])->name('user_login');
 //registration form start
-Route::get('/user_reg',[Main_controller::class,'user_reg'])->name('user_reg');
+Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
 //registration form end
 //view profile start
-Route::get('/viewprofile',[Main_controller::class,'viewprofile'])->name('viewprofile');
+Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
 //view profile end
-
+//signup satrt
+Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup');
+Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
+//end sign up
 //booking form start
 Route::get('/bookingform',[Booking_controller::class,'bookingform'])->name('bookingform');
 //booking form end

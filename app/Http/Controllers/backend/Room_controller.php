@@ -19,7 +19,8 @@ class Room_controller extends Controller
 
      public function manage_room()
      {
-          $newroomlist=Room::paginate(3);
+          $newroomlist=Room::with('catagory')->paginate(6);
+
 
 
      return view('backend.layouts.manage_room',compact('newroomlist'));
@@ -30,13 +31,14 @@ public function roomlist(Request $newroomlist){
      Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
           'room_name'=>$newroomlist->room_name,
-               'max_adult'=>$newroomlist->max_adult,
-              'max_child'=>$newroomlist->max_child,
-              'room_description'=>$newroomlist->room_description,
-              'no_of_bed'=>$newroomlist->no_of_bed,
-              'imaje'=>$newroomlist->imaje,
-             'price'=>$newroomlist-> price
-
+          'max_adult'=>$newroomlist->max_adult,
+          'max_child'=>$newroomlist->max_child,
+          'room_description'=>$newroomlist->room_description,
+          'no_of_bed'=>$newroomlist->no_of_bed,
+          'imaje'=>$newroomlist->imaje,
+          
+          'price'=>$newroomlist-> price
+             
 
      ]);
      return redirect()->route('manage_room');
@@ -45,7 +47,8 @@ public function roomlist(Request $newroomlist){
 
      public function room()
      {
-          return view('frontend.layouts.room.room');
+          $room=Catagory::get()->take(6);
+          return view('frontend.layouts.room.room',compact('room'));
      }
 
 }

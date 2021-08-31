@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Hotel extends Model
 {
     use HasFactory;
-    protected $table =('newrooms');
     protected $guarded=[];
-    public function catagory()
-    {
-        return $this->belongsTo(Catagory::class);
-    }
 }

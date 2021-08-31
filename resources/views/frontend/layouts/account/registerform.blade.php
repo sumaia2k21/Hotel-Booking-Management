@@ -31,7 +31,7 @@
                 <input type="date" id="birthDate" class="form-control">
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="country" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-9">
                 <select id="country" class="form-control">
@@ -45,7 +45,8 @@
                     <option>Haiti</option>
                 </select>
             </div>
-        </div> <!-- /.form-group -->
+        </div> -->
+         <!-- /.form-group -->
         <div class="form-group">
             <label class="control-label col-sm-3">Gender</label>
             <div class="col-sm-6">

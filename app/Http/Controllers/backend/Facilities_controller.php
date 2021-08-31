@@ -24,9 +24,9 @@ class Facilities_controller extends Controller
     {
      //    dd($facilitylist->all());
       Facility::Create([
-          'facility_title'=>$facilitylist->imaje,
-          'description'=>$facilitylist->facility_title,
-                    'imaje'=>$facilitylist->description
+          'facility_title'=>$facilitylist->facility_title,
+          'description'=>$facilitylist->description,
+                    'imaje'=>$facilitylist->imaje
      
      
           ]);

@@ -18,10 +18,12 @@
             <label for="formFileSm" class="form-label">Imaje</label>
             <input class="form-control form-control-sm" name='imaje' id="formFileSm" type="file">
         </div>
+        
         <div class="form-group">
             <label for="smallInput">Facilities title</label>
             <input type="text" class="form-control form-control-sm" name='facility_title' id="Price" placeholder="facilities">
         </div>
+        
         <div class="form-group">
             <label for="largeInput">Description</label>
             <input type="text" class="form-control form-control" name='description' id="Description" placeholder="Description">

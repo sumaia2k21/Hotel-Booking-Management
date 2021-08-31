@@ -20,8 +20,11 @@
                     <option>Standard </option>
                     <option>Deluxe</option>
                     <option>Superior Deluxe </option>
-                    <option>Single</option>
+                    
                     <option>Premier Deluxe</option>
+                    <option>Single</option>
+                    <option>Double</option>
+                    <option>Twin</option>
                 </select>
 
             </div>

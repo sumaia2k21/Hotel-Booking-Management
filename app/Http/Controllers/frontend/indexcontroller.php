@@ -14,10 +14,11 @@ class indexcontroller extends Controller
     }
     public function home()
     {
-        $addroom=Room::get()->take(2);
+        $addroom=Room::with('catagory')->get()->take(2);
         // dd($addroom);
         return view('frontend.layouts.home.home',compact('addroom'));
     }
+   
     
    
    

@@ -12,18 +12,18 @@ class Main_controller extends Controller
         return view('guest.main');
     }
    
-    public function user_login()
-    {
-        return view('frontend.layouts.account.user_login');
-    }
-    public function user_reg()
-    {
-        return view('frontend.layouts.account.registerform');
-    }
-    public function viewprofile()
-    {
-        return view('frontend.layouts.account.viewprofile');
-    }
+    // public function user_login()
+    // {
+    //     return view('frontend.layouts.account.user_login');
+    // }
+    // public function user_reg()
+    // {
+    //     return view('frontend.layouts.account.registerform');
+    // }
+    // public function viewprofile()
+    // {
+    //     return view('frontend.layouts.account.viewprofile');
+    // }
     //test
     public function testroom()
     {

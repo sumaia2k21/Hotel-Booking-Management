@@ -8,32 +8,35 @@
 
 <div class="card">
     <div class="card-body">
-        <form>
+        <form action="{{route('hotelinfo.store')}}"method="post">
+            @csrf
+           
+          
             <div class="form-group">
-                <label for="largeInput">Hotel Name</label>
-                <input type="text" class="form-control form-control" name='hotel_name' id="Description"
-                    placeholder="hotel name">
+                <label for="name">Hotel Name</label>
+                <input type="text" class="form-control " name='hotel_name' id="hotel_name"
+                    placeholder="hotel name"value="{{$checkinfo->name??''}}">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <label for="email" class="form-label">Email </label>
+                <input type="email"name="email" class="form-control" id="email" placeholder="email"value="{{$checkinfo->email??''}}">
             </div>
 
             <div class="mb-3">
-                <label for="formFileSm" class="form-label">Logo</label>
-                <input class="form-control form-control-sm" name='imaje' id="formFileSm" type="file">
+                <label for="logo" class="form-label">Logo</label>
+                <input class="form-control " name='imaje' id="formFileSm" type="file"value="{{$checkinfo->logo??''}}">
             </div>
             <div class="form-group">
-                <label for="smallInput">Address</label>
-                <input type="text" class="form-control form-control-sm" name='address' id="Price" placeholder="address">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" name='address' id="Price" placeholder="address"value="{{$checkinfo->address??''}}">
             </div>
             <div class="form-group">
-                <label for="largeInput"> Contact No </label>
-                <input type="text" class="form-control form-control" name='hotel_name' id="Description"
-                    placeholder="cell no">
+                <label for="contact_no"> Contact No </label>
+                <input type="text" class="form-control " name='contact_no' id="Description"
+                    placeholder="cell no"value="{{$checkinfo->contact_no??''}}">
             </div>
             <div class="card-action">
-                <button class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success">Add</button>
 
             </div>
         </form>
