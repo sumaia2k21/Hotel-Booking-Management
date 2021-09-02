@@ -1,8 +1,7 @@
-
 @extends('frontend.index')
 @section('content')
 
- 
+
 <!--w3l-header-->
 
 <!-- //w3l-header -->
@@ -20,11 +19,8 @@
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
-        
             <div class="features-with-17-top_sur">
-                
                 <div class="row">
-                
                     <!-- <div class="col-lg-4 col-md-6 align-self">
                         <h3 class="title-small">Luxury Hotel Services</h3>
                         <p>Our rooms are beautifully designed and comfortable and can accommodate various groups of
@@ -33,32 +29,32 @@
                     @foreach($facility as $survic)
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                         <div class="features-with-17-right-tp_sur">
-                            <div class="features-with-17-left1">
-                                <span class="fa fa-bed" aria-hidden="true"></span>
-                            </div>
                             <div class="features-with-17-left2">
-                           
-                                <!-- <h5>Fitness Zone</h5> -->
-                                <h6><a href="#url">{{$survic->facility_title}}</a></h6>
+                              <h6><a href="#url">{{$survic->facility_title}}</a></h6>
+                                <div>
+                                <img src="{{url('/uploads/'. $survic->imaje)}}" style="width: 200px;" alt="">
+                                </div>
                                 
-                                
-                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
-                                    distracted by the readable.</p>
-                                    <h6><a href="#url">{{$survic->imaje}}</a></h6>
+                                <p>Our rooms are beautifully designed and comfortable and can accommodate various groups of
+                            travelers. All rooms have private bathrooms.</p>
+                    
+                                <button type="button" class="btn btn-primary" data-toggle="modal"data-target="#exampleModal">
+                                    Details
+                                </button>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                   
-                    
+
+
                 </div>
-                
-               
+
+
             </div>
-            
-            
+
+
         </div>
-        
+
     </div>
 </section>
 <!-- <section class="w3l-stats">

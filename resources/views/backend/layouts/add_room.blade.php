@@ -9,7 +9,7 @@
 <div class="col-md-6">
     <div class="card">
                 <div class="card-body">
-                    <form action="{{route('roomlist')}}" method="post">
+                    <form action="{{route('roomlist')}}" method="post" enctype="multipart/form-data">
                         @csrf
 
                     <div class="form-group">

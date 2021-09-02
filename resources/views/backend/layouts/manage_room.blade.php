@@ -31,7 +31,10 @@
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>
                 <td>{{$newroom->room_description}}</td>
-                <td>{{$newroom->imaje}}</td>
+                <td>
+                    <img src="{{url('/uploads/'.$newroom->imaje)}}"width="40px" alt="imaje">
+
+                </td>
                 <td>{{$newroom->Price}}</td>
                 
                 

@@ -50,9 +50,9 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block"> Book </button>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block"> My booking details </button>
-                        </div>
+                        </div> -->
                       </form>
                 </div>
             </div>

@@ -14,7 +14,7 @@ class Facilities_controller extends Controller
     }
     public function manage_facilities()
     {
-     $facilitylist=Facility::paginate(4);
+     $facilitylist=Facility::paginate(7);
      
 
      return view('backend.layouts.manage_facilities',compact('facilitylist'));
@@ -23,10 +23,24 @@ class Facilities_controller extends Controller
     public function facility_list(Request $facilitylist)
     {
      //    dd($facilitylist->all());
+     // dd($newroomlist->all());
+     // dd(date('Ymdhms').'.'.$newroomlist->file('imaje')->getClientOriginalExtension());
+     $fileName='';
+     if($facilitylist->hasFile('imaje'))
+     {
+
+          $file=$facilitylist->file('imaje');
+          // dd($file);
+          //generate file name
+          $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$fileName);
+     }
+
       Facility::Create([
+          'imaje'=>$fileName,
           'facility_title'=>$facilitylist->facility_title,
-          'description'=>$facilitylist->description,
-                    'imaje'=>$facilitylist->imaje
+          'description'=>$facilitylist->description
+                    
      
      
           ]);

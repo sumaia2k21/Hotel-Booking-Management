@@ -159,7 +159,8 @@
                 <div class="maghny-grid">
 
                     <figure class="effect-lily">
-                        <img class="img-fluid" src="assets/images/room1.jpg" alt="">
+                        <!-- <img class="img-fluid" src="assets/images/room1.jpg" alt=""> -->
+                        <img src="{{url('/uploads/'. $room->imaje)}}" alt="">
                         <figcaption class="w3set-hny">
                             <div>
                                 <h4 class="top-text">Luxury Hotel and Best Resort
@@ -172,9 +173,9 @@
 
                     <div class="room-info">
 
-
+                    
                         <h3 class="room-title"><a href="room-single.html">
-                                {{$room->catagory_id}}
+                                {{$room->catagory->catagory_title}}
                             </a></h3>
                         <ul class="mb-3">
                             <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
@@ -186,12 +187,16 @@
 
                         <!-- <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a> -->
                         <!-- Button trigger modal -->
+                       
+                        <button type="button" class="btn btn-primary">Primary</button>
+                        
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Book Now
+                           details
+                           
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -202,72 +207,23 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
-                                            <div class="form-group">
 
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="firstName" placeholder="Full Name"
-                                                        class="form-control" autofocus>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
+                                    @foreach($addroom as $room)
 
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="firstName" placeholder="Mobile_no"
-                                                        class="form-control" autofocus>
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-
-                                                <div class="col-sm-9">
-                                                    <input type="email" id="email" placeholder="Email"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="address" placeholder="Address"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-
-                                                <div class="col-sm-9">
-                                                    <input type="date" id="address" placeholder="Address"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-
-                                                <div class="col-sm-9">
-                                                    <input type="date" id="address" placeholder="Address"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="gender">Gender</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                                        id="exampleRadios1" value="option1" checked>
-                                                    <label class="form-check-label" for="exampleRadios1">
-                                                        Male
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="exampleRadios"
-                                                        id="exampleRadios2" value="option2">
-                                                    <label class="form-check-label" for="exampleRadios2">
-                                                        Femal
-                                                    </label>
-                                                </div>
-                                            </div>
-
-
-                                            <br>
-
-                                        </form>
+                                    <h3 class="room-title"><a href="room-single.html">
+                                {{$room->catagory->catagory_title}}
+                            </a></h3>
+                        <ul class="mb-3">
+                            <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
+                            <li><span class="fa fa-users"></span> {{$room->max_child}}</li>
+                            <li><span class="fa fa-bed"></span> {{$room->no_of_bed}}</li>
+                            <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
+                        </ul>
+                        <h5>{{$room->room_description}}</h5>
+                                    @endforeach
+                                    
+                                    
+                                    
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -276,7 +232,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
 
                 </div>

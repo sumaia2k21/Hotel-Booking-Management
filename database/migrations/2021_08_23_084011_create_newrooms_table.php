@@ -23,7 +23,7 @@ class CreateNewroomsTable extends Migration
             $table->string('no_of_bed');
             $table->string('imaje');
             
-            $table->string('Price');
+             $table->string('Price');
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@
 										</div> -->
 
     <div class="card-body">
-        <form action="{{route('facility_list')}}"method="post" >
+        <form action="{{route('facility_list')}}"method="post"enctype="multipart/form-data" >
             @csrf
         <div class="mb-3">
             <label for="formFileSm" class="form-label">Imaje</label>

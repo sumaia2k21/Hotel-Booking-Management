@@ -33,6 +33,7 @@ class User_Controller extends Controller
             'name'=>$request->guest_name,
             'mobile'=>$request->guest_mobile_no,
             'email'=>$request->guest_email,
+            'role'=>'customer',
             'password'=>bcrypt($request->guest_password)
            
         ]);

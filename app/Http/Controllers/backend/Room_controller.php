@@ -27,7 +27,20 @@ class Room_controller extends Controller
 }
 
 public function roomlist(Request $newroomlist){
+     
      // dd($newroomlist->all());
+     // dd(date('Ymdhms').'.'.$newroomlist->file('imaje')->getClientOriginalExtension());
+     $fileName='';
+     if($newroomlist->hasFile('imaje'))
+     {
+
+          $file=$newroomlist->file('imaje');
+          // dd($file);
+          //generate file name
+          $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$fileName);
+     }
+
      Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
           'room_name'=>$newroomlist->room_name,
@@ -35,7 +48,7 @@ public function roomlist(Request $newroomlist){
           'max_child'=>$newroomlist->max_child,
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
-          'imaje'=>$newroomlist->imaje,
+          'imaje'=>$fileName,
           
           'price'=>$newroomlist-> price
              

@@ -2,6 +2,14 @@
 <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
+                <li>
+                        <a  href="" aria-expanded="false">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                            
+                            {{auth()->user()->name}}
+                        </a>
+                        
+                    </li>
                     
                     <li>
                         <a  href="{{route('home')}}" aria-expanded="false">
@@ -120,6 +128,20 @@
                         <a  href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>
                             <span class="nav-text">Reports </span>
+                        </a>
+                        
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a  href="{{route('customer.list')}}" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="nav-text">Customer </span>
+                        </a>
+                        
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a  href="{{route('user.list')}}" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="nav-text">User </span>
                         </a>
                         
                     </li>
