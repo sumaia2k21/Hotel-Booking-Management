@@ -100,11 +100,13 @@
                         <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
                         <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Room details</a>
                     </div>
+                   
                 </div>
             </div>
          
             @endforeach
         </div>
+         
         
     </div>
 </div>

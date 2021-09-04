@@ -10,5 +10,10 @@ class Catagory extends Model
     use HasFactory;
     protected $table =('catagoris');
     protected $guarded=[];
+
+    // public function rooms()
+    // {
+    //     return $this->hasMany(Room::class);
+    // }
     
 }

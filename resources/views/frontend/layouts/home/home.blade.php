@@ -152,7 +152,7 @@
     <div class="container py-lg-5 py-sm-4">
         <h3 class="title-big text-center">Best Rooms</h3>
         <div class="ban-content-inf row py-lg-3">
-             @foreach($addroom as $room)
+            @foreach($addroom as $room)
             <div class="maghny-gd-1 col-lg-6">
 
 
@@ -173,7 +173,7 @@
 
                     <div class="room-info">
 
-                    
+
                         <h3 class="room-title"><a href="room-single.html">
                                 {{$room->catagory->catagory_title}}
                             </a></h3>
@@ -184,67 +184,17 @@
                             <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
                         </ul>
                         <h5>{{$room->room_description}}</h5>
-
-                        <!-- <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a> -->
-                        <!-- Button trigger modal -->
-                       
-                        <button type="button" class="btn btn-primary">Primary</button>
-                        
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                           details
-                           
-                        </button>
-
-                        <!-- Modal -->
-                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Book Your Room</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                    @foreach($addroom as $room)
-
-                                    <h3 class="room-title"><a href="room-single.html">
-                                {{$room->catagory->catagory_title}}
-                            </a></h3>
-                        <ul class="mb-3">
-                            <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
-                            <li><span class="fa fa-users"></span> {{$room->max_child}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->no_of_bed}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
-                        </ul>
-                        <h5>{{$room->room_description}}</h5>
-                                    @endforeach
-                                    
-                                    
-                                    
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Book Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
+                        <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a> 
                     </div>
-
                 </div>
-
             </div>
             @endforeach
-            <!-- <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
                 <div class="row">
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="assets/images/room2.jpg" alt="" />
+                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Family Rooms <span> Resort</span></h4>
@@ -258,7 +208,7 @@
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="assets/images/room3.jpg" alt="" />
+                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Double Rooms <span> Resort</span></h4>
@@ -272,7 +222,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="assets/images/room4.jpg" alt="" />
+                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Luxury Rooms <span> Resort</span></h4>
@@ -286,7 +236,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="assets/images/room5.jpg" alt="" />
+                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Resort Rooms <span> Resort</span></h4>
@@ -298,7 +248,9 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            
+            
         </div>
     </div>
 </div>

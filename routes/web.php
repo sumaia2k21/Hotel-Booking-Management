@@ -50,6 +50,9 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
      //end db add_catagory
      Route::get('/manage_catagory',[Catagory_Controller::class,'manage_catagory'])->name('manage_catagory');
+     //catagory under room start
+     Route::get('/catagory/{id}/rooms',[Catagory_Controller::class,'allRoom'])->name('catagory.room');
+     //end
      //catagory end
      //Facilities start
      Route::get('/add_facilities',[Facilities_controller::class,'add_facilities'])->name('add_facilities');

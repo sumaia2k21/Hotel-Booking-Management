@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
+use App\Models\Room;
 
 class Catagory_Controller extends Controller
 {
@@ -16,7 +17,7 @@ class Catagory_Controller extends Controller
 
     public function manage_catagory( )
     {
-         $catagorylist=Catagory::paginate(4);
+         $catagorylist=Catagory::paginate(8);
      
 
          return view('backend.layouts.manage_catagory',compact('catagorylist'));
@@ -34,6 +35,15 @@ public function catagory_list(Request $catagorylist){
      ]);
      return redirect()->route('manage_catagory');
 }
+
+public function allRoom($id)
+    {
+      $rooms=Room::where('catagory_id',$id)->get();
+     // dd($rooms);
+     // $rooms=Catagory::with('rooms')->find($id);
+     // dd($rooms);
+         return view('backend.layouts.room_catagory-list',compact('rooms'));
+    }
 }
 
 

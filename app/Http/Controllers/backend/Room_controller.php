@@ -60,7 +60,7 @@ public function roomlist(Request $newroomlist){
 
      public function room()
      {
-          $room=Catagory::get()->take(6);
+          $room=Catagory::get()->take(2);
           return view('frontend.layouts.room.room',compact('room'));
      }
 

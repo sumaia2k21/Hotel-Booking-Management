@@ -17,20 +17,20 @@
 
             <th scope="col">price</th>
             <th scope="col">Action</th>
-            </tr>
-            </tr>
+            
         </thead>
         <tbody>
-            @foreach($catagorylist as $cat)
+            @foreach($catagorylist as $catagory)
             <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$cat->catagory_title}}</td>
-                <td>{{$cat->description}}</td>
-                <td>{{$cat->price}}</td>
+                <!-- <td>{{$loop->iteration}}</td> -->
+                <td>{{$catagory->id}}</td>
+                <td>{{$catagory->catagory_title}}</td>
+                <td>{{$catagory->description}}</td>
+                <td>{{$catagory->price}}</td>
                 
                 <td>
                  
-                    <a type="button" class="btn btn-success">view</a>
+                <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
                     <a type="button" class="btn btn-danger">delect</a>
 
                 </td>

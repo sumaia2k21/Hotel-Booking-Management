@@ -36,6 +36,7 @@
 					</li>
 					<li class="nav-item @@services__active">
 						<a class="nav-link" href="{{route('room')}}">Room</a>
+						
 					</li>
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Gallary</a>
