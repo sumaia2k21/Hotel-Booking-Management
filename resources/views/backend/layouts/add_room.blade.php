@@ -25,6 +25,11 @@
                         <label for="largeInput">Room name</label>
                         <input type="text" class="form-control form-control"name="room_name" id="Description" placeholder="Room Name">
                     </div>
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number</label>
+                        <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number">
+                    </div>
+                    
 
 
                     <div class="form-group">

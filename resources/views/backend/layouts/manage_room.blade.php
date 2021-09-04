@@ -8,6 +8,7 @@
             <th scope="col">sl</th>
             <th scope="col">catagory_id</th>
             <th scope="col">room_name</th>
+            <th scope="col">room_number</th>
             <th scope="col">Dmax_adult</th>
             <th scope="col">max_child</th>
             <th scope="col">no_of_bed</th>
@@ -27,6 +28,7 @@
                
                 <td>{{$newroom->catagory->catagory_title}}</td>
                 <td>{{$newroom->room_name}}</td>
+                <td>{{$newroom->room_number}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>

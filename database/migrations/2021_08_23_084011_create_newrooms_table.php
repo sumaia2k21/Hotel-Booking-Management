@@ -17,6 +17,7 @@ class CreateNewroomsTable extends Migration
             $table->id();
             $table->string('catagory_id');
             $table->string('room_name');
+            $table->string('room_number')->unique();
             $table->string('max_adult');
             $table->string('max_child');
             $table->string('room_description');

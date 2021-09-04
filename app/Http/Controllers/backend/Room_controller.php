@@ -44,6 +44,7 @@ public function roomlist(Request $newroomlist){
      Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
           'room_name'=>$newroomlist->room_name,
+          'room_number'=>$newroomlist->room_number,
           'max_adult'=>$newroomlist->max_adult,
           'max_child'=>$newroomlist->max_child,
           'room_description'=>$newroomlist->room_description,
