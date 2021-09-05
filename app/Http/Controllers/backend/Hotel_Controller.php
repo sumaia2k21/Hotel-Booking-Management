@@ -21,6 +21,7 @@ class Hotel_Controller extends Controller
      }
      
      public function hotelinfopost(Request $hotelinfopost){
+         
      // dd($hotelinfopost->all());
           $checkinfo=Hotel::first();
           if($checkinfo)

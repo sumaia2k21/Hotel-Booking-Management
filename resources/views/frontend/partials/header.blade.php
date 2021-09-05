@@ -31,9 +31,22 @@
                     <!-- <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Facilities</a>
 					</li> -->
+
+					
+
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="{{route('user.signup')}}">signup/signin</a>
+					@if(auth()->user())
+						<a class="nav-link" href="{{route('guest.logout')}}">logout/{{auth()->user()->name}}</a>
+						@else
+						<a class="nav-link" href="{{route('user.signup')}}">login/signup</a>
+					@endif		
+
 					</li>
+						
+					
+
+
+
 					<li class="nav-item @@services__active">
 						<a class="nav-link" href="{{route('room')}}">Room</a>
 						
@@ -41,16 +54,9 @@
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Gallary</a>
 					</li>
-					<!-- <li class="nav-item @@services__active">
-						<a class="nav-link" href="">My Account</a>
-						<a class="nav-link" href="{{route('user_login')}}">login</a>
-						<a class="nav-link" href="{{route('viewprofile')}}">view profile</a>
-						
-						
 					
-					</li> -->
                     <li class="nav-item @@services__active">
-						<a class="nav-link" href="">Admin</a>
+						<a class="nav-link" href="{{route('admin.login')}}">Admin</a>
 					</li>
 				</ul>
 				

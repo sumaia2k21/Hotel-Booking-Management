@@ -166,10 +166,11 @@ span
 				<img src="fb.png">
 			</div> -->
      
-			<form id="login" class="input-group">
+			<form  action="{{route('user.do.login')}}"method="post" id="login" class="input-group">
+				@csrf
 
-				<input type="email" value="@gmail.com" class="input-field" placeholder="User email" required="">
-				<input type="password" class="input-field" placeholder="Enter your Password" required="">
+				<input type="email" name="email" class="input-field" placeholder="User email" required>
+				<input type="password" name="password"class="input-field" placeholder="Enter your Password" required>
 				<!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
         <br>
         <br>

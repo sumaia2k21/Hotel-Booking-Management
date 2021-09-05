@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin/login',[UserController ::class,'login'])->name('admin.login');
 Route::post('/admin/loginpost',[UserController ::class,'loginpost'])->name('admin.login.post');
 
-Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //admin start
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
      Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
@@ -91,7 +91,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
    
 
 
-Route::group(['prefix'=>'/guest'],function(){
+
 //forntend
 Route::get('/index',[indexcontroller::class,'index'])->name('index');
 //home
@@ -110,40 +110,42 @@ Route::post('/readenquiry',[Contact_controller::class,'readenquiry'])->name('rea
 Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
 //service end
 
-//room satrt
-Route::get('/room',[Room_controller::class,'room'])->name('room');
-//room end
 
-//frontend end
+Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
+     //room satrt
+     Route::get('/room',[Room_controller::class,'room'])->name('room');
+
+     //logout
+     Route::get('/guest_logout',[User_Controller ::class,'guestlogout'])->name('guest.logout');
+
+});
 
 
+//  frontend user login
+// user-login
+// Route::get('/user_login',[User_Controller::class,'user_login'])->name('user_login');
+
+//  Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
+
+// view profile start
+//  Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
 
 
-
-
-// frontend user login
-//user-login
-Route::get('/user_login',[User_Controller::class,'user_login'])->name('user_login');
-//registration form start
- Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
-//registration form end
-//view profile start
- Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
-//view profile end
 //signup satrt
 Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
 
-// login here
+Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login');
 
 
-//end sign up
+
+
 //booking form start
 Route::get('/bookingform',[Booking_controller::class,'bookingform'])->name('bookingform');
-//booking form end
+
 
 Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');
-});
+
 
 
 

@@ -5,22 +5,23 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 
 class User_Controller extends Controller
 {
-    public function user_login()
-    {
-        return view('frontend.layouts.account.user_login');
-    }
-    public function user_reg()
-    {
-        return view('frontend.layouts.account.registerform');
-    }
-    public function viewprofile()
-    {
-        return view('frontend.layouts.account.viewprofile');
-    }
+    // public function user_login()
+    // {
+    //     return view('frontend.layouts.account.user_login');
+    // }
+    // public function user_reg()
+    // {
+    //     return view('frontend.layouts.account.registerform');
+    // }
+    // public function viewprofile()
+    // {
+    //     return view('frontend.layouts.account.viewprofile');
+    // }
     public function signupform()
     {
        
@@ -47,6 +48,35 @@ class User_Controller extends Controller
            
         ]);
         return redirect()->back()->with('success','user registration successfull');
+    }
+//login here
+    public function userlogin()
+    {
+       
+        return view('frontend.layouts.account.signup');
+    }
+
+    public function dologin(Request $request)
+    {
+        $credentials=$request->except('_token');
+    
+        // dd($request->all());
+    //   dd( $credentials);
+      if(Auth::attempt( $credentials))
+      {
+
+             return redirect()->route('home');
+        }
+        
+
+         return redirect()->back()->with('message','invalid user info');
+        
+    }
+
+    public function guestlogout()
+    {
+        Auth::logout();
+        return redirect()->route('home');
     }
     
 }
