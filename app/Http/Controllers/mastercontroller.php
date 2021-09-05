@@ -10,7 +10,7 @@ class mastercontroller extends Controller
     {
          return view('backend.master');
     }
-    public function home()
+    public function dashboard()
     {
          return view('backend.layouts.home');
     }

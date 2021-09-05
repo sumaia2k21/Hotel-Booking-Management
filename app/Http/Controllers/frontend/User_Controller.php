@@ -28,7 +28,16 @@ class User_Controller extends Controller
     }
     public function signupformpost(Request $request)
     {
-        //  dd($request->all());
+        // dd($request->all());
+        $request->validate([
+            'guest_name'=> 'required',
+            'guest_email'=> 'required|email|unique:users,email',
+            'guest_password'=> 'required|min:6',
+            'guest_mobile_no'=> 'required',
+
+
+        ]);
+       
         User::Create([
             'name'=>$request->guest_name,
             'mobile'=>$request->guest_mobile_no,

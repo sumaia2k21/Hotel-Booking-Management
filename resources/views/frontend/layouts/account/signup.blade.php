@@ -15,7 +15,7 @@
 {
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(banner.jpg);
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/login_singup.jpg);
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -129,12 +129,34 @@ span
     </style>
 </head>
 <body>
-	<div class="hero">
-  
+	<div class="hero" >
+
+		<!-- <img src="{{url('/images/login_singup.jpg')}}" alt="image"> -->
 		<div class="form-box">
-			<div class="button-box">
+		@if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
+
+		<div class="button-box">
+			
 				<div id="btn"></div>
-				<button type="button" class="toggle-btn" onclick="login()">sign in</button>
+				<button type="button" class="toggle-btn" onclick="login()">log in</button>
 				<button type="button" class="toggle-btn" onclick="register()">sign up</button>
 				
 			</div>
@@ -145,7 +167,8 @@ span
 			</div> -->
      
 			<form id="login" class="input-group">
-				<input type="email" class="input-field" placeholder="User email" required="">
+
+				<input type="email" value="@gmail.com" class="input-field" placeholder="User email" required="">
 				<input type="password" class="input-field" placeholder="Enter your Password" required="">
 				<!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
         <br>
@@ -153,17 +176,14 @@ span
 				<button type="submit" class="submit-btn">Log in</button>
 				
 			</form>
-      @if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div>
-@endif
+     
 			<form id="register" class="input-group"action="{{route('user.signup.store')}}"method="post">
       @csrf
-				<input type="text" name="guest_name" class="input-field" placeholder="Name" required="">
-				<input type="email"name="guest_email" class="input-field" placeholder="Email" required="">
-				<input type="password"name="guest_password"class="input-field" placeholder="password" required="">
-				<input type="text"name="guest_mobile_no" class="input-field" placeholder="Mobile no" required="">
+	  
+				<input type="text" name="guest_name" class="input-field" placeholder="Name" >
+				<input type="email"name="guest_email" class="input-field" placeholder="Email" >
+				<input type="password"name="guest_password"class="input-field" placeholder="password" >
+				<input type="text"name="guest_mobile_no" class="input-field" placeholder="Mobile no" >
 				<!-- <input type="checkbox" class="check-box"><span>I am agree to terms and condition</span> -->
 
         <br>

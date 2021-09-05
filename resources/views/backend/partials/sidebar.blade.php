@@ -4,7 +4,7 @@
                 <ul class="metismenu" id="menu">
                 <li>
                         <a  href="" aria-expanded="false">
-                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <!-- <i class="fa fa-home" aria-hidden="true"></i> -->
                             
                             {{auth()->user()->name}}
                         </a>
@@ -12,7 +12,7 @@
                     </li>
                     
                     <li>
-                        <a  href="{{route('home')}}" aria-expanded="false">
+                        <a  href="{{route('dashboard')}}" aria-expanded="false">
                         <i class="fa fa-home" aria-hidden="true"></i>
                             <span class="nav-text">Home</span>
                         </a>

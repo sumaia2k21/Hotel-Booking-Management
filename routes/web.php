@@ -38,7 +38,7 @@ Route::post('/admin/loginpost',[UserController ::class,'loginpost'])->name('admi
 Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      //admin start
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
-     Route::get('/home',[mastercontroller ::class,'home'])->name('home');
+     Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
      //logout
      Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
      //profile
@@ -125,14 +125,17 @@ Route::get('/room',[Room_controller::class,'room'])->name('room');
 //user-login
 Route::get('/user_login',[User_Controller::class,'user_login'])->name('user_login');
 //registration form start
-Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
+ Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
 //registration form end
 //view profile start
-Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
+ Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
 //view profile end
 //signup satrt
 Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
+
+// login here
+
 
 //end sign up
 //booking form start
