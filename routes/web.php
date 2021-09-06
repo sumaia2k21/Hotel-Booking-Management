@@ -142,6 +142,11 @@ Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login'
 
 //booking form start
 Route::get('/bookingform',[Booking_controller::class,'bookingform'])->name('bookingform');
+Route::post('/booking/store',[Booking_controller::class,'bookingstore'])->name('booking.store');
+
+
+Route::get('/category_wise-room/{id}',[Room_controller::class,'catagory_under_room'])->name('catagory-under-room');
+
 
 
 Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');

@@ -29,6 +29,43 @@
 
             </div>
             <div class="form-group">
+                        <label for="squareSelect">Max Adults</label>
+                        <select class="form-control input-square" name="max_adult" id="squareSelect">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="squareSelect">Max Child</label>
+                        <select class="form-control input-square" name="max_child" id="squareSelect">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="squareSelect">No of bed</label>
+                        <select class="form-control input-square" name="no_of_bed"id="squareSelect">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="exampleFormControlFile1">Imaje</label>
+                        <input type="file" class="form-control-file" name="imaje" id="exampleFormControlFile1">
+                    </div>
+            <div class="form-group">
                 <label for="largeInput">Description</label>
                 <input type="text" class="form-control form-control"name="description" id="Description" placeholder="Description">
             </div>

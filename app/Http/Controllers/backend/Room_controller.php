@@ -61,8 +61,17 @@ public function roomlist(Request $newroomlist){
 
      public function room()
      {
-          $room=Catagory::get()->take(2);
+          $room=Catagory::get()->take(4);
           return view('frontend.layouts.room.room',compact('room'));
      }
+     
+     public function catagory_under_room($id)
+    {
+     $catagory_room_view=Room::with('catagory')->get()->take(4);
+     //  dd($catagory_room_view);
+       $catagory_room=Room::where('catagory_id',$id)->get(); 
+         return view('frontend.layouts.room.catagory_under_room',compact('catagory_room','catagory_room_view'));
+    }
+    
 
 }

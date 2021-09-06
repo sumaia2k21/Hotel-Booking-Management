@@ -28,6 +28,10 @@ public function catagory_list(Request $catagorylist){
      // dd($catagorylist->all());
      Catagory::Create([
           'catagory_title'=>$catagorylist->catagory_title,
+               'max_adult'=>$catagorylist->max_adult,
+               'max_child'=>$catagorylist->max_child,
+               'no_of_bed'=>$catagorylist->no_of_bed,
+               'imaje'=>$catagorylist->imaje,
                'description'=>$catagorylist->description,
               'price'=>$catagorylist->price
 
@@ -44,6 +48,8 @@ public function allRoom($id)
      // dd($rooms);
          return view('backend.layouts.room_catagory-list',compact('rooms'));
     }
+
+    
 }
 
 

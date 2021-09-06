@@ -4,17 +4,21 @@
     <h1><strong>Hotel Booking Management System/</strong>booking</h2>
 </div>
 <br>
-<h4 style="background: #f5c842;">All Booking<h4>
+<!-- <h4 style="background: #f5c842;">All Booking<h4> -->
         <div class="card">
             <table class="table table-bordered">
                 <thead>
 
                     <th scope="col">S.No</th>
-
-                    <th scope="col">Booking Number</th>
+                    
+                    <th scope="col">Room number</th>
+                    <!-- <th scope="col">Booking Number</th> -->
                     <th scope="col">Name</th>
+                    <th scope="col">Mobile_no</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Mobile Number</th>
+                    <th scope="col">address</th>
+                    <th scope="col">checkin</th>
+                    <th scope="col">checkout</th>
 
 
                     <th scope="col">Status</th>
@@ -23,25 +27,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
+            @foreach($request as $list)
+            <tr>
+                <td>{{$list->id}}</td>
+                <td>{{$list->room_number}}</td>
+                
+                <td>{{$list->name}}</td>
+                <td>{{$list->mobile_no}}</td>
+                <td>{{$list->email}}</td>
+                <td>{{$list->address}}</td>
+                <td>{{$list->checkin}}</td>
+                <td>{{$list->checkout}}</td>
+                <td>Active</td>
+                
 
-                        <td>@fat</td>
-                        <td>
-                            <a type="button" class="btn btn-warning">view</a>
-                            <a type="button" class="btn btn-success">edit</a>
-                            <a type="button" class="btn btn-danger">delect</a>
+                 <td>
+                    <a type="button" class="btn btn-warning">view</a>
+                   
+                </td>
 
-                        </td>
+                <!-- <a type="button" class="btn btn-primary">Primary</a> -->
 
-
-
-                    </tr>
-                </tbody>
+            </tr>
+            @endforeach();
+        </tbody>
             </table>
         </div>
 

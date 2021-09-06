@@ -1,3 +1,7 @@
+@extends('frontend.index')
+@section('content')
+
+
 <link rel="stylesheet" href="{{url('/css/login.css')}}">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -10,42 +14,43 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div class="hotel_reserve_box">
                     <h3> Book Your </h3><br>
-                    <form>
+                    <form action="{{route('booking.store')}}" method="POST">
+                        @csrf
                         <div class="form-group">
 
                             <div class="col-sm-9">
-                                <input type="text" id="firstName" placeholder="Full Name" class="form-control"
+                                <input type="text" name="name" id="firstName" placeholder="Full Name" class="form-control"
                                     autofocus>
                                 </div>
                         </div>
                         <div class="form-group">
 
                             <div class="col-sm-9">
-                                <input type="text" id="firstName" placeholder="Mobile_no" class="form-control"
-                                    autofocus>
+                                <input type="text" name="mobile_no" id="firstName" placeholder="Mobile_no" class="form-control"
+                                    >
 
                             </div>
                         </div>
                         <div class="form-group">
 
                             <div class="col-sm-9">
-                                <input type="email" id="email" placeholder="Email" class="form-control">
+                                <input type="email" name="email"  id="email" placeholder="Email" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
 
                             <div class="col-sm-9">
-                                <input type="text" id="address" placeholder="Address" class="form-control">
+                                <input type="text" name="address" id="address" placeholder="Address" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-input col-md-4 col-sm-6 mt-3">
                             <label>Check-in </label>
-                            <input type="date" name="" placeholder="Date" required="">
+                            <input type="date" name="checkin" placeholder="Date" required="">
                         </div>
                         <div class="form-input col-md-4 col-sm-6 mt-3">
                             <label>Check-out </label>
-                            <input type="date" name="" placeholder="Date" required="">
+                            <input type="date" name="checkout" placeholder="Date" required="">
                         </div>  <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block"> Book </button>
@@ -174,3 +179,5 @@
     }
 
 </style>
+
+@endsection

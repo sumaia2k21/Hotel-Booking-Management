@@ -91,14 +91,17 @@
                     <div class="room-info">
                         <h3 class="room-title"><a href="room-single.html">{{$showcatagory->catagory_title}}</a></h3>
                         <ul class="mb-3">
-                            <li><span class="fa fa-users"></span>{{$showcatagory->room_description}}</li>
-                            <li><span class="fa fa-bed"></span> {{$showcatagory->price}}</li>
+                            </span>{{$showcatagory->room_description}}</li>
+                            </span> {{$showcatagory->price}}</li>
+                            <li><span class="fa fa-users"></span>{{$showcatagory->max_adult}}</li>
+                            <li><span class="fa fa-users"></span>max_child  {{$showcatagory->max_child}}</li>
+                            <li><span class="fa fa-bed"></span> no of bed#{{$showcatagory->no_of_bed}}</li>
                             
+
                         </ul>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>
-                        <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
-                        <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Room details</a>
+                        <a href="{{route('catagory-under-room',$showcatagory->id)}}"  class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
                     </div>
                    
                 </div>

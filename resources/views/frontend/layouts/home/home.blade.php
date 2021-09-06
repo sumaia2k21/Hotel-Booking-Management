@@ -184,7 +184,7 @@
                             <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
                         </ul>
                         <h5>{{$room->room_description}}</h5>
-                        <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a> 
+                        <a href="{{route('room')}}" class="btn btn-style btn-primary mt-sm-4 mt-3">More...</a> 
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
+                                <img class="img-fluid" src="" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Family Rooms <span> Resort</span></h4>
@@ -208,7 +208,7 @@
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
+                                <img class="img-fluid" src="" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Double Rooms <span> Resort</span></h4>
@@ -222,7 +222,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
+                                <img class="img-fluid" src="" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Luxury Rooms <span> Resort</span></h4>
@@ -236,7 +236,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('/uploads/'. $room->imaje)}}" alt="" />
+                                <img class="img-fluid" src="" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Resort Rooms <span> Resort</span></h4>
