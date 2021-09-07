@@ -10,14 +10,14 @@ class Facilities_controller extends Controller
 {
     public function add_facilities()
     {
-         return view('backend.layouts.add_facilities');
+         return view('backend.layouts.facility.add_facilities');
     }
     public function manage_facilities()
     {
      $facilitylist=Facility::paginate(7);
      
 
-     return view('backend.layouts.manage_facilities',compact('facilitylist'));
+     return view('backend.layouts.facility.manage_facilities',compact('facilitylist'));
     }
 //     facility_list
     public function facility_list(Request $facilitylist)

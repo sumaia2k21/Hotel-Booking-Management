@@ -184,7 +184,8 @@
                             <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
                         </ul>
                         <h5>{{$room->room_description}}</h5>
-                        <a href="{{route('room')}}" class="btn btn-style btn-primary mt-sm-4 mt-3">More...</a> 
+                        <a href="{{route('catagory-under-room',$room->id)}}" 
+                             class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
                     </div>
                 </div>
             </div>

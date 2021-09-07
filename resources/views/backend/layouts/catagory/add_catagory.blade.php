@@ -12,7 +12,7 @@
 
     <div class="card-body">
        
-        <form action="{{route('catagory_list')}}" method="post">
+        <form action="{{route('catagory_list')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="largeSelect">Catagory Title</label>

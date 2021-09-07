@@ -13,18 +13,18 @@ class Room_controller extends Controller
     {
          $catagory=Catagory::all();
 //     dd($catagory->all());
-         return view('backend.layouts.add_room',compact('catagory'));
+         return view('backend.layouts.newroom.add_room',compact('catagory'));
     }
     
 
      public function manage_room()
      {
           $newroomlist=Room::with('catagory')->paginate(6);
+           return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
+          }
 
 
 
-     return view('backend.layouts.manage_room',compact('newroomlist'));
-}
 
 public function roomlist(Request $newroomlist){
      
@@ -56,7 +56,25 @@ public function roomlist(Request $newroomlist){
 
      ]);
      return redirect()->route('manage_room');
-}
+     }
+     //delete here
+     public function delete($id)
+     {
+          // dd($id);
+          // Room::destroy($id);
+          $room=Room::find($id);
+          if($room)
+          {
+               $room->delete();
+               return redirect()->back()->with('message','delete successfully' );
+          }
+          return redirect()->back()->with('message','no product found' );
+     }
+
+
+
+
+
 //frontent room page view
 
      public function room()
@@ -65,13 +83,7 @@ public function roomlist(Request $newroomlist){
           return view('frontend.layouts.room.room',compact('room'));
      }
      
-     public function catagory_under_room($id)
-    {
-     $catagory_room_view=Room::with('catagory')->get()->take(4);
-     //  dd($catagory_room_view);
-       $catagory_room=Room::where('catagory_id',$id)->get(); 
-         return view('frontend.layouts.room.catagory_under_room',compact('catagory_room','catagory_room_view'));
-    }
+
     
 
 }

@@ -12,12 +12,12 @@ class Hotel_Controller extends Controller
     public function hotelinfo()
     {
      $checkinfo=Hotel::first();
-         return view('backend.layouts.hotelinfo',compact('checkinfo'));
+         return view('backend.layouts.hotelinfo.hotelinfo',compact('checkinfo'));
     }
     //    hotelinfo_list
      public function  hotelinfo_list()
      {
-          return view('backend.layouts.hotelinfo_list');
+          return view('backend.layouts.hotelinfo.hotelinfo_list');
      }
      
      public function hotelinfopost(Request $hotelinfopost){

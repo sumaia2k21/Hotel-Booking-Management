@@ -11,9 +11,9 @@ class Catagory extends Model
     protected $table =('catagoris');
     protected $guarded=[];
 
-    // public function rooms()
-    // {
-    //     return $this->hasMany(Room::class);
-    // }
+     public function rooms()
+    {
+         return $this->hasMany(Room::class);
+     }
     
 }

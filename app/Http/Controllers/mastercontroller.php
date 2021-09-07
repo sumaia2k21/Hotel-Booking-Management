@@ -12,7 +12,7 @@ class mastercontroller extends Controller
     }
     public function dashboard()
     {
-         return view('backend.layouts.home');
+         return view('backend.layouts.home.home');
     }
     public function profilecreate()
     {

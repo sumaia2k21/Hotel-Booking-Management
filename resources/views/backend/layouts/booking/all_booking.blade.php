@@ -30,7 +30,7 @@
             @foreach($request as $list)
             <tr>
                 <td>{{$list->id}}</td>
-                <td>{{$list->room_number}}</td>
+                <td>{{$list->room->room_number}}</td>
                 
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>

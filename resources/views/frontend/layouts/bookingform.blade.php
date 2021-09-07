@@ -13,16 +13,24 @@
      <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div class="hotel_reserve_box">
-                    <h3> Book Your </h3><br>
+                    <h3> Book Your Room</h3><br>
                     <form action="{{route('booking.store')}}" method="POST">
                         @csrf
                         <div class="form-group">
-
+                            <input type="hidden" name="room_id" value="{{$room->id}}">
                             <div class="col-sm-9">
                                 <input type="text" name="name" id="firstName" placeholder="Full Name" class="form-control"
                                     autofocus>
                                 </div>
-                        </div>
+                            </div>
+                            
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <input readonly type="text" value="{{$room->room_number}}" id="firstName"  class="form-control"
+                                    autofocus>
+                                </div>
+                            </div>
+                            
                         <div class="form-group">
 
                             <div class="col-sm-9">

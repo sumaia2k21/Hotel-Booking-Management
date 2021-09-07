@@ -8,7 +8,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{{route('hotelinfo.store')}}"method="post" enctype="multipart/form-data">
+        <form action="{{route('hotelinfo.store')}}"method="post" enctype="multipart/form-data" enctype="multipart/form-data" >
             @csrf
            
           

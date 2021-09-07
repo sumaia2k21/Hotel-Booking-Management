@@ -1,6 +1,13 @@
 @extends('backend.master')
 @section('content')
 <h3 style="background: #f5c842;">Manage Room</h3>
+
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif  
+
 <div class="card">
     <table class="table table-border">
         <thead>
@@ -24,7 +31,7 @@
         <tbody>
             @foreach($newroomlist as $newroom)
             <tr>  
-            <td>{{$loop->iteration}}</td>        
+            <td>{{$newroom->id}}</td>        
                
                 <td>{{$newroom->catagory->catagory_title}}</td>
                 <td>{{$newroom->room_name}}</td>
@@ -44,7 +51,7 @@
                 <td>
                     <a type="button" class="btn btn-warning">view</a>
                     <a type="button" class="btn btn-success">edit</a>
-                    <a type="button" class="btn btn-danger">delect</a>
+                    <a  onclick="return confirm('Are you sure you want to delete this item?');"href="{{route('room.delete',$newroom->id)}}" class="btn btn-danger">deleted</a>
 
                 </td>
 

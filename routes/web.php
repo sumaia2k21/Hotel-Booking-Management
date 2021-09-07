@@ -61,11 +61,15 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //db facility end
      Route::get('/manage_facilities',[Facilities_controller::class,'manage_facilities'])->name('manage_facilities');
      //facilities end
+
      //Room start
      Route::get('/add_room',[Room_controller::class,'add_room'])->name('add_room');
      //db add room start
      Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
      //db end
+
+     Route::get('/room/delete/{id}',[Room_controller::class,'delete'])->name('room.delete');
+
      Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
      //room end
      //page start
@@ -141,11 +145,11 @@ Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login'
 
 
 //booking form start
-Route::get('/bookingform',[Booking_controller::class,'bookingform'])->name('bookingform');
+Route::get('/bookingform/{id}',[Booking_controller::class,'bookingform'])->name('bookingform');
 Route::post('/booking/store',[Booking_controller::class,'bookingstore'])->name('booking.store');
 
-
-Route::get('/category_wise-room/{id}',[Room_controller::class,'catagory_under_room'])->name('catagory-under-room');
+//catagory under room (frontend)
+Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');
 
 
 

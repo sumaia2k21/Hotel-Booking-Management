@@ -28,10 +28,13 @@
                 <!-- <td>{{$loop->iteration}}</td> -->
                 <td>{{$catagory->id}}</td>
                 <td>{{$catagory->catagory_title}}</td>
-                <td>{{$catagory->description}}</td>
-                <td>{{$catagory->description}}</td>
-                <td>{{$catagory->description}}</td>
-                <td>{{$catagory->description}}</td>
+                <td>{{$catagory->max_adult}}</td>
+                <td>{{$catagory->max_child}}</td>
+                <td>{{$catagory->no_of_bed}}</td>
+                <td>
+                    <img src="{{url('/uploads/'.$catagory->imaje)}}"width="40px" alt="imaje">
+
+                </td>
                 <td>{{$catagory->description}}</td>
                 <td>{{$catagory->price}}</td>
                 

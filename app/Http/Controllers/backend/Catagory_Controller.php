@@ -12,7 +12,7 @@ class Catagory_Controller extends Controller
      
     public function add_catagory()
     {
-         return view('backend.layouts.add_catagory');
+         return view('backend.layouts.catagory.add_catagory');
     }
 
     public function manage_catagory( )
@@ -20,18 +20,34 @@ class Catagory_Controller extends Controller
          $catagorylist=Catagory::paginate(8);
      
 
-         return view('backend.layouts.manage_catagory',compact('catagorylist'));
+         return view('backend.layouts.catagory.manage_catagory',compact('catagorylist'));
     }
     
 
 public function catagory_list(Request $catagorylist){
+     $fileName='';
+     if($catagorylist->hasFile('imaje'))
+     {
+
+          $file=$catagorylist->file('imaje');
+          // dd($file);
+          //generate file name
+          $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$fileName);
+     }
+
+
+
+
+
+
      // dd($catagorylist->all());
      Catagory::Create([
           'catagory_title'=>$catagorylist->catagory_title,
                'max_adult'=>$catagorylist->max_adult,
                'max_child'=>$catagorylist->max_child,
                'no_of_bed'=>$catagorylist->no_of_bed,
-               'imaje'=>$catagorylist->imaje,
+               'imaje'=>$fileName,
                'description'=>$catagorylist->description,
               'price'=>$catagorylist->price
 
@@ -46,9 +62,17 @@ public function allRoom($id)
      // dd($rooms);
      // $rooms=Catagory::with('rooms')->find($id);
      // dd($rooms);
-         return view('backend.layouts.room_catagory-list',compact('rooms'));
+         return view('backend.layouts.catagory.room_catagory-list',compact('rooms'));
     }
-
+    public function catagory_under_room($id)
+    {
+     // $catagory_room_view=Room::with('catagory')->get()->take(4);
+     
+     //   $catagory_room=Room::where('catagory_id',$id)->get(); 
+     $catagory_room_view=Catagory::with('rooms')->find($id);
+     // dd($rooms);
+         return view('frontend.layouts.room.catagory_under_room',compact('catagory_room_view'));
+    }
     
 }
 

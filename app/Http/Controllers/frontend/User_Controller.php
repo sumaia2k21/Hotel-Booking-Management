@@ -65,7 +65,7 @@ class User_Controller extends Controller
       if(Auth::attempt( $credentials))
       {
 
-             return redirect()->route('home');
+             return redirect()->route('room');
         }
         
 
