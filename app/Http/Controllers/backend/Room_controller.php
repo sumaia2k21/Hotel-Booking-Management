@@ -71,6 +71,33 @@ public function roomlist(Request $newroomlist){
           return redirect()->back()->with('message','no product found' );
      }
 
+     public function edit($id)
+     {
+          $catagory=Catagory::all();
+     // dd($catagory);
+          $room=Room::find($id);
+          return view('backend.layouts.newroom.edit',compact('catagory','room'));
+     }
+     public function update(Request $newroomlist,$id)
+     {
+          $room=Room::find($id);
+          $room->update([
+               'room_name'=>$newroomlist->room_name,
+          'room_number'=>$newroomlist->room_number,
+          'max_adult'=>$newroomlist->max_adult,
+          'max_child'=>$newroomlist->max_child,
+          'room_description'=>$newroomlist->room_description,
+          'no_of_bed'=>$newroomlist->no_of_bed,
+        'price'=>$newroomlist-> price 
+
+          ]);
+
+       return redirect()->route('manage_room')->with('message','room update sucessfully');  
+          
+       
+
+     }
+
 
 
 

@@ -15,6 +15,9 @@ class Page_controller extends Controller
     {
          return view('backend.layouts.page.contact_us');
     }
-    
+    public function edit($id)
+    {
+         
+    }
    
 }

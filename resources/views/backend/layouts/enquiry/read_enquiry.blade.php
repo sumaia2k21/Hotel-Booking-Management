@@ -1,7 +1,14 @@
 @extends('backend.master')
 @section('content')
 <h4 style="background: #f5c842">Read Enquiry<h4>
-        <div class="card">
+    <br>
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif 
+     
+<div class="card">
         <table class="table table-striped table-hover">
         <thead class="thead-dark">
 
@@ -10,8 +17,6 @@
                     <th scope="col">Email</th>
                     <th scope="col">Mobile Number</th>
                     <th scope="col">Message</th>
-
-                    <!-- <th scope="col">Enquiry Date</th> -->
                     <th scope="col">Action</th>
                     </tr>
                     </tr>
@@ -19,8 +24,7 @@
                 <tbody>
             @foreach($enquirylist as $enquiry)
             <tr>
-            <td>{{$loop->iteration}}</td>
-                <!-- <td>{{$enquiry->sl}}</td> -->
+            <td>{{$enquiry->id}}</td>
                 <td>{{$enquiry->name}}</td>
                 <td>{{$enquiry->email}}</td>
                 <td>{{$enquiry->mobile_no}}</td>
@@ -29,7 +33,7 @@
                 <td>
                     <a type="button" class="btn btn-warning">view</a>
                     
-                    <a type="button" class="btn btn-danger">delect</a>
+                    <a href="{{route('enquiry.delete',$enquiry->id)}}" class="btn btn-danger">delect</a>
 
                 </td>
 

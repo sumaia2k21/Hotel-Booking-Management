@@ -49,6 +49,8 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //db add_catagory
      Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
      //end db add_catagory
+     Route::get('/catagory/delete/{id}',[Catagory_Controller::class,'delete'])->name('catagory.delete');
+     
      Route::get('/manage_catagory',[Catagory_Controller::class,'manage_catagory'])->name('manage_catagory');
      //catagory under room start
      Route::get('/catagory/{id}/rooms',[Catagory_Controller::class,'allRoom'])->name('catagory.room');
@@ -59,6 +61,11 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //db facility start
      Route::post('/facility_list',[Facilities_controller::class,'facility_list'])->name('facility_list');
      //db facility end
+     
+     Route::get('/facilities/{id}/delete',[Facilities_controller::class,'delete'])->name('facility.delete');
+     Route::get('/facilities/{id}/edit',[Facilities_controller::class,'edit'])->name('facility.edit');
+     Route::put('/facilities/{id}/update',[Facilities_controller::class,'update'])->name('facility.update');
+
      Route::get('/manage_facilities',[Facilities_controller::class,'manage_facilities'])->name('manage_facilities');
      //facilities end
 
@@ -69,17 +76,24 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //db end
 
      Route::get('/room/delete/{id}',[Room_controller::class,'delete'])->name('room.delete');
+     Route::get('/room/edit/{id}',[Room_controller::class,'edit'])->name('room.edit');
+     Route::put('/room/update/{id}',[Room_controller::class,'update'])->name('room.update');
 
      Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
      //room end
      //page start
      Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
+     Route::get('/about_us/{id}/edit',[Page_controller::class,'edit'])->name('about_us.edit');
+
+
+     
      Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
      // Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
      //page end
      //booking start
      Route::get('/new_booking',[Booking_controller::class,'new_booking'])->name('new_booking');
      Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
+     Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
      //booking end
      //hotelinfo form start
      Route::get('/hotelinfo',[Hotel_Controller::class,'hotelinfo'])->name('hotelinfo');
@@ -108,7 +122,9 @@ Route::get('/contact',[Contact_controller::class,'contact'])->name('contact');
 Route::get('/read_enquiry',[Contact_controller::class,'read_enquiry'])->name('read_enquiry');
 // read quiray
 //db contact us start
-Route::post('/readenquiry',[Contact_controller::class,'readenquiry'])->name('readenquiry');
+Route::post('/readenquiry/store',[Contact_controller::class,'readenquiry'])->name('readenquiry');
+
+Route::get('/enquiry/delete/{id}',[Contact_controller::class,'delete'])->name('enquiry.delete');
 //db end contact
 //service start
 Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
@@ -154,6 +170,9 @@ Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_unde
 
 
 Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');
+
+
+
 
 
 

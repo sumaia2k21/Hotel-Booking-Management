@@ -115,6 +115,45 @@
     </div>
 </div>
 
+
+<div class="card">
+    <table class="table table-bordered">
+        <thead>
+              <th scope="col">S.No</th>
+            <th scope="col">Room number</th>
+            <th scope="col">title</th>
+            <th scope="col">Mobile_no</th>
+            <th scope="col">Email</th>
+            <th scope="col">address</th>
+            <th scope="col">checkin</th>
+            <th scope="col">checkout</th>
+           <th scope="col">Status</th>
+            <th scope="col">Action</th>
+            </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+                <td>Active</td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
 <section class="w3l-feature-2">
     <div class="grid top-bottom py-5">
         <div class="container py-md-5">

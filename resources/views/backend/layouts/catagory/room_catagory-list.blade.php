@@ -5,7 +5,7 @@
 
 <div class="card">
 <table class="table table-bordered">
-  <thead class="thead-light">
+  <thead class="thead-dark">
 
             <th scope="col">ID</th>
             <th scope="col">Catagory Title</th>
@@ -21,7 +21,10 @@
                 <!-- <td>{{$loop->iteration}}</td> -->
                 <td>{{$data->id}}</td>
                 <td>{{$data->Catagory->catagory_title}}</td>
-                <td>{{$data->room_description}}</td>
+                
+                <td>{{$data->room_number}}</td>
+                
+                
                 <td>{{$data->Price}}</td>
 
             </tr>

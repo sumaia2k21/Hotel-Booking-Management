@@ -50,7 +50,7 @@
                 
                 <td>
                     <a type="button" class="btn btn-warning">view</a>
-                    <a type="button" class="btn btn-success">edit</a>
+                    <a href="{{route('room.edit',$newroom->id)}}" class="btn btn-success">edit</a>
                     <a  onclick="return confirm('Are you sure you want to delete this item?');"href="{{route('room.delete',$newroom->id)}}" class="btn btn-danger">deleted</a>
 
                 </td>

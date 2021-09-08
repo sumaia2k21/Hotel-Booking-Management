@@ -16,8 +16,23 @@ class Contact_controller extends Controller
     public function read_enquiry()
     {
         $enquirylist=Contact::paginate(4);
-         return view('backend.layouts.read_enquiry',compact('enquirylist'));
+         return view('backend.layouts.enquiry.read_enquiry',compact('enquirylist'));
     }
+
+    //delete read quiry here
+    public function delete($id)
+    {
+         // dd($id);
+         // Room::destroy($id);
+         $enquiry=Contact::find($id);
+         if($enquiry)
+         {
+              $enquiry->delete();
+              return redirect()->back()->with('message','delete successfully' );
+         }
+         return redirect()->back()->with('message','no product found' );
+    }
+
     //db
     public function readenquiry(Request $enquirylist)
     {
@@ -30,6 +45,6 @@ class Contact_controller extends Controller
            'message' =>$enquirylist->message
 
         ]);
-        return redirect()->route('read_enquiry');
+        return redirect()->back()->with('message','your request send successfully');
     }
 }

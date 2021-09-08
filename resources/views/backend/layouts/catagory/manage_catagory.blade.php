@@ -6,6 +6,11 @@
 <!-- <h2>Catagory/<small>add catagory</small></h2> -->
 
 <h1 style="background: #f5c842;">Manage Catagory</h1>
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif  
 
 <div class="card">
 <table class="table table-bordered">
@@ -41,7 +46,7 @@
                 <td>
                  
                 <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
-                    <a type="button" class="btn btn-danger">delect</a>
+                    <a href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delect</a>
 
                 </td>
 

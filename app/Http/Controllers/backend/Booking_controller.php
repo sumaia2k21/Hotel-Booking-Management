@@ -19,7 +19,19 @@ class Booking_controller extends Controller
     //  dd($request);
          return view('backend.layouts.booking.all_booking',compact('request'));
     }
-  
+  //delete here
+  public function delete($id)
+{
+     // dd($id);
+     // Room::destroy($id);
+     $room=Book::find($id);
+     if($room)
+     {
+          $room->delete();
+          return redirect()->back()->with('message','delete successfully' );
+     }
+     return redirect()->back()->with('message','no product found' );
+}
 
 public function bookingform($id)
     {
@@ -43,5 +55,7 @@ public function bookingform($id)
 
         
     }
+
+
 
 }

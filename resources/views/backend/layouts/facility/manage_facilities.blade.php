@@ -4,6 +4,14 @@
 <div>
     <h2"><strong>Facilities/</strong>manage facilities</h2>
 </div>
+<br>
+<br>
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif  
+
 <div class="card">
 <table class="table table-striped table-hover">
     <thead class="thead-dark">
@@ -27,16 +35,13 @@
                 <td>{{$fy->facility_title}}</td>
                 <td>{{$fy->description}}</td>
                  <td>
-                    <a type="button" class="btn btn-warning">view</a>
-                    <a type="button" class="btn btn-success">edit</a>
-                    <a type="button" class="btn btn-danger">delect</a>
+                    
+                    <a href="{{route('facility.edit',$fy->id)}}" class="btn btn-success">edit</a>
+                    <a href="{{route('facility.delete',$fy->id)}}" class="btn btn-danger">delect</a>
 
                 </td>
-
-                <!-- <a type="button" class="btn btn-primary">Primary</a> -->
-
             </tr>
-            @endforeach();
+            @endforeach
         </tbody>
     </table>
     {{$facilitylist->links('pagination::bootstrap-4')}} 

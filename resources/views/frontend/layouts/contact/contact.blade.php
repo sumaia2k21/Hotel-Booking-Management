@@ -71,6 +71,11 @@ Author URL: http://w3layouts.com
                     </div>
                 </div>
                 <div class="map-content-9 mt-lg-0 mt-4">
+                @if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif 
                     <form action="{{route('readenquiry')}}" method="post">
                         @csrf
                         <div class="twice-two">

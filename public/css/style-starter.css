@@ -9750,7 +9750,7 @@ h3.title-big {
   .w3l-header-nav .dropdown-item:hover {
     color: rgba(0, 0, 0, 0.9); }
   .w3l-header-nav a.dropdown-item.active {
-    color: rgba(0, 0, 0, 0.9); }
+    color: rgba(7, 3, 3, 0.9); }
   .w3l-header-nav .navbar-light a.navbar-brand {
     color: #f57b51;
     font-weight: 700;
@@ -9943,7 +9943,7 @@ h3.title-big {
 .owl-carousel .owl-item {
   min-height: 1px;
   float: left;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility:hidden;
   -webkit-touch-callout: none; }
 
 .owl-carousel .owl-dots.disabled,

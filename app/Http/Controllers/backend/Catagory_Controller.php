@@ -73,7 +73,18 @@ public function allRoom($id)
      // dd($rooms);
          return view('frontend.layouts.room.catagory_under_room',compact('catagory_room_view'));
     }
-    
+    public function delete($id)
+{
+     // dd($id);
+     // Room::destroy($id);
+     $catagory=Catagory::find($id);
+     if($catagory)
+     {
+          $catagory->delete();
+          return redirect()->back()->with('message','delete successfully' );
+     }
+     return redirect()->back()->with('message','no product found' );
+}
 }
 
 
