@@ -23,7 +23,7 @@
 						<a class="nav-link" href="{{route('about')}}">About</a>
 					</li>
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="{{route('survice')}}">Services</a>
+						<a class="nav-link" href="{{route('survice')}}">Facilities</a>
 					</li>
 					<li class="nav-item @@contact__active">
 						<a class="nav-link" href="{{route('contact')}}">Contact</a>
@@ -53,6 +53,15 @@
 					</li>
                     <li class="nav-item @@services__active">
 						<a class="nav-link" href="">Gallary</a>
+						
+					</li>
+					<li class="nav-item @@services__active">
+						<a class="nav-link" href="{{route('viewprofile')}}">My Account</a>
+						
+					</li>
+					
+					<li class="nav-item @@services__active">
+						<a class="nav-link" href="{{route('mybooking.status')}}">My Booking status</a>
 						
 					</li>
 					

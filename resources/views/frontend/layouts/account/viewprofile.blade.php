@@ -1,170 +1,64 @@
+@extends('frontend.index')
+@section('content')
+
+<body>
+
+    <section class="w3l-breadcrumb">
+        <div class="breadcrum-bg py-sm-5 py-4">
+            <div class="container py-lg-3">
+                <!-- <h2>View your profile</h2> -->
+                <p><a href="">View your profile</a> &nbsp; / &nbsp; profile</p>
+
+            </div>
+        </div>
+    </section>
+    <!-- contact1 -->
+    <section class="w3l-contact-1 py-5">
+        <div class="contacts-9 py-lg-5 py-sm-4">
+            <div class="container">
+
+                <div class="d-grid contact-view">
+                    <div class="cont-details">
+                        image show 
+                    </div>
+                    <div class="map-content-9 mt-lg-0 mt-4">
+                        @if(session()->has('message'))
+                        <span class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </span>
+                        @endif
+                        <h2>View your profile/<small>profile</small></h2>
+                        <form action="" method="post">
+                            @csrf
+                            <div class="twice">
+                                <input type="text" class="form-control" name="name" id="w3lName" placeholder="Name"
+                                    required="">
+                            </div>
+                            <div class="twice">
+                                <input type="email" class="form-control" name="email" id="w3lSender" placeholder="Email"
+                                    required="">
+                            </div>
+                            <div class="twice">
+                                <input type="text" class="form-control" name="mobile_no" id="w3lName"
+                                    placeholder="Mobile No" required="">
+                            </div>
+
+                            <div class="twice">
+
+                                <input type="date" class="form-control" name="reg_date" id="w3lSubject"
+                                    placeholder="Registration Date" required="">
+                            </div>
 
 
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="modal-dialog modal-dialog-scrollable">
-<div class="container">
-    <br>
-    <br>
-    <div class="row" id="main">
-        <!-- <div class="col-md-4 well" id="leftPanel">
-            <div class="row">
-                <div class="col-md-12">
-                    <div>
-                        <img src="http://lorempixel.com/200/200/abstract/1/" alt="Texto Alternativo"
-                            class="img-circle img-thumbnail">
-                        <h2>Gopinath Perumal</h2>
-                        
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-warning">
-                                Social</button>
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span><span class="sr-only">Social</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Github</a></li>
-                            </ul>
-                        </div>
+                            <button type="submit" class="btn btn-primary">update</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div> -->
-        <div class="col-md-8 well" id="rightPanel">
-            <div class="row">
-                <div class="col-md-12">
-                    <form role="form">
-                        <h2>View your profile/<small>profile</small></h2>
-                        <hr class="colorgraph">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="Full_name" id="full_name" class="form-control input-lg"
-                                        placeholder="First Name" tabindex="1">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="last_name" id="last_name" class="form-control input-lg"
-                                        placeholder="Mobile No" tabindex="2">
-                                       
-                                </div>
-                            </div>
-                            
-            </div>
-        </div> 
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-lg"
-                                placeholder="Email Address" tabindex="4">
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control input-lg"
-                                        placeholder="Password" tabindex="5">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="password" name="password_confirmation" id="password_confirmation"
-                                        class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="colorgraph">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6"></div>
-                            <div class="col-xs-12 col-md-6"><a href="#"
-                                    class="btn btn-success btn-block btn-lg">Update</a></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-                        </div>
-                        <div class="modal-body">
-                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi,
-                                aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi
-                                tempore possimus ipsa porro delectus quidem dolorem ad.</p> -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
         </div>
-    </div>
-</div>
-</div>
-</div>
-
-
-<style>
-    #leftPanel{
-    background-color:#0079ac;
-    color:#fff;
-    text-align: center;
-}
-
-#rightPanel{
-    min-height:415px;
-}
-
-/* Credit to bootsnipp.com for the css for the color graph */
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-</style>
+    </section>
+    <!-- /contact1 -->
 
 
 
-
-
-
-
-
-
-
-
-
+    @endsection

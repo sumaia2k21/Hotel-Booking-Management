@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Room;
+use App\Models\Facility;
 use Illuminate\Http\Request;
 
 class indexcontroller extends Controller
@@ -14,9 +15,10 @@ class indexcontroller extends Controller
     }
     public function home()
     {
+        $facility=Facility::get()->take(3);
         $addroom=Room::with('catagory')->get()->take(1);
         // dd($addroom);
-        return view('frontend.layouts.home.home',compact('addroom'));
+        return view('frontend.layouts.home.home',compact('addroom','facility'));
     }
    
     

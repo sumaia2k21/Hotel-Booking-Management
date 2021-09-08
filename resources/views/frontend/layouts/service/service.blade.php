@@ -18,9 +18,11 @@
 <!--  services section -->
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
+    <h2 style="text-align: center;">Facilities</h2>
         <div class="container py-lg-5 py-sm-4">
             <div class="features-with-17-top_sur">
                 <div class="row">
+                  
                     <!-- <div class="col-lg-4 col-md-6 align-self">
                         <h3 class="title-small">Luxury Hotel Services</h3>
                         <p>Our rooms are beautifully designed and comfortable and can accommodate various groups of

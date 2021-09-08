@@ -5,25 +5,25 @@ Author URL: http://w3layouts.com
 @extends('frontend.index')
 @section('content')
 
-  <body>
-<!--w3l-header-->
+<body>
+    <!--w3l-header-->
 
 
-<!-- //w3l-header -->
-<section class="w3l-breadcrumb">
-    <div class="breadcrum-bg py-sm-5 py-4">
-        <div class="container py-lg-3">
-            <h2>Contact Us</h2>
-            <p><a href="index.html">Home</a> &nbsp; / &nbsp; Contact</p>
+    <!-- //w3l-header -->
+    <section class="w3l-breadcrumb">
+        <div class="breadcrum-bg py-sm-5 py-4">
+            <div class="container py-lg-3">
+                <h2>Contact Us</h2>
+                <p><a href="index.html">Home</a> &nbsp; / &nbsp; Contact</p>
 
+            </div>
         </div>
-    </div>
-</section>
-<!-- contact1 -->
-<section class="w3l-contact-1 py-5">
-    <div class="contacts-9 py-lg-5 py-sm-4">
-        <div class="container">
-            <!-- <div class="d-grid contact-view">
+    </section>
+    <!-- contact1 -->
+    <section class="w3l-contact-1 py-5">
+        <div class="contacts-9 py-lg-5 py-sm-4">
+            <div class="container">
+                <!-- <div class="d-grid contact-view">
                 <div class="cont-details">
                     <p>Get in touch</p>
                     <h3 class="title-big">Contact and Access</h3>
@@ -33,7 +33,7 @@ Author URL: http://w3layouts.com
                         perferendis voluptas consequatur quaerat incidunt. Similique, officia! Dolorum fugiat et aliquam
                         necessitatibus quas reiciendis, totam voluptatibus deleniti tempore doloribus.</p>
                 </div> -->
-            </div> 
+            </div>
             <!-- <div class="map-iframe my-5">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
@@ -71,11 +71,11 @@ Author URL: http://w3layouts.com
                     </div>
                 </div>
                 <div class="map-content-9 mt-lg-0 mt-4">
-                @if(session()->has('message'))
-    <span class="alert alert-success">
-        {{ session()->get('message') }}
-	</span>
-@endif 
+                    @if(session()->has('message'))
+                    <span class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </span>
+                    @endif
                     <form action="{{route('readenquiry')}}" method="post">
                         @csrf
                         <div class="twice-two">
@@ -89,8 +89,8 @@ Author URL: http://w3layouts.com
                                 placeholder="Subject" required="">
                         </div> -->
                         <div class="twice">
-                        <input type="number" class="form-control" name="mobile_no" id="w3lName" placeholder="Mobile No"
-                                required="">
+                            <input type="number" class="form-control" name="mobile_no" id="w3lName"
+                                placeholder="Mobile No" required="">
                         </div>
                         <textarea name="message" class="form-control" id="w3lMessage" placeholder="Message"
                             required="">Message</textarea>
@@ -99,10 +99,10 @@ Author URL: http://w3layouts.com
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- /contact1 -->
+        </div>
+    </section>
+    <!-- /contact1 -->
 
 
 
-@endsection
+    @endsection

@@ -70,9 +70,38 @@
     </div>
 </section>
 <!-- /main-slider -->
+<section class="w3l-servicesblock1" id="service">
+
+    <div class="features-with-17_sur py-5">
+        <div class="container py-lg-5 py-sm-4">
+            <h2 style="text-align: center;"> Our Services</h2>
+            <div class="features-with-17-top_sur">
+                <div class="row">
+                    @foreach($facility as $survic)
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                        <div class="features-with-17-right-tp_sur">
+                            <div class="features-with-17-left1">
+                                <span class="fa fa-bed" aria-hidden="true"></span>
+                            </div>
+                            <div class="features-with-17-left2">
+                                <h5>Fitness Zone</h5>
+                                <h6><a href="#url">{{$survic->facility_title}}</a></h6>
+                                <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
+                                    distracted by the readable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="w3l-availability-form" id="booking">
     <!-- /w3l-availability-form-section -->
-    <div class="w3l-availability-form-main py-5">
+    <!-- <div class="w3l-availability-form-main py-5">
         <div class="container pt-lg-3 pb-lg-5">
             <div class="forms-top">
                 <div class="form-right">
@@ -122,12 +151,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 <!-- //w3l-availability-form-section -->
 
 <!-- about -->
-<section class="w3l-about py-5">
+<section class="best-rooms py-5">
     <div class="container py-sm-4">
         <div class="row">
             <div class="col-lg-6 about-left mb-md-0 mb-5">
@@ -143,6 +172,33 @@
             <div class="col-lg-6 about-right position-relative mt-lg-0 mt-5">
                 <img src="/images/top.jpg" alt="" class="img-fluid img-border mt-4" />
                 <img src="assets/images/bottom.jpg" alt="" class="img-fluid position-absolute img-position" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="w3l-availability-form" id="booking">
+    <!-- /w3l-availability-form-section -->
+    <div class="w3l-availability-form-main py-5">
+        <div class="container pt-lg-3 pb-lg-5">
+            <div class="forms-top">
+                <div class="form-right">
+                    <div class="form-inner-cont">
+
+                        <div class="row">
+                            @foreach($facility as $survic)
+                            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                                <div class="features-with-17-right-tp_sur">
+                                    <div class="features-with-17-left2">
+                                        <img src="{{url('/uploads/'. $survic->imaje)}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -184,8 +240,8 @@
                             <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
                         </ul>
                         <h5>{{$room->room_description}}</h5>
-                        <a href="{{route('catagory-under-room',$room->id)}}" 
-                             class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
+                        <a href="{{route('catagory-under-room',$room->id)}}"
+                            class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
                     </div>
                 </div>
             </div>
@@ -250,8 +306,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
 </div>

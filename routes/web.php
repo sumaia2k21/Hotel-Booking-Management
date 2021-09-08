@@ -148,7 +148,9 @@ Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
 //  Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
 
 // view profile start
-//  Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
+ Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
+ //My Booking details
+ Route::get('/my_booking',[User_Controller::class,'mybooking'])->name('mybooking.status');
 
 
 //signup satrt

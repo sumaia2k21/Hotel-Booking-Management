@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Facility;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -18,10 +19,16 @@ class User_Controller extends Controller
     // {
     //     return view('frontend.layouts.account.registerform');
     // }
-    // public function viewprofile()
-    // {
-    //     return view('frontend.layouts.account.viewprofile');
-    // }
+    public function viewprofile()
+    {
+        $facility=Facility::get()->take(3);
+        return view('frontend.layouts.account.viewprofile');
+    }
+    public function mybooking()
+    {
+        
+        return view('frontend.layouts.account.my_booking');
+    }
     public function signupform()
     {
        
