@@ -29,7 +29,7 @@
 						<a class="nav-link" href="{{route('contact')}}">Contact</a>
 					</li>
                     <!-- <li class="nav-item @@services__active">
-						<a class="nav-link" href="">Facilities</a>
+						<a class="nav-link" href="{{route('testroom')}}">Facilities</a>
 					</li> -->
 
 					
@@ -56,7 +56,7 @@
 						
 					</li>
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="{{route('viewprofile')}}">My Account</a>
+						<a class="nav-link" href="{{route('viewprofile')}}">view profile</a>
 						
 					</li>
 					

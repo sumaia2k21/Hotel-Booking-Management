@@ -20,32 +20,41 @@ class Hotel_Controller extends Controller
           return view('backend.layouts.hotelinfo.hotelinfo_list');
      }
      
-     public function hotelinfopost(Request $hotelinfopost){
-         
+     public function hotelinfopost(Request $request){
+     //     dd($checkinfo->all());
+          $fileName='';
+          if($request->hasFile('logo'))
+          {
+     
+               $file=$request->file('logo');
+               // dd($file);
+               //generate file name
+               $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+               $file->storeAs('/uploads',$fileName);
+          }
+
+
      // dd($hotelinfopost->all());
           $checkinfo=Hotel::first();
+
           if($checkinfo)
           {
                //update
                $checkinfo->update([
-                    'name'=>$hotelinfopost->hotel_name,
-                    'email'=>$hotelinfopost->email,
-                    
-                   'logo'=>$hotelinfopost->imaje,
-         
-                    'address'=>$hotelinfopost->address,
-                   'contact_no'=>$hotelinfopost->contact_no
+                    'name'=>$request->name,
+                    'email'=>$request->email, 
+                   'logo'=>$fileName,
+                    'address'=>$request->address,
+                   'contact_no'=>$request->contact_no
 
                ]);
           }else{
          Hotel::Create([
-              'name'=>$hotelinfopost->hotel_name,
-                   'email'=>$hotelinfopost->email,
-                   
-                  'logo'=>$hotelinfopost->imaje,
-        
-                   'address'=>$hotelinfopost->address,
-                  'contact_no'=>$hotelinfopost->contact_no
+              'name'=>$request->name,
+                   'email'=>$request->email,
+                  'logo'=>$fileName,
+                   'address'=>$request->address,
+                  'contact_no'=>$request->contact_no
          ]);
      }
          return redirect()->back();

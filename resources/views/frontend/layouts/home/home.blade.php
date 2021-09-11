@@ -159,6 +159,7 @@
 <section class="best-rooms py-5">
     <div class="container py-sm-4">
         <div class="row">
+        @foreach($addroom as $room)
             <div class="col-lg-6 about-left mb-md-0 mb-5">
                 <h3 class="title-big">Relax in our Hotel</h3>
                 <h5>We make the best for all our customers.</h5>
@@ -170,9 +171,10 @@
                 <a href="{{route('about')}}" class="btn btn-style btn-primary mt-sm-5 mt-4">Learn About Us</a>
             </div>
             <div class="col-lg-6 about-right position-relative mt-lg-0 mt-5">
-                <img src="/images/top.jpg" alt="" class="img-fluid img-border mt-4" />
+                <img src="{{url('/uploads/'. $survic->imaje)}}" alt="" class="img-fluid img-border mt-4" />
                 <img src="assets/images/bottom.jpg" alt="" class="img-fluid position-absolute img-position" />
             </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -204,19 +206,19 @@
     </div>
 </section>
 <!-- //about -->
-<div class="best-rooms py-5">
+
+
+<!-- <div class="best-rooms py-5">
+   
     <div class="container py-lg-5 py-sm-4">
         <h3 class="title-big text-center">Best Rooms</h3>
+        
         <div class="ban-content-inf row py-lg-3">
-            @foreach($addroom as $room)
+        @foreach($addroom as $room)
             <div class="maghny-gd-1 col-lg-6">
-
-
                 <div class="maghny-grid">
-
                     <figure class="effect-lily">
-                        <!-- <img class="img-fluid" src="assets/images/room1.jpg" alt=""> -->
-                        <img src="{{url('/uploads/'. $room->imaje)}}" alt="">
+                        <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="">
                         <figcaption class="w3set-hny">
                             <div>
                                 <h4 class="top-text">Luxury Hotel and Best Resort
@@ -225,23 +227,16 @@
                             </div>
                         </figcaption>
                     </figure>
-
-
                     <div class="room-info">
-
-
-                        <h3 class="room-title"><a href="room-single.html">
-                                {{$room->catagory->catagory_title}}
-                            </a></h3>
+                        <h3 class="room-title"><a href="room-single.html">Luxury Hotel</a></h3>
                         <ul class="mb-3">
-                            <li><span class="fa fa-users"></span> {{$room->max_adult}}</li>
-                            <li><span class="fa fa-users"></span> {{$room->max_child}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->no_of_bed}}</li>
-                            <li><span class="fa fa-bed"></span> {{$room->Price}}</li>
+                            <li><span class="fa fa-users"></span> 2 Guests</li>
+                            <li><span class="fa fa-bed"></span> Double bed</li>
+                            <li><span class="fa fa-bed"></span> 15sqft</li>
                         </ul>
-                        <h5>{{$room->room_description}}</h5>
-                        <a href="{{route('catagory-under-room',$room->id)}}"
-                            class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
+                            tempora voluptates?</p>
+                        <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -251,7 +246,7 @@
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="" alt="" />
+                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Family Rooms <span> Resort</span></h4>
@@ -265,7 +260,7 @@
                     <div class="maghny-gd-1 col-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="" alt="" />
+                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Double Rooms <span> Resort</span></h4>
@@ -279,7 +274,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="" alt="" />
+                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Luxury Rooms <span> Resort</span></h4>
@@ -293,7 +288,7 @@
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="" alt="" />
+                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
                                 <figcaption>
                                     <div>
                                         <h4>Resort Rooms <span> Resort</span></h4>
@@ -306,13 +301,128 @@
                     </div>
                 </div>
             </div>
-
-
+    
         </div>
+      
+    </div>
+    
+</div> -->
+<!-- <div class="best-rooms py-5">
+    <div class="container py-lg-5 py-sm-4">
+        <h3 class="title-big text-center">Best Rooms </h3>
+        <div class="ban-content-inf row py-lg-3">
+        @foreach($addroom as $room)
+
+
+            <div class="maghny-gd-1 col-lg-6">
+                <div class="maghny-grid">
+                    <figure class="effect-lily">
+                        <img class="img-fluid" src="{{url('uploads/'.$room->imaje)}}" alt="">
+                        <figcaption class="w3set-hny">
+                            <div>
+                                <h4 class="top-text">Luxury Hotel and Best Resort
+                                    <span>Peaceful Place to stay</span></h4>
+                                <p>From 20$ </p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <div class="room-info">
+                        
+                        <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        @endforeach
+
+            
+        </div>
+    </div>
+</div> -->
+
+<div class="best-rooms py-5">
+    <div class="container py-lg-5 py-sm-4">
+        <h3 class="title-big text-center"> Rooms Catagory</h3>
+        
+        <div class="ban-content-inf row py-lg-3">
+        @foreach($addroom as $room)
+            <div class="maghny-gd-1 col-lg-6">
+                <div class="maghny-grid">
+                    <figure class="effect-lily">
+                        <img class="img-fluid" src="{{url('/uploads/'.$room->imaje)}}" alt="">
+                        <figcaption class="w3set-hny">
+                            <div>
+                                <h4 class="top-text">Luxury Hotel and Best Resort
+                                    <span>Peaceful Place to stay</span></h4>
+                                <p>From 20$ </p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <div class="room-info">
+                        <h3 class="room-title"><a href="room-single.html">{{$room->catagory_title}}</a></h3>
+                        <ul class="mb-3">
+                            </span>{{$room->room_description}}</li>
+                            </span>price# {{$room->price}}</li>
+                            
+                           
+
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
+                            tempora voluptates?</p>
+                        <a href="{{route('catagory-under-room',$room->id)}}" 
+                             class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
+                    </div>
+                   
+                </div>
+            </div>
+         
+            @endforeach
+        </div>
+         
+        
     </div>
 </div>
 
+<section class="w3l-index3">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6 left-wthree-img text-righ">
+                    <div class="position-relative">
+                        <img src="assets/images/videobg.jpg" alt="" class="img-fluid" />
+                        <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
+                            <span class="video-play-icon">
+                                <span class="fa fa-play"></span>
+                            </span>
+                        </a>
+                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                            <iframe src="https://player.vimeo.com/video/246941769" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self">
+                    <h6>Discover our Locations</h6>
+                    <h3 class="title-big">20 Years of Hotels and Resort Experience</h3>
+                    <p class="mt-3">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                        ultrices in ligula. Semper at tempufddfel.</p>
+                    <ul class="w3l-right-book mt-4">
+                        <li><span class="fa fa-check" aria-hidden="true"></span>We make the best for all our customers</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Follow our Resort Luxury Hotels</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Luxury hotels and best resorts</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Double rooms and family rooms</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>Enjoy a luxury experience</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-style btn-primary mt-4">Check all packages</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-@include('frontend.partials.footer')
+
+
 
 @endsection

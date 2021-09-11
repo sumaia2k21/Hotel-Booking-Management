@@ -93,6 +93,7 @@
                         <ul class="mb-3">
                             </span>{{$showcatagory->room_description}}</li>
                             </span>price# {{$showcatagory->price}}</li>
+                            
                             <!-- <li><span class="fa fa-users"></span>{{$showcatagory->max_adult}}</li>
                             <li><span class="fa fa-users"></span>max_child  {{$showcatagory->max_child}}</li>
                             <li><span class="fa fa-bed"></span> no of bed#{{$showcatagory->no_of_bed}}</li>
@@ -116,39 +117,6 @@
 </div>
 
 
-<div class="card">
-    <table class="table table-bordered">
-        <thead>
-              <th scope="col">S.No</th>
-            <th scope="col">Room number</th>
-            <th scope="col">title</th>
-            <th scope="col">Mobile_no</th>
-            <th scope="col">Email</th>
-            <th scope="col">address</th>
-            <th scope="col">checkin</th>
-            <th scope="col">checkout</th>
-           <th scope="col">Status</th>
-            <th scope="col">Action</th>
-            </tr>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-            </tr>
-           
-        </tbody>
-    </table>
-</div>
 
 
 

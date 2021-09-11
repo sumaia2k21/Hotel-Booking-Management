@@ -40,7 +40,7 @@
                 <td>{{$list->checkout}}</td>
                 <td>Active</td>
                 <td>
-                    <a href="{{route('booking.delete',$list->id)}}" class="btn btn-warning">view</a>
+                    <a href="{{route('booking.delete',$list->id)}}" class="btn btn-danger">delete</a>
 
                 </td>
             </tr>

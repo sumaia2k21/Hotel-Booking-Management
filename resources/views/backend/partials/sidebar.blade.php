@@ -2,22 +2,23 @@
 <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                <li>
-                        <a  href="" aria-expanded="false">
-                        <!-- <i class="fa fa-home" aria-hidden="true"></i> -->
-                            
-                            {{auth()->user()->name}}
+                
+                <li >
+                        <<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                             
+                             <span class="nav-text">{{auth()->user()->name}}</span>
+                        </a>
+                        
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a href="{{route('dashboard')}}" aria-expanded="false">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                             <span class="nav-text">Home</span>
                         </a>
                         
                     </li>
                     
-                    <li>
-                        <a  href="{{route('dashboard')}}" aria-expanded="false">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                            <span class="nav-text">Home</span>
-                        </a>
-                        
-                    </li>
+                    
                     
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -125,7 +126,7 @@
                         
                     </li> -->
                     <li class="mega-menu mega-menu-sm">
-                        <a  href="javascript:void()" aria-expanded="false">
+                        <li><a  href="javascript:void()" aria-expanded="false"></li>
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>
                             <span class="nav-text">Reports </span>
                         </a>

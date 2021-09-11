@@ -32,17 +32,18 @@
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                         <div class="features-with-17-right-tp_sur">
                             <div class="features-with-17-left2">
-                              <h6><a href="#url">{{$survic->facility_title}}</a></h6>
+                              <h6 st><a href="#url">{{$survic->facility_title}}</a></h6>
                                 <div>
+                                    <hr>
                                 <img src="{{url('/uploads/'. $survic->imaje)}}" style="width: 200px;" alt="">
                                 </div>
                                 
                                 <p>Our rooms are beautifully designed and comfortable and can accommodate various groups of
                             travelers. All rooms have private bathrooms.</p>
                     
-                                <button type="button" class="btn btn-primary" data-toggle="modal"data-target="#exampleModal">
+                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal"data-target="#exampleModal">
                                     Details
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>

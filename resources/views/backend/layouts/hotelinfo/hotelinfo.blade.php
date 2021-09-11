@@ -8,14 +8,14 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{{route('hotelinfo.store')}}"method="post" enctype="multipart/form-data" enctype="multipart/form-data" >
+        <form action="{{route('hotelinfo.store')}}"method="post" enctype="multipart/form-data" >
             @csrf
            
           
             <div class="form-group">
                 <label for="name">Hotel Name</label>
-                <input type="text" class="form-control " name='hotel_name' id="hotel_name"
-                    placeholder="hotel name"value="{{$checkinfo->name??''}}">
+                <input type="text" class="form-control " name='name' id="hotel_name"
+                    placeholder="hotel name" value="{{$checkinfo->name??''}}">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email </label>
@@ -24,7 +24,7 @@
 
             <div class="mb-3">
                 <label for="logo" class="form-label">Logo</label>
-                <input type="file" class="form-control " name='imaje' id="formFileSm" type="file"value="{{$checkinfo->logo??''}}">
+                <input type="file" class="form-control " name='logo' id="formFileSm" value="{{$checkinfo->logo??''}}">
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
@@ -36,7 +36,7 @@
                     placeholder="cell no"value="{{$checkinfo->contact_no??''}}">
             </div>
             <div class="card-action">
-                <button type="submit" class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success">update</button>
 
             </div>
         </form>

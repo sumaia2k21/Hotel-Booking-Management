@@ -1,5 +1,9 @@
 @extends('backend.master')
 @section('content')
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <h3 style="background: #f5c842;">Manage Room</h3>
 
 @if(session()->has('message'))
@@ -50,8 +54,8 @@
                 
                 <td>
                   
-                    <a href="{{route('room.edit',$newroom->id)}}" class="btn btn-success">edit</a>
-                    <a  onclick="return confirm('Are you sure you want to delete this item?');"href="{{route('room.delete',$newroom->id)}}" class="btn btn-danger">deleted</a>
+                    <a href="{{route('room.edit',$newroom->id)}}" class="btn btn-light"><i class="material-icons">edit</i></a>
+                    <a  onclick="return confirm('Are you sure you want to delete this item?');"href="{{route('room.delete',$newroom->id)}}" class="btn btn-light"><i class="material-icons">delete</i></a>
 
                 </td>
 

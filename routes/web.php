@@ -83,11 +83,9 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','role']],function(){
      //room end
      //page start
      Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
-     Route::get('/about_us/{id}/edit',[Page_controller::class,'edit'])->name('about_us.edit');
-
-
      
      Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
+     Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');
      // Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
      //page end
      //booking start

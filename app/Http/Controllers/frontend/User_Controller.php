@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Facility;
+use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -26,8 +27,10 @@ class User_Controller extends Controller
     }
     public function mybooking()
     {
-        
-        return view('frontend.layouts.account.my_booking');
+      
+        $bookstatus=Book::all();
+      
+        return view('frontend.layouts.account.my_booking',compact('bookstatus') );
     }
     public function signupform()
     {

@@ -27,17 +27,19 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($bookstatus as $list)
             <tr>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
-                <td>Active</td>
+            <td>{{$list->id}}</td>
+                <td>{{$list->room->room_number}}</td>
+                <td>{{$list->name}}</td>
+                <td>{{$list->mobile_no}}</td>
+                <td>{{$list->email}}</td>
+                <td>{{$list->address}}</td>
+                
                 <td>Active</td>
                 
             </tr>
-           
+           @endforeach
         </tbody>
     </table>
 </div>
