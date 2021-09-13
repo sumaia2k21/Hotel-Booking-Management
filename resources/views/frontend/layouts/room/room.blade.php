@@ -76,8 +76,12 @@
         
         <div class="ban-content-inf row py-lg-3">
         @foreach($room as $showcatagory)
+        
+        
             <div class="maghny-gd-1 col-lg-6">
+            <a href="{{route('catagory-under-room',$showcatagory->id)}}" >
                 <div class="maghny-grid">
+                
                     <figure class="effect-lily">
                         <img class="img-fluid" src="{{url('/uploads/'.$showcatagory->imaje)}}" alt="">
                         <figcaption class="w3set-hny">
@@ -88,8 +92,10 @@
                             </div>
                         </figcaption>
                     </figure>
+                 
                     <div class="room-info">
-                        <h3 class="room-title"><a href="room-single.html">{{$showcatagory->catagory_title}}</a></h3>
+                        <h3 class="room-title">{{$showcatagory->catagory_title}}</h3>
+                        </a>
                         <ul class="mb-3">
                             </span>{{$showcatagory->room_description}}</li>
                             </span>price# {{$showcatagory->price}}</li>
@@ -102,13 +108,13 @@
                         </ul>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>
-                        <a href="{{route('catagory-under-room',$showcatagory->id)}}" 
-                             class="btn btn-style btn-primary mt-sm-4 mt-3">view room</a>
+                       
                     </div>
                    
                 </div>
+            
             </div>
-         
+           
             @endforeach
         </div>
          

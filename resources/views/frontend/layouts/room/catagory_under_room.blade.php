@@ -31,7 +31,7 @@
                         </ul>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>
-                        <a href="{{route('bookingform',$data->id)}}" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
+                        
                     </div>
                 </div>
             </div>

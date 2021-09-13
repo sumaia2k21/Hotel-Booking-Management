@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Booking_controller extends Controller
 {
@@ -33,28 +34,29 @@ class Booking_controller extends Controller
      return redirect()->back()->with('message','no product found' );
 }
 
-public function bookingform($id)
-    {
-        $room = Room::find($id);
-         return view('frontend.layouts.bookingform',compact('room'));
-    }
+// public function bookingform($id)
+//     {
+//          $bookingform=Auth::user();
+//         $room = Room::find($id);
+//          return view('frontend.layouts.bookingform',compact('room','bookingform'));
+//     }
     
-    public function bookingstore(Request $request)
-    {
-     //     dd($request->all());
-     Book::Create([ 
-               'room_id'=>$request->room_id,
-               'name'=>$request->name,
-               'mobile_no'=>$request->mobile_no,
-               'email'=>$request->email,
-               'address'=>$request->address,
-               'checkin'=>$request->checkin,
-               'checkout'=>$request->checkout
-           ]);
-           return redirect()->route('room');
+//     public function bookingstore(Request $request)
+//     {
+//      //     dd($request->all());
+//      Book::Create([ 
+//                'room_id'=>$request->room_id,
+//                'name'=>$request->name,
+//                'mobile_no'=>$request->mobile_no,
+//                'email'=>$request->email,
+//                'address'=>$request->address,
+//                'checkin'=>$request->checkin,
+//                'checkout'=>$request->checkout
+//            ]);
+//            return redirect()->route('room');
 
         
-    }
+//     }
 
 
 

@@ -31,6 +31,7 @@
             <div class="form-group">
                         <label for="squareSelect">Max Adults</label>
                         <select class="form-control input-square" name="max_adult" id="squareSelect">
+                            <option>Max adult</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -41,6 +42,7 @@
                     <div class="form-group">
                         <label for="squareSelect">Max Child</label>
                         <select class="form-control input-square" name="max_child" id="squareSelect">
+                            <option>Max Child</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -51,6 +53,7 @@
                     <div class="form-group">
                         <label for="squareSelect">No of bed</label>
                         <select class="form-control input-square" name="no_of_bed"id="squareSelect">
+                            <option>No of bed</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>

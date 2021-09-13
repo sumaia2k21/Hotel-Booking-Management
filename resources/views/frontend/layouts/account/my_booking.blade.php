@@ -18,6 +18,7 @@
         <thead>
               <th scope="col">S.No</th>
             <th scope="col">Booking number</th>
+            <th scope="col">Room number</th>
             <th scope="col">Name</th>
             <th scope="col">Mobile_no</th>
             <th scope="col">Email</th>
@@ -30,13 +31,15 @@
             @foreach($bookstatus as $list)
             <tr>
             <td>{{$list->id}}</td>
+            <td>Booking number</td>
                 <td>{{$list->room->room_number}}</td>
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>
                 <td>{{$list->email}}</td>
                 <td>{{$list->address}}</td>
                 
-                <td>Active</td>
+                <td> <button type="btn-btn-success"> view booking details</button>
+                   </td>
                 
             </tr>
            @endforeach

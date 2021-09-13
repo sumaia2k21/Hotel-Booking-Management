@@ -2,6 +2,7 @@
 <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
+                 @if(auth()->user()->role=='admin')
                 
                 <li >
                         <<a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -147,19 +148,17 @@
                         
                     </li>
                    
-                    <!-- <li>
+                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Search </span>
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Staff </span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./form-basic.html">Basic Form</a></li>
-                            <li><a href="./form-validation.html">Form Validation</a></li>
-                            <li><a href="./form-step.html">Step Form</a></li>
-                            <li><a href="./form-editor.html">Editor</a></li>
-                            <li><a href="./form-picker.html">Picker</a></li>
+                            <li><a href="{{route('staff')}}">add staff</a></li>
+                            <li><a href="{{route('staff.list')}}">Manage Staff</a></li>
+                            
                         </ul>
                     </li>
-                    <li class="nav-label">Table</li>
+                    <!-- <li class="nav-label">Table</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
@@ -168,7 +167,7 @@
                             <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
                             <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
                         </ul>
-                    </li> -->
+                    </li>  -->
                     <!-- <li class="nav-label">Pages</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -189,6 +188,63 @@
                             </li>
                         </ul>
                     </li> -->
+                @endif
+                @if(auth()->user()->role=='Manager')
+                
+                <li >
+                        <<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                             
+                             <span class="nav-text">{{auth()->user()->name}}</span>
+                        </a>
+                        
+                    </li>
+                <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">Pages</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('about_us')}}">About_us</a></li>
+                            <li><a href="{{route('contact_us')}}">Contact Us</a></li>
+                        </ul>
+                    </li>
+                     <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <!-- <i class="fa fa-bed" aria-hidden="true"></i> -->
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <span class="nav-text">New Room</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('add_room')}}">Add Room</a></li>
+                            <li><a href="{{route('manage_room')}}">Manage Room</a></li>
+                        </ul>
+                    </li>
+
+
+
+                @endif
+                @if(auth()->user()->role=='Receptionist')
+                <li >
+                        <a  href="javascript:void()" aria-expanded="false">
+                             
+                             <span class="nav-text">{{auth()->user()->name}}</span>
+                        </a>
+                        
+                    </li>
+                <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                            <span class="nav-text">Booking</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('all_booking')}}">All Booking</a></li>
+                            <li><a href="{{route('new_booking')}}">New Booking</a></li>
+                            <li><a href="{{route('all_booking')}}">Approve Booking</a></li>
+                            <li><a href="{{route('all_booking')}}">Cancel Booking</a></li>
+                           
+                        </ul>
+                    </li>
+                @endif
                 </ul>
             </div>
         </div>

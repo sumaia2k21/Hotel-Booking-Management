@@ -17,13 +17,15 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=="admin")
+        // dd(auth()->user()->role=='Receptionist');
+        if(auth()->user()->role=='admin'||auth()->user()->role=='Manager'||auth()->user()->role=='Receptionist')
         {
             return $next($request);
          }else
          {
-             Auth::logout();
-             return redirect()->route('home');
+            //  Auth::logout();
+            //  return redirect()->route('home');
+            return redirect()->back()->with('message','you dont have permission');
          }
         
     }

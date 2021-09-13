@@ -25,13 +25,15 @@ class User_Controller extends Controller
         $facility=Facility::get()->take(3);
         return view('frontend.layouts.account.viewprofile');
     }
-    public function mybooking()
-    {
+    
+    // public function mybooking()
+    // {
       
-        $bookstatus=Book::all();
-      
-        return view('frontend.layouts.account.my_booking',compact('bookstatus') );
-    }
+    //     $bookstatus=Book::all();
+    //      $bookprofile=User::with('book')->get();
+    //      return view('frontend.layouts.account.my_booking',compact('bookstatus','bookprofile') );
+    //     return view('frontend.layouts.account.my_booking',compact('bookstatus') );
+    // }
     public function signupform()
     {
        

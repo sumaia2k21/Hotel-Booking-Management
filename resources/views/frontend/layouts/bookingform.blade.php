@@ -67,7 +67,7 @@
                         <div class="twice">
                             <input type="hidden" name="room_id" value="{{$room->id}}">
                            
-                                <input type="text" name="name" id="firstName" placeholder="Full Name" class="form-control"
+                                <input type="text" name="name" id="firstName" placeholder="Full Name" value="{{$bookingform->name}}" class="form-control"
                                 required="">
                                
                             </div>
@@ -82,7 +82,7 @@
                         <div class="twice">
 
                            
-                            <input type="text" name="mobile_no" id="firstName" placeholder="Mobile_no" class="form-control" >
+                            <input type="text" name="mobile_no" id="firstName" placeholder="Mobile_no"value="{{$bookingform->mobile}}" class="form-control" >
                                  
 
                             
@@ -90,7 +90,7 @@
                         <div class="twice">
 
                             
-                                <input type="email" name="email"  id="email" placeholder="Email" class="form-control">
+                                <input type="email" name="email"  id="email" placeholder="Email" value="{{$bookingform->email}}" class="form-control">
                            
                         </div>
                         <div class="twice">

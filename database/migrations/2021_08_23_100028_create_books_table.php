@@ -16,6 +16,7 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('user_id');
             $table->foreignId('room_id')->unique();
             $table->string('mobile_no');
             $table->string('email');

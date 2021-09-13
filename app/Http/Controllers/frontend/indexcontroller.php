@@ -8,6 +8,7 @@ use App\Models\Room;
 use App\Models\Facility;
 use App\Models\Hotel;
 
+
 use Illuminate\Http\Request;
 
 class indexcontroller extends Controller
@@ -22,6 +23,7 @@ class indexcontroller extends Controller
         
         $facility=Facility::get()->take(3);
         $addroom=Room::with('catagory')->get()->take(1);
+       
        
         
         // dd($addroom);

@@ -1,6 +1,13 @@
 @extends('backend.master')
 @section('content')
 <h2>Customer list</h2>
+<div class="row">
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+	</span>
+@endif
+</div> 
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -14,12 +21,16 @@
 @foreach($user as $data)
   <tbody>
     <tr>
-      <th scope="row">1</th>
+    <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
       
       <td>{{$data->email}}</td>
       <td>{{$data->role}}</td>
-      <td>view</td>
+      <td>
+      <a href="" class="btn btn-success">view</a>
+      <a href="" class="btn btn-danger">edit</a>
+      <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger">delect</a>
+      </td>
     </tr>
     
   </tbody>

@@ -7,14 +7,16 @@
 <br>
 <br>
 @if(session()->has('message'))
+<div class="row" style="padding: 10px;">
     <span class="alert alert-success">
         {{ session()->get('message') }}
 	</span>
+    </div>
 @endif  
 
 <div class="card">
 <table class="table table-striped table-hover">
-    <thead class="thead-dark">
+    <thead >
          <th scope="col">sl</th>
             <th scope="col">Imaje</th>
             <th scope="col">Facilities Title</th>
@@ -36,8 +38,8 @@
                 <td>{{$fy->description}}</td>
                  <td>
                     
-                    <a href="{{route('facility.edit',$fy->id)}}" class="btn btn-success">edit</a>
-                    <a href="{{route('facility.delete',$fy->id)}}" class="btn btn-danger">delect</a>
+                    <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('facility.edit',$fy->id)}}" class="btn btn-success">edit</a>
+                    <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('facility.delete',$fy->id)}}" class="btn btn-danger">delect</a>
 
                 </td>
             </tr>

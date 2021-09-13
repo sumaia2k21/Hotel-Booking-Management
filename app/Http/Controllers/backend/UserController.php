@@ -18,9 +18,21 @@ class UserController extends Controller
     public function userlist()
     {
         $user=User::where('role','!=','customer')->get();
-        return view('backend.layouts.user',compact('user'));
+        return view('backend.layouts.user.user',compact('user'));
 
     }
+    //user delete
+    public function delete($id)
+    {
+        $staff=User::find($id);
+        if($staff)
+        {
+            $staff->delete();
+            return redirect()->back()->with('message','delete successfully');
+        }
+        return redirect()->back()->with('message','no user found');
+    }
+
     public function login()
     {
          return view('backend.layouts.login');
@@ -35,7 +47,7 @@ class UserController extends Controller
       if(Auth::attempt( $credentials))
       {
 
-        if(auth()->user()->role=="admin")
+        if(auth()->user()->role=='admin'||auth()->user()->role=='Manager'||auth()->user()->role=='Receptionist')
         {
             return redirect()->route('master');
          }else
