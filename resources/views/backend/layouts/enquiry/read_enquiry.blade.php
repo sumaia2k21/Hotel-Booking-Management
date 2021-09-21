@@ -1,6 +1,8 @@
 @extends('backend.master')
 @section('content')
-<h4 style="background: #f5c842">Read Enquiry<h4>
+<!-- <h4 style="background: #f5c842">Read Enquiry<h4> -->
+    <h2>Read Enquiry</h2>
+    <hr>
     <br>
 @if(session()->has('message'))
     <span class="alert alert-success">
@@ -10,7 +12,7 @@
      
 <div class="card">
         <table class="table table-striped table-hover">
-        <thead class="thead-dark">
+        <thead >
 
                     <th scope="col">sl</th>
                     <th scope="col">Name</th>

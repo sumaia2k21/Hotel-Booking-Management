@@ -11,30 +11,21 @@ class Hotel_Controller extends Controller
     //     hotelinfo form
     public function hotelinfo()
     {
-     $checkinfo=Hotel::first();
+          $checkinfo=Hotel::first();
          return view('backend.layouts.hotelinfo.hotelinfo',compact('checkinfo'));
     }
-    //    hotelinfo_list
-     public function  hotelinfo_list()
-     {
-          return view('backend.layouts.hotelinfo.hotelinfo_list');
-     }
      
-     public function hotelinfopost(Request $request){
-     //     dd($checkinfo->all());
+     public function hotelinfopost(Request $request)
+     {
           $fileName='';
           if($request->hasFile('logo'))
           {
-     
                $file=$request->file('logo');
-               // dd($file);
                //generate file name
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
           }
-
-
-     // dd($hotelinfopost->all());
+          
           $checkinfo=Hotel::first();
 
           if($checkinfo)

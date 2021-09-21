@@ -20,6 +20,7 @@ class BookingController extends Controller
     
     public function bookingstore(Request $request)
     {
+
      //     dd($request->all());
      Book::Create([ 
                'room_id'=>$request->room_id,
@@ -28,8 +29,11 @@ class BookingController extends Controller
                'mobile_no'=>$request->mobile_no,
                'email'=>$request->email,
                'address'=>$request->address,
-               'checkin'=>$request->checkin,
-               'checkout'=>$request->checkout
+               'from_date'=>$request->from_date,
+               'to_date'=>$request->to_date
+           ]);
+           Room::where('room_number',$request->room_number)->update([
+            'status'=>'Booked'
            ]);
            return redirect()->route('room');
 

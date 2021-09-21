@@ -5,13 +5,15 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class Contact_controller extends Controller
 {
     public function contact()
     {
-        return view('frontend.layouts.contact.contact');
+        $contact=Auth::user();
+        return view('frontend.layouts.contact.contact',compact('contact'));
     }
     public function read_enquiry()
     {

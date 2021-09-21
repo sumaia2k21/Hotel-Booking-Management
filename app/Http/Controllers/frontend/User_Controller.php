@@ -22,18 +22,11 @@ class User_Controller extends Controller
     // }
     public function viewprofile()
     {
-        $facility=Facility::get()->take(3);
-        return view('frontend.layouts.account.viewprofile');
+        $profile=Auth::user();
+        // $facility=Facility::get()->take(3);
+        return view('frontend.layouts.account.viewprofile',compact('profile'));
     }
     
-    // public function mybooking()
-    // {
-      
-    //     $bookstatus=Book::all();
-    //      $bookprofile=User::with('book')->get();
-    //      return view('frontend.layouts.account.my_booking',compact('bookstatus','bookprofile') );
-    //     return view('frontend.layouts.account.my_booking',compact('bookstatus') );
-    // }
     public function signupform()
     {
        
@@ -47,7 +40,9 @@ class User_Controller extends Controller
             'guest_email'=> 'required|email|unique:users,email',
             'guest_password'=> 'required|min:6',
             'guest_mobile_no'=> 'required',
-
+            'guest_mobile_no'=> 'required',
+            
+            
 
         ]);
        
@@ -56,7 +51,8 @@ class User_Controller extends Controller
             'mobile'=>$request->guest_mobile_no,
             'email'=>$request->guest_email,
             'role'=>'customer',
-            'password'=>bcrypt($request->guest_password)
+            'password'=>bcrypt($request->guest_password),
+            
            
         ]);
         return redirect()->back()->with('success','user registration successfull');

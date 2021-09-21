@@ -92,19 +92,14 @@
                             </div>
                         </figcaption>
                     </figure>
-                 
+                    
                     <div class="room-info">
-                        <h3 class="room-title">{{$showcatagory->catagory_title}}</h3>
-                        </a>
+                        <h3 class="room-title">{{$showcatagory->catagory_title}}</a></h3>
+                       
                         <ul class="mb-3">
                             </span>{{$showcatagory->room_description}}</li>
                             </span>price# {{$showcatagory->price}}</li>
-                            
-                            <!-- <li><span class="fa fa-users"></span>{{$showcatagory->max_adult}}</li>
-                            <li><span class="fa fa-users"></span>max_child  {{$showcatagory->max_child}}</li>
-                            <li><span class="fa fa-bed"></span> no of bed#{{$showcatagory->no_of_bed}}</li>
-                             -->
-
+                           
                         </ul>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>

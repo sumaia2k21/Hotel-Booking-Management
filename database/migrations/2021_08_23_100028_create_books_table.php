@@ -21,8 +21,8 @@ class CreateBooksTable extends Migration
             $table->string('mobile_no');
             $table->string('email');
             $table->string('address');
-            $table->string('checkin');
-            $table->string('checkout');
+            $table->string('from_date');
+            $table->string('to_date');
             $table->timestamps();
         });
     }

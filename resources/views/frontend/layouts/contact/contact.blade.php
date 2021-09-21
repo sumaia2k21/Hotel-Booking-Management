@@ -79,9 +79,9 @@ Author URL: http://w3layouts.com
                     <form action="{{route('readenquiry')}}" method="post">
                         @csrf
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="name" id="w3lName" placeholder="Name"
+                            <input type="text" class="form-control" name="name" value="{{$contact->name}}" id="w3lName" placeholder="Name"
                                 required="">
-                            <input type="email" class="form-control" name="email" id="w3lSender" placeholder="Email"
+                            <input type="email" class="form-control" name="email" value="{{$contact->email}}" id="w3lSender" placeholder="Email"
                                 required="">
                         </div>
                         <!-- <div class="twice">
@@ -89,7 +89,7 @@ Author URL: http://w3layouts.com
                                 placeholder="Subject" required="">
                         </div> -->
                         <div class="twice">
-                            <input type="number" class="form-control" name="mobile_no" id="w3lName"
+                            <input type="number" class="form-control" name="mobile_no" value="{{$contact->mobile}}" id="w3lName"
                                 placeholder="Mobile No" required="">
                         </div>
                         <textarea name="message" class="form-control" id="w3lMessage" placeholder="Message"

@@ -1,152 +1,92 @@
 @extends('frontend.index')
 @section('content')
 
-<!-- <div class="best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center">Best Rooms </h3>
-        <div class="ban-content-inf row py-lg-3">
-        @foreach($catagory_room_view->rooms as $data)
 
+<body>
 
-            <div class="maghny-gd-1 col-lg-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
-                        <figcaption class="w3set-hny">
-                            <div>
-                                <h4 class="top-text">Luxury Hotel and Best Resort
-                                    <span>Peaceful Place to stay</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <div class="room-info">
-                        <h3 class="room-title"><a href="room-single.html"></a>{{$data->catagory->catagory_title}}</h3>
-                        <li>Room no # {{$data->room_number}}</li>
-                        <ul class="mb-3">
-                            <li><span class="fa fa-users"></span> Max-User#{{$data->max_adult}} </li>
-                            
-                            <li>Price# </span> {{$data->Price}}</li>
-                            <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
-                            tempora voluptates?</p>
-                        
-                    </div>
-                </div>
-            </div>
+<!-- //w3l-header -->
+<section class="w3l-breadcrumb">
+    <div class="breadcrum-bg py-sm-5 py-4">
+        <div class="container py-lg-3">
 
+            <h2>Rooms</h2>
+            <p><a href="index.html">Home</a> &nbsp; / &nbsp; rooms</p>
 
-
-        @endforeach
-
-            
         </div>
     </div>
-</div> -->
+</section>
+<section class="w3l-roomsingleblock1 py-5">
 
-<div class="best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center">Best Rooms</h3>
-        @foreach($catagory_room_view->rooms as $data)
+    <div class="best-rooms w3l-blog py-5">
     
-            <div class="ban-content-inf row py-lg-3">
-
-                <div class="maghny-gd-1 col-lg-6">
-
+        <div class="container py-lg-5 py-sm-4">
+        
+            <div class="ban-content-inf row">
+            @foreach($catagory_room_view->rooms as $data)
+                <div class="maghny-gd-1 col-lg-4 col-md-6">
+                
                     <div class="maghny-grid">
+                        <a href="{{route('single.room.view',$data->id)}}">
                         <figure class="effect-lily">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
-                            <figcaption class="w3set-hny">
+                            <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
+                            <figcaption>
                                 <div>
-                                    <h4 class="top-text">Luxury Hotel and Best Resort
-                                        <span>Peaceful Place to stay</span></h4>
-                                    <p>From 20$ </p>
+                                    <h4 class="top-text">Luxury Hotel room
+                                        <ul>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star-o"></span></li>
+                                        </ul>
+                                    </h4>
+                                    <p>Book for 20$ </p>
                                 </div>
                             </figcaption>
                         </figure>
-                        <div class="room-info">
-                            <h3>{{$data->catagory->catagory_title}} </h3>
-                            <hr>
-                            <ul class="mb-3">
-                            <li> Room No# {{$data->room_number}}</li>
-                                <li> max_adult#{{$data->max_adult}}</li>
-                                <li>no_of_bed# {{$data->no_of_bed}}</li>
-                                <li>room_description# {{$data->room_description}}</li>
-                                <li>Price# {{$data->Price}}</li>
-                            </ul>
-                           
-                            <a href="{{route('bookingform',$data->id)}}" class="btn btn-style btn-primary mt-sm-4 mt-3">Book now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
-                    <div class="row">
-                        <div class="maghny-gd-1 col-6">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>Family Rooms <span> Resort</span></h4>
-                                            <p>From 20$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>Double Rooms <span> Resort</span></h4>
-                                            <p>From 20$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>Luxury Rooms <span> Resort</span></h4>
-                                            <p>From 20$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>Resort Rooms <span> Resort</span></h4>
-                                            <p>From 20$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
                         
-                    </div>
-                </div>
+                        <div class="room-info">
+                            
+                            <h3 class="room-title">{{$data->catagory->catagory_title}}</a></h3>
+                           
+                            <ul class="mb-3">
+                                <li><span class="fa fa-users"></span>{{$data->max_adult}}</li>
+                                <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
+                                <li><span class="fa fa-bed"></span>  {{$data->room_number}}</li>
+                                
+                            </ul>
+                            
 
-            </div>
-        
-        @endforeach
+                            <h4>{{$data->room_description}}</h4>
+                            <a href="{{route('bookingform',$data->id)}}" class="btn mt-sm-4 mt-3">Book Now</a>
+                            <div class="room-info-bottom">
+                                <ul class="room-amenities">
+                                    <li><a href="#url"><span class="fa fa-bed" title="Beds"></span></a></li>
+                                    <li><a href="#url"><span class="fa fa-television" title="Television"></span></a>
+                                    </li>
+                                    <li><a href="#url"><span class="fa fa-bath" title="Private Bathroom"></span></a>
+                                    </li>
+                                    <li><a href="#url"><span class="fa fa-motorcycle" title="Bike Rental"></span></a>
+                                    </li>
+                                </ul>
+                                <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+                @endforeach
+            </div> 
+           
+        </div>
+           
     </div>
-</div>
+     
+</section>
+
+
+
+</body>
+
 
 @endsection

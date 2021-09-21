@@ -98,34 +98,22 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li>
-                            <li><a href="{{route('hotelinfo_list')}}">Manage hotel info list</a></li>
+                        
                             
                         </ul>
                     </li> 
                    
                     <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a  href="{{route('read_enquiry')}}" aria-expanded="false">
                         <i class="fa fa-check-square" aria-hidden="true"></i>
                             <span class="nav-text">Enquiry </span>
                         </a>
-                        <ul aria-expanded="false">
+                        <!-- <ul aria-expanded="false">
                             <li><a href="{{route('read_enquiry')}}">Read Enquiry</a></li>
-                            <li><a href="./form-validation.html">Unread Enquiry</a></li>
-                            
-                        </ul>
+                            <li><a href="">Unread Enquiry</a></li>  
+                        </ul> -->
                     </li>
-                    <!-- <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                            <span class="nav-text">Staff</span>
-                            <ul aria-expanded="false">
-                            <li><a href="./uc-nestedable.html">Add Employee</a></li>
-                            <li><a href="./uc-noui-slider.html"></a>Manage Employee</li>
-                            
-                        </ul>
-                        </a>
-                        
-                    </li> -->
+                 
                     <li class="mega-menu mega-menu-sm">
                         <li><a  href="javascript:void()" aria-expanded="false"></li>
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>
@@ -149,14 +137,14 @@
                     </li>
                    
                      <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a href="{{route('staff')}}" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Staff </span>
                         </a>
-                        <ul aria-expanded="false">
+                        <!-- <ul aria-expanded="false">
                             <li><a href="{{route('staff')}}">add staff</a></li>
                             <li><a href="{{route('staff.list')}}">Manage Staff</a></li>
                             
-                        </ul>
+                        </ul> -->
                     </li>
                     <!-- <li class="nav-label">Table</li>
                     <li>

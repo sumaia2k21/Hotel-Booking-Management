@@ -21,10 +21,10 @@
                         </select>
 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="largeInput">Room name</label>
                         <input type="text" class="form-control form-control"name="room_name" id="Description" placeholder="Room Name">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="roomNumber">Room Number</label>
                         <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number">
@@ -79,6 +79,15 @@
                     <div class="form-group">
                         <label for="largeInput">price</label>
                         <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="squareSelect">status</label>
+                        <select class="form-control input-square" name="status"id="squareSelect">
+                            <option selected>Active</option>
+                            <option>Inactive</option>
+                           
+                        </select>
                     </div>
 
                     <div class="card-action">

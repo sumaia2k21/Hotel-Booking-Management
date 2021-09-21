@@ -36,7 +36,7 @@
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>
                 <td>{{$list->email}}</td>
-                <td>{{$list->address}}</td>
+                <td>pending</td>
                 
                 <td> <button type="btn-btn-success"> view booking details</button>
                    </td>

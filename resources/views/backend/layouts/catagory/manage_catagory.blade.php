@@ -3,9 +3,10 @@
 <!-- <div>
 	<h1><strong>Hotel Booking Management System/</strong>Catagory</h1>	
 </div> -->
-<!-- <h2>Catagory/<small>add catagory</small></h2> -->
+<h2>Catagory/<small>add catagory</small></h2>
+<hr>
+<br>
 
-<h1 style="background: #f5c842;">Manage Catagory</h1>
 @if(session()->has('message'))
     <span class="alert alert-success">
         {{ session()->get('message') }}

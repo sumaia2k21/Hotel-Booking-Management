@@ -7,7 +7,7 @@
 
           <ul>
             <h6 class="footer-title-29">Address</h6>
-           <p>abcd</p>
+           <p> {{$hotels->address}}</p>
           </ul>
         </div>
         
@@ -15,10 +15,11 @@
           <h6 class="footer-title-29">Contact us</h6>
           <ul>
             <li>
-              <p><span class="fa fa-map-marker"></span> Luxury hotel, #32841 block, #221DRS Rental & Paid rooms
-                business, UK.</p>
+             
             </li>
-            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
+            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> {{$hotels->contact_no}}</a></li>
+            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> {{$hotels->email}}</a></li>
+           
             
           </ul>
         </div>
@@ -37,13 +38,12 @@
         </div> -->
         <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
           <h6 class="footer-title-29">About Us</h6>
-          <p>Enter your email and receive the latest news from us.
-           We'll never share your email address</p>
-
-          <form action="#" class="subscribe" method="post">
+       
+        <li><p>fdghfgjmhdffhgfgghghjhfgghgjhjh</p></li> 
+          <!-- <form action="#" class="subscribe" method="post">
             <input type="email" name="email" placeholder="Your Email Address" required="">
             <button><span class="fa fa-envelope-o"></span></button>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

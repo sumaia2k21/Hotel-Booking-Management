@@ -7,12 +7,46 @@
             <div class="item">
                 <li>
                     <div class="slider-info banner-view bg bg2">
+                        <!-- /w3l-availability-form-section -->
+                        <div class="card">
+                            <div class="container pt-lg-3 pb-lg-5">
+                                <div class="forms-top">
+                                    <div class="form-right">
+                                        <div class="form-inner-cont">
+                                            <h3 class="title-small">Check Availability</h3>
+                                            <form action="{{route('search')}}" method="get">
+                                                <div class="row book-form">
+                                                    <div class="form-input col-md-4 col-sm-6 mt-3">
+                                                        <label>From Date</label>
+                                                        <input type="date" name="from_date" placeholder="Date"
+                                                            required="">
+                                                    </div>
+                                                    <div class="form-input col-md-4 col-sm-6 mt-3">
+                                                        <label>To Date</label>
+                                                        <input type="date" name="to_date" placeholder="Date"
+                                                            required="">
+                                                    </div>
+
+                                                    <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                                        <button type="submit"
+                                                            class="btn btn-style btn-primary w-100 px-2">Check
+                                                            Availability</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="banner-info">
                             <div class="container">
                                 <div class="banner-info-bg">
                                     <h5>Location is heavenly. Best to visit in week days to enjoy the peaceful beauty
                                     </h5>
-                                    <a class="btn btn-style transparent-btn mt-sm-5 mt-4" href="services.html"> Our
+                                    <a class="btn btn-style transparent-btn mt-sm-5 mt-4" href="{{route('survice')}}">
+                                        Our
                                         Services</a>
                                 </div>
                             </div>
@@ -70,8 +104,9 @@
     </div>
 </section>
 <!-- /main-slider -->
-<section class="w3l-servicesblock1" id="service">
+<!-- /w3l-availability-form-section -->
 
+<section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
             <h2 style="text-align: center;"> Our Services</h2>
@@ -97,64 +132,6 @@
         </div>
     </div>
 </section>
-
-
-<section class="w3l-availability-form" id="booking">
-    <!-- /w3l-availability-form-section -->
-    <!-- <div class="w3l-availability-form-main py-5">
-        <div class="container pt-lg-3 pb-lg-5">
-            <div class="forms-top">
-                <div class="form-right">
-                    <div class="form-inner-cont">
-                        <h3 class="title-small">Check Availability</h3>
-                        <form action="search-results.html" method="post" class="signin-form">
-                            <div class="row book-form">
-                                <div class="form-input col-md-4 col-sm-6 mt-3">
-                                    <label>Check-in Date</label>
-                                    <input type="date" name="" placeholder="Date" required="">
-                                </div>
-                                <div class="form-input col-md-4 col-sm-6 mt-3">
-                                    <label>Check-out Date</label>
-                                    <input type="date" name="" placeholder="Date" required="">
-                                </div>
-                                <div class="form-input col-md-4 col-sm-6 mt-3">
-                                    <label>Adults</label>
-                                    <select class="selectpicker">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                    </select>
-
-                                </div>
-                                <div class="form-input col-md-4 col-sm-6 mt-3">
-                                    <label>Children</label>
-                                    <select class="selectpicker">
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                    </select>
-
-                                </div>
-                                <div class="form-input col-md-4 col-sm-6 mt-3">
-                                    <label>Price </label>
-                                    <input type="text" name="" placeholder="Max Price ($)" required />
-                                </div>
-                                <div class="bottom-btn col-md-4 col-sm-6 mt-3">
-                                    <label>Check availability </label>
-                                    <button class="btn btn-style btn-primary w-100 px-2">Check Availability</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-</section>
-<!-- //w3l-availability-form-section -->
-
 <!-- about -->
 <section class="best-rooms py-5">
     <div class="container py-sm-4">
@@ -171,15 +148,13 @@
                 <a href="{{route('about')}}" class="btn btn-style btn-primary mt-sm-5 mt-4">Learn About Us</a>
             </div>
             <div class="col-lg-6 about-right position-relative mt-lg-0 mt-5">
-                <img src="{{url('/uploads/'. $survic->imaje)}}" alt="" class="img-fluid img-border mt-4" />
+                <img src="{{url('/uploads/'. $room->imaje)}}" alt="" class="img-fluid img-border mt-4" />
                 <img src="assets/images/bottom.jpg" alt="" class="img-fluid position-absolute img-position" />
             </div>
             @endforeach
         </div>
     </div>
 </section>
-
-
 <section class="w3l-availability-form" id="booking">
     <!-- /w3l-availability-form-section -->
     <div class="w3l-availability-form-main py-5">
@@ -206,186 +181,6 @@
     </div>
 </section>
 <!-- //about -->
-
-
-<!-- <div class="best-rooms py-5">
-   
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center">Best Rooms</h3>
-        
-        <div class="ban-content-inf row py-lg-3">
-        @foreach($addroom as $room)
-            <div class="maghny-gd-1 col-lg-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily">
-                        <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="">
-                        <figcaption class="w3set-hny">
-                            <div>
-                                <h4 class="top-text">Luxury Hotel and Best Resort
-                                    <span>Peaceful Place to stay</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <div class="room-info">
-                        <h3 class="room-title"><a href="room-single.html">Luxury Hotel</a></h3>
-                        <ul class="mb-3">
-                            <li><span class="fa fa-users"></span> 2 Guests</li>
-                            <li><span class="fa fa-bed"></span> Double bed</li>
-                            <li><span class="fa fa-bed"></span> 15sqft</li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
-                            tempora voluptates?</p>
-                        <a href="#book" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
-                <div class="row">
-                    <div class="maghny-gd-1 col-6">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
-                                <figcaption>
-                                    <div>
-                                        <h4>Family Rooms <span> Resort</span></h4>
-                                        <p>From 20$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="maghny-gd-1 col-6">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
-                                <figcaption>
-                                    <div>
-                                        <h4>Double Rooms <span> Resort</span></h4>
-                                        <p>From 20$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="maghny-gd-1 col-6 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
-                                <figcaption>
-                                    <div>
-                                        <h4>Luxury Rooms <span> Resort</span></h4>
-                                        <p>From 20$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="maghny-gd-1 col-6 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{route('catagory-under-room',$room->id)}}" alt="" />
-                                <figcaption>
-                                    <div>
-                                        <h4>Resort Rooms <span> Resort</span></h4>
-                                        <p>From 20$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-      
-    </div>
-    
-</div> -->
-<!-- <div class="best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center">Best Rooms </h3>
-        <div class="ban-content-inf row py-lg-3">
-        @foreach($addroom as $room)
-
-
-            <div class="maghny-gd-1 col-lg-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily">
-                        <img class="img-fluid" src="{{url('uploads/'.$room->imaje)}}" alt="">
-                        <figcaption class="w3set-hny">
-                            <div>
-                                <h4 class="top-text">Luxury Hotel and Best Resort
-                                    <span>Peaceful Place to stay</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <div class="room-info">
-                        
-                        <a href="" class="btn btn-style btn-primary mt-sm-4 mt-3">Book Now</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-        @endforeach
-
-            
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center"> Rooms Catagory</h3>
-        
-        <div class="ban-content-inf row py-lg-3">
-        @foreach($addroom as $room)
-            <div class="maghny-gd-1 col-lg-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily">
-                        <img class="img-fluid" src="{{url('/uploads/'.$room->imaje)}}" alt="">
-                        <figcaption class="w3set-hny">
-                            <div>
-                                <h4 class="top-text">Luxury Hotel and Best Resort
-                                    <span>Peaceful Place to stay</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <div class="room-info">
-                        <h3 class="room-title">{{$room->catagory->catagory_title}}</h3>
-                        <h3 class="room-title"><a href="{{route('room')}}">{{$room->catagory->catagory_title}}</a></h3>
-                        <ul class="mb-3">
-                            </span>{{$room->room_description}}</li>
-                            </span>price# {{$room->price}}</li>
-                            
-                           
-
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
-                            tempora voluptates?</p>
-                        <a href="{{route('bookingform',$room->id)}}" 
-                             class="btn btn-style btn-primary mt-sm-4 mt-3">Book now</a>
-                    </div>
-                   
-                </div>
-            </div>
-         
-            @endforeach
-        </div>
-         
-        
-    </div>
-</div> -->
-
 <div class="best-rooms py-5">
     <div class="container py-lg-5 py-sm-4">
         <h3 class="title-big text-center">Best Rooms</h3>
@@ -419,13 +214,12 @@
                     <li>Price# {{$data->Price}}</li>
                 </ul>
 
-                <a href="{{route('bookingform',$data->id)}}"  class="btn btn-info">Book
+                <a href="{{route('bookingform',$data->id)}}" class="btn btn-info">Book
                     now</a>
-                    <a href="{{route('room')}}" class="btn btn-info">Info</a>
+                <a href="{{route('all.room.view')}}" class="btn btn-info">Info</a>
             </div>
         </div>
     </div>
-
     <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
         <div class="row">
             <div class="maghny-gd-1 col-6">
@@ -493,9 +287,5 @@
 @endforeach
 </div>
 </div>
-
-
-
-
 
 @endsection

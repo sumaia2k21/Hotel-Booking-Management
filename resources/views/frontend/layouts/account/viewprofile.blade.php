@@ -18,9 +18,9 @@
             <div class="container">
 
                 <div class="d-grid contact-view">
-                    <div class="cont-details">
+                <!-- <div class="cont-details">
                         image show 
-                    </div>
+                    </div> -->
                     <div class="map-content-9 mt-lg-0 mt-4">
                         @if(session()->has('message'))
                         <span class="alert alert-success">
@@ -31,15 +31,15 @@
                         <form action="" method="post">
                             @csrf
                             <div class="twice">
-                                <input type="text" class="form-control" name="name" id="w3lName" placeholder="Name"
+                                <input type="text" class="form-control" name="name" value="{{$profile->name}}" id="w3lName" placeholder="Name"
                                     required="">
                             </div>
                             <div class="twice">
-                                <input type="email" class="form-control" name="email" id="w3lSender" placeholder="Email"
+                                <input type="email" class="form-control" name="email" value="{{$profile->email}}" id="w3lSender" placeholder="Email"
                                     required="">
                             </div>
                             <div class="twice">
-                                <input type="text" class="form-control" name="mobile_no" id="w3lName"
+                                <input type="text" class="form-control" name="mobile_no" value="{{$profile->mobile}}" id="w3lName"
                                     placeholder="Mobile No" required="">
                             </div>
 

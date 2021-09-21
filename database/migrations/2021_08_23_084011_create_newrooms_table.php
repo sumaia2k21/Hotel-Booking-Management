@@ -16,15 +16,16 @@ class CreateNewroomsTable extends Migration
         Schema::create('newrooms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('catagory_id');
-            $table->string('room_name');
+            // $table->string('room_name');
             $table->string('room_number')->unique();
             $table->string('max_adult');
             $table->string('max_child');
             $table->string('room_description');
             $table->string('no_of_bed');
             $table->string('imaje');
-            
              $table->string('Price');
+             $table->string('status');
+
             $table->timestamps();
         });
     }

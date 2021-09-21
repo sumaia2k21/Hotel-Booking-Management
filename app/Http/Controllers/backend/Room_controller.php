@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Catagory;
+use App\Models\Facility;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -43,16 +44,16 @@ public function roomlist(Request $newroomlist){
 
      Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
-          'room_name'=>$newroomlist->room_name,
+          // 'room_name'=>$newroomlist->room_name,
           'room_number'=>$newroomlist->room_number,
           'max_adult'=>$newroomlist->max_adult,
           'max_child'=>$newroomlist->max_child,
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
           'imaje'=>$fileName,
+          'price'=>$newroomlist-> price,
+          'status'=>$newroomlist-> status
           
-          'price'=>$newroomlist-> price
-             
 
      ]);
      return redirect()->route('manage_room');
@@ -98,17 +99,20 @@ public function roomlist(Request $newroomlist){
 
      }
 
+     
+
 
 
 
 
 //frontent room page view
 
-     public function room()
-     {
-          $room=Catagory::get()->take(4);
-          return view('frontend.layouts.room.room',compact('room'));
-     }
+     // public function room()
+     // {
+     //      $room=Catagory::get()->take(4);
+     //      $facility=Facility::all();
+     //      return view('frontend.layouts.room.room',compact('room','facility'));
+     // }
      
 
     

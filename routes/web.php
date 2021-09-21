@@ -7,13 +7,17 @@ use App\Http\Controllers\backend\Hotel_Controller;
 use App\Http\Controllers\backend\Page_controller;
 use App\Http\Controllers\backend\Reg_user_controller;
 use App\Http\Controllers\backend\Room_controller;
+use App\Http\Controllers\backend\Search_Controller;
 use App\Http\Controllers\backend\StaffController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\frontend\About_controller;
 use App\Http\Controllers\frontend\BookingController;
 use App\Http\Controllers\frontend\Contact_controller;
+use App\Http\Controllers\frontend\GallaryController;
 use App\Http\Controllers\frontend\indexcontroller;
 use App\Http\Controllers\frontend\Main_controller;
+use App\Http\Controllers\Frontend\RoomController;
+use App\Http\Controllers\frontend\SearchController;
 use App\Http\Controllers\frontend\Service_controller;
 use App\Http\Controllers\frontend\User_Controller;
 use App\Http\Controllers\mastercontroller;
@@ -56,68 +60,54 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
    
      //Catagory start
      Route::get('/add_catagory',[Catagory_Controller::class,'add_catagory'])->name('add_catagory');
-     //db add_catagory
      Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
-     //end db add_catagory
      Route::get('/catagory/delete/{id}',[Catagory_Controller::class,'delete'])->name('catagory.delete');
-     
      Route::get('/manage_catagory',[Catagory_Controller::class,'manage_catagory'])->name('manage_catagory');
      //catagory under room start
      Route::get('/catagory/{id}/rooms',[Catagory_Controller::class,'allRoom'])->name('catagory.room');
-     //end
-     //catagory end
+     
      //Facilities start
      Route::get('/add_facilities',[Facilities_controller::class,'add_facilities'])->name('add_facilities');
-     //db facility start
      Route::post('/facility_list',[Facilities_controller::class,'facility_list'])->name('facility_list');
-     //db facility end
-     
      Route::get('/facilities/{id}/delete',[Facilities_controller::class,'delete'])->name('facility.delete');
      Route::get('/facilities/{id}/edit',[Facilities_controller::class,'edit'])->name('facility.edit');
      Route::put('/facilities/{id}/update',[Facilities_controller::class,'update'])->name('facility.update');
-
      Route::get('/manage_facilities',[Facilities_controller::class,'manage_facilities'])->name('manage_facilities');
      //facilities end
 
      //Room start
      Route::get('/add_room',[Room_controller::class,'add_room'])->name('add_room');
-     //db add room start
      Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
-     //db end
-
      Route::get('/room/delete/{id}',[Room_controller::class,'delete'])->name('room.delete');
      Route::get('/room/edit/{id}',[Room_controller::class,'edit'])->name('room.edit');
      Route::put('/room/update/{id}',[Room_controller::class,'update'])->name('room.update');
+      Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
+      Route::get('/booking_search',[Search_Controller::class,'booking_search'])->name('booking.search');
 
-     Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
-     //room end
      //page start
      Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
-     
      Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
      Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');
-     // Route::get('/read_enquiry',[Page_controller::class,'read_enquiry'])->name('read_enquiry');
-     //page end
+
      //booking start
      Route::get('/new_booking',[Booking_controller::class,'new_booking'])->name('new_booking');
      Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
      Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
      //booking end
+
      //hotelinfo form start
      Route::get('/hotelinfo',[Hotel_Controller::class,'hotelinfo'])->name('hotelinfo');
      Route::post('/hotelinfo/store',[Hotel_Controller::class,'hotelinfopost'])->name('hotelinfo.store');
-     //hotelinfolist
-     Route::get('/hotelinfo_list',[Hotel_Controller::class,'hotelinfo_list'])->name('hotelinfo_list');
      //end 
      //user 
      Route::get('/customers',[UserController::class,'customerlist'])->name('customer.list');
      Route::get('/users',[UserController::class,'userlist'])->name('user.list');
      Route::get('/users/{id}',[UserController::class,'delete'])->name('user.delete');
+     Route::get('/users/{id}/staff',[UserController::class,'user_staff'])->name('user.under.staff');
 
      //staff
      Route::get('/staff',[StaffController::class,'staff'])->name('staff');
      Route::post('/staff',[StaffController::class,'staffpost'])->name('staff.store');
-
      Route::get('/manage_staff',[StaffController::class,'managestaff'])->name('staff.list');
 
      }); 
@@ -125,18 +115,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      
      Route::group(['middleware'=>'Manager'],function(){
           Route::get('/add_room',[Room_controller::class,'add_room'])->name('add_room');
-          //db add room start
           Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
-          //db end
-     
           Route::get('/room/delete/{id}',[Room_controller::class,'delete'])->name('room.delete');
           Route::get('/room/edit/{id}',[Room_controller::class,'edit'])->name('room.edit');
           Route::put('/room/update/{id}',[Room_controller::class,'update'])->name('room.update');
-     
-          Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
-          //room end
+           Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
+         
           Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
-     
           Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
           Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');
 
@@ -160,30 +145,22 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
 
 //forntend
 Route::get('/index',[indexcontroller::class,'index'])->name('index');
-//home
 Route::get('/home',[indexcontroller::class,'home'])->name('home');
-//about
 Route::get('/about',[About_controller::class,'about'])->name('about');
-//contact
 Route::get('/contact',[Contact_controller::class,'contact'])->name('contact');
-// read quiray
 Route::get('/read_enquiry',[Contact_controller::class,'read_enquiry'])->name('read_enquiry');
-// read quiray
-//db contact us start
 Route::post('/readenquiry/store',[Contact_controller::class,'readenquiry'])->name('readenquiry');
-
 Route::get('/enquiry/delete/{id}',[Contact_controller::class,'delete'])->name('enquiry.delete');
-//db end contact
-//service start
 Route::get('/survice',[Service_controller::class,'survice'])->name('survice');
-//service end
-
 Route::get('/gallary',[GallaryController::class,'gallary'])->name('gallary');
+
+// room search 
+Route::get('/search',[SearchController::class,'search'])->name('search');
 
 
 Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
-     //room satrt
-     Route::get('/room',[Room_controller::class,'room'])->name('room');
+    
+     Route::get('/room',[RoomController::class,'room'])->name('room');
 
      //logout
      Route::get('/guest_logout',[User_Controller ::class,'guestlogout'])->name('guest.logout');
@@ -198,7 +175,7 @@ Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
 //  Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
 
 // view profile start
- Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
+//  Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
  //My Booking details
 //  Route::get('/my_booking',[User_Controller::class,'mybooking'])->name('mybooking.status');
 
@@ -206,8 +183,8 @@ Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
 //signup satrt
 Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
-
 Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login');
+Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
 
 
 
@@ -220,9 +197,12 @@ Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybookin
 
 //catagory under room (frontend)
 Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');
+// single room view
+Route::get('/single-room-view/{id}',[RoomController::class,'single_room'])->name('single.room.view');
+Route::get('/allroom',[RoomController::class,'all_room'])->name('all.room.view');
 
 
-
+// test
 Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');
 
 

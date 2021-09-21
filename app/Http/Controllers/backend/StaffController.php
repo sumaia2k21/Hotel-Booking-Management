@@ -26,13 +26,8 @@ class StaffController extends Controller
  
  
       ]);
-      return redirect()->back();
+      return redirect()->route('user.list');
   }
 
-// public function managestaff()
-// {
-//   $staff=Staff::paginate(10);
-//   return view('backend.layouts.staff.manage_staff',compact('staff'));
-// }
 
 }

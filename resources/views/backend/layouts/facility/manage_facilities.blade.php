@@ -1,10 +1,9 @@
 @extends('backend.master')
 @section('content')
 <!-- <h4 style="background: #f5c842;">Manage Facility</h4> -->
-<div>
-    <h2"><strong>Facilities/</strong>manage facilities</h2>
-</div>
-<br>
+
+<h2>Facility/<small>list</small></h2>
+<hr>
 <br>
 @if(session()->has('message'))
 <div class="row" style="padding: 10px;">
