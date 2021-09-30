@@ -30,13 +30,14 @@
         <tbody>
             @foreach($bookstatus as $list)
             <tr>
-            <td>{{$list->id}}</td>
+            <td>{{$loop->iteration}}</td> 
+            <!-- <td>{{$list->id}}</td> -->
             <td>Booking number</td>
                 <td>{{$list->room->room_number}}</td>
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>
                 <td>{{$list->email}}</td>
-                <td>pending</td>
+                <td>{{$list->status}}</td>
                 
                 <td> <button type="btn-btn-success"> view booking details</button>
                    </td>

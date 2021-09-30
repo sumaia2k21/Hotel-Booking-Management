@@ -72,7 +72,7 @@
 <!-- /main-slider -->
 <div class="best-rooms py-5">
     <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center"> Rooms Catagory</h3>
+        <h3 class="title-big text-center"> Room Type</h3>
         
         <div class="ban-content-inf row py-lg-3">
         @foreach($room as $showcatagory)
@@ -83,12 +83,12 @@
                 <div class="maghny-grid">
                 
                     <figure class="effect-lily">
-                        <img class="img-fluid" src="{{url('/uploads/'.$showcatagory->imaje)}}" alt="">
+                        <img class="img-fluid" src="{{url('/uploads/'.$showcatagory->image)}}" alt="">
                         <figcaption class="w3set-hny">
                             <div>
-                                <h4 class="top-text">Luxury Hotel and Best Resort
+                                <h4 class="top-text">{{$showcatagory->catagory_title}} room
                                     <span>Peaceful Place to stay</span></h4>
-                                <p>From 20$ </p>
+                                <p>{{$showcatagory->Price}}</p>
                             </div>
                         </figcaption>
                     </figure>

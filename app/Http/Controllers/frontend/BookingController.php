@@ -20,8 +20,23 @@ class BookingController extends Controller
     
     public function bookingstore(Request $request)
     {
+           
 
-     //     dd($request->all());
+        $isBooked=Book::where('room_id',$request->room_id)
+        ->where('from_date','<=',$request->from_date)
+        ->where('to_date','>=',$request->from_date)
+        ->first();
+        if(!$isBooked && auth()->user()->id !=1)
+        {
+
+            $from_date = \Carbon\Carbon::createFromFormat('Y-m-d', $request->from_date);
+            $to_date = \Carbon\Carbon::createFromFormat('Y-m-d',$request->to_date );
+            
+            $diff_in_days = $to_date->diffInDays($from_date);
+            
+         
+            
+        $room=Room::find($request->room_id);
      Book::Create([ 
                'room_id'=>$request->room_id,
                'name'=>$request->name,
@@ -30,15 +45,36 @@ class BookingController extends Controller
                'email'=>$request->email,
                'address'=>$request->address,
                'from_date'=>$request->from_date,
-               'to_date'=>$request->to_date
-           ]);
-           Room::where('room_number',$request->room_number)->update([
-            'status'=>'Booked'
-           ]);
-           return redirect()->route('room');
+               'to_date'=>$request->to_date,
+               'total_ammount'=>$diff_in_days*$room->price,
+               'status'=>$request->status
+           ]);return redirect()->back()->with('message','booking successful.');
+        }else{
+         return redirect()->back()->with('message','Admin cannot book any room');
+        }
+        if(!$isBooked )
+        {
+            Book::Create([ 
+                'room_id'=>$request->room_id,
+                'name'=>$request->name,
+                'user_id'=>Auth::id(),
+                'mobile_no'=>$request->mobile_no,
+                'email'=>$request->email,
+                'address'=>$request->address,
+                'from_date'=>$request->from_date,
+                'to_date'=>$request->to_date,
+                'status'=>$request->status
+            ]);
+            return redirect()->back()->with('message','booking successful.');
+        }else{
+         return redirect()->back()->with('message','Room not available on this dates.');
+        }
+    }
+    
+
 
         
-    }
+  
     public function mybooking()
     {
       

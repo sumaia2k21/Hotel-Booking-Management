@@ -26,7 +26,7 @@
                         <div class="maghny-grid">
                             <figure class="effect-lily">
                             <a href="{{route('single.room.view',$data->id)}}">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
                                 <figcaption>
                                     <div>
                                         <h4 class="top-text">{{$data->catagory->catagory_title}}  Hotel room

@@ -28,10 +28,10 @@
                     <div class="maghny-grid">
                         <a href="{{route('single.room.view',$data->id)}}">
                         <figure class="effect-lily">
-                            <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
+                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
                             <figcaption>
                                 <div>
-                                    <h4 class="top-text">Luxury Hotel room
+                                    <h4 class="top-text">{{$data->catagory->catagory_title}} room
                                         <ul>
                                             <li> <span class="fa fa-star"></span></li>
                                             <li> <span class="fa fa-star"></span></li>
@@ -40,7 +40,7 @@
                                             <li> <span class="fa fa-star-o"></span></li>
                                         </ul>
                                     </h4>
-                                    <p>Book for 20$ </p>
+                                    <p>{{$data->Price}} </p>
                                 </div>
                             </figcaption>
                         </figure>

@@ -18,13 +18,14 @@
                                                 <div class="row book-form">
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>From Date</label>
-                                                        <input type="date" name="from_date" placeholder="Date"
-                                                            required="">
+                                                        <input type="date" name="from_date" placeholder="Date"  value="{{ date('m-d-Y') }}"
+                                                        min="{{ date('m-d-Y')}}" required="">
                                                     </div>
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>To Date</label>
-                                                        <input type="date" name="to_date" placeholder="Date"
-                                                            required="">
+                                                        <input type="date" name="to_date" placeholder="Date" value="{{ date('m-d-Y') }}"
+                                                     min="{{ date('m-d-Y') }}" required="">
+                                                            
                                                     </div>
 
                                                     <div class="bottom-btn col-md-4 col-sm-6 mt-3">
@@ -106,6 +107,35 @@
 <!-- /main-slider -->
 <!-- /w3l-availability-form-section -->
 
+<!-- <div class="card">
+    <div class="container pt-lg-3 pb-lg-5">
+        <div class="forms-top">
+            <div class="form-right">
+                <div class="form-inner-cont">
+                    <h3 class="title-small">Check Availability</h3>
+                    <form action="{{route('search')}}" method="get">
+                        <div class="row book-form">
+                            <div class="form-input col-md-4 col-sm-6 mt-3">
+                                <label>From Date</label>
+                                <input type="date" name="from_date" placeholder="Date" required="">
+                            </div>
+                            <div class="form-input col-md-4 col-sm-6 mt-3">
+                                <label>To Date</label>
+                                <input type="date" name="to_date" placeholder="Date" required="">
+                            </div>
+
+                            <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                <button type="submit" class="btn btn-style btn-primary w-100 px-2">Check
+                                    Availability</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
@@ -148,7 +178,7 @@
                 <a href="{{route('about')}}" class="btn btn-style btn-primary mt-sm-5 mt-4">Learn About Us</a>
             </div>
             <div class="col-lg-6 about-right position-relative mt-lg-0 mt-5">
-                <img src="{{url('/uploads/'. $room->imaje)}}" alt="" class="img-fluid img-border mt-4" />
+                <img src="{{url('/uploads/'. $room->image)}}" alt="" class="img-fluid img-border mt-4" />
                 <img src="assets/images/bottom.jpg" alt="" class="img-fluid position-absolute img-position" />
             </div>
             @endforeach
@@ -193,7 +223,7 @@
                 <a href="{{route('room')}}">
                     <div class="maghny-grid">
                         <figure class="effect-lily">
-                            <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
+                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
                             <figcaption class="w3set-hny">
                                 <div>
                                     <h4 class="top-text">Luxury Hotel and Best Resort
@@ -225,7 +255,7 @@
             <div class="maghny-gd-1 col-6">
                 <div class="maghny-grid">
                     <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
+                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
                         <figcaption>
                             <div>
                                 <h4>Family Rooms <span> Resort</span></h4>
@@ -239,7 +269,7 @@
             <div class="maghny-gd-1 col-6">
                 <div class="maghny-grid">
                     <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
+                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
                         <figcaption>
                             <div>
                                 <h4>Double Rooms <span> Resort</span></h4>
@@ -253,7 +283,7 @@
             <div class="maghny-gd-1 col-6 mt-4">
                 <div class="maghny-grid">
                     <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
+                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
                         <figcaption>
                             <div>
                                 <h4>Luxury Rooms <span> Resort</span></h4>
@@ -267,7 +297,7 @@
             <div class="maghny-gd-1 col-6 mt-4">
                 <div class="maghny-grid">
                     <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="" />
+                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
                         <figcaption>
                             <div>
                                 <h4>Resort Rooms <span> Resort</span></h4>

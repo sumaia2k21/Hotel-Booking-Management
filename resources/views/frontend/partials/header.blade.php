@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <!-- <img src="{{url('/uploads/'. $hotels->imaje)}}" alt="Your logo" style="height:35px;" /> -->
-                <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" />
+                {{$hotels->name}}
+                <!-- <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" /> -->
                
             </a>
             <!-- if logo is image enable this   

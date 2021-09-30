@@ -17,12 +17,14 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id');
-            $table->foreignId('room_id')->unique();
+            $table->foreignId('room_id');
             $table->string('mobile_no');
             $table->string('email');
             $table->string('address');
             $table->string('from_date');
             $table->string('to_date');
+            $table->string('total_ammount');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

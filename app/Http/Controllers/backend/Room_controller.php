@@ -21,6 +21,7 @@ class Room_controller extends Controller
      public function manage_room()
      {
           $newroomlist=Room::with('catagory')->paginate(6);
+          
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
 
@@ -30,12 +31,12 @@ class Room_controller extends Controller
 public function roomlist(Request $newroomlist){
      
      // dd($newroomlist->all());
-     // dd(date('Ymdhms').'.'.$newroomlist->file('imaje')->getClientOriginalExtension());
+     // dd(date('Ymdhms').'.'.$newroomlist->file('image')->getClientOriginalExtension());
      $fileName='';
-     if($newroomlist->hasFile('imaje'))
+     if($newroomlist->hasFile('image'))
      {
 
-          $file=$newroomlist->file('imaje');
+          $file=$newroomlist->file('image');
           // dd($file);
           //generate file name
           $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
@@ -44,13 +45,13 @@ public function roomlist(Request $newroomlist){
 
      Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
-          // 'room_name'=>$newroomlist->room_name,
+          'room_name'=>$newroomlist->room_name,
           'room_number'=>$newroomlist->room_number,
           'max_adult'=>$newroomlist->max_adult,
           'max_child'=>$newroomlist->max_child,
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
-          'imaje'=>$fileName,
+          'image'=>$fileName,
           'price'=>$newroomlist-> price,
           'status'=>$newroomlist-> status
           
@@ -89,7 +90,8 @@ public function roomlist(Request $newroomlist){
           'max_child'=>$newroomlist->max_child,
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
-        'price'=>$newroomlist-> price 
+        'price'=>$newroomlist-> price, 
+        'status'=>$newroomlist-> status 
 
           ]);
 

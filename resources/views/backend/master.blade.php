@@ -3,10 +3,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>hotel</title>
+    <title>hbms</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Pignose Calender -->
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://demo.themefisher.com/quixlab/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="https://demo.themefisher.com/quixlab/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -69,73 +70,12 @@
                 
                @yield('content')
                 
-
-
-                <!-- top 4 boxs start-->
-
-                <!-- <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <h5>something</h5>
-                                    <div class="card-body pb-0 d-flex justify-content-between">
-                                        <div>
-                                            <h4 class="mb-1">Product Sales</h4>
-                                            <p>Total Earnings of the Month</p>
-                                            <h3 class="m-0">$ 12,555</h3>
-                                        </div>
-                                        <div>
-                                            <ul>
-                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Day</a></li>
-                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Week</a></li>
-                                                <li class="d-inline-block"><a class="text-dark" href="#">Month</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="chart-wrapper">
-                                        <canvas id="chart_widget_2"></canvas>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="w-100 mr-2">
-                                                <h6>Pixel 2</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
-                                                </div>
-                                            </div>
-                                            <div class="ml-2 w-100">
-                                                <h6>iPhone X</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-primary" style="width: 80%"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                
-
+<!-- 
                 <div class="row">
 
-            <!-- #/ container -->
         </div>
-        
-            <!-- Content body end -->
-        
-        
-        
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <!-- @include('backend.partials.footer') -->
-        <!--**********************************
-            Footer end
-        ***********************************-->
+      -->
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -171,7 +111,6 @@
 
 
     <script src="https://demo.themefisher.com/quixlab/js/dashboard/dashboard-1.js"></script>
-
 </body>
 
 </html>

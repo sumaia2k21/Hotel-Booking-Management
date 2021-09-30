@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="largeInput">Mobile Number</label>
                 <input type="text" name="mobile_no" value="{{$contact->mobile_no??''}}" class="form-control form-control" id="Description"
-                    placeholder="Description">
+                    placeholder="Mobile Number">
             </div>
             <div class="form-group">
                 <label for="largeInput">Page Description</label>

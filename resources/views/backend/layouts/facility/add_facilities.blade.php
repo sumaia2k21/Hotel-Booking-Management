@@ -15,7 +15,7 @@
         <form action="{{route('facility_list')}}"method="post"enctype="multipart/form-data" >
             @csrf
         <div class="mb-3">
-            <label for="formFileSm" class="form-label">Imaje</label>
+            <label for="formFileSm" class="form-label">Image</label>
             <input class="form-control form-control-sm" name='imaje' id="formFileSm" type="file">
         </div>
         

@@ -18,6 +18,13 @@ class mastercontroller extends Controller
     {
          return view('backend.layouts.profile');
     }
+    public function test()
+    {
+         return view('test');
+    }
+  
+
+
    
     
      

@@ -26,10 +26,10 @@ class Catagory_Controller extends Controller
 
 public function catagory_list(Request $catagorylist){
      $fileName='';
-     if($catagorylist->hasFile('imaje'))
+     if($catagorylist->hasFile('image'))
      {
 
-          $file=$catagorylist->file('imaje');
+          $file=$catagorylist->file('image');
           // dd($file);
           //generate file name
           $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
@@ -44,10 +44,10 @@ public function catagory_list(Request $catagorylist){
      // dd($catagorylist->all());
      Catagory::Create([
           'catagory_title'=>$catagorylist->catagory_title,
-               'max_adult'=>$catagorylist->max_adult,
-               'max_child'=>$catagorylist->max_child,
-               'no_of_bed'=>$catagorylist->no_of_bed,
-               'imaje'=>$fileName,
+               // 'max_adult'=>$catagorylist->max_adult,
+               // 'max_child'=>$catagorylist->max_child,
+               // 'no_of_bed'=>$catagorylist->no_of_bed,
+               'image'=>$fileName,
                'description'=>$catagorylist->description,
               'price'=>$catagorylist->price
 

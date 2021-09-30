@@ -73,15 +73,23 @@
 
                     <div class="form-group">
 
-                        <label for="exampleFormControlFile1">Imaje</label>
-                        <input type="file" value="{{$room->imaje}}" class="form-control-file" name="imaje" id="exampleFormControlFile1">
+                        <label for="exampleFormControlFile1">Image</label>
+                        <input type="file" value="{{$room->image}}" class="form-control-file" name="image" id="exampleFormControlFile1">
                     </div>
                     
                    
                     <div class="form-group">
                         <label for="largeInput">price</label>
                         
-                        <input type="text" value="{{$room->imaje}}" class="form-control form-control"name="price" id="Description" placeholder="">
+                        <input type="text" value="{{$room->price}}" class="form-control form-control"name="price" id="Description" placeholder="">
+                    </div>
+                     <div class="form-group">
+                        <label for="squareSelect">status</label>
+                        <select class="form-control input-square"  value="{{$room->status}}"name="status"id="squareSelect">
+                            <option selected>Active</option>
+                            <option>Inactive</option>
+                           
+                        </select>
                     </div>
 
                     <div class="card-action">

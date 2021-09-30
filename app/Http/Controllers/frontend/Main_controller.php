@@ -31,5 +31,4 @@ class Main_controller extends Controller
     }
     
 
-
 }

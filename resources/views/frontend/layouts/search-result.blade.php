@@ -15,7 +15,7 @@
                     <div class="maghny-gd-1 col-lg-4 col-md-6">
                         <div class="maghny-grid">
                             <figure class="effect-lily">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->imaje)}}" alt="">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
                                 <figcaption>
                                     <div>
                                         <h4 class="top-text">{{$data->catagory->catagory_title}} Hotel room

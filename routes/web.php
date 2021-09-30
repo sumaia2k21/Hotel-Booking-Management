@@ -3,8 +3,10 @@
 use App\Http\Controllers\backend\Booking_controller;
 use App\Http\Controllers\backend\Catagory_Controller;
 use App\Http\Controllers\backend\Facilities_controller;
+use App\Http\Controllers\backend\Gallary_Controller;
 use App\Http\Controllers\backend\Hotel_Controller;
 use App\Http\Controllers\backend\Page_controller;
+use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\Reg_user_controller;
 use App\Http\Controllers\backend\Room_controller;
 use App\Http\Controllers\backend\Search_Controller;
@@ -90,9 +92,19 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');
 
      //booking start
-     Route::get('/new_booking',[Booking_controller::class,'new_booking'])->name('new_booking');
+     Route::get('/all_booking_report',[Booking_controller::class,'all_booking_report'])->name('all.booking.report');
      Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
      Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
+     Route::get('/confirmation/{id}',[Booking_controller::class,'confirmation'])->name('book.confirmation');
+     Route::get('/approve/{id}',[Booking_controller::class,'approve'])->name('book.approve');
+     Route::get('/cancel/{id}',[Booking_controller::class,'cancel'])->name('book.cancel');
+     Route::get('/approve_list',[Booking_controller::class,'approved_booking_list'])->name('approved.booking.list');
+     Route::get('/cancel_list',[Booking_controller::class,'cancel_booking_list'])->name('cancel.booking.list');
+     Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
+     Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
+     Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
+
+     Route::get('/invoice',[Booking_controller::class,'invoice'])->name('invoice');
      //booking end
 
      //hotelinfo form start
@@ -109,6 +121,16 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/staff',[StaffController::class,'staff'])->name('staff');
      Route::post('/staff',[StaffController::class,'staffpost'])->name('staff.store');
      Route::get('/manage_staff',[StaffController::class,'managestaff'])->name('staff.list');
+
+     //payment
+     // Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
+     // Route::get('/paymentstore',[PaymentController::class,'payment_store'])->name('payment.store');
+     Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('payment.list');
+
+     //gallary
+     Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
+     Route::post('/gallaries/post',[Gallary_Controller::class,'gallaries_post'])->name('gallaries.post');
+
 
      }); 
      
@@ -204,6 +226,9 @@ Route::get('/allroom',[RoomController::class,'all_room'])->name('all.room.view')
 
 // test
 Route::get('/testroom',[Main_controller::class,'testroom'])->name('testroom');
+Route::get('/test',[mastercontroller::class,'test'])->name('test');
+
+
 
 
 

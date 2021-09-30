@@ -20,14 +20,14 @@
         <thead>
 
             <th scope="col">sl</th>
-            <th scope="col">Room Name</th>
-            <!-- <th scope="col">room_name</th> -->
+            <th scope="col">catagory title</th>
+            <th scope="col">room_name</th>
             <th scope="col">room_number</th>
             <th scope="col">max_adult</th>
             <th scope="col">max_child</th>
             <th scope="col">no_of_bed</th>
             <th scope="col">room_description</th>
-            <th scope="col">Imaje</th>
+            <th scope="col">Image</th>
             <th scope="col">price</th>
             <th scope="col">status</th>
             <th scope="col">Action</th>
@@ -36,21 +36,22 @@
         </thead>
         <tbody>
             @foreach($newroomlist as $newroom)
-            <tr>  
+            <tr> 
+ 
             <td>{{$newroom->id}}</td>        
-               
+            <!-- <td>{{$loop->iteration}}</td>  -->
                 <td>{{$newroom->catagory->catagory_title}}</td>
-                <!-- <td>{{$newroom->room_name}}</td> -->
+                <td>{{$newroom->room_name}}</td>
                 <td>{{$newroom->room_number}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>
                 <td>{{$newroom->room_description}}</td>
                 <td>
-                    <img src="{{url('/uploads/'.$newroom->imaje)}}"width="40px" alt="imaje">
+                    <img src="{{url('/uploads/'.$newroom->image)}}"width="40px" alt="image">
 
                 </td>
-                <td>{{$newroom->Price}}</td>
+                <td>{{$newroom->price}}</td>
                 <td>{{$newroom->status}}</td>
                 
                 

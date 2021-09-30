@@ -6,7 +6,7 @@
             <b class="logo-abbr"><img src="" alt=""> </b>
             <span class="logo-compact"><img src="" alt=""></span>
             <span class="brand-title">
-                <h4 style="color:aliceblue">hbms<h4>
+                <h4 style="color:aliceblue">HBMS<h4>
             </span>
         </a>
     </div>

@@ -15,11 +15,11 @@
                             <h6>{{$singleroom->catagory->catagory_title}} </h6>
                             <div class="border-line">
                                 <div class="bg">
-                                    <span class="price">{{$singleroom->Price}} TK</span>
+                                    <span class="price">{{$singleroom->price}} TK</span>
                                     <p> Per night</p>
                                 </div>
                                 <div class="book-btn px-2">
-                                    <a href="booking.html" class="btn btn-style btn-secondary mt-3">Book Now</a>
+                                    <a href="{{route('bookingform',$singleroom->id)}}" class="btn btn-style btn-secondary mt-3">Book Now</a>
                                 </div>
                             </div>
                             <ul class="room-amenities">
@@ -38,7 +38,7 @@
                                 <input type="radio" name="slides" id="slides_4" />
                                 <ul class="banner_slide_bg">
                                     <li>
-                                        <img class="img" src="{{url('uploads/'.$singleroom->imaje)}}" alt="">
+                                        <img class="img" src="{{url('uploads/'.$singleroom->image)}}" alt="">
                                     </li>
                                     <li>
                                         <img class="img" src="" alt="">
@@ -78,10 +78,10 @@
             <div class="container py-sm-4">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-6">
-                        <img src="{{url('uploads/'.$singleroom->imaje)}}" alt="" class="img-fluid">
+                        <img src="{{url('uploads/'.$singleroom->image)}}" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-3 col-md-4 col-6">
-                        <img src="{{url('uploads/'.$singleroom->imaje)}}" alt="" class="img-fluid">
+                        <img src="{{url('uploads/'.$singleroom->image)}}" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-6 roomsingle mt-lg-0 mt-4">
                         <h3 class="title-small">The Room</h3>
@@ -125,7 +125,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-5 mt-lg-0 mt-4">
-                        <img src="{{url('uploads/'.$singleroom->imaje)}}" alt="" class="img-fluid">
+                        <img src="{{url('uploads/'.$singleroom->image)}}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>

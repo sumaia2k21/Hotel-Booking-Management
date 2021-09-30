@@ -21,10 +21,10 @@
                         </select>
 
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="largeInput">Room name</label>
                         <input type="text" class="form-control form-control"name="room_name" id="Description" placeholder="Room Name">
-                    </div> -->
+                    </div>
                     <div class="form-group">
                         <label for="roomNumber">Room Number</label>
                         <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number">
@@ -54,7 +54,8 @@
                     </div>
                     <div class="form-group">
                         <label for="largeInput">Room Description</label>
-                        <input type="text" class="form-control form-control"name="room_description" id="Description" placeholder="Description">
+                        <textarea type="text" class="form-control form-control"name="room_description" id="Description" placeholder="Description">
+                        </textarea>
                     </div>
 
                     <div class="form-group">
@@ -71,8 +72,8 @@
 
                     <div class="form-group">
 
-                        <label for="exampleFormControlFile1">Imaje</label>
-                        <input type="file" class="form-control-file" name="imaje" id="exampleFormControlFile1">
+                        <label for="exampleFormControlFile1">Image</label>
+                        <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
                     </div>
                     
                    

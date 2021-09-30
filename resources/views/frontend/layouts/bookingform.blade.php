@@ -134,14 +134,18 @@
                                 <label>To date</label>
                                 <input type="date"class="form-control" name="to_date" placeholder="Date" required="">
                             </div>
+                             <div class="twice">
+                                <label>total Ammount</label>
+                                <!-- <input class="form-control" name="total_ammount"   required=""> -->
+                            </div> 
                             <div class="twice">
-                                <label for="groups">Gender</label>
-                                <select class="form-control" id="type" name="type">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
+                        <label for="squareSelect">status</label>
+                        <select class="form-control" name="status">
+                            <option readonly>pending</option>
                             
+                           
+                        </select>
+                    </div>
                             <br>
                             <div class="twice">
                                 <button type="submit" class="btn btn-primary "> send </button>
