@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Gallary;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class Gallary_Controller extends Controller
 {
    public function gallaries()
@@ -15,10 +17,11 @@ class Gallary_Controller extends Controller
    public function gallaries_post(Request $request)
    {
 
-$fileName='';
+          $fileName='';
           if($request->hasFile('image1'))
           {
                $file=$request->file('image1');
+              
                //generate file name
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
@@ -27,6 +30,7 @@ $fileName='';
           if($request->hasFile('image2'))
           {
                $file=$request->file('image2');
+               // dd($file);
                //generate file name
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
@@ -35,6 +39,7 @@ $fileName='';
           if($request->hasFile('image3'))
           {
                $file=$request->file('image3');
+              
                //generate file name
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
@@ -43,6 +48,7 @@ $fileName='';
           if($request->hasFile('image4'))
           {
                $file=$request->file('image4');
+            
                //generate file name
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
@@ -89,23 +95,7 @@ $fileName='';
           }
 
           
-          $checkinfo=Gallary::first();
-
-          if($checkinfo)
-          {
-               //update
-               $checkinfo->update([
-                        'image1'=>$fileName,
-                        'image2'=>$fileName,
-                        'image3'=>$fileName,
-                        'image4'=>$fileName,
-                        'image5'=>$fileName,
-                        'image6'=>$fileName,
-                        'image7'=>$fileName,
-                        'image8'=>$fileName,
-
-               ]);
-          }else{
+          
                  Gallary::Create([
                     'image1'=>$fileName,
                     'image2'=>$fileName,
@@ -114,8 +104,16 @@ $fileName='';
                     'image5'=>$fileName,
                     'image6'=>$fileName,
                     'image7'=>$fileName,
-                    'image8'=>$fileName,
+                    'image8'=>$fileName
                 ]);
-            }
-
+            
+            return redirect()->route('gallerystore');
         }
+        
+     public function gallerytable()
+          {
+               
+          $gallerytable=Gallary::paginate(15);
+               return view('backend.layouts.gallary.gallerytable',compact('gallerytable'));
+          }
+     }

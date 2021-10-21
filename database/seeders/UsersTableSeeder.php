@@ -14,17 +14,30 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create(
-            [
+        User::create([
                'name'=>'Admin',
                'role'=>'admin',
                'email'=>'admin@gmail.com',
                'password'=>bcrypt('123456'),
                'mobile'=>'123456'
+            ]);
 
+            User::create([
+                'name'=>'Manager',
+                'role'=>'Manager',
+                'email'=>'manager@gmail.com',
+                'password'=>bcrypt('123456'),
+                'mobile'=>'123456'
+             ]);
 
+             User::create([
+                'name'=>'User',
+                'role'=>'customer',
+                'email'=>'customer@gmail.com',
+                'password'=>bcrypt('123456'),
+                'mobile'=>'123456'
+             ]);
 
-            ]
-            );
+             
     }
 }

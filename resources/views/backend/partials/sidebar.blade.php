@@ -102,6 +102,17 @@
                             
                         </ul>
                     </li> 
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                            <span class="nav-text">gallery</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('gallaries')}}">Add gallery</a></li>
+                            <li><a href="{{route('gallerystore')}}">manage gallery</a></li>
+                        </ul>
+                    </li>
+                    
                     
                     <li class="mega-menu mega-menu-sm">
                         <a  href="{{route('gallaries')}}" aria-expanded="false">
@@ -194,16 +205,16 @@
                         </a>
                         
                     </li>
-                <li class="mega-menu mega-menu-sm">
+                    <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-book" aria-hidden="true"></i>
                             <span class="nav-text">Booking</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('all_booking')}}">All Booking</a></li>
-                            <li><a href="{{route('new_booking')}}">New Booking</a></li>
-                            <li><a href="{{route('all_booking')}}">Approve Booking</a></li>
-                            <li><a href="{{route('all_booking')}}">Cancel Booking</a></li>
+                            <li><a href="{{route('all_booking')}}">All Booking List</a></li>
+                            <li><a href="{{route('new.booking.list')}}">New Booking List</a></li>
+                            <li><a href="{{route('approved.booking.list')}}">Approve Booking List</a></li>
+                            <li><a href="{{route('cancel.booking.list')}}">Cancel Booking List</a></li>
                            
                         </ul>
                     </li>

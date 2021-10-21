@@ -14,7 +14,7 @@ class Booking_controller extends Controller
     public function all_booking()
     {
 
-     $request=Book::with('room')->paginate(7);
+     $request=Book::with('room')->latest()->paginate(7);
     //  dd($request);
          return view('backend.layouts.booking.all_booking',compact('request'));
     }
@@ -69,7 +69,9 @@ class Booking_controller extends Controller
     }
     public function new_booking_list()
     {
-          $request=Book::with('room')->latest();
+     $request=Book::with('room')
+     ->where('status','pending')->get();
+          // dd($request->all());
          return view('backend.layouts.booking.new-booking-list',compact('request'));
     }
 

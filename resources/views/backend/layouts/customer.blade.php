@@ -27,8 +27,7 @@
       <td>{{$data->email}}</td>
       <td>{{$data->role}}</td>
       <td>
-      <a href="" class="btn btn-success">view</a>
-      <a href="" class="btn btn-danger">edit</a>
+     
       <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger">delect</a>
       </td>
     </tr>

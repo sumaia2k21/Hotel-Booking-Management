@@ -46,7 +46,7 @@ Route::post('/admin/loginpost',[UserController ::class,'loginpost'])->name('admi
 Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
 
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
-     Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
+     // Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
      Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
 
     Route::group(['middleware'=>'role'],function(){
@@ -130,12 +130,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      //gallary
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
      Route::post('/gallaries/post',[Gallary_Controller::class,'gallaries_post'])->name('gallaries.post');
+     Route::get('/gallery/table',[Gallary_Controller::class,'gallerytable'])->name('gallerystore');
 
 
      }); 
      
      
-     Route::group(['middleware'=>'Manager'],function(){
+     Route::group(['middleware'=>'auth','Manager'],function(){
           Route::get('/add_room',[Room_controller::class,'add_room'])->name('add_room');
           Route::post('/roomlist',[Room_controller::class,'roomlist'])->name('roomlist');
           Route::get('/room/delete/{id}',[Room_controller::class,'delete'])->name('room.delete');
@@ -150,7 +151,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
           
      
      });
-     Route::group(['middleware'=>'Receptionist'],function(){
+     Route::group(['middleware'=>'auth','Receptionist'],function(){
           Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
           Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
 
@@ -180,7 +181,7 @@ Route::get('/gallary',[GallaryController::class,'gallary'])->name('gallary');
 Route::get('/search',[SearchController::class,'search'])->name('search');
 
 
-Route::group(['prefix'=>'/guest','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'/guest',['middleware'=>'auth','user']],function(){
     
      Route::get('/room',[RoomController::class,'room'])->name('room');
 

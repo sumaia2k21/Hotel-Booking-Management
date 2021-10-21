@@ -132,11 +132,11 @@
                             </div>
                             <div class="twice">
                                 <label>To date</label>
-                                <input type="date"class="form-control" name="to_date" placeholder="Date" required="">
+                                <input type="date"class="form-control" name="to_date"  placeholder="Date" required="">
                             </div>
                              <div class="twice">
                                 <label>total Ammount</label>
-                                <!-- <input class="form-control" name="total_ammount"   required=""> -->
+                                <!-- <input value="{{$bookingform->total_ammount}}" class="form-control" type="number" name="total_ammount" required=""> -->
                             </div> 
                             <div class="twice">
                         <label for="squareSelect">status</label>

@@ -18,21 +18,23 @@
                                                 <div class="row book-form">
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>From Date</label>
-                                                        <input type="date" name="from_date" placeholder="Date"  value="{{ date('m-d-Y') }}"
-                                                        min="{{ date('m-d-Y')}}" required="">
+                                                        <input type="date" name="from_date" placeholder="Date"
+                                                            value="{{ date('m-d-Y') }}" min="{{ date('m-d-Y')}}"
+                                                            required="">
                                                     </div>
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>To Date</label>
-                                                        <input type="date" name="to_date" placeholder="Date" value="{{ date('m-d-Y') }}"
-                                                     min="{{ date('m-d-Y') }}" required="">
-                                                            
-                                                    </div>
+                                                        <input type="date" name="to_date" placeholder="Date"
+                                                            value="{{ date('m-d-Y') }}" min="{{ date('m-d-Y') }}"
+                                                            required="">
 
+                                                    </div>
                                                     <div class="bottom-btn col-md-4 col-sm-6 mt-3">
                                                         <button type="submit"
                                                             class="btn btn-style btn-primary w-100 px-2">Check
                                                             Availability</button>
                                                     </div>
+                                                    
                                                 </div>
                                             </form>
                                         </div>
@@ -186,32 +188,19 @@
     </div>
 </section>
 <section class="w3l-availability-form" id="booking">
-    <!-- /w3l-availability-form-section -->
-    <div class="w3l-availability-form-main py-5">
-        <div class="container pt-lg-3 pb-lg-5">
-            <div class="forms-top">
-                <div class="form-right">
-                    <div class="form-inner-cont">
-
-                        <div class="row">
-                            @foreach($facility as $survic)
-                            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                                <div class="features-with-17-right-tp_sur">
-                                    <div class="features-with-17-left2">
-                                        <img src="{{url('/uploads/'. $survic->imaje)}}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            @foreach($roomimages as $images)
+            <div class="col-md-3">
+                 <img src="{{url('/uploads/'. $images->image)}}" alt="Lights" style="width:100%">   
             </div>
+            @endforeach
         </div>
-    </div>
+        
+ 
 </section>
+
 <!-- //about -->
-<div class="best-rooms py-5">
+<!-- <div class="best-rooms py-5">
     <div class="container py-lg-5 py-sm-4">
         <h3 class="title-big text-center">Best Rooms</h3>
         @foreach($addroom as $data)
@@ -313,9 +302,129 @@
     </div>
 
 </div>
-
 @endforeach
 </div>
+</div> -->
+
+
+<!-- new room -->
+
+<div class="best-rooms w3l-blog py-5">
+    <div class="container py-lg-5 py-sm-4">
+        <div class="ban-content-inf row">
+            @foreach($addroom as $data)
+            <div class="maghny-gd-1 col-lg-4 col-md-6">
+
+                <div class="maghny-grid">
+                    <figure class="effect-lily">
+                        <a href="{{route('single.room.view',$data->id)}}">
+                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
+                            <figcaption>
+                                <div>
+                                    <h4 class="top-text">{{$data->catagory->catagory_title}} Hotel room
+                                        <ul>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star"></span></li>
+                                            <li> <span class="fa fa-star-o"></span></li>
+                                        </ul>
+                                    </h4>
+                                    <p>{{$data->Price}}</p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <div class="room-info">
+                        <h3 class="room-title"><a href="#url">{{$data->catagory->catagory_title}} </a></h3>
+                        <ul class="mb-3">
+                            <li><span class="fa fa-users"></span>{{$data->max_adult}}</li>
+                            <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
+                            <li><span class="fa fa-bed"></span>{{$data->room_number}} </li>
+
+                        </ul>
+                        <h4></h4>
+
+                        <div class="room-info-bottom">
+                            <a href="{{route('bookingform',$data->id)}}" class="btn view">Book Now</a>
+                            <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                <div class="row">
+                    <div class="maghny-gd-1 col-6">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
+                                <!-- <figcaption>
+                                    <div>
+                                        <h4>Family Rooms <span> Resort</span></h4>
+
+                                    </div>
+
+                                </figcaption> -->
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
+                                <!-- <figcaption>
+                                    <div>
+                                        <h4>Double Rooms <span> Resort</span></h4>
+
+                                    </div>
+
+                                </figcaption> -->
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6 mt-4">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
+                                <!-- <figcaption>
+                                    <div>
+                                        <h4>Luxury Rooms <span> Resort</span></h4>
+
+                                    </div>
+
+                                </figcaption> -->
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6 mt-4">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
+                                <!-- <figcaption>
+                                    <div>
+                                        <h4>Resort Rooms <span> Resort</span></h4>
+
+                                    </div>
+
+                                </figcaption> -->
+                            </figure>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+
+    </div>
+
 </div>
+
+
+
 
 @endsection

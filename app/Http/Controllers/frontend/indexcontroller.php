@@ -22,12 +22,14 @@ class indexcontroller extends Controller
     {
         
         $facility=Facility::get()->take(3);
-        $addroom=Room::with('catagory')->get()->take(1);
+        $roomimages =Room::with('room')->get()->take(4);
+        $addroom =Room::with('room')->get()->take(1);
+       
     
        
         
         // dd($addroom);
-        return view('frontend.layouts.home.home',compact('addroom','facility'));
+        return view('frontend.layouts.home.home',compact('addroom','facility','roomimages'));
     }
    
     

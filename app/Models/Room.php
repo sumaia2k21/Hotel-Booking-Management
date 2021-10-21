@@ -14,6 +14,10 @@ class Room extends Model
     {
         return $this->belongsTo(Catagory::class);
     }
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
 
     public function bookings()
     {

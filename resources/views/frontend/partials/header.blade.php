@@ -27,6 +27,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('survice')}}">Facilities</a>
                     </li>
+                    @if(auth()->user())
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
                     </li>
@@ -55,6 +56,10 @@
                             
 						</div>
 					</li>
+                        @else
+                        
+                        @endif
+                    
                     <li class="nav-item @@services__active">
                         <a class="nav-link" href="{{route('gallary')}}">Gallary</a>
 

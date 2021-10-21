@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckManager
+class CheckUser
 {
     /**
      * Handle an incoming request.
@@ -17,15 +17,14 @@ class CheckManager
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=='Manager'||auth()->user()->role=='admin')
+        if(auth()->user()->role=='customer')
         {
             return $next($request);
-        }else
-        {
-            Auth::logout();
-            return redirect()->route('home');
-            return redirect()->back()->with('message','you donot have permission');
-        }
-        
+         }else
+         {
+             Auth::logout();
+             return redirect()->route('home');
+            return redirect()->back()->with('message','you dont have permission');
+         }
     }
 }

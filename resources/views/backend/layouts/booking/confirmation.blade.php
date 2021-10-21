@@ -16,7 +16,7 @@
     <table class="table table-bordered">
         <thead>
             <th scope="col">S.No</th>
-            <th scope="col">Booking number</th>
+            
             <th scope="col">Room name</th>
             <th scope="col">Room number</th>
             <th scope="col">Name</th>
@@ -34,7 +34,7 @@
             
             <tr>
                 <td>{{$request->id}}</td>
-                <td>Booking Number</td>
+           
                 <td>{{$request->room->room_name}}</td>
                 <td>{{$request->room->room_number}}</td>
                 <td>{{$request->name}}</td>

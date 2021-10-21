@@ -19,7 +19,12 @@ public function catagory()
 {
     return $this->belongsTo(Catagory::class);
 }
+public function book()
+{
+    return $this->belongsTo(Book::class);
+}
 
 }
+
 
 
