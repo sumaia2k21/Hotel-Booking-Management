@@ -3,7 +3,7 @@
 
 
 
-
+{{-- @dd($request) --}}
     <section class="w3l-roomsingleblock1 py-5">
         <div class="best-rooms w3l-blog py-5">
         <h2 class=" title-lg text-center">Search Result</h2>

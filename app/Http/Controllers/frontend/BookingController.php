@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class BookingController extends Controller
 {
     public function bookingform($id)
-    {
+    { 
          $bookingform=Auth::user();
         $room = Room::find($id);
-    $payment=Book::all();
-        
-         return view('frontend.layouts.bookingform',compact('room','bookingform','payment'));
+        $payment=Book::all();
+        $value = session()->all(); //extracting all data from session
+        //  dd($value);
+         return view('frontend.layouts.bookingform',compact('room','bookingform','payment','value'));
     }
     
     public function bookingstore(Request $request)

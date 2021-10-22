@@ -15,6 +15,11 @@
                                         <div class="form-inner-cont">
                                             <h3 class="title-small">Check Availability</h3>
                                             <form action="{{route('search')}}" method="get">
+                                                    @if(session()->has('message'))
+                                                        <div class="alert alert-danger">
+                                                            {{ session()->get('message') }}
+                                                        </div>
+                                                    @endif
                                                 <div class="row book-form">
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>From Date</label>

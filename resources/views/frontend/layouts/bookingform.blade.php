@@ -128,11 +128,11 @@
                             </div>
                             <div class="twice">
                                 <label>From date</label>
-                                <input type="date" class="form-control" name="from_date" placeholder="Date" required="">
+                                <input value="{{$value[1]}}" type="date" class="form-control" name="from_date" placeholder="Date" required="">
                             </div>
                             <div class="twice">
                                 <label>To date</label>
-                                <input type="date"class="form-control" name="to_date"  placeholder="Date" required="">
+                                <input value="{{$value[3]}}" type="date"class="form-control" name="to_date"  placeholder="Date" required="">
                             </div>
                              <div class="twice">
                                 <label>total Ammount</label>
