@@ -13,6 +13,7 @@ class SearchController extends Controller
 
   public function search(Request $request)
     {
+      // dd(auth()->user());
       if (auth()->user()) {
         $from_date = $request->from_date;
       $to_date = $request->to_date;

@@ -134,9 +134,24 @@
                                 <label>To date</label>
                                 <input value="{{$value[3]}}" type="date"class="form-control" name="to_date"  placeholder="Date" required="">
                             </div>
+
+                                @php
+                                    $to_date=$value[3];
+                                    $from_date=$value[1];
+                                    $date1=date_create($from_date);
+                                    $date2=date_create($to_date);
+                                    $diff_in_days=date_diff($date1,$date2);
+                                    // dd($diff_in_days);
+                                    $days=$diff_in_days->days;
+                                    // dd($days);
+                                    $p=(int)$room->price;
+                                    $total=$days*$p;
+                                    // dd($total);
+                                @endphp
+
                              <div class="twice">
                                 <label>total Ammount</label>
-                                <!-- <input value="{{$bookingform->total_ammount}}" class="form-control" type="number" name="total_ammount" required=""> -->
+                                <input value="{{$total}}" class="form-control" type="number" name="total_ammount" required="" readonly>
                             </div> 
                             <div class="twice">
                         <label for="squareSelect">status</label>

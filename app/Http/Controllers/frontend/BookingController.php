@@ -50,7 +50,7 @@ class BookingController extends Controller
                'to_date'=>$request->to_date,
                'total_ammount'=>$diff_in_days*$room->price,
                'status'=>$request->status
-           ]);return redirect()->back()->with('message','booking successful.');
+           ]);return redirect()->route('mybooking.status')->with('message','booking successful.');
         }else{
          return redirect()->back()->with('message','Admin cannot book any room');
         }
