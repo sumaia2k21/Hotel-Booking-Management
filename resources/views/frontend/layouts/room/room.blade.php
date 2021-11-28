@@ -97,8 +97,8 @@
                         <h3 class="room-title">{{$showcatagory->catagory_title}}</a></h3>
                        
                         <ul class="mb-3">
-                            </span>{{$showcatagory->room_description}}</li>
-                            </span>price# {{$showcatagory->price}}</li>
+                            <li>price# {{$showcatagory->price}}</li>
+                        <li>{{$showcatagory->room_description}}</li>
                            
                         </ul>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam

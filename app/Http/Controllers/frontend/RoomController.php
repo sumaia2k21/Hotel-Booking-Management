@@ -18,9 +18,10 @@ class RoomController extends Controller
     }
     public function single_room($id)
     {
-        // dd($id);
+        //dd($id);
         $singleroom=Room::find($id);
         return view('frontend.layouts.room.single_room_view',compact('singleroom'));
+       
     }
     public function all_room()
     {

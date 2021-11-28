@@ -87,4 +87,9 @@ class BookingController extends Controller
         // dd($bookstatus);
         return view('frontend.layouts.account.my_booking',compact('bookstatus') );
     }
+    public function invoice()
+    {
+        $bookstatus=Book::where('user_id',Auth::id())->get();
+        return view('frontend.layouts.account.invoice',compact('bookstatus') ); 
+    }
 }

@@ -1,7 +1,7 @@
 @extends('frontend.index')
 @section('content')
 
- @dd()
+ 
 
         <!-- room-single-block -->
         <section class="room-single-block">

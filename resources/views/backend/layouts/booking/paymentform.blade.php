@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label for="smallInput">Total Ammount</label>
-                <input type="text" class="form-control" name="total_ammount" id="Price" placeholder="total_ammount">
+                <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount">
             </div>
             <div class="form-group">
                 <label for="smallInput">pay_ammount</label>

@@ -19,9 +19,6 @@
 
             <th scope="col">sl</th>
             <th scope="col">Catagory Title</th>
-            <!-- <th scope="col">max_adult</th>
-            <th scope="col">max_child</th>
-            <th scope="col">no_of_bed</th> -->
             <th scope="col">image</th>
             <th scope="col">description</th>
             <th scope="col">price</th>
@@ -34,9 +31,6 @@
                 <!-- <td>{{$loop->iteration}}</td> -->
                 <td>{{$catagory->id}}</td>
                 <td>{{$catagory->catagory_title}}</td>
-                <!-- <td>{{$catagory->max_adult}}</td>
-                <td>{{$catagory->max_child}}</td>
-                <td>{{$catagory->no_of_bed}}</td> -->
                 <td>
                     <img src="{{url('/uploads/'.$catagory->image)}}"width="40px" alt="image">
 

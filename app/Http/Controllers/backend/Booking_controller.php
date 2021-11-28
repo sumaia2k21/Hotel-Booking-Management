@@ -85,10 +85,10 @@ class Booking_controller extends Controller
 
 
 
-     public function invoice()
-     {
-          return view('backend.layouts.booking.invoice');
-     }
+     // public function invoice()
+     // {
+     //      return view('backend.layouts.booking.invoice');
+     // }
 
 
 }

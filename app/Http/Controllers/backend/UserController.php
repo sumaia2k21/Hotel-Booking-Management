@@ -32,11 +32,11 @@ class UserController extends Controller
         }
         return redirect()->back()->with('message','no user found');
     }
-    // public function user_staff($id)
-    // {
-    //     $user_staff=User::where('user_id',$id)->get();
-    //     return view('backend.layouts.user.user_staff',compact('user_staff'));
-    // }
+    public function user_staff($id)
+    {
+        $user_staff=User::where('user_id',$id)->get();
+        return view('backend.layouts.user.user_staff',compact('user_staff'));
+    }
 
     public function login()
     {
@@ -69,7 +69,7 @@ class UserController extends Controller
     public function logout()
     {
          Auth::logout();
-         return redirect()->route('admin.login');
+         return redirect()->route('home');
     }
     
 

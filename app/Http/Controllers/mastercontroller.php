@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\Facility;
 use App\Models\Contact;
 use App\Models\Catagory;
+use App\Models\Staff;
 use App\Models\User;
 
 class mastercontroller extends Controller
@@ -23,11 +24,12 @@ class mastercontroller extends Controller
      $facilitylist=Facility::count();
      $enquirylist=Contact::count();
      $catagorylist=Catagory::count();
+     $userlist=Staff::count();
      $approved=Book::with('room')->where('status','Booked')->count();
      $cencel=Book::with('room')->where('status','cancel')->count();
      $user=User::where('role','=','customer')->count();
      $newbooking=Book::with('room')->where('status','pending')->count();
-         return view('backend.layouts.home.home',compact('newroomlist','request','facilitylist','enquirylist','catagorylist','approved','cencel','user','newbooking'));
+         return view('backend.layouts.home.home',compact('newroomlist','request','facilitylist','enquirylist','catagorylist','approved','cencel','user','newbooking','userlist'));
     }
 
 
@@ -38,6 +40,7 @@ class mastercontroller extends Controller
     }
     public function test()
     {
+     
          return view('test');
     }
   

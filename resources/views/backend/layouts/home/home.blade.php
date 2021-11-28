@@ -135,7 +135,24 @@
                 </span>
             </div>
         </div>
+        
     </div>
+
+    <div class="col-lg-3 col-sm-6">
+        <div class="card gradient-2">
+            <div class="card-body">
+                <h3 class="card-title text-white">Total user</h3>
+                <div class="d-inline-block">
+                    <h2 class="text-white">{{$userlist}}</h2>
+                </div>
+                <span class="float-right display-5 opacity-5">
+                    <!-- <i class="fa fa-money"></i> -->
+                </span>
+            </div>
+        </div>
+        
+    </div>
+
 </div>
 
 

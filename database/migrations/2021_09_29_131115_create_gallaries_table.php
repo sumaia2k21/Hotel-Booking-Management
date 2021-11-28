@@ -16,13 +16,9 @@ class CreateGallariesTable extends Migration
         Schema::create('gallaries', function (Blueprint $table) {
             $table->id();
             $table->string('image1');
-            $table->string('image2');
-            $table->string('image3');
-            $table->string('image4');
-            $table->string('image5');
-            $table->string('image6');
-            $table->string('image7');
-            $table->string('image8');
+            $table->text('img_src')->nullable();
+            $table->text('img_alt')->nullable();
+           
            
             $table->timestamps();
         });

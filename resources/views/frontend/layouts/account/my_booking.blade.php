@@ -16,21 +16,21 @@
 <div class="card">
     <table class="table table-bordered">
         <thead>
-              <th scope="col">S.No</th>
+              <!-- <th scope="col">S.No</th> -->
             <th scope="col">Booking number</th>
             <th scope="col">Room number</th>
             <th scope="col">Name</th>
             <th scope="col">Mobile_no</th>
             <th scope="col">Email</th>
            <th scope="col">Status</th>
-            <th scope="col">Action</th>
+           <th scope="col">action</th>
             </tr>
             </tr>
         </thead>
         <tbody>
             @foreach($bookstatus as $list)
             <tr>
-            <td>{{$loop->iteration}}</td> 
+            <!-- <td>{{$loop->iteration}}</td>  -->
             <!-- <td>{{$list->id}}</td> -->
             <td>{{$list->id}}</td>
                 <td>{{$list->room->room_number}}</td>
@@ -39,7 +39,7 @@
                 <td>{{$list->email}}</td>
                 <td>{{$list->status}}</td>
                 
-                <td> <button type="btn-btn-success"> view details</button>
+                <td><a href="{{route('invoice')}}" type="button" class="btn btn-primary">invoice</a>
                    </td>
                 
             </tr>

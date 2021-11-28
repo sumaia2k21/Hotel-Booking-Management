@@ -84,6 +84,9 @@
         {{ session()->get('message') }}
 	</span>
 @endif
+<br>
+		<h2 style="text-align: center;">Please Login </h2>
+		<hr>
 			<form id="login" class="input-group"action="{{route('admin.login.post')}}"method="post">
             @csrf
 				<input type="email" name="email" class="input-field" placeholder="Email" required="">

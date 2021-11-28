@@ -45,13 +45,17 @@
                             </figure>
                             <div class="room-info">
                                 <h3 class="room-title"><a href="#url">{{$data->catagory->catagory_title}} </a></h3>
+                                
                                 <ul class="mb-3">
                                     <li><span class="fa fa-users"></span>{{$data->max_adult}}</li>
                                     <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
                                     <li><span class="fa fa-bed"></span>{{$data->room_number}} </li>
 
                                 </ul>
-                                <h4></h4>
+                                <li>Max_adult:  {{$data->max_adult}}</li>
+                                <li>  No_of_bed:  {{$data->no_of_bed}}</li>
+                                <li> Room_number : {{$data->room_number}} </li>
+                            
                                 <a href="{{route('bookingform',$data->id)}}" class="btn mt-sm-4 mt-3">Book Now</a>
                                 <div class="room-info-bottom">
                                     <ul class="room-amenities">

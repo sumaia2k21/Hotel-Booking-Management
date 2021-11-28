@@ -86,8 +86,8 @@
     ***********************************-->
     <script src="https://demo.themefisher.com/quixlab/plugins/common/common.min.js"></script>
     <script src="https://demo.themefisher.com/quixlab/js/custom.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/js/gleek.js"></script>
     <script src="https://demo.themefisher.com/quixlab/js/settings.js"></script>
+    <script src="https://demo.themefisher.com/quixlab/js/gleek.js"></script>
     <script src="https://demo.themefisher.com/quixlab/js/styleSwitcher.js"></script>
 
     <!-- Chartjs -->

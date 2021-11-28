@@ -48,7 +48,7 @@
                         <div class="room-info">
                             
                             <h3 class="room-title">{{$data->catagory->catagory_title}}</a></h3>
-                           
+                           <hr>
                             <ul class="mb-3">
                                 <li><span class="fa fa-users"></span>{{$data->max_adult}}</li>
                                 <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
@@ -56,8 +56,14 @@
                                 
                             </ul>
                             
+                            <li>Max_adult:  {{$data->max_adult}}</li>
+                                <li>  No_of_bed:  {{$data->no_of_bed}}</li>
+                                <li> Room_number : {{$data->room_number}} </li>
+                                <li> Price : {{$data->price}} </li>
+                                <li> room_description : {{$data->room_description}} </li>
+                            
 
-                            <h4>{{$data->room_description}}</h4>
+                            <h4></h4>
                             <a href="{{route('bookingform',$data->id)}}" class="btn mt-sm-4 mt-3">Book Now</a>
                             <div class="room-info-bottom">
                                 <ul class="room-amenities">

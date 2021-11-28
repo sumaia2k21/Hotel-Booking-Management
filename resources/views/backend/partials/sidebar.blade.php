@@ -5,7 +5,7 @@
                  @if(auth()->user()->role=='admin')
                 
                     <li >
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a  href="javascript:void()" aria-expanded="false">
                              
                              <span class="nav-text">{{auth()->user()->name}}</span>
                         </a>
@@ -102,25 +102,19 @@
                             
                         </ul>
                     </li> 
+                    
+                    
+                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                            <span class="nav-text">gallery</span>
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">gallary</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('gallaries')}}">Add gallery</a></li>
-                            <li><a href="{{route('gallerystore')}}">manage gallery</a></li>
+                            <li><a href="{{route('gallaries')}}">add gallary</a></li>
+                            <li><a href="{{route('gallerystore')}}">view gallary</a></li>
                         </ul>
                     </li>
-                    
-                    
-                    <li class="mega-menu mega-menu-sm">
-                        <a  href="{{route('gallaries')}}" aria-expanded="false">
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                            <span class="nav-text">gallaries </span>
-                        </a>
-                    </li>
-          
                     <li class="mega-menu mega-menu-sm">
                         <a  href="{{route('read_enquiry')}}" aria-expanded="false">
                         <i class="fa fa-check-square" aria-hidden="true"></i>
@@ -129,7 +123,7 @@
                     </li>
           
                     <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-book" aria-hidden="true"></i>
                             <span class="nav-text">Payment</span>
                         </a>
@@ -155,12 +149,23 @@
                         
                     </li>
                    
-                     <li>
+                     <!-- <li>
                         <a href="{{route('staff')}}" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Staff </span>
                         </a>
                       
+                    </li> -->
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">images</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('images')}}">add images</a></li>
+                            <li><a href="{{route('images.table')}}">view images</a></li>
+                        </ul>
                     </li>
+                    
                    
                 @endif
                 @if(auth()->user()->role=='Manager')

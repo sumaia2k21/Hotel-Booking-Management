@@ -40,29 +40,23 @@
             <ul class="clearfix">
 
 
-
-                <li class="icons dropdown">
+<h4><li><a href="{{route('admin.logout')}}">Logout</a></li></h4> 
+                <!-- <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative" data-toggle="dropdown">
-                        <span class="activity active"></span>
-                        <img src="images/user/1.png" height="40" width="40" alt="">
+                   
+                       
+                        <img src="images/admin.jpg" height="40" width="40" alt="">
+                     
                     </div>
                     <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                         <div class="dropdown-content-body">
                             <ul>
-                                <li>
-                                    <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
-                                </li>
-
-
-                                <hr class="my-2">
-                                <li>
-                                    <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                </li>
-                                <li><a href="{{route('admin.logout')}}"><i class="icon-key"></i> <span>Logout</span></a></li>
+                               
+                                <li><a href="{{route('admin.logout')}}"><span>Logout</span></a></li>
                             </ul>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\Catagory_Controller;
 use App\Http\Controllers\backend\Facilities_controller;
 use App\Http\Controllers\backend\Gallary_Controller;
 use App\Http\Controllers\backend\Hotel_Controller;
+use App\Http\Controllers\backend\ImageController;
 use App\Http\Controllers\backend\Page_controller;
 use App\Http\Controllers\backend\PaymentController;
 use App\Http\Controllers\backend\Reg_user_controller;
@@ -103,8 +104,8 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
      Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
      Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
-
-     Route::get('/invoice',[Booking_controller::class,'invoice'])->name('invoice');
+     
+     
      //booking end
 
      //hotelinfo form start
@@ -115,7 +116,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/customers',[UserController::class,'customerlist'])->name('customer.list');
      Route::get('/users',[UserController::class,'userlist'])->name('user.list');
      Route::get('/users/{id}',[UserController::class,'delete'])->name('user.delete');
-     Route::get('/users/{id}/staff',[UserController::class,'user_staff'])->name('user.under.staff');
+     // Route::get('/users/{id}/staff',[UserController::class,'user_staff'])->name('user.under.staff');
 
      //staff
      Route::get('/staff',[StaffController::class,'staff'])->name('staff');
@@ -131,6 +132,10 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
      Route::post('/gallaries/post',[Gallary_Controller::class,'gallaries_post'])->name('gallaries.post');
      Route::get('/gallery/table',[Gallary_Controller::class,'gallerytable'])->name('gallerystore');
+     //test multiple image upload
+     Route::get('images', [ ImageController::class, 'image' ])->name('images');
+     Route::post('images', [ ImageController::class, 'store' ])->name('images.store');
+     Route::get('images/table', [ ImageController::class, 'images_table' ])->name('images.table');
 
 
      }); 
@@ -191,32 +196,19 @@ Route::group(['prefix'=>'/guest',['middleware'=>'auth','user']],function(){
 });
 
 
-//  frontend user login
-// user-login
-// Route::get('/user_login',[User_Controller::class,'user_login'])->name('user_login');
-
-//  Route::get('/user_reg',[User_Controller::class,'user_reg'])->name('user_reg');
-
-// view profile start
-//  Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
- //My Booking details
-//  Route::get('/my_booking',[User_Controller::class,'mybooking'])->name('mybooking.status');
-
-
 //signup satrt
 Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup');
 Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
 Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login');
 Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
 
-
-
-
 //booking form start
 Route::get('/bookingform/{id}',[BookingController::class,'bookingform'])->name('bookingform');
 Route::post('/booking/store',[BookingController::class,'bookingstore'])->name('booking.store');
 
 Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybooking.status');
+
+Route::get('/invoice',[BookingController::class,'invoice'])->name('invoice');
 
 //catagory under room (frontend)
 Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');

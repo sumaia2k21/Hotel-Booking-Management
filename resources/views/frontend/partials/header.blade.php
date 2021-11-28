@@ -31,19 +31,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
                     </li>
-                    <!-- <li class="nav-item @@services__active">
-						<a class="nav-link" href="{{route('testroom')}}">Facilities</a>
-					</li> -->
 
-
-
-                    <!-- <li class="nav-item active">
-                        @if(auth()->user())
-                        <a class="nav-link" href="{{route('guest.logout')}}">logout/{{auth()->user()->name}}</a>
-                        @else
-                        <a class="nav-link" href="{{route('user.signup')}}">login/signup</a>
-                        @endif
-                    </li> -->
                    
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -56,14 +44,6 @@
                             
 						</div>
 					</li>
-                        @else
-                        
-                        @endif
-                    
-                    <li class="nav-item @@services__active">
-                        <a class="nav-link" href="{{route('gallary')}}">Gallary</a>
-
-                    </li>
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -83,10 +63,26 @@
 						</div>
 					</li>
                     
+                        @else
+                        
+                        @endif
+                    
+                    <li class="nav-item @@services__active">
+                        <a class="nav-link" href="{{route('gallary')}}">Gallary</a>
 
+                    </li>
+                   
+                    <li class="nav-item active">
+                    @if(auth()->user())
+                        <a class="nav-link" href="{{route('guest.logout')}}">logout/{{auth()->user()->name}}</a>
+                        @else
+                        <a class="nav-link" href="{{route('user.signup')}}">login/signup</a>
+                        @endif
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('admin.login')}}">Admin</a>
                     </li>
+                   
                 </ul>
 
             </div>

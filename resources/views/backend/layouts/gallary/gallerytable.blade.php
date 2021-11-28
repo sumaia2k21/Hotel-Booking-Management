@@ -10,46 +10,24 @@
 <table class="table table-striped table-hover">
     <thead >
          <th scope="col">sl</th>
-            <th scope="col">Image1</th>
-            <th scope="col">Image2</th>
-            <th scope="col">Image3</th>
-            <th scope="col">Image4</th>
-            <th scope="col">image5</th>
-            <th scope="col">image6</th>
-            <th scope="col">image7</th>
-            <th scope="col">image8</th>
-
+            <th scope="col">Image</th>
+            <th scope="col">img_src</th>
+            <th scope="col">img_alt</th>
+            
            
             
         </thead>
         <tbody>
-            @foreach($gallerytable as $fy)
+            @foreach($gallerytable as $data)
             <tr>
-                <td>{{$fy->id}}</td>  
+                <td>{{$data->id}}</td>  
                 <td>
-                <img src="{{url('/uploads/'.$fy->image1)}}"width="40px" alt="imaje">
-                </td>  
-                <td>
-                <img src="{{url('/uploads/'.$fy->image2)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image3)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image4)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image5)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image6)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image7)}}"width="40px" alt="imaje">
-                </td> 
-                <td>
-                <img src="{{url('/uploads/'.$fy->image8)}}"width="40px" alt="imaje">
-                </td> 
+                <img src="{{url('/uploads/'.$data->image1)}}"width="40px" alt="imag1e">
+                </td>
+                <td>{{$data->img_src}}</td>
+                <td>{{$data->img_alt}}</td>  
+
+               
             </tr>
             @endforeach
         </tbody>
