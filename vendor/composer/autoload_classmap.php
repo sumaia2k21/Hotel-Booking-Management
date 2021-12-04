@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\backend\\Facilities_controller' => $baseDir . '/app/Http/Controllers/backend/Facilities_controller.php',
     'App\\Http\\Controllers\\backend\\Gallary_Controller' => $baseDir . '/app/Http/Controllers/backend/Gallary_Controller.php',
     'App\\Http\\Controllers\\backend\\Hotel_Controller' => $baseDir . '/app/Http/Controllers/backend/Hotel_Controller.php',
+    'App\\Http\\Controllers\\backend\\ImageController' => $baseDir . '/app/Http/Controllers/backend/ImageController.php',
     'App\\Http\\Controllers\\backend\\Page_controller' => $baseDir . '/app/Http/Controllers/backend/Page_controller.php',
     'App\\Http\\Controllers\\backend\\PaymentController' => $baseDir . '/app/Http/Controllers/backend/PaymentController.php',
     'App\\Http\\Controllers\\backend\\Reg_user_controller' => $baseDir . '/app/Http/Controllers/backend/Reg_user_controller.php',

@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\Facility;
 use App\Models\Contact;
 use App\Models\Catagory;
+use App\Models\Gallary;
 use App\Models\Staff;
 use App\Models\User;
 
@@ -40,9 +41,9 @@ class mastercontroller extends Controller
     }
     public function test()
     {
-     
          return view('test');
     }
+    
   
 
 

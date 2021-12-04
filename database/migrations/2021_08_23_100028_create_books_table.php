@@ -24,6 +24,8 @@ class CreateBooksTable extends Migration
             $table->string('from_date');
             $table->string('to_date');
             $table->string('total_ammount');
+            $table->string('discount')->nullable();
+            $table->string('discount_price')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

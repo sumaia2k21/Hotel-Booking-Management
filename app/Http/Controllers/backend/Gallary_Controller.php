@@ -39,7 +39,7 @@ class Gallary_Controller extends Controller
          
           
             return redirect()->route('gallerystore')->with('success', 'Images uploaded successfully');
-        }
+     }
         
      public function gallerytable()
           {
@@ -47,4 +47,9 @@ class Gallary_Controller extends Controller
           $gallerytable=Gallary::paginate(15);
                return view('backend.layouts.gallary.gallerytable',compact('gallerytable'));
           }
+
+
+          
      }
+
+

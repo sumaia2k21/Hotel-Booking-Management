@@ -100,28 +100,28 @@
                         <div class="col-6 pr-2 mt-4">
                             <div class="grids-speci1">
                                 <span class="fa fa-users"></span>
-                                <h3 class="title-spe">1200+</h3>
-                                <p>Happy Clients</p>
+                                <h3 class="title-spe">{{$category}}</h3>
+                                <p>Room category</p>
                             </div>
                         </div>
                         <div class="col-6 pl-2 mt-4">
                             <div class="grids-speci1">
                                 <span class="fa fa-camera"></span>
-                                <h3 class="title-spe">18k+</h3>
+                                <h3 class="title-spe">{{$rooms}}+</h3>
                                 <p>Luxury Rooms</p>
                             </div>
                         </div>
                         <div class="col-6 pr-2 mt-4">
                             <div class="grids-speci1">
                                 <span class="fa fa-briefcase"></span>
-                                <h3 class="title-spe">158</h3>
-                                <p>Employers</p>
+                                <h3 class="title-spe">{{$facilities}}+</h3>
+                                <p>Facilities</p>
                             </div>
                         </div>
                         <div class="col-6 pl-2 mt-4">
                             <div class="grids-speci1">
                                 <span class="fa fa-comments"></span>
-                                <h3 class="title-spe">879+</h3>
+                                <h3 class="title-spe">{{$user}}+</h3>
                                 <p>Services</p>
                             </div>
                         </div>

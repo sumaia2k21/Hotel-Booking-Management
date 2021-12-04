@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Facility;
+use App\Models\Gallary;
 use App\Models\Room;
 
 class RoomController extends Controller
@@ -19,8 +20,11 @@ class RoomController extends Controller
     public function single_room($id)
     {
         //dd($id);
+        $room=Catagory::find($id);
+        $facility=Facility::find($id);
         $singleroom=Room::find($id);
-        return view('frontend.layouts.room.single_room_view',compact('singleroom'));
+        $gallery=Gallary::find($id);
+        return view('frontend.layouts.room.single_room_view',compact('singleroom','room','facility','gallery'));
        
     }
     public function all_room()

@@ -540,6 +540,7 @@ class ComposerStaticInitd3a9a706ec9f3a153ce182a0ce254e22
         'App\\Http\\Controllers\\backend\\Facilities_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Facilities_controller.php',
         'App\\Http\\Controllers\\backend\\Gallary_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Gallary_Controller.php',
         'App\\Http\\Controllers\\backend\\Hotel_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Hotel_Controller.php',
+        'App\\Http\\Controllers\\backend\\ImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/ImageController.php',
         'App\\Http\\Controllers\\backend\\Page_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Page_controller.php',
         'App\\Http\\Controllers\\backend\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/PaymentController.php',
         'App\\Http\\Controllers\\backend\\Reg_user_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Reg_user_controller.php',

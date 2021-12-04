@@ -83,6 +83,12 @@
                         
                         <input type="text" value="{{$room->price}}" class="form-control form-control"name="price" id="Description" placeholder="">
                     </div>
+                    <div class="form-group">
+                        <label for="largeInput">discount</label>
+                        
+                        <input type="text" value="{{$room->discount}}" class="form-control form-control"name="discount" id="Description" placeholder="">
+                    </div>
+                   
                      <div class="form-group">
                         <label for="squareSelect">status</label>
                         <select class="form-control input-square"  value="{{$room->status}}"name="status"id="squareSelect">

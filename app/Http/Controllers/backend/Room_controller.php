@@ -53,6 +53,7 @@ public function roomlist(Request $newroomlist){
           'no_of_bed'=>$newroomlist->no_of_bed,
           'image'=>$fileName,
           'price'=>$newroomlist-> price,
+          'discount'=>$newroomlist-> discount,
           'status'=>$newroomlist-> status
           
 
@@ -91,6 +92,7 @@ public function roomlist(Request $newroomlist){
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
         'price'=>$newroomlist-> price, 
+        'discount'=>$newroomlist-> discount,
         'status'=>$newroomlist-> status 
 
           ]);

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\backend\Booking_controller;
 use App\Http\Controllers\backend\Catagory_Controller;
+use App\Http\Controllers\backend\CouponController;
 use App\Http\Controllers\backend\Facilities_controller;
+use App\Http\Controllers\backend\FileController;
 use App\Http\Controllers\backend\Gallary_Controller;
 use App\Http\Controllers\backend\Hotel_Controller;
 use App\Http\Controllers\backend\ImageController;
@@ -76,7 +78,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/facilities/{id}/edit',[Facilities_controller::class,'edit'])->name('facility.edit');
      Route::put('/facilities/{id}/update',[Facilities_controller::class,'update'])->name('facility.update');
      Route::get('/manage_facilities',[Facilities_controller::class,'manage_facilities'])->name('manage_facilities');
-     //facilities end
+     
 
      //Room start
      Route::get('/add_room',[Room_controller::class,'add_room'])->name('add_room');
@@ -106,12 +108,12 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
      
      
-     //booking end
+     
 
      //hotelinfo form start
      Route::get('/hotelinfo',[Hotel_Controller::class,'hotelinfo'])->name('hotelinfo');
      Route::post('/hotelinfo/store',[Hotel_Controller::class,'hotelinfopost'])->name('hotelinfo.store');
-     //end 
+  
      //user 
      Route::get('/customers',[UserController::class,'customerlist'])->name('customer.list');
      Route::get('/users',[UserController::class,'userlist'])->name('user.list');
@@ -124,8 +126,6 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/manage_staff',[StaffController::class,'managestaff'])->name('staff.list');
 
      //payment
-     // Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
-     // Route::get('/paymentstore',[PaymentController::class,'payment_store'])->name('payment.store');
      Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('payment.list');
 
      //gallary
@@ -136,6 +136,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('images', [ ImageController::class, 'image' ])->name('images');
      Route::post('images', [ ImageController::class, 'store' ])->name('images.store');
      Route::get('images/table', [ ImageController::class, 'images_table' ])->name('images.table');
+
+
+     //coupon code
+     Route::get('addcoupon', [ CouponController::class, 'addcoupon' ])->name('addcoupon');
+     Route::post('coupon/post', [ CouponController::class, 'coupon_post' ])->name('coupon.post');
+     Route::get('editcoupon', [ CouponController::class, 'editcoupon' ])->name('editcoupon');
+     Route::get('coupon/table', [ CouponController::class, 'coupon_store' ])->name('coupon.store');
 
 
      }); 
@@ -208,7 +215,8 @@ Route::post('/booking/store',[BookingController::class,'bookingstore'])->name('b
 
 Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybooking.status');
 
-Route::get('/invoice',[BookingController::class,'invoice'])->name('invoice');
+Route::get('/invoice/{id}',[BookingController::class,'invoice'])->name('invoice');
+Route::get('/testinvoice',[BookingController::class,'testinvoice'])->name('testinvoice');
 
 //catagory under room (frontend)
 Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');

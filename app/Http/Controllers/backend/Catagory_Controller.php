@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
+use App\Models\Gallary;
 use App\Models\Room;
 
 class Catagory_Controller extends Controller
@@ -68,6 +69,7 @@ public function allRoom($id)
     {
     
      $catagory_room_view=Catagory::with('rooms')->find($id);
+     
      // dd($rooms);
          return view('frontend.layouts.room.catagory_under_room',compact('catagory_room_view'));
     }

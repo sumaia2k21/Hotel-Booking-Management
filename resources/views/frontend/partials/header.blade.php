@@ -4,6 +4,8 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 {{$hotels->name}}
+                
+                
                 <!-- <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" /> -->
                
             </a>
@@ -41,9 +43,9 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="{{route('room')}}">Room Types</a>
 							<a class="dropdown-item" href="{{route('all.room.view')}}"> All Room</a>
-                            
 						</div>
 					</li>
+                 
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

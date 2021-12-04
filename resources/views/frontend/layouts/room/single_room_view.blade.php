@@ -2,7 +2,7 @@
 @section('content')
 
  
-
+@if(auth()->user())
         <!-- room-single-block -->
         <section class="room-single-block">
             <div class="content-with-slider">
@@ -10,7 +10,7 @@
                 
                     <div class="content-photo-1 d-grid">
                         <div class="content-photo-left text-center">
-                            <h4>Luxury Hotel</h4>
+                            <h4>{{$singleroom->catagory->catagory_title}} Room</h4>
                             
                             <h6>{{$singleroom->catagory->catagory_title}} </h6>
                             <div class="border-line">
@@ -27,13 +27,13 @@
                                 <li><a href="#url"><span class="fa fa-users"></span>{{$singleroom->max_adult}} </a></li>
                                 <li><a href="#url"><span class="fa fa-bed"></span> </a> {{$singleroom->no_of_bed}}</li>
                             </ul>
-                            <a href="{{route('all.room.view')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to all
+                            <a href="{{route('search')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to  available room
                                 rooms</a>
                         </div>
                         <div class="content-photo-right">
                             <div class="csslider infinity" id="slider1">
                                 <input type="radio" name="slides" checked="checked" id="slides_1" />
-                                <input type="radio" name="slides" id="slides_2" />
+                                <input type="radio" name="slides"  id="slides_2" />
                                 <input type="radio" name="slides" id="slides_3" />
                                 <input type="radio" name="slides" id="slides_4" />
                                 <ul class="banner_slide_bg">
@@ -41,13 +41,13 @@
                                         <img class="img" src="{{url('uploads/'.$singleroom->image)}}" alt="">
                                     </li>
                                     <li>
-                                        <img class="img" src="" alt="">
+                                        <img class="{{url('uploads/'.$singleroom->image)}}" src="" alt="">
                                     </li>
                                     <li>
-                                        <img class="img" src="" alt="">
+                                        <img class="" src="" alt="">
                                     </li>
                                     <li>
-                                        <img class="img" src="" alt="">
+                                        <img class="" src="" alt="">
                                     </li>
                                 </ul>
                                 <div class="arrows">
@@ -101,7 +101,7 @@
                     <div class="col-lg-7 roomsingle">
                         <h3 class="title-small">Amenities provided by our hotel</h3>
                         <ul class="w3l-right-book mt-4">
-                            <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Flat screen TV</a>
+                            <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Flat screen TV </a>
                             </li>
                             <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Free high-speed
                                     WiFi</a></li>
@@ -125,13 +125,29 @@
                         </ul>
                     </div>
                     <div class="col-lg-5 mt-lg-0 mt-4">
+                        <!-- <img src="{{url('uploads/'.$facility->imaje)}}" alt="" class="img-fluid"> -->
                         <img src="{{url('uploads/'.$singleroom->image)}}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
             
         </section>
-
+        @else
+        <!-- <a href="{{route('user.signup')}}" type="button" class="btn btn-primary">login</a> -->
+        <h4 style="color: green;"> Please Login..................... </h4> 
+       
+            <br><br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+        
+       
+        @endif   
 
         
 @endsection

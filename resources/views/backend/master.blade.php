@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://demo.themefisher.com/quixlab/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="https://demo.themefisher.com/quixlab/css/style.css" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 

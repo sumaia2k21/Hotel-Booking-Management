@@ -32,7 +32,7 @@ class Contact_controller extends Controller
               $enquiry->delete();
               return redirect()->back()->with('message','delete successfully' );
          }
-         return redirect()->back()->with('message','no product found' );
+         return redirect()->back()->with('message','not found' );
     }
 
     //db

@@ -13,6 +13,7 @@ class BookingController extends Controller
 {
     public function bookingform($id)
     { 
+       
          $bookingform=Auth::user();
         $room = Room::find($id);
         $payment=Book::all();
@@ -23,7 +24,8 @@ class BookingController extends Controller
     
     public function bookingstore(Request $request)
     {
-           
+        
+       
 
         $isBooked=Book::where('room_id',$request->room_id)
         ->where('from_date','<=',$request->from_date)
@@ -49,10 +51,12 @@ class BookingController extends Controller
                'from_date'=>$request->from_date,
                'to_date'=>$request->to_date,
                'total_ammount'=>$diff_in_days*$room->price,
+               'discount'=>$request->discount,
+               'discount_price'=>$request->discount_price,
                'status'=>$request->status
            ]);return redirect()->route('mybooking.status')->with('message','booking successful.');
         }else{
-         return redirect()->back()->with('message','Admin cannot book any room');
+         return redirect()->back()->with('message','Room not available on this dates.');
         }
         if(!$isBooked )
         {
@@ -67,12 +71,14 @@ class BookingController extends Controller
                 'from_date'=>$request->from_date,
                 'to_date'=>$request->to_date,
                 'total_ammount'=>$diff_in_days*$room->price,
+                'discount'=>$request->discount,
+                'discount_price'=>$request->discount_price,
                 'status'=>$request->status
             ]);
             return redirect()->back()->with('message','booking successful.');
         }
         else{
-         return redirect()->back()->with('message','Room not available on this dates.');
+         return redirect()->back()->with('message','Admin can not book room ');
         }
     }
     
@@ -87,9 +93,21 @@ class BookingController extends Controller
         // dd($bookstatus);
         return view('frontend.layouts.account.my_booking',compact('bookstatus') );
     }
-    public function invoice()
+    public function invoice($id)
     {
-        $bookstatus=Book::where('user_id',Auth::id())->get();
-        return view('frontend.layouts.account.invoice',compact('bookstatus') ); 
+       
+        $user=Book::where('user_id',Auth::id())->get()->take(1);
+        $bookinginfo=Book::where('id',$id)->get();
+       
+        return view('frontend.layouts.account.invoice',compact('bookinginfo','user') ); 
+    }
+    public function testinvoice()
+    {
+       
+        $user=Book::where('user_id',Auth::id())->get()->take(1);
+        $bookinginfo=Book::where('user_id',Auth::id())->get();
+       
+        return view('frontend.layouts.account.test_invoice',compact('bookinginfo','user') ); 
     }
 }
+

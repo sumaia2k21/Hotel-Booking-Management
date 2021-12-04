@@ -81,6 +81,10 @@
                         <label for="largeInput">price</label>
                         <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
                     </div>
+                    <div class="form-group">
+                        <label for="largeInput">discount</label>
+                        <input type="text" class="form-control form-control"name="discount" id="Description" placeholder="">
+                    </div>
 
                     <div class="form-group">
                         <label for="squareSelect">status</label>

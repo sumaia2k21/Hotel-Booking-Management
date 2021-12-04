@@ -24,6 +24,7 @@ class CreateNewroomsTable extends Migration
             $table->string('no_of_bed');
             $table->string('image');
              $table->string('price');
+             $table->string('discount')->nullable();
              $table->string('status')->nullable();
 
             $table->timestamps();

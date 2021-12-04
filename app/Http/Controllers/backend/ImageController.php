@@ -27,14 +27,14 @@ class ImageController extends Controller
                 $name = $image->getClientOriginalName();
                 $path = $image->storeAs('uploads', $name, 'public');
 
-              Multipleimage::create([
+                Multipleimage::create([
                     'name' => $name,
                     'path' => '/storage/'.$path
                   ]);
             }
          }
 
-         return redirect()->route('images.table')->with('success', 'Images uploaded successfully');
+        return back()->with('success', 'Images uploaded successfully');
     }
     
     public function images_table()

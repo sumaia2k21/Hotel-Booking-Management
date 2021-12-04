@@ -93,6 +93,16 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">coupon</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('addcoupon')}}">add coupon</a></li>
+                            <li><a href="{{route('coupon.store')}}">view coupon</a></li>
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-h-square" aria-hidden="true"></i>
                             <span class="nav-text">Hotel Information</span>
                         </a>
@@ -113,6 +123,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('gallaries')}}">add gallary</a></li>
                             <li><a href="{{route('gallerystore')}}">view gallary</a></li>
+                          
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">

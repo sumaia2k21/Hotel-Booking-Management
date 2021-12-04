@@ -29,6 +29,7 @@
             <th scope="col">room_description</th>
             <th scope="col">Image</th>
             <th scope="col">price</th>
+            <th scope="col">discount</th>
             <th scope="col">status</th>
             <th scope="col">Action</th>
             </tr>
@@ -52,6 +53,7 @@
 
                 </td>
                 <td>{{$newroom->price}}</td>
+                <td>{{$newroom->discount}}</td>
                 <td>{{$newroom->status}}</td>
                 
                 
