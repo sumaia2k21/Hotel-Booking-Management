@@ -12,15 +12,16 @@ class Room_controller extends Controller
 {
     public function add_room()
     {
+
          $catagory=Catagory::all();
-//     dd($catagory->all());
-         return view('backend.layouts.newroom.add_room',compact('catagory'));
+         $amenities=Facility::all();
+          return view('backend.layouts.newroom.add_room',compact('catagory','amenities'));
     }
     
 
      public function manage_room()
      {
-          $newroomlist=Room::with('catagory')->paginate(6);
+          $newroomlist=Room::with('catagory','roomamenities')->paginate(8);
           
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
@@ -86,16 +87,29 @@ public function roomlist(Request $newroomlist){
           $room=Room::find($id);
           $room->update([
                'room_name'=>$newroomlist->room_name,
-          'room_number'=>$newroomlist->room_number,
-          'max_adult'=>$newroomlist->max_adult,
-          'max_child'=>$newroomlist->max_child,
-          'room_description'=>$newroomlist->room_description,
-          'no_of_bed'=>$newroomlist->no_of_bed,
-        'price'=>$newroomlist-> price, 
-        'discount'=>$newroomlist-> discount,
-        'status'=>$newroomlist-> status 
+               'room_number'=>$newroomlist->room_number,
+               'max_adult'=>$newroomlist->max_adult,
+               'max_child'=>$newroomlist->max_child,
+               'room_description'=>$newroomlist->room_description,
+               'no_of_bed'=>$newroomlist->no_of_bed,
+               'price'=>$newroomlist-> price, 
+               'discount'=>$newroomlist-> discount,
+               'status'=>$newroomlist-> status 
 
           ]);
+
+          foreach($newroomlist->facilities_id as $am)
+          {
+            
+            Facility::create([
+              'room_id'=>$room->id,
+              'facilities_id'=>$am
+            ]);
+
+          }
+
+      
+
 
        return redirect()->route('manage_room')->with('message','room update sucessfully');  
           

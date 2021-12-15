@@ -27,6 +27,7 @@
             <th scope="col">max_child</th>
             <th scope="col">no_of_bed</th>
             <th scope="col">room_description</th>
+            <th scope="col">Amenities</th>
             <th scope="col">Image</th>
             <th scope="col">price</th>
             <th scope="col">discount</th>
@@ -47,26 +48,24 @@
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>
-                <td>{{$newroom->room_description}}</td>
+                <td>{{$newroom->room_description}} </td>
+                <td>
+                     @foreach($newroom->roomamenities as $data)
+                    <span class="badge alert-success">{{$data->amenity->facility_title}}</span>
+                    @endforeach
+                </td>
                 <td>
                     <img src="{{url('/uploads/'.$newroom->image)}}"width="40px" alt="image">
-
                 </td>
                 <td>{{$newroom->price}}</td>
                 <td>{{$newroom->discount}}</td>
                 <td>{{$newroom->status}}</td>
-                
-                
-                
                 <td>
                   
                     <a href="{{route('room.edit',$newroom->id)}}" class="btn btn-light"><i class="material-icons">edit</i></a>
                     <a  onclick="return confirm('Are you sure you want to delete this item?');"href="{{route('room.delete',$newroom->id)}}" class="btn btn-light"><i class="material-icons">delete</i></a>
 
                 </td>
-
-                <!-- <a type="button" class="btn btn-primary">Primary</a> -->
-
             </tr>
             @endforeach()
         </tbody>

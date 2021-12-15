@@ -73,9 +73,21 @@ class Facilities_controller extends Controller
       }
       public function update(Request $facilitylist, $id)
       {
+          $fileName='';
+          if($facilitylist->hasFile('imaje'))
+          {
+     
+               $file=$facilitylist->file('imaje');
+               // dd($file);
+               //generate file name
+               $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+               $file->storeAs('/uploads',$fileName);
+          }
+     
           //  dd($facilitylist->all());
            $facility=Facility::find($id);  
            $facility->update([
+               'imaje'=>$fileName,
                'facility_title'=>$facilitylist->facility_title,
                'description'=>$facilitylist->description
 

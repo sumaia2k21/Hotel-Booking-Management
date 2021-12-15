@@ -12,6 +12,7 @@
          <th scope="col">sl</th>
             <th scope="col">name</th>
             <th scope="col">path</th>
+            <th scope="col">image</th>
             
             
            
@@ -23,7 +24,9 @@
                 <td>{{$data->id}}</td>  
                 <td>{{$data->name}}</td>
                 <td>{{$data->path}}</td>  
-
+                <td>
+                <img src="{{url('/uploads/'.$data->images)}}"width="40px" alt="images">
+                </td>
                
             </tr>
             @endforeach

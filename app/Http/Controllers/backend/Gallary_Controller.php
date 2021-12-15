@@ -23,20 +23,22 @@ class Gallary_Controller extends Controller
           $fileName='';
           if($request->hasFile('image1'))
           {
-               $file=$request->file('image1');
+               $files=$request->file('image1');
               
                //generate file name
+               foreach($files as $file) {
                $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
                $file->storeAs('/uploads',$fileName);
-          }
-          Gallary::Create([
+         
+               Gallary::Create([
                     'image1'=>$fileName,
                     'img_src'=>$request->img_src,
                    'img_alt'=>$request->img_alt
      
      
-          ]);
-         
+                ]);}
+          }
+
           
             return redirect()->route('gallerystore')->with('success', 'Images uploaded successfully');
      }
@@ -44,7 +46,7 @@ class Gallary_Controller extends Controller
      public function gallerytable()
           {
                
-          $gallerytable=Gallary::paginate(15);
+          $gallerytable=Gallary::all();
                return view('backend.layouts.gallary.gallerytable',compact('gallerytable'));
           }
 

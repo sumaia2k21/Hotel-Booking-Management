@@ -17,7 +17,8 @@
             @csrf
         <div class="mb-3">
             <label for="formFileSm" class="form-label">gallery</label>
-            <input type="file" class="form-control form-control-sm"  name='image1' id="formFileSm">
+            <!-- <input type="file" class="form-control form-control-sm"  name='image1' id="formFileSm"> -->
+            <input type="file" name="image1[]" multiple class="form-control" accept="image/*">
         </div>
         <div class="mb-3">
             <label for="formFileSm" class="form-label">src</label>

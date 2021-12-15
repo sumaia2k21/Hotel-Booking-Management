@@ -27,8 +27,7 @@
             <th scope="col">to_date</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
-            </tr>
-            </tr>
+             
         </thead>
         <tbody>
             

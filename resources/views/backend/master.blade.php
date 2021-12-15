@@ -10,14 +10,17 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Pignose Calender -->
-    <link href="https://demo.themefisher.com/quixlab/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="{{url('/css/pignose.calendar.min.css')}}" rel="stylesheet">
     <!-- Chartist -->
-    <link rel="stylesheet" href="https://demo.themefisher.com/quixlab/plugins/chartist/css/chartist.min.css">
-    <link rel="stylesheet" href="https://demo.themefisher.com/quixlab/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="{{url('/css/chartist.min.css')}}">
+    <link rel="stylesheet" href="{{url('/css/chartist-plugin-tooltip.css')}}">
     <!-- Custom Stylesheet -->
     <link href="https://demo.themefisher.com/quixlab/css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link href="{{url('/css/style.css')}}" rel="stylesheet"> -->
+    
 
+    <script src="{{url('/js/jquery.min.js')}}"></script>
+   
 </head>
 
 <body>
@@ -84,33 +87,33 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="https://demo.themefisher.com/quixlab/plugins/common/common.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/js/custom.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/js/settings.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/js/gleek.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/js/styleSwitcher.js"></script>
+    <script src="{{url('/js/common.min.js')}}"></script>
+    <script src="{{url('/js/custom.min.js')}}"></script>
+    <script src="{{url('/js/settings.js')}}"></script>
+    <script src="{{url('/js/gleek.js')}}"></script>
+    <script src="{{url('/js/styleSwitcher.js')}}"></script>
 
     <!-- Chartjs -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/chart.js/Chart.bundle.min.js"></script>
+    <script src="{{url('/js/Chart.bundle.min.js')}}"></script>
     <!-- Circle progress -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/circle-progress/circle-progress.min.js"></script>
+    <script src="{{url('/js/circle-progress.min.js')}}"></script>
     <!-- Datamap -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/d3v3/index.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/plugins/topojson/topojson.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/plugins/datamaps/datamaps.world.min.js"></script>
+    <script src="{{url('/js/index.js')}}"></script>
+    <script src="{{url('/js/topojson.min.js')}}"></script>
+    <script src="{{url('/js/datamaps.world.min.js')}}"></script>
     <!-- Morrisjs -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/raphael/raphael.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/plugins/morris/morris.min.js"></script>
+    <script src="{{url('/js/raphael.min.js')}}"></script>
+    <script src="{{url('/js/morris.min.js')}}"></script>
     <!-- Pignose Calender -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/moment/moment.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <script src="{{url('/js/moment.min.js')}}"></script>
+    <script src="{{url('/js/pignose.calendar.min.js')}}"></script>
     <!-- ChartistJS -->
-    <script src="https://demo.themefisher.com/quixlab/plugins/chartist/js/chartist.min.js"></script>
-    <script src="https://demo.themefisher.com/quixlab/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{url('/js/chartist.min.js')}}"></script>
+    <script src="{{url('/js/chartist-plugin-tooltip.min.js')}}"></script>
 
 
 
-    <script src="https://demo.themefisher.com/quixlab/js/dashboard/dashboard-1.js"></script>
+    <script src="{{url('/js/dashboard-1.js')}}"></script>
 </body>
 
 </html>

@@ -128,7 +128,7 @@
             </div>
             <br>
             <br>
-
+          
             <h5> Payment information</h5>
             <hr>
                     <div class="table-responsive">
@@ -136,11 +136,11 @@
                             <tbody>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>sub total</strong></th>
-                                    <td>qq</td>
+                                    <td>total</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total </strong></th>
-                                    <td>{{$list->mobile_no}}</td>
+                                    <td>ff</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>qqq</strong></th>

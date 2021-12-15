@@ -2,7 +2,7 @@
 @section('content')
 
  
-@if(auth()->user())
+
         <!-- room-single-block -->
         <section class="room-single-block">
             <div class="content-with-slider">
@@ -125,29 +125,14 @@
                         </ul>
                     </div>
                     <div class="col-lg-5 mt-lg-0 mt-4">
-                        <!-- <img src="{{url('uploads/'.$facility->imaje)}}" alt="" class="img-fluid"> -->
+                       
                         <img src="{{url('uploads/'.$singleroom->image)}}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
             
         </section>
-        @else
-        <!-- <a href="{{route('user.signup')}}" type="button" class="btn btn-primary">login</a> -->
-        <h4 style="color: green;"> Please Login..................... </h4> 
-       
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-        
-       
-        @endif   
+         
 
         
 @endsection

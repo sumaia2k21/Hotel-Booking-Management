@@ -104,9 +104,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/approve_list',[Booking_controller::class,'approved_booking_list'])->name('approved.booking.list');
      Route::get('/cancel_list',[Booking_controller::class,'cancel_booking_list'])->name('cancel.booking.list');
      Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
-     Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
-     Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
-     
+    
      
      
 
@@ -126,6 +124,8 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/manage_staff',[StaffController::class,'managestaff'])->name('staff.list');
 
      //payment
+     Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
+     Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
      Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('payment.list');
 
      //gallary

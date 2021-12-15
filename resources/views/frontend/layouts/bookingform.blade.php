@@ -2,7 +2,7 @@
 @section('content')
 
 
-@if(auth()->user())
+
 
     <section class="w3l-booking-top">
         <!-- /form-16-section -->
@@ -113,21 +113,6 @@
             </div>
         </div>
     </section>
-    @else
-        <!-- <a href="{{route('user.signup')}}" type="button" class="btn btn-primary">login</a> -->
-        <h4 style="color: green;"> Please Login..................... </h4> 
-       
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-        
-       
-        @endif   
+  
 
     @endsection

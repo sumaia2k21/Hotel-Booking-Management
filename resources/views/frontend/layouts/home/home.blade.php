@@ -180,6 +180,7 @@
 <!-- new room -->
 
 <div class="best-rooms w3l-blog py-5">
+
     <div class="container py-lg-5 py-sm-4">
         <div class="ban-content-inf row">
             @foreach($addroom as $data)
@@ -214,7 +215,7 @@
 
                         </ul>
                         <h4></h4>
-
+                      
                         <div class="room-info-bottom">
                             <a href="{{route('bookingform',$data->id)}}" class="btn view">Book Now</a>
                             <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
@@ -271,13 +272,13 @@
     var today = new Date().toISOString().split('T')[0];
 document.getElementById("date1").setAttribute('min', today);
 
-alert("min Data " + today)
+// alert("min Data " + today)
 </script>
 <script>
     var today = new Date().toISOString().split('T')[0];
 document.getElementById("date2").setAttribute('min', today);
 
-alert("min Data " + today)
+// alert("min Data " + today)
 </script>
 
 

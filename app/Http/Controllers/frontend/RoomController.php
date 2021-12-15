@@ -19,13 +19,15 @@ class RoomController extends Controller
     }
     public function single_room($id)
     {
-        //dd($id);
+        if (auth()->user()) {
         $room=Catagory::find($id);
         $facility=Facility::find($id);
         $singleroom=Room::find($id);
         $gallery=Gallary::find($id);
         return view('frontend.layouts.room.single_room_view',compact('singleroom','room','facility','gallery'));
-       
+    } else {
+        return redirect()->back()->with('message','You need to login first');
+      }
     }
     public function all_room()
     {

@@ -91,7 +91,7 @@
                            
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
+                    <!-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
                             <span class="nav-text">coupon</span>
@@ -100,7 +100,7 @@
                             <li><a href="{{route('addcoupon')}}">add coupon</a></li>
                             <li><a href="{{route('coupon.store')}}">view coupon</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-h-square" aria-hidden="true"></i>

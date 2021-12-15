@@ -13,6 +13,7 @@ class BookingController extends Controller
 {
     public function bookingform($id)
     { 
+        if (auth()->user()) {
        
          $bookingform=Auth::user();
         $room = Room::find($id);
@@ -20,6 +21,9 @@ class BookingController extends Controller
         $value = session()->all(); //extracting all data from session
         //  dd($value);
          return view('frontend.layouts.bookingform',compact('room','bookingform','payment','value'));
+        } else {
+            return redirect()->back()->with('message','You need to login first');
+          }
     }
     
     public function bookingstore(Request $request)
@@ -38,30 +42,12 @@ class BookingController extends Controller
         $diff_in_days = $to_date->diffInDays($from_date);
 
         $room=Room::find($request->room_id);
-        if(!$isBooked && auth()->user()->id !=1)
+        if(auth()->user()->id !=1)
         {
 
-            Book::Create([ 
-               'room_id'=>$request->room_id,
-               'name'=>$request->name,
-               'user_id'=>Auth::id(),
-               'mobile_no'=>$request->mobile_no,
-               'email'=>$request->email,
-               'address'=>$request->address,
-               'from_date'=>$request->from_date,
-               'to_date'=>$request->to_date,
-               'total_ammount'=>$diff_in_days*$room->price,
-               'discount'=>$request->discount,
-               'discount_price'=>$request->discount_price,
-               'status'=>$request->status
-           ]);return redirect()->route('mybooking.status')->with('message','booking successful.');
-        }else{
-         return redirect()->back()->with('message','Room not available on this dates.');
-        }
-        if(!$isBooked )
-        {
-            
-            Book::Create([ 
+                if(!$isBooked )
+                {
+                Book::Create([ 
                 'room_id'=>$request->room_id,
                 'name'=>$request->name,
                 'user_id'=>Auth::id(),
@@ -74,10 +60,13 @@ class BookingController extends Controller
                 'discount'=>$request->discount,
                 'discount_price'=>$request->discount_price,
                 'status'=>$request->status
-            ]);
-            return redirect()->back()->with('message','booking successful.');
-        }
-        else{
+                    ]);
+                    return redirect()->route('mybooking.status')->with('message','booking successful.');
+                }else{
+                    return redirect()->back()->with('message','Room not available on this dates.');
+                 }
+        
+            }else{
          return redirect()->back()->with('message','Admin can not book room ');
         }
     }
