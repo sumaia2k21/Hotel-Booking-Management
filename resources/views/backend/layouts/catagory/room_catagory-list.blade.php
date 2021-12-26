@@ -24,8 +24,8 @@
                 
                 <td>{{$data->room_number}}</td>
                 
-                
-                <td>{{$data->Price}}</td>
+
+                <td>{{$data->price}}</td>
 
             </tr>
             @endforeach()

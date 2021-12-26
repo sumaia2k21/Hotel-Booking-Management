@@ -10,8 +10,7 @@
 <table class="table table-striped table-hover">
     <thead >
          <th scope="col">sl</th>
-            <th scope="col">name</th>
-            <th scope="col">path</th>
+           
             <th scope="col">image</th>
             
             
@@ -22,10 +21,11 @@
             @foreach($images as $data)
             <tr>
                 <td>{{$data->id}}</td>  
-                <td>{{$data->name}}</td>
-                <td>{{$data->path}}</td>  
+               
                 <td>
+                @foreach(collect($data->images) ?? [] as $image)
                 <img src="{{url('/uploads/'.$data->images)}}"width="40px" alt="images">
+                @endforeach
                 </td>
                
             </tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Catagory;
 use App\Models\Facility;
+use App\Models\Roomamenities;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class Room_controller extends Controller
      public function manage_room()
      {
           $newroomlist=Room::with('catagory','roomamenities')->paginate(8);
-          
+          // $amenities = Roomamenities::with('roomamenities')->paginate(8);
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
 
@@ -33,6 +34,7 @@ public function roomlist(Request $newroomlist){
      
      // dd($newroomlist->all());
      // dd(date('Ymdhms').'.'.$newroomlist->file('image')->getClientOriginalExtension());
+   
      $fileName='';
      if($newroomlist->hasFile('image'))
      {
@@ -44,7 +46,7 @@ public function roomlist(Request $newroomlist){
           $file->storeAs('/uploads',$fileName);
      }
 
-     Room::Create([
+    $room = Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
           'room_name'=>$newroomlist->room_name,
           'room_number'=>$newroomlist->room_number,
@@ -59,6 +61,16 @@ public function roomlist(Request $newroomlist){
           
 
      ]);
+
+     foreach($newroomlist->facilities_id as $am)
+     {
+       
+     Roomamenities::create([
+         'room_id'=>$room->id,
+         'facilities_id'=>$am
+       ]);
+
+     }
      return redirect()->route('manage_room');
      }
      //delete here
@@ -101,7 +113,7 @@ public function roomlist(Request $newroomlist){
           foreach($newroomlist->facilities_id as $am)
           {
             
-            Facility::create([
+               Roomamenities::create([
               'room_id'=>$room->id,
               'facilities_id'=>$am
             ]);

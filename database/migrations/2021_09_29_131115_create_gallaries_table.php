@@ -15,9 +15,8 @@ class CreateGallariesTable extends Migration
     {
         Schema::create('gallaries', function (Blueprint $table) {
             $table->id();
-            $table->string('image1');
-            $table->text('img_src')->nullable();
-            $table->text('img_alt')->nullable();
+            $table->string('image');
+           
            
            
             $table->timestamps();

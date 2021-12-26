@@ -68,16 +68,27 @@
                             <option>5</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="name">Select Amenities</label>
-                        <select multiple="multiple" class="form-control" name="facilities_id[]" id="">
+                        <select multiple="multiple"  class="form-control" name="facilities_id[]" id="">
                         @foreach($amenities as $data)
                         <option value="{{$data->id}}">{{$data->facility_title}}</option>
                         @endforeach
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
-
+                        <label for="name">Select Amenities</label>
+                        @foreach($amenities as $data)
+                        <div class="form-check">
+                        <input class="form-check-input" multiple="multiple" type="checkbox" value="{{$data->id}}" id="flexCheckDefault"name="facilities_id[]">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        {{$data->facility_title}}
+                        </label>
+                        </div>
+                        @endforeach
+                        </div>
+                <br>
+                 <div class="form-group">
                         <label for="exampleFormControlFile1">Image</label>
                         <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
                     </div>

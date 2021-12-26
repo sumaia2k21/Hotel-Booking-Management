@@ -41,7 +41,8 @@
                 <td>
                  
                 <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
-                    <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
+                    <a onclick="return confirm('Are you sure you want to delete this item?');"
+                     href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
 
                 </td>
 

@@ -49,6 +49,8 @@ Route::post('/admin/loginpost',[UserController ::class,'loginpost'])->name('admi
 Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
 
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
+     // Route::get('/Css',[mastercontroller ::class,'master_css'])->name('master_css');
+     
      // Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
      Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
 
@@ -132,6 +134,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
      Route::post('/gallaries/post',[Gallary_Controller::class,'gallaries_post'])->name('gallaries.post');
      Route::get('/gallery/table',[Gallary_Controller::class,'gallerytable'])->name('gallerystore');
+     Route::get('/gallery/table/{id}',[Gallary_Controller::class,'delete'])->name('gallery.delete');
      //test multiple image upload
      Route::get('images', [ ImageController::class, 'image' ])->name('images');
      Route::post('images', [ ImageController::class, 'store' ])->name('images.store');

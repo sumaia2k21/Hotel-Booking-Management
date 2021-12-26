@@ -43,9 +43,12 @@ class mastercontroller extends Controller
     {
          return view('test');
     }
-    
+   
   
-
+//     public function  master_css()
+//     {
+//          return view('backend.layouts.masterCss');
+//     }
 
    
     

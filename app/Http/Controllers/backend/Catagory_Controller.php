@@ -67,11 +67,11 @@ public function allRoom($id)
     }
     public function catagory_under_room($id)
     {
-    
+     $room=Catagory::get()->take(4);
      $catagory_room_view=Catagory::with('rooms')->find($id);
      
      // dd($rooms);
-         return view('frontend.layouts.room.catagory_under_room',compact('catagory_room_view'));
+         return view('frontend.layouts.room.catagory_under_room',compact('catagory_room_view','room'));
     }
     public function delete($id)
 {

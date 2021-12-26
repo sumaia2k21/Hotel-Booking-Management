@@ -51,7 +51,7 @@
                 <td>{{$newroom->room_description}} </td>
                 <td>
                      @foreach($newroom->roomamenities as $data)
-                    <span class="badge alert-success">{{$data->amenity->facility_title}}</span>
+                    <span class="badge alert-success">{{optional($data->facility)->facility_title}}</span>
                     @endforeach
                 </td>
                 <td>

@@ -1,6 +1,36 @@
 @extends('frontend.index')
 @section('content')
-
+<!-- category -->
+<!-- <section class="w3l-servicesblock1" id="service">
+    <div class="features-with-17_sur py-5">
+        <div class="container py-lg-5 py-sm-4">
+            <h2 style="text-align: center;"> Room Type</h2>
+            <div class="features-with-17-top_sur">
+                <div class="row">
+                @foreach($room as $showcatagory)
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                        <div class="features-with-17-right-tp_sur">
+                            <div class="features-with-17-left1">
+                            <h6><a href="{{route('catagory-under-room',$showcatagory->id)}}">{{$showcatagory->catagory_title}}</a></h6>
+                            </div>
+                            <div class="features-with-17-left2">
+                            <a href="{{route('catagory-under-room',$showcatagory->id)}}" > 
+                          
+                            <h6>price# {{$showcatagory->price}}</h6>
+                           
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
+                            tempora voluptates?</p>
+                           
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- end category -->
 
 
 

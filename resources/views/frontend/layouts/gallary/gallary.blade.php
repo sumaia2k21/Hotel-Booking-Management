@@ -14,7 +14,7 @@
                             <div class="features-with-17-left2">
                             
                             {{$data->name}}
-                                <img class="img-fluid" src="{{url('uploads/'.$data->image1)}}" alt="">
+                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
                              </div>
                         </div>
                     </div>
