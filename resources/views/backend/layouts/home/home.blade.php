@@ -138,7 +138,7 @@
         
     </div>
 
-    <div class="col-lg-3 col-sm-6">
+    <!-- <div class="col-lg-3 col-sm-6">
         <div class="card gradient-2">
             <div class="card-body">
                 <h3 class="card-title text-white">Total user</h3>
@@ -151,7 +151,7 @@
             </div>
         </div>
         
-    </div>
+    </div> -->
 
 </div>
 

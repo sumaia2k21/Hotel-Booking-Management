@@ -16,11 +16,14 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('book_id');
-            $table->string('total_ammount');
-            $table->string('pay_ammount');
+            $table->integer('total_ammount');
+            $table->integer('discount');
+            $table->integer('discount_price');
+            $table->integer('pay_ammount');
             $table->string('payment_type');
             $table->string('transection');
             $table->string('payment_date');
+            $table->string('due');
             $table->timestamps();
         });
     }

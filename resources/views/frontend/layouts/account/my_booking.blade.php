@@ -47,7 +47,7 @@
                 <td>{{$list->discount_price}}</td>
                 <td>{{$list->status}}</td>
                 
-                <td><a href="{{route('invoice',$list->id)}}" type="button" class="btn btn-primary">invoice</a>
+                <td><a href="{{route('invoice',$list->id)}}" type="button" class="btn btn-primary">booking details</a>
                    </td>
                 
             </tr>
@@ -57,7 +57,7 @@
     
     
 </div>
-<a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a>
+<!-- <a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a> -->
 <br>
 <br>
 <br>

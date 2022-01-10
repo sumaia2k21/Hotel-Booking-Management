@@ -120,9 +120,40 @@
                             @endforeach
                         </tbody>
                     </table>
+                    
                    
                   
                     </div>
+                    <br>
+                    <div class="col-md-6">
+                    @foreach($pay as $pays)
+                    <h5>Payment details</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
+                                    <td>{{$pays->total_ammount}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Discount:</strong></th>
+                                    <td>{{$pays->discount}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Pay Amount:</strong></th>
+                                    <td>{{$pays->pay_ammount}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Due:</strong></th>
+                                    <td>{{$pays->due}}</td>
+                                </tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @endforeach
+                </div>
                 </div>
             </div>
 

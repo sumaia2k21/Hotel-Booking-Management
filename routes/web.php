@@ -130,6 +130,9 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
      Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('payment.list');
 
+     Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('payment.edit');
+     Route::put('/payment/update/{id}',[PaymentController::class,'update'])->name('payment.update');
+
      //gallary
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
      Route::post('/gallaries/post',[Gallary_Controller::class,'gallaries_post'])->name('gallaries.post');
@@ -220,6 +223,7 @@ Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybookin
 
 Route::get('/invoice/{id}',[BookingController::class,'invoice'])->name('invoice');
 Route::get('/testinvoice',[BookingController::class,'testinvoice'])->name('testinvoice');
+Route::get('/approveinvoice/{id}',[BookingController::class,'approve_invoice'])->name('invoice.approve');
 
 //catagory under room (frontend)
 Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');

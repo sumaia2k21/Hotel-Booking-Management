@@ -16,6 +16,14 @@
                 <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount">
             </div>
             <div class="form-group">
+                <label for="smallInput">discount</label>
+                <input type="text"  value="{{$book->discount}}"class="form-control"  name="discount" id="Price" placeholder="total_ammount">
+            </div>
+            <div class="form-group">
+                <label for="smallInput">discount_price</label>
+                <input type="text"  value="{{$book->discount_price}}"class="form-control"  name="discount_price" id="Price" placeholder="total_ammount">
+            </div>
+            <div class="form-group">
                 <label for="smallInput">pay_ammount</label>
                 <input type="text" class="form-control" name="pay_ammount" id="pay_ammount" placeholder="pay_ammount">
             </div>

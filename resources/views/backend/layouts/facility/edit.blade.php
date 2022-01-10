@@ -3,7 +3,7 @@
 
 <br>
 
-<h2 style="background: #cccccc">Add Facilities</h2>
+<h2 style="background: #cccccc">update Facilities</h2>
 <div class="card">
     
     <div class="card-body">

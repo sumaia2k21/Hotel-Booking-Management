@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Book;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -87,8 +88,8 @@ class BookingController extends Controller
        
         $user=Book::where('user_id',Auth::id())->get()->take(1);
         $bookinginfo=Book::where('id',$id)->get();
-       
-        return view('frontend.layouts.account.invoice',compact('bookinginfo','user') ); 
+       $pay=Payment::where('id',$id)->get();
+        return view('frontend.layouts.account.invoice',compact('bookinginfo','user','pay') ); 
     }
     public function testinvoice()
     {

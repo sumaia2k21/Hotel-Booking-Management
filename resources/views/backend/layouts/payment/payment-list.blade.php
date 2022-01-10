@@ -21,6 +21,7 @@
                     <th scope="col">payment type</th>
                     <th scope="col">transection</th>
                     <th scope="col">payment date</th>
+                    <th scope="col">action</th>
                 </thead>
                 <tbody>
                 @foreach($pay as $data)
@@ -32,6 +33,11 @@
                 <td>{{$data->payment_type}}</td>
                 <td>{{$data->transection}}</td>
                 <td>{{$data->payment_date}}</td>
+                <td>
+                    <a href="{{route('payment.edit',$data->id)}}" class="btn btn-success">edit</a>
+                    
+
+                </td>
                 
                
                 
