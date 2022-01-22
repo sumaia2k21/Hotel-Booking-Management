@@ -7,6 +7,10 @@
         <form action="{{route('payment.update',$payment->id)}}" method="post" enctype="multipart/form-data">
         @method('put')
         @csrf
+        <div class="form-group">
+                <label for="smallInput">discount_price</label>
+                <input type="text"  value="{{$payment->discount_price}}"class="form-control"  name="discount_price" id="Price" placeholder="total_ammount" readonly>
+            </div>
             <div class="form-group">
                 <label for="smallInput">pay_ammount</label>
                 <input type="text" value="{{$payment->pay_ammount}}"  class="form-control" name="pay_ammount" id="pay_ammount" placeholder="pay_ammount">

@@ -20,20 +20,7 @@
                                         width="450px">
                                 </figure>
                             </div>
-
-                            <!-- <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item">
-                                            <img src="{{url('uploads/'.$data->image1)}}"
-                                            class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
+                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -58,12 +45,18 @@
                                     <td>{{$data->no_of_bed}}</td>
                                 </tr>
                                 <th class="pl-0 w-25" scope="row"><strong>price</strong></th>
-                                <td>{{$data->price}} tk</td>
+                                <td>{{$data->price}} TK</td>
                                 </tr>
                                 <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
-                                <td>{{$data->discount}} tk</td>
+                                <td>{{$data->discount}} %</td>
                                 </tr>
+                                <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
+                                <td><del>{{$data->price}} TK</del>     {{$data->discount_price}} TK</td>
+                                </tr>
+                               
+                               
                             </tbody>
                         </table>
                     </div>

@@ -30,8 +30,6 @@
                         <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number">
                     </div>
                     
-
-
                     <div class="form-group">
                         <label for="squareSelect">Max Adults</label>
                         <select class="form-control input-square" name="max_adult" id="squareSelect">
@@ -52,11 +50,6 @@
                             <option>5</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="largeInput">Room Description</label>
-                        <textarea type="text" class="form-control form-control"name="room_description" id="Description" placeholder="Description">
-                        </textarea>
-                    </div>
 
                     <div class="form-group">
                         <label for="squareSelect">No of bed</label>
@@ -68,6 +61,19 @@
                             <option>5</option>
                         </select>
                     </div>
+                    <!-- <div class="form-group">
+                        <label for="largeInput">price</label>
+                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
+                    </div> -->
+
+                   
+                    <div class="form-group">
+                        <label for="largeInput">Room Description</label>
+                        <textarea type="text" class="form-control form-control"name="room_description" id="Description" placeholder="Description">
+                        </textarea>
+                    </div>
+
+                   
                     <!-- <div class="form-group">
                         <label for="name">Select Amenities</label>
                         <select multiple="multiple"  class="form-control" name="facilities_id[]" id="">
@@ -94,14 +100,7 @@
                     </div>
                    
                    
-                    <div class="form-group">
-                        <label for="largeInput">price</label>
-                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="largeInput">discount</label>
-                        <input type="text" class="form-control form-control"name="discount" id="Description" placeholder="">
-                    </div>
+                    
 
                     <div class="form-group">
                         <label for="squareSelect">status</label>

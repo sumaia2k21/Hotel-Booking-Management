@@ -10,13 +10,18 @@
                 
                     <div class="content-photo-1 d-grid">
                         <div class="content-photo-left text-center">
+                            
+                        
                             <h4>{{$singleroom->catagory->catagory_title}} Room</h4>
                             
                             <h6>{{$singleroom->catagory->catagory_title}} </h6>
                             <div class="border-line">
                                 <div class="bg">
-                                    <span class="price">{{$singleroom->price}} TK</span>
+                                    <span class="price">{{$singleroom->discount_price}} TK</span>
+                                    <p class="price"><del>{{$singleroom->price}} TK</del></p>
+                                    
                                     <p> Per night</p>
+                                   
                                 </div>
                                 <div class="book-btn px-2">
                                     <a href="{{route('bookingform',$singleroom->id)}}" class="btn btn-style btn-secondary mt-3">Book Now</a>
@@ -89,6 +94,7 @@
 
                         <p class="roomsingle mt-3">{{$singleroom->room_description}}
                             </p>
+                           
                     </div>
                 </div>
             </div>

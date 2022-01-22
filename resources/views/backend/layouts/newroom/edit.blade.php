@@ -13,15 +13,7 @@
                     @method('put')
                         @csrf
 
-                    <div class="form-group">
-                        <label for="largeSelect">Catagory Title</label>
-                        <select class="form-control form-control-lg"name="catagory_title" id="Catagory Title">
-                            @foreach($catagory as $cat)
-                            <option value="{{$cat->id}}">{{$cat->catagory_title}} </option>
-                            @endforeach
-                        </select>
- 
-                    </div>
+                    
                     <div class="form-group">
                         <label for="largeInput">Room name</label>
                         <input type="text" value="{{$room->room_name}}" class="form-control form-control"name="room_name" id="Description" placeholder="Room Name">
@@ -78,16 +70,7 @@
                     </div>
                     
                    
-                    <div class="form-group">
-                        <label for="largeInput">price</label>
-                        
-                        <input type="text" value="{{$room->price}}" class="form-control form-control"name="price" id="Description" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="largeInput">discount</label>
-                        
-                        <input type="text" value="{{$room->discount}}" class="form-control form-control"name="discount" id="Description" placeholder="">
-                    </div>
+                   
                    
                      <div class="form-group">
                         <label for="squareSelect">status</label>

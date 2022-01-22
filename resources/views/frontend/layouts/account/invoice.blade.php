@@ -66,8 +66,8 @@
 
                             <th scope="col">Booking number</th>
                             <th scope="col">From date</th>
-                            <th scope="col">to date</th>
-                            <th scope="col"> Ammount</th>
+                            <th scope="col">To date</th>
+                            <th scope="col">  Discount Ammount</th>
                             <th scope="col">Status</th>
                             
                             <th scope="col"></th>
@@ -95,10 +95,10 @@
                             <!-- <th scope="col">room Type or category</th> -->
                             <th scope="col">Room number</th>
                             <th scope="col">Room name</th>
-                            <th scope="col">max_adult</th>
-                            <th scope="col">max_child</th>
+                            <th scope="col">Maximum_adult</th>
+                            <th scope="col">Maximum_child</th>
                             <th scope="col">no_of_bed</th>
-                            <th scope="col">image</th>
+                            <th scope="col">Image</th>
 
                             </tr>
                             </tr>
@@ -133,19 +133,19 @@
                             <tbody>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
-                                    <td>{{$pays->total_ammount}}</td>
+                                    <td><del>{{$pays->total_ammount}}</del> /=</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Discount:</strong></th>
-                                    <td>{{$pays->discount}}</td>
+                                    <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
+                                    <td>{{$pays->discount_price}} /=</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Pay Amount:</strong></th>
-                                    <td>{{$pays->pay_ammount}}</td>
+                                    <td>{{$pays->pay_ammount}} /=</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Due:</strong></th>
-                                    <td>{{$pays->due}}</td>
+                                    <td>{{$pays->due}} /=</td>
                                 </tr>
 
                                 </tr>

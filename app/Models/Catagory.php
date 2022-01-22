@@ -13,7 +13,11 @@ class Catagory extends Model
 
      public function rooms()
     {
-         return $this->hasMany(Room::class);
+         return $this->belongsTo(Room::class,'catagory_id','id');
      }
+    //  public function discount()
+    // {
+    //      return $this->hasMany(Discount::class);
+    //  }
     
 }

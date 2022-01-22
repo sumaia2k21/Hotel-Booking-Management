@@ -18,14 +18,15 @@ class CreateNewroomsTable extends Migration
             $table->foreignId('catagory_id');
             $table->string('room_name');
             $table->string('room_number')->unique();
-            $table->string('max_adult');
-            $table->string('max_child');
+            $table->string('max_adult')->nullable();
+            $table->string('max_child')->nullable();
             $table->string('room_description');
-            $table->string('no_of_bed');
+            $table->string('no_of_bed')->nullable();
             $table->string('image');
-             $table->string('price');
-             $table->string('discount')->nullable();
-             $table->string('status')->nullable();
+             $table->string('price')->nullable();
+             $table->string('discount_price')->nullable();
+             $table->integer('discount')->default(0);
+             $table->string('status')->default('active');
 
             $table->timestamps();
         });

@@ -8,22 +8,20 @@
 <br>
 
 @if(session()->has('message'))
-    <span class="alert alert-success">
-        {{ session()->get('message') }}
-	</span>
-@endif  
-
+<span class="alert alert-success">
+    {{ session()->get('message') }}
+</span>
+@endif
 <div class="card">
-<table class="table table-bordered">
-  <thead class="thead-light">
-
-            <th scope="col">sl</th>
-            <th scope="col">Catagory Title</th>
-            <th scope="col">image</th>
-            <th scope="col">description</th>
-            <th scope="col">price</th>
-            <th scope="col">Action</th>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+             <th scope="col">Sl</th>
+            <th scope="col">Category Title</th>
+            <th scope="col">Image</th>
+            <th scope="col">Description</th>
+            <th scope="col">Discount</th>
             
+            <th scope="col">Action</th>
         </thead>
         <tbody>
             @foreach($catagorylist as $catagory)
@@ -32,27 +30,23 @@
                 <td>{{$catagory->id}}</td>
                 <td>{{$catagory->catagory_title}}</td>
                 <td>
-                    <img src="{{url('/uploads/'.$catagory->image)}}"width="40px" alt="image">
-
+                    <img src="{{url('/uploads/'.$catagory->image)}}" width="40px" alt="image">
                 </td>
                 <td>{{$catagory->description}}</td>
-                <td>{{$catagory->price}}</td>
-                
+                <td>{{$catagory->discount}}%</td>
+                <!-- <td>{{$catagory->status}}</td> -->
                 <td>
-                 
-                <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
+                <!-- <a href="{{route('discount.confirmation',$catagory->id)}}" class="btn btn-success">discount</a> -->
+                       <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
+                       <a href="{{route('catagory.edit',$catagory->id)}}" class="btn btn-success">edit</a>
                     <a onclick="return confirm('Are you sure you want to delete this item?');"
-                     href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
-
+                        href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
                 </td>
-
-                <!-- <a type="button" class="btn btn-primary">Primary</a> -->
-
             </tr>
             @endforeach()
         </tbody>
     </table>
-   {{$catagorylist->links('pagination::bootstrap-4')}} 
+    {{$catagorylist->links('pagination::bootstrap-4')}}
 </div>
 
 @endsection

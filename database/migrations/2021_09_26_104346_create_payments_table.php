@@ -17,13 +17,13 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->string('book_id');
             $table->integer('total_ammount');
-            $table->integer('discount');
             $table->integer('discount_price');
             $table->integer('pay_ammount');
             $table->string('payment_type');
             $table->string('transection');
             $table->string('payment_date');
-            $table->string('due');
+            $table->integer('due')->default(0);
+            $table->string('payment_status')->default('unpaid');
             $table->timestamps();
         });
     }

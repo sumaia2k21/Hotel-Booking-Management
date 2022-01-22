@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\Booking_controller;
 use App\Http\Controllers\backend\Catagory_Controller;
 use App\Http\Controllers\backend\CouponController;
+use App\Http\Controllers\backend\Discount_Controller;
 use App\Http\Controllers\backend\Facilities_controller;
 use App\Http\Controllers\backend\FileController;
 use App\Http\Controllers\backend\Gallary_Controller;
@@ -18,6 +19,7 @@ use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\frontend\About_controller;
 use App\Http\Controllers\frontend\BookingController;
 use App\Http\Controllers\frontend\Contact_controller;
+use App\Http\Controllers\Frontend\DiscountController;
 use App\Http\Controllers\frontend\GallaryController;
 use App\Http\Controllers\frontend\indexcontroller;
 use App\Http\Controllers\frontend\Main_controller;
@@ -49,14 +51,9 @@ Route::post('/admin/loginpost',[UserController ::class,'loginpost'])->name('admi
 Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
 
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
-     // Route::get('/Css',[mastercontroller ::class,'master_css'])->name('master_css');
-     
-     // Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
      Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
 
     Route::group(['middleware'=>'role'],function(){
-
-   
      //admin start
      Route::get('/',[mastercontroller ::class,'master'])->name('master');
      Route::get('/dashboard',[mastercontroller ::class,'dashboard'])->name('dashboard');
@@ -68,8 +65,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      //Catagory start
      Route::get('/add_catagory',[Catagory_Controller::class,'add_catagory'])->name('add_catagory');
      Route::post('/catagory_list',[Catagory_Controller::class,'catagory_list'])->name('catagory_list');
+     Route::get('/catagory/edit/{id}',[Catagory_Controller::class,'edit'])->name('catagory.edit');
+     Route::put('/catagory/{id}/update',[Catagory_Controller::class,'update'])->name('catagory.update');
      Route::get('/catagory/delete/{id}',[Catagory_Controller::class,'delete'])->name('catagory.delete');
      Route::get('/manage_catagory',[Catagory_Controller::class,'manage_catagory'])->name('manage_catagory');
+     Route::get('/discount/{id}',[Catagory_Controller::class,'confirmation'])->name('discount.confirmation');
+     Route::get('/discount/active/{id}',[Catagory_Controller::class,'active'])->name('discount.active');
+     Route::get('/discount/cancel/{id}',[Catagory_Controller::class,'cancel'])->name('discount.cancel');
      //catagory under room start
      Route::get('/catagory/{id}/rooms',[Catagory_Controller::class,'allRoom'])->name('catagory.room');
      
@@ -89,8 +91,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/room/edit/{id}',[Room_controller::class,'edit'])->name('room.edit');
      Route::put('/room/update/{id}',[Room_controller::class,'update'])->name('room.update');
       Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
-      Route::get('/booking_search',[Search_Controller::class,'booking_search'])->name('booking.search');
-
+      
      //page start
      Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
      Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
@@ -106,7 +107,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/approve_list',[Booking_controller::class,'approved_booking_list'])->name('approved.booking.list');
      Route::get('/cancel_list',[Booking_controller::class,'cancel_booking_list'])->name('cancel.booking.list');
      Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
-    
+
+
+     Route::get('/booking_search',[Search_Controller::class,'booking_search'])->name('booking.search');
+     Route::get('/bookingno_search',[Search_Controller::class,'bookingno_search'])->name('booking.search.no');
+
+
+
      
      
 
@@ -127,11 +134,13 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
 
      //payment
      Route::get('/paymentform/{id}',[PaymentController::class,'paymentform'])->name('payment.form');
-     Route::post('/payment/post',[PaymentController::class,'payment_store'])->name('payment.store');
+     Route::post('/payment/post/{id}',[PaymentController::class,'payment_store'])->name('payment.store');
      Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('payment.list');
 
+     Route::get('/payment/delete/{id}',[PaymentController::class,'delete'])->name('payment.delete');
      Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('payment.edit');
      Route::put('/payment/update/{id}',[PaymentController::class,'update'])->name('payment.update');
+     Route::get('/payment/report/{id}',[PaymentController::class,'report'])->name('payment.report');
 
      //gallary
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
@@ -143,13 +152,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::post('images', [ ImageController::class, 'store' ])->name('images.store');
      Route::get('images/table', [ ImageController::class, 'images_table' ])->name('images.table');
 
-
-     //coupon code
-     Route::get('addcoupon', [ CouponController::class, 'addcoupon' ])->name('addcoupon');
-     Route::post('coupon/post', [ CouponController::class, 'coupon_post' ])->name('coupon.post');
-     Route::get('editcoupon', [ CouponController::class, 'editcoupon' ])->name('editcoupon');
-     Route::get('coupon/table', [ CouponController::class, 'coupon_store' ])->name('coupon.store');
-
+    
 
      }); 
      
@@ -226,7 +229,7 @@ Route::get('/testinvoice',[BookingController::class,'testinvoice'])->name('testi
 Route::get('/approveinvoice/{id}',[BookingController::class,'approve_invoice'])->name('invoice.approve');
 
 //catagory under room (frontend)
-Route::get('/category_wise-room/{id}',[Catagory_Controller::class,'catagory_under_room'])->name('catagory-under-room');
+Route::get('/category_wise-room/{id}',[RoomController::class,'catagory_under_room'])->name('catagory-under-room');
 // single room view
 Route::get('/single-room-view/{id}',[RoomController::class,'single_room'])->name('single.room.view');
 Route::get('/allroom',[RoomController::class,'all_room'])->name('all.room.view');

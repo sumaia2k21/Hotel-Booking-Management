@@ -31,7 +31,7 @@
                                 <div class="twice">
                                     <input type="hidden" name="room_id" value="{{$room->id}}">
                                     <input type="text" name="name" id="firstName" placeholder="Full Name"
-                                        value="{{$bookingform->name}}" class="form-control" required="">
+                                         class="form-control" required="">
                                 </div>
                                 <div class="twice">
                                     <input readonly type="text" value="{{$room->room_number}}" id="firstName"
@@ -39,12 +39,12 @@
                                 </div>
                                 <div class="twice">
                                     <input type="text" name="mobile_no" id="firstName" placeholder="Mobile_no"
-                                        value="{{$bookingform->mobile}}" class="form-control">
+                                         class="form-control">
                                 </div>
                                 <div class="twice">
 
                                     <input type="email" name="email" id="email" placeholder="Email"
-                                        value="{{$bookingform->email}}" class="form-control">
+                                       class="form-control">
                                 </div>
                                 <div class="twice">
                                     <textarea type="text" name="address" id="address" placeholder="Address"
@@ -52,13 +52,13 @@
                                 </div>
                                 <div class="twice">
                                     <label>From date</label>
-                                    <input value="{{$value[1]}}" type="date" class="form-control" name="from_date"
-                                        placeholder="Date" required="">
+                                    <input value="{{$value[1]}}" type="date"  id="date1"  class="form-control" name="from_date"
+                                        placeholder="Date" required="" />
                                 </div>
                                 <div class="twice">
                                     <label>To date</label>
-                                    <input value="{{$value[3]}}" type="date" class="form-control" name="to_date"
-                                        placeholder="Date" required="">
+                                    <input value="{{$value[3]}}" type="date" id="date2"  class="form-control" name="to_date"
+                                        placeholder="Date" required=""/>
                                 </div>
 
                                 @php
@@ -72,24 +72,23 @@
                                 // dd($days);
                                 $p=(int)$room->price;
                                 $total=$days*$p;
-                                // dd($total);
+                                $discount= $total-$room->discount/100*$total;
+                                //dd($discount);
                                 @endphp
 
                                 <div class="twice">
-                                    <label>total Ammount</label>
+                                    <label>Total Ammount</label>
                                     <input value="{{$total}}" class="form-control" type="number" name="total_ammount"
                                         required="" readonly>
                                 </div>
                                 <div class="twice">
-                                    <label>discount</label>
+                                    <label>Discount %</label>
                                     <input value="{{$room->discount}}"   class="form-control" type="number" name="discount"
                                         required="" readonly>
                                 </div>
-                               @php
-                               $discount = $total - $room->discount;
-                               @endphp
+                               
                                 <div class="twice">
-                                    <label>discount price</label>
+                                    <label>Discount price</label>
                                     <input readonly class="form-control" type="number" name="discount_price"
                                         required="" value="{{$discount}}" >
                                 </div>
@@ -113,6 +112,19 @@
             </div>
         </div>
     </section>
+
+    <script>
+    var today = new Date().toISOString().split('T')[0];
+document.getElementById("date1").setAttribute('min', today);
+
+// alert("min Data " + today)
+</script>
+<script>
+    var today = new Date().toISOString().split('T')[0];
+document.getElementById("date2").setAttribute('min', today);
+
+// alert("min Data " + today)
+</script>
   
 
     @endsection

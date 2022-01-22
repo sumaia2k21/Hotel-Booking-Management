@@ -20,18 +20,18 @@
         <thead>
 
             <th scope="col">sl</th>
-            <th scope="col">catagory title</th>
-            <th scope="col">room_name</th>
-            <th scope="col">room_number</th>
-            <th scope="col">max_adult</th>
-            <th scope="col">max_child</th>
-            <th scope="col">no_of_bed</th>
-            <th scope="col">room_description</th>
+            <th scope="col">Category title</th>
+            <th scope="col">Room Name</th>
+            <th scope="col">Room Number</th>
+            <th scope="col">Maximum Adult</th>
+            <th scope="col">Maximum Child</th>
+            <th scope="col">No of bed</th>
+            
             <th scope="col">Amenities</th>
             <th scope="col">Image</th>
-            <th scope="col">price</th>
-            <th scope="col">discount</th>
-            <th scope="col">status</th>
+            <th scope="col">Price</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
             </tr>
             </tr>
@@ -48,7 +48,7 @@
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
                 <td>{{$newroom->no_of_bed}}</td>
-                <td>{{$newroom->room_description}} </td>
+            
                 <td>
                      @foreach($newroom->roomamenities as $data)
                     <span class="badge alert-success">{{optional($data->facility)->facility_title}}</span>
@@ -57,8 +57,8 @@
                 <td>
                     <img src="{{url('/uploads/'.$newroom->image)}}"width="40px" alt="image">
                 </td>
-                <td>{{$newroom->price}}</td>
-                <td>{{$newroom->discount}}</td>
+                <td>{{$newroom->catagory->price}}</td>
+                <td>{{$newroom->catagory->discount}}%</td>
                 <td>{{$newroom->status}}</td>
                 <td>
                   

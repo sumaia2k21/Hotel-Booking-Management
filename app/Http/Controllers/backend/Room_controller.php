@@ -32,9 +32,10 @@ class Room_controller extends Controller
 
 public function roomlist(Request $newroomlist){
      
-     // dd($newroomlist->all());
-     // dd(date('Ymdhms').'.'.$newroomlist->file('image')->getClientOriginalExtension());
    
+     $discount=Catagory::find($newroomlist->catagory_title);
+     //dd($discount);
+  
      $fileName='';
      if($newroomlist->hasFile('image'))
      {
@@ -55,8 +56,9 @@ public function roomlist(Request $newroomlist){
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
           'image'=>$fileName,
-          'price'=>$newroomlist-> price,
-          'discount'=>$newroomlist-> discount,
+          'price'=>$discount-> price ,
+          'discount_price'=>$discount-> price-$discount-> discount/100*$discount-> price ,
+          'discount'=>$discount-> discount,
           'status'=>$newroomlist-> status
           
 
@@ -96,6 +98,7 @@ public function roomlist(Request $newroomlist){
      }
      public function update(Request $newroomlist,$id)
      {
+          
           $room=Room::find($id);
           $room->update([
                'room_name'=>$newroomlist->room_name,
@@ -104,21 +107,12 @@ public function roomlist(Request $newroomlist){
                'max_child'=>$newroomlist->max_child,
                'room_description'=>$newroomlist->room_description,
                'no_of_bed'=>$newroomlist->no_of_bed,
-               'price'=>$newroomlist-> price, 
-               'discount'=>$newroomlist-> discount,
+               
                'status'=>$newroomlist-> status 
 
           ]);
 
-          foreach($newroomlist->facilities_id as $am)
-          {
-            
-               Roomamenities::create([
-              'room_id'=>$room->id,
-              'facilities_id'=>$am
-            ]);
-
-          }
+          
 
       
 

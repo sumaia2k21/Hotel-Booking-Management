@@ -21,7 +21,7 @@
             <th scope="col">Room number</th>
             <th scope="col">Name</th>
             <th scope="col">Mobile_no</th>
-            <th scope="col">Email</th>
+            <th scope="col">Total Paid</th>
             <th scope="col">address</th>
             <th scope="col">from_date</th>
             <th scope="col">to_date</th>
@@ -38,7 +38,7 @@
                 <td>{{$request->room->room_number}}</td>
                 <td>{{$request->name}}</td>
                 <td>{{$request->mobile_no}}</td>
-                <td>{{$request->email}}</td>
+                <td>{{$request->total_paid}}</td>
                 <td>{{$request->address}}</td>
                 <td>{{$request->from_date}}</td>
                 <td>{{$request->to_date}}</td>

@@ -10,6 +10,7 @@ class Room extends Model
     use HasFactory;
     protected $table =('newrooms');
     protected $guarded=[];
+
     public function catagory()
     {
         return $this->belongsTo(Catagory::class);
@@ -28,6 +29,7 @@ class Room extends Model
 
     public function bookings()
     {
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Book::class);
     }
+   
 }

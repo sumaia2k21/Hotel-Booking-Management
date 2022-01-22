@@ -14,7 +14,7 @@ class BookingController extends Controller
 {
     public function bookingform($id)
     { 
-        if (auth()->user()) {
+       
        
          $bookingform=Auth::user();
         $room = Room::find($id);
@@ -22,16 +22,14 @@ class BookingController extends Controller
         $value = session()->all(); //extracting all data from session
         //  dd($value);
          return view('frontend.layouts.bookingform',compact('room','bookingform','payment','value'));
-        } else {
-            return redirect()->back()->with('message','You need to login first');
-          }
+        
     }
     
     public function bookingstore(Request $request)
     {
-        
-       
-
+        if (auth()->user()) {  
+           
+            
         $isBooked=Book::where('room_id',$request->room_id)
         ->where('from_date','<=',$request->from_date)
         ->where('to_date','>=',$request->from_date)
@@ -58,6 +56,7 @@ class BookingController extends Controller
                 'from_date'=>$request->from_date,
                 'to_date'=>$request->to_date,
                 'total_ammount'=>$diff_in_days*$room->price,
+               
                 'discount'=>$request->discount,
                 'discount_price'=>$request->discount_price,
                 'status'=>$request->status
@@ -70,6 +69,9 @@ class BookingController extends Controller
             }else{
          return redirect()->back()->with('message','Admin can not book room ');
         }
+    } else {
+        return redirect()->back()->with('message','You need to login first');
+      }
     }
     
 
@@ -88,7 +90,8 @@ class BookingController extends Controller
        
         $user=Book::where('user_id',Auth::id())->get()->take(1);
         $bookinginfo=Book::where('id',$id)->get();
-       $pay=Payment::where('id',$id)->get();
+       $pay=Payment::where('book_id',$id)->get();
+       //dd($pay);
         return view('frontend.layouts.account.invoice',compact('bookinginfo','user','pay') ); 
     }
     public function testinvoice()

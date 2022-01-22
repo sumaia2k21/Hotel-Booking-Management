@@ -62,7 +62,7 @@ class Facilities_controller extends Controller
                $facility->delete();
                return redirect()->back()->with('message','delete successfully' );
           }
-          return redirect()->back()->with('message','no product found' );
+          return redirect()->back()->with('message','no room found' );
      }
 
      public function edit($id)

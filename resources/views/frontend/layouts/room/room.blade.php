@@ -78,7 +78,7 @@
         @foreach($room as $showcatagory)
         
         
-            <div class="maghny-gd-1 col-lg-6">
+            <div class="maghny-gd-1 col-lg-4">
             <a href="{{route('catagory-under-room',$showcatagory->id)}}" >
                 <div class="maghny-grid">
                 
@@ -88,19 +88,14 @@
                             <div>
                                 <h4 class="top-text">{{$showcatagory->catagory_title}} room
                                     <span>Peaceful Place to stay</span></h4>
-                                <p>{{$showcatagory->Price}}</p>
+                                
                             </div>
                         </figcaption>
                     </figure>
                     
                     <div class="room-info">
                         <h3 class="room-title">{{$showcatagory->catagory_title}}</a></h3>
-                       
-                        <ul class="mb-3">
-                            <li>price# {{$showcatagory->price}}</li>
-                        <li>{{$showcatagory->room_description}}</li>
-                           
-                        </ul>
+                        <h6 class="room-title"> Discount {{$showcatagory->discount}}%</a></h6>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>
                        

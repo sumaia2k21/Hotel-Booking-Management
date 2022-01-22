@@ -4,24 +4,21 @@
 <hr>
 <div class="card">
     <div class="card-body">
-        <form action="{{route('payment.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('payment.store',$book->id)}}" method="post" enctype="multipart/form-data">
         @csrf
             <div class="form-group">
                 <label for="smallInput">booking-id</label>
                 <input type="text" value="{{$book->id}}" class="form-control" name="book_id" id=""
-                    placeholder="book_id">
+                    placeholder="book_id" readonly>
             </div>
             <div class="form-group">
                 <label for="smallInput">Total Ammount</label>
-                <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount">
+                <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount" readonly>
             </div>
-            <div class="form-group">
-                <label for="smallInput">discount</label>
-                <input type="text"  value="{{$book->discount}}"class="form-control"  name="discount" id="Price" placeholder="total_ammount">
-            </div>
+           
             <div class="form-group">
                 <label for="smallInput">discount_price</label>
-                <input type="text"  value="{{$book->discount_price}}"class="form-control"  name="discount_price" id="Price" placeholder="total_ammount">
+                <input type="text"  value="{{$book->discount_price}}"class="form-control"  name="discount_price" id="Price" placeholder="total_ammount" readonly>
             </div>
             <div class="form-group">
                 <label for="smallInput">pay_ammount</label>

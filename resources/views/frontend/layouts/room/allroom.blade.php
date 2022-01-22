@@ -51,15 +51,15 @@
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Room_number</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Room Number</strong></th>
                                     <td>{{$data->room_number}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Max_adult</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Maximum Adult</strong></th>
                                     <td>{{$data->max_adult}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Max_child</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Maximum Child</strong></th>
                                     <td>{{$data->max_child}}</td>
                                 </tr>
                                 <tr>
@@ -67,18 +67,22 @@
                                     <td>{{$data->no_of_bed}}</td>
                                 </tr>
                                 <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>price</strong></th>
-                                <td>{{$data->price}} tk</td>
+                                <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
+                                <td>{{$data->price}} TAKA</td>
                                 </tr>
                                 <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
-                                <td>{{$data->discount}} tk</td>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount</strong></th>
+                                <td>{{$data->catagory->discount}}%</td>
+                                </tr>
+                                <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount Price</strong></th>
+                                <td><del>{{$data->price}} TK</del>   {{$data->catagory->discount_price}} TAKA</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <hr>
-                    <a href="{{route('bookingform',$data->id)}}" type="button"
+                    <a href="{{route('home',$data->id)}}" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">book now</a>
                     <a href="{{route('single.room.view',$data->id)}}" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>

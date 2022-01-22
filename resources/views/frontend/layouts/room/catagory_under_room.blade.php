@@ -48,7 +48,7 @@
 <section class="w3l-roomsingleblock1 py-5">
     <div class="best-rooms w3l-blog py-5">
         <div class="container py-lg-5 py-sm-4">
-            @foreach($catagory_room_view->rooms as $data)
+            @foreach($catagory_room_view as $data)
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="mdb-lightbox">
@@ -60,17 +60,6 @@
                                 </figure>
                             </div>
 
-                            <!-- <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item">
-                                            <img src="{{url('uploads/'.$data->image1)}}"
-                                            class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
 
                         </div>
                     </div>
@@ -81,33 +70,39 @@
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Room_number</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Room_number:</strong></th>
                                     <td>{{$data->room_number}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Max_adult</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Max_adult:</strong></th>
                                     <td>{{$data->max_adult}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Max_child</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>Max_child:</strong></th>
                                     <td>{{$data->max_child}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>No_of_bed</strong></th>
+                                    <th class="pl-0 w-25" scope="row"><strong>No_of_bed:</strong></th>
                                     <td>{{$data->no_of_bed}}</td>
                                 </tr>
-                                <th class="pl-0 w-25" scope="row"><strong>price</strong></th>
-                                <td>{{$data->price}} tk</td>
+                                <th class="pl-0 w-25" scope="row"><strong>price:</strong></th>
+                                <td>{{$data->price}} TAKA</td>
                                 </tr>
                                 <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
-                                <td>{{$data->discount}} tk</td>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount:</strong></th>
+                                <td>{{$data->discount}} %</td>
                                 </tr>
+                                <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
+                                <td>{{$data->discount_price}} TAKA</td>
+                                </tr>
+                                
+                               
                             </tbody>
                         </table>
                     </div>
                     <hr>
-                    <a href="{{route('bookingform',$data->id)}}" type="button"
+                    <a href="{{route('home',$data->id)}}" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">book now</a>
                     <a href="{{route('single.room.view',$data->id)}}" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>
