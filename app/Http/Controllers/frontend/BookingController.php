@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Book;
+use App\Models\Catagory;
 use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,11 @@ class BookingController extends Controller
     
     public function bookingstore(Request $request)
     {
+        // $request->validate([
+        //     'name'=> 'required',
+        //     'mobile'=> 'required|email|unique:users,email',
+        //     'email'=> 'required|min:6',
+        // ]);
         if (auth()->user()) {  
            
             
@@ -91,8 +97,9 @@ class BookingController extends Controller
         $user=Book::where('user_id',Auth::id())->get()->take(1);
         $bookinginfo=Book::where('id',$id)->get();
        $pay=Payment::where('book_id',$id)->get();
+       $category=Catagory::find($id);
        //dd($pay);
-        return view('frontend.layouts.account.invoice',compact('bookinginfo','user','pay') ); 
+        return view('frontend.layouts.account.invoice',compact('bookinginfo','user','pay','category') ); 
     }
     public function testinvoice()
     {

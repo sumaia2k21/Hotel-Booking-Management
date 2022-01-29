@@ -4,12 +4,10 @@
 <section class="w3l-breadcrumb">
         <div class="breadcrum-bg py-sm-5 py-4">
             <div class="container py-lg-3">
-                <h2>ghjk</h2>
-                
+                <h2>ghjk</h2>    
             </div>
         </div>
     </section>
-
     <br>
     <h1 style="text-align: center;">My Hotel Booking Detail</h1>
     <br>
@@ -48,14 +46,11 @@
                 <td>{{$list->status}}</td>
                 
                 <td><a href="{{route('invoice',$list->id)}}" type="button" class="btn btn-primary">booking details</a>
-                   </td>
-                
+                   </td>    
             </tr>
            @endforeach
         </tbody>
-    </table>
-    
-    
+    </table>    
 </div>
 <!-- <a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a> -->
 <br>

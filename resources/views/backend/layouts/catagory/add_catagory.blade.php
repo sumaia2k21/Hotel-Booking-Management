@@ -28,11 +28,11 @@
                 <textarea type="text" class="form-control form-control" name="description" id="Description"
                     placeholder="Description"></textarea>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="smallInput">Discount</label>
                 <input type="number" class="form-control form-control-sm" name="discount" id="Price" placeholder="discount">
             </div>
-            
+             -->
                     <div class="form-group">
                         <label for="largeInput">price</label>
                         <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">

@@ -34,7 +34,7 @@ public function catagory_list(Request $catagorylist){
      // dd($catagorylist->all());
      Catagory::Create([
           'catagory_title'=>$catagorylist->catagory_title,
-               'discount'=>$catagorylist->discount,
+               // 'discount'=>$catagorylist->discount,
                'image'=>$fileName,
                'description'=>$catagorylist->description,
                'price'=>$catagorylist-> price ,

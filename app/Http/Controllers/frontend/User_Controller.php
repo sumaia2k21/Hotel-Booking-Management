@@ -19,7 +19,6 @@ class User_Controller extends Controller
         // $facility=Facility::get()->take(3);
         return view('frontend.layouts.account.viewprofile',compact('profile'));
     }
-    
     public function signupform()
     {
        

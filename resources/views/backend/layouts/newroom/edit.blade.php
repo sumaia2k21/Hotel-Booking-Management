@@ -70,7 +70,10 @@
                     </div>
                     
                    
-                   
+                    <!-- <div class="form-group">
+                        <label for="largeInput">price</label>
+                        <input type="text" class="form-control form-control" value="{{$room->catagory->price}}" name="price" id="Description" placeholder="">
+                    </div> -->
                    
                      <div class="form-group">
                         <label for="squareSelect">status</label>

@@ -67,7 +67,7 @@
                         
                         @endif
                     
-                    <li class="nav-item @@services__active">
+                        <li class="nav-item active">
                         <a class="nav-link" href="{{route('gallary')}}">Gallary</a>
 
                     </li>

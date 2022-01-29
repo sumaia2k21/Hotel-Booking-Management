@@ -14,11 +14,13 @@ class PaymentController extends Controller
 {
     public function paymentlist()
     {
+    //    dd($_GET);
         $payment=Book::all();
         $pay=Payment::all();
         // $pay=Payment::where('payment_status','paid')->get();            
         return view('backend.layouts.payment.payment-list',compact('payment','pay'));
     }
+    
     public function paymentform($id)
     {
         // $payment=Book::select('id')->get();
@@ -117,5 +119,17 @@ public function edit($id)
        $payment=Payment::where('id',$id)->get();
         return view('backend.layouts.payment.pay_reciept',compact('bookinginfo','user','pay','payment'));
     }
+
+   
+    public function search()
+    {
+        // dd($_GET['search']);
+
+          $key=request()->search;
+          $payment=Book::where('name','LIKE',"%{$key}%")->get(); 
+        //   dd($payment);
+        return view('backend.layouts.payment.payment_search_result',compact('payment'));
+    }
+
 
 }

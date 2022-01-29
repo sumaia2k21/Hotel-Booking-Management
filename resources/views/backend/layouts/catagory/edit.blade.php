@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                         <label for="largeInput">price</label>
-                        <input type="text"value="{{$category->price}}" class="form-control form-control"name="price" id="Description" placeholder="">
+                        <input type="text"value="{{$category->price}}" class="form-control form-control"name="price" id="Description" placeholder="" readonly>
                     </div>
             <div class="card-action">
                 <button type="submit" class="btn btn-success">update</button>

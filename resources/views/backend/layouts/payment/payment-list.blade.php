@@ -1,7 +1,20 @@
 @extends('backend.master')
 @section('content')
-<!-- <h4 style="background: #f5c842">Read Enquiry<h4> -->
+
+<div class="header-left" style="float: right;">
+            <div class="input-group icons">
+                
+            <form action="{{route('payment.search')}}" method="get">
+                      
+                        <input type="text" class="form-control" placeholder="Search Dashboard" name="search" aria-label="Search Dashboard">
+                        <button type="submit"><i
+                            class="mdi mdi-magnify" type="submit" ></i></button>
+                    </form>
+                
+            </div>
+        </div>
     <h2>Payment</h2>
+    
     <hr>
     <br>
 <!-- @if(session()->has('message'))
@@ -16,6 +29,8 @@
 
                     <th scope="col">Sl</th>
                     <th scope="col">Book number</th>
+                    <th scope="col"> User Name</th>
+                    <th scope="col"> Mobile_no</th>
                     <th scope="col">Total Ammount</th>
                     <th scope="col">Total Paid </th>
                     <th scope="col">Discount Price</th>
@@ -32,6 +47,8 @@
             <tr>
                 <td>{{$data->id}}</td>
                 <td>{{$data->book->room_id}}</td>
+                <td>{{$data->book->name}}</td>
+                <td>{{$data->book->mobile_no}}</td>
                 <td>{{$data->total_ammount}}</td>
                 <td>{{$data->book->total_paid}}</td>
                 <td>{{$data->discount_price}}</td>
@@ -45,18 +62,12 @@
                     <!-- <a href="{{route('payment.edit',$data->id)}}" class="btn btn-success">edit</a> -->
                     <a href="{{route('payment.delete',$data->id)}}" class="btn btn-danger">delete</a>
                     <a href="{{route('payment.report',$data->id)}}" class="btn btn-success">details</a>
-                    
-
                 </td>
-                
-               
-                
-
             </tr>
             @endforeach()
         </tbody>
             </table>
             
-        </div>
+ </div>
 
-        @endsection
+ @endsection

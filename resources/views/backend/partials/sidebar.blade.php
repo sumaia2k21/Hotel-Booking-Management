@@ -227,7 +227,7 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-list" aria-hidden="true"></i>
+                        <i class="fa fa-picture-o" aria-hidden="true"></i>
                             <span class="nav-text">gallary</span>
                         </a>
                         <ul aria-expanded="false">

@@ -105,9 +105,7 @@
                     <div class="form-group">
                         <label for="squareSelect">status</label>
                         <select class="form-control input-square" name="status"id="squareSelect">
-                            <option selected>Active</option>
-                            <option>Inactive</option>
-                           
+                            <option selected>Active</option>   
                         </select>
                     </div>
 

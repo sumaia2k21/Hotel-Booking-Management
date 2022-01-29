@@ -37,8 +37,8 @@
                 <!-- <td>{{$catagory->status}}</td> -->
                 <td>
                 <!-- <a href="{{route('discount.confirmation',$catagory->id)}}" class="btn btn-success">discount</a> -->
+                <a href="{{route('catagory.edit',$catagory->id)}}" class="btn btn-success">discount</a>
                        <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
-                       <a href="{{route('catagory.edit',$catagory->id)}}" class="btn btn-success">edit</a>
                     <a onclick="return confirm('Are you sure you want to delete this item?');"
                         href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
                 </td>

@@ -31,33 +31,33 @@
                                 <div class="twice">
                                     <input type="hidden" name="room_id" value="{{$room->id}}">
                                     <input type="text" name="name" id="firstName" placeholder="Full Name"
-                                         class="form-control" required="">
+                                         class="form-control" required>
                                 </div>
                                 <div class="twice">
                                     <input readonly type="text" value="{{$room->room_number}}" id="firstName"
-                                        class="form-control" required="">
+                                        class="form-control" required>
                                 </div>
                                 <div class="twice">
-                                    <input type="text" name="mobile_no" id="firstName" placeholder="Mobile_no"
-                                         class="form-control">
+                                    <input type="number" name="mobile_no"  id="firstName" placeholder="Mobile_no"
+                                         class="form-control" required>
                                 </div>
                                 <div class="twice">
 
                                     <input type="email" name="email" id="email" placeholder="Email"
-                                       class="form-control">
+                                       class="form-control" required>
                                 </div>
                                 <div class="twice">
-                                    <textarea type="text" name="address" id="address" placeholder="Address"
+                                    <textarea type="text" name="address" required id="address" placeholder="Address"
                                         class="form-control"></textarea>
                                 </div>
                                 <div class="twice">
                                     <label>From date</label>
-                                    <input value="{{$value[1]}}" type="date"  id="date1"  class="form-control" name="from_date"
+                                    <input value="{{$value[1]}}" type=""  id="date1"  class="form-control" name="from_date"
                                         placeholder="Date" required="" />
                                 </div>
                                 <div class="twice">
                                     <label>To date</label>
-                                    <input value="{{$value[3]}}" type="date" id="date2"  class="form-control" name="to_date"
+                                    <input value="{{$value[3]}}" type="" id="date2"  class="form-control" name="to_date"
                                         placeholder="Date" required=""/>
                                 </div>
 

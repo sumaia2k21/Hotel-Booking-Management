@@ -16,7 +16,7 @@ class CreateFacilitiesTable extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('imaje')->nullable();
-            $table->string('facility_title');
+            $table->string('facility_title')->unique();
             $table->string('description');
             $table->timestamps();
         });

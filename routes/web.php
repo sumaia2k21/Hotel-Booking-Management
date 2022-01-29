@@ -113,10 +113,6 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/bookingno_search',[Search_Controller::class,'bookingno_search'])->name('booking.search.no');
 
 
-
-     
-     
-
      //hotelinfo form start
      Route::get('/hotelinfo',[Hotel_Controller::class,'hotelinfo'])->name('hotelinfo');
      Route::post('/hotelinfo/store',[Hotel_Controller::class,'hotelinfopost'])->name('hotelinfo.store');
@@ -141,6 +137,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('payment.edit');
      Route::put('/payment/update/{id}',[PaymentController::class,'update'])->name('payment.update');
      Route::get('/payment/report/{id}',[PaymentController::class,'report'])->name('payment.report');
+     Route::get('/payment/search',[PaymentController::class,'search'])->name('payment.search');
 
      //gallary
      Route::get('/gallaries',[Gallary_Controller::class,'gallaries'])->name('gallaries');
@@ -167,9 +164,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
          
           Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
           Route::get('/contact_us',[Page_controller::class,'contact_us'])->name('contact_us');
-          Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');
-
-          
+          Route::post('/contact_us/store',[Page_controller::class,'contact_uspost'])->name('contact_us.store');     
      
      });
      Route::group(['middleware'=>'auth','Receptionist'],function(){
@@ -177,14 +172,8 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
           Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
 
      });
-
-
-
-
      //  admin end
 });
-   
-
 
 
 //forntend
