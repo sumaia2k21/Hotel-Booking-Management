@@ -19,8 +19,6 @@
                         
                     </li>
                     
-                    
-                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
@@ -55,16 +53,8 @@
                         </ul>
                     </li>
                   
-                    <!-- <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Page</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('about_us')}}" aria-expanded="false">About Us</a></li>
-                            <li><a href="{{route('contact_us')}}" aria-expanded="false">ontact us</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="mega-menu mega-menu-sm">
+                 
+                    <!-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
                             <span class="nav-text">Pages</span>
@@ -74,10 +64,8 @@
                             <li><a href="{{route('contact_us')}}">Contact Us</a></li>
                         </ul>
                     </li>
-                    
-                  
-                    
-                    
+                     -->
+                 
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-book" aria-hidden="true"></i>
@@ -91,20 +79,17 @@
                            
                         </ul>
                     </li>
+                   
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-h-square" aria-hidden="true"></i>
                             <span class="nav-text">Hotel Information</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li>
-                        
-                            
+                            <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li> 
                         </ul>
                     </li> 
-                    
-                    
-                    
+                
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
@@ -113,6 +98,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('gallaries')}}">add gallary</a></li>
                             <li><a href="{{route('gallerystore')}}">view gallary</a></li>
+                          
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
@@ -128,13 +114,11 @@
                             <span class="nav-text">Payment</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="{{route('payment.list')}}">payment List</a></li>  
                             
-                            <li><a href="{{route('payment.list')}}">payment List</a></li>
-                            
-                           
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
+                    <!-- <li class="mega-menu mega-menu-sm">
                         <a  href="{{route('customer.list')}}" aria-expanded="false">
                         <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="nav-text">Customer </span>
@@ -147,15 +131,25 @@
                             <span class="nav-text">User </span>
                         </a>
                         
+                    </li> -->
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="nav-text">Users</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('customer.list')}}">Customer</a></li>
+                            <li><a href="{{route('user.list')}}">User</a></li>
+                          
+                        </ul>
                     </li>
-                   
                      <!-- <li>
                         <a href="{{route('staff')}}" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Staff </span>
                         </a>
                       
                     </li> -->
-                    <li class="mega-menu mega-menu-sm">
+                    <!-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
                             <span class="nav-text">images</span>
@@ -165,7 +159,7 @@
                             <li><a href="{{route('images.table')}}">view images</a></li>
                         </ul>
                     </li>
-                    
+                     -->
                    
                 @endif
                 @if(auth()->user()->role=='Manager')
@@ -176,6 +170,39 @@
                              <span class="nav-text">{{auth()->user()->name}}</span>
                         </a>
                         
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a href="{{route('dashboard')}}" aria-expanded="false">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                             <span class="nav-text">Home</span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                 
+                   
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">Room Catagory</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('add_catagory')}}">Add Room Catagory</a></li>
+                            <li><a href="{{route('manage_catagory')}}">Manage Catagory</a></li>
+                        </ul>
+                    </li>
+                   
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-h-square" aria-hidden="true"></i>
+                             <span class="nav-text">Facilities</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('add_facilities')}}">Add Facilities</a></li>
+                            <li><a href="{{route('manage_facilities')}}">Manage Facilities</a></li>
+                           
+                        </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -198,6 +225,33 @@
                             <li><a href="{{route('manage_room')}}">Manage Room</a></li>
                         </ul>
                     </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-picture-o" aria-hidden="true"></i>
+                            <span class="nav-text">gallary</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('gallaries')}}">add gallary</a></li>
+                            <li><a href="{{route('gallerystore')}}">view gallary</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a  href="{{route('read_enquiry')}}" aria-expanded="false">
+                        <i class="fa fa-check-square" aria-hidden="true"></i>
+                            <span class="nav-text">Enquiry </span>
+                        </a>
+                    </li>
+          
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                            <span class="nav-text">Payment</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('payment.list')}}">payment List</a></li>  
+                        </ul>
+                    </li>
 
 
 
@@ -209,6 +263,24 @@
                              <span class="nav-text">{{auth()->user()->name}}</span>
                         </a>
                         
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a href="{{route('dashboard')}}" aria-expanded="false">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                             <span class="nav-text">Home</span>
+                        </a>
+                        
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <!-- <i class="fa fa-bed" aria-hidden="true"></i> -->
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <span class="nav-text">New Room</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            
+                            <li><a href="{{route('manage_room')}}">Manage Room</a></li>
+                        </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -223,6 +295,49 @@
                            
                         </ul>
                     </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                            <span class="nav-text">gallary</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('gallaries')}}">add gallary</a></li>
+                            <li><a href="{{route('gallerystore')}}">view gallary</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-h-square" aria-hidden="true"></i>
+                             <span class="nav-text">Facilities</span>
+                        </a>
+                        <ul aria-expanded="false">
+                      
+                            <li><a href="{{route('manage_facilities')}}">Manage Facilities</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                            <span class="nav-text">Payment</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('payment.list')}}">payment List</a></li>  
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="nav-text">Users</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('customer.list')}}">Customer</a></li>
+                           
+                          
+                        </ul>
+
+
                 @endif
                 </ul>
             </div>

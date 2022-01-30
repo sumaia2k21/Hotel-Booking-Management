@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Catagory;
 use App\Models\Hotel;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -30,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $hotels = Hotel::first();
             View::share('hotels',$hotels);
         }
+      
+
     }
 }

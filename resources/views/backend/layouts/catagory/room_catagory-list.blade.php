@@ -10,7 +10,7 @@
             <th scope="col">ID</th>
             <th scope="col">Catagory Title</th>
             <th scope="col">Description</th>
-            <th scope="col">price</th>
+            
            
             
         </thead>
@@ -23,9 +23,6 @@
                 <td>{{$data->Catagory->catagory_title}}</td>
                 
                 <td>{{$data->room_number}}</td>
-                
-                
-                <td>{{$data->Price}}</td>
 
             </tr>
             @endforeach()

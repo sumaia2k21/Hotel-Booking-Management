@@ -23,17 +23,18 @@
                                                 <div class="row book-form">
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>From Date</label>
-                                                        <input type="date" name="from_date" placeholder="Date"
-                                                            value="{{ date('m-d-Y') }}" min="{{ date('m-d-Y')}}"
-                                                            required="">
+                                                        <input type="date" id="date1"  required="" name="from_date"/> 
+                                                                                  
                                                     </div>
+
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>To Date</label>
-                                                        <input type="date" name="to_date" placeholder="Date"
-                                                            value="{{ date('m-d-Y') }}" min="{{ date('m-d-Y') }}"
-                                                            required="">
+                                                        <input type="date" id="date2"  required="" name="to_date"/>
+                                                        
 
                                                     </div>
+
+                                                    
                                                     <div class="bottom-btn col-md-4 col-sm-6 mt-3">
                                                         <button type="submit"
                                                             class="btn btn-style btn-primary w-100 px-2">Check
@@ -47,6 +48,7 @@
                                 </div>
                             </div>
                         </div>
+                        
 
                         <div class="banner-info">
                             <div class="container">
@@ -110,39 +112,10 @@
             </div>
         </div>
     </div>
+
+    
 </section>
 <!-- /main-slider -->
-<!-- /w3l-availability-form-section -->
-
-<!-- <div class="card">
-    <div class="container pt-lg-3 pb-lg-5">
-        <div class="forms-top">
-            <div class="form-right">
-                <div class="form-inner-cont">
-                    <h3 class="title-small">Check Availability</h3>
-                    <form action="{{route('search')}}" method="get">
-                        <div class="row book-form">
-                            <div class="form-input col-md-4 col-sm-6 mt-3">
-                                <label>From Date</label>
-                                <input type="date" name="from_date" placeholder="Date" required="">
-                            </div>
-                            <div class="form-input col-md-4 col-sm-6 mt-3">
-                                <label>To Date</label>
-                                <input type="date" name="to_date" placeholder="Date" required="">
-                            </div>
-
-                            <div class="bottom-btn col-md-4 col-sm-6 mt-3">
-                                <button type="submit" class="btn btn-style btn-primary w-100 px-2">Check
-                                    Availability</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
@@ -192,129 +165,22 @@
         </div>
     </div>
 </section>
-<section class="w3l-availability-form" id="booking">
+<!-- <section class="w3l-availability-form" id="booking">
         <div class="row">
-            @foreach($roomimages as $images)
+        @foreach($gallary as $images)
             <div class="col-md-3">
-                 <img src="{{url('/uploads/'. $images->image)}}" alt="Lights" style="width:100%">   
+                 <img src="{{url('/uploads/'. $images->image1)}}" alt="Lights" style="width:100%">   
             </div>
             @endforeach
         </div>
         
  
-</section>
-
-<!-- //about -->
-<!-- <div class="best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <h3 class="title-big text-center">Best Rooms</h3>
-        @foreach($addroom as $data)
-
-        <div class="ban-content-inf row py-lg-3">
-
-            <div class="maghny-gd-1 col-lg-6">
-
-                <a href="{{route('room')}}">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily">
-                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4 class="top-text">Luxury Hotel and Best Resort
-                                        <span>Peaceful Place to stay</span></h4>
-                                    <p>From 20$ </p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                        <div class="room-info">
-                            <h3>{{$data->catagory->catagory_title}}</h3>
-                </a>
-                <hr>
-                <ul class="mb-3">
-                    <li> Room No# {{$data->room_number}}</li>
-                    <li> max_adult#{{$data->max_adult}}</li>
-                    <li>no_of_bed# {{$data->no_of_bed}}</li>
-                    <li>room_description# {{$data->room_description}}</li>
-                    <li>Price# {{$data->Price}}</li>
-                </ul>
-
-                <a href="{{route('bookingform',$data->id)}}" class="btn btn-info">Book
-                    now</a>
-                <a href="{{route('all.room.view')}}" class="btn btn-info">Info</a>
-            </div>
-        </div>
-    </div>
-    <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
-        <div class="row">
-            <div class="maghny-gd-1 col-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                        <figcaption>
-                            <div>
-                                <h4>Family Rooms <span> Resort</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="maghny-gd-1 col-6">
-                <div class="maghny-grid">
-                    <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                        <figcaption>
-                            <div>
-                                <h4>Double Rooms <span> Resort</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="maghny-gd-1 col-6 mt-4">
-                <div class="maghny-grid">
-                    <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                        <figcaption>
-                            <div>
-                                <h4>Luxury Rooms <span> Resort</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="maghny-gd-1 col-6 mt-4">
-                <div class="maghny-grid">
-                    <figure class="effect-lily border-radius">
-                        <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                        <figcaption>
-                            <div>
-                                <h4>Resort Rooms <span> Resort</span></h4>
-                                <p>From 20$ </p>
-                            </div>
-
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-@endforeach
-</div>
-</div> -->
-
+</section> -->
 
 <!-- new room -->
 
 <div class="best-rooms w3l-blog py-5">
+
     <div class="container py-lg-5 py-sm-4">
         <div class="ban-content-inf row">
             @foreach($addroom as $data)
@@ -327,13 +193,13 @@
                             <figcaption>
                                 <div>
                                     <h4 class="top-text">{{$data->catagory->catagory_title}} Hotel room
-                                        <ul>
+                                        <!-- <ul>
                                             <li> <span class="fa fa-star"></span></li>
                                             <li> <span class="fa fa-star"></span></li>
                                             <li> <span class="fa fa-star"></span></li>
                                             <li> <span class="fa fa-star"></span></li>
                                             <li> <span class="fa fa-star-o"></span></li>
-                                        </ul>
+                                        </ul> -->
                                     </h4>
                                     <p>{{$data->Price}}</p>
                                 </div>
@@ -349,7 +215,7 @@
 
                         </ul>
                         <h4></h4>
-
+                      
                         <div class="room-info-bottom">
                             <a href="{{route('bookingform',$data->id)}}" class="btn view">Book Now</a>
                             <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
@@ -359,75 +225,62 @@
                 </div>
 
             </div>
-
+            @endforeach
+            
             <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
                 <div class="row">
-                    <div class="maghny-gd-1 col-6">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                                <!-- <figcaption>
-                                    <div>
-                                        <h4>Family Rooms <span> Resort</span></h4>
-
-                                    </div>
-
-                                </figcaption> -->
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="maghny-gd-1 col-6">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                                <!-- <figcaption>
-                                    <div>
-                                        <h4>Double Rooms <span> Resort</span></h4>
-
-                                    </div>
-
-                                </figcaption> -->
-                            </figure>
-                        </div>
-                    </div>
+                @foreach($category as $data)
                     <div class="maghny-gd-1 col-6 mt-4">
                         <div class="maghny-grid">
                             <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                                <!-- <figcaption>
+                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
+                            
+                                <figcaption>
                                     <div>
-                                        <h4>Luxury Rooms <span> Resort</span></h4>
+                                        <h4>{{$data->catagory_title}} <span> Resort</span></h4>
 
                                     </div>
 
-                                </figcaption> -->
+                                </figcaption>
+                              
                             </figure>
                         </div>
                     </div>
-                    <div class="maghny-gd-1 col-6 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="" />
-                                <!-- <figcaption>
-                                    <div>
-                                        <h4>Resort Rooms <span> Resort</span></h4>
-
-                                    </div>
-
-                                </figcaption> -->
-                            </figure>
-                        </div>
-                    </div>
-
+                 
+                    @endforeach
                 </div>
             </div>
-            @endforeach
+           
 
         </div>
 
     </div>
 
 </div>
+<!-- quotation -->
+<div class="quotation py-5">
+	<div class="container py-xl-5 py-lg-3">
+		<div class="welcome-left text-center py-md-5 py-3">
+			<h3>Enjoy a Luxury experience. Discover our locaions. Relax and enjoy your holiday</h3>
+			<!-- <a href="booking.html" class="btn btn-style transparent-btn mt-sm-5 mt-4 mr-2">Book Now</a> -->
+			<a href="{{route('contact')}}" class="btn btn-style btn-primary mt-sm-5 mt-4">Contact Us</a>
+		</div>
+	</div>
+</div>
+
+<script>
+    var today = new Date().toISOString().split('T')[0];
+document.getElementById("date1").setAttribute('min', today);
+
+// alert("min Data " + today)
+</script>
+<script>
+    var today = new Date().toISOString().split('T')[0];
+document.getElementById("date2").setAttribute('min', today);
+
+// alert("min Data " + today)
+</script>
+
 
 
 

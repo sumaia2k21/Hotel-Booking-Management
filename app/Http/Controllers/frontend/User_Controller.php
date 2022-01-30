@@ -12,21 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class User_Controller extends Controller
 {
-    // public function user_login()
-    // {
-    //     return view('frontend.layouts.account.user_login');
-    // }
-    // public function user_reg()
-    // {
-    //     return view('frontend.layouts.account.registerform');
-    // }
+   
     public function viewprofile()
     {
         $profile=Auth::user();
         // $facility=Facility::get()->take(3);
         return view('frontend.layouts.account.viewprofile',compact('profile'));
     }
-    
     public function signupform()
     {
        

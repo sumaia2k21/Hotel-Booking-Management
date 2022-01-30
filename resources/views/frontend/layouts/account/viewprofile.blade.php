@@ -28,6 +28,7 @@
                         </span>
                         @endif
                         <h2>View your profile/<small>profile</small></h2>
+                        <br>
                         <form action="" method="post">
                             @csrf
                             <div class="twice">
@@ -43,14 +44,14 @@
                                     placeholder="Mobile No" required="">
                             </div>
 
-                            <div class="twice">
+                            <!-- <div class="twice">
 
                                 <input type="date" class="form-control" name="reg_date" id="w3lSubject"
                                     placeholder="Registration Date" required="">
-                            </div>
+                            </div> -->
 
 
-                            <button type="submit" class="btn btn-primary">update</button>
+                            <button type="submit" class="btn btn-primary">profile</button>
                         </form>
                     </div>
                 </div>

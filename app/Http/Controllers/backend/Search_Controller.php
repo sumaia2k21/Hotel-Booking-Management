@@ -26,4 +26,7 @@ class Search_Controller extends Controller
 
         return view('backend.layouts.booking.search_result',compact('book','from_date','to_date'));
     }
+
+
+    
 }

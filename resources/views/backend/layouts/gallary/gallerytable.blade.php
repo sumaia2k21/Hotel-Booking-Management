@@ -11,8 +11,7 @@
     <thead >
          <th scope="col">sl</th>
             <th scope="col">Image</th>
-            <th scope="col">img_src</th>
-            <th scope="col">img_alt</th>
+           
             
            
             
@@ -22,11 +21,12 @@
             <tr>
                 <td>{{$data->id}}</td>  
                 <td>
-                <img src="{{url('/uploads/'.$data->image1)}}"width="40px" alt="imag1e">
+                @foreach(collect($data->image) ?? [] as $image)
+                <img src="{{url('/uploads/'.$image)}}"width="40px" alt="imag1e">
+                @endforeach
                 </td>
-                <td>{{$data->img_src}}</td>
-                <td>{{$data->img_alt}}</td>  
-
+                <td> <a onclick="return confirm('Are you sure you want to delete this item?');"
+                     href="{{route('gallery.delete',$data->id)}}" class="btn btn-danger">delete</a></td>
                
             </tr>
             @endforeach

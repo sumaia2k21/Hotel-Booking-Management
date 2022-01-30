@@ -17,34 +17,55 @@ class Gallary_Controller extends Controller
    public function gallaries_post(Request $request)
    {
      $request->validate([
-          'image1' => 'required',
+          'image' => 'required',
         ]);
 
-          $fileName='';
-          if($request->hasFile('image1'))
+          
+          if($request->hasFile('image'))
           {
-               $file=$request->file('image1');
-              
+               foreach($request->file('image')as $key=>$file) {
                //generate file name
-               $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
-               $file->storeAs('/uploads',$fileName);
-          }
-          Gallary::Create([
-                    'image1'=>$fileName,
-                    'img_src'=>$request->img_src,
-                   'img_alt'=>$request->img_alt
-     
-     
-          ]);
+                $photo=uniqid('photo',more_entropy:true).'.'.$file->getClientOriginalName();
+               //  $file->move(public_path('uploads'),'$photo');
+               $file->storeAs('/uploads',$photo);
          
+               $fileName[] =  $photo;
+               }
+
+               // dd($fileName); 
+               foreach($fileName as $filename){
+                    Gallary::create([
+                         'image'=>$filename
+                   ]);
+               }
+
+              
+          }
+
           
             return redirect()->route('gallerystore')->with('success', 'Images uploaded successfully');
-        }
+     }
         
      public function gallerytable()
           {
                
-          $gallerytable=Gallary::paginate(15);
+          $gallerytable=Gallary::all();
                return view('backend.layouts.gallary.gallerytable',compact('gallerytable'));
           }
+
+          public function delete($id)
+          {
+               // dd($id);
+               // Room::destroy($id);
+               $gallery=Gallary::find($id);
+               if($gallery)
+               {
+                    $gallery->delete();
+                    return redirect()->back()->with('message','delete successfully' );
+               }
+               return redirect()->back()->with('message','no imaje found' );
+          }
+          
      }
+
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\Payment;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,9 @@ class Booking_controller extends Controller
     {
 
      $request=Book::with('room')->latest()->paginate(7);
+     
     //  dd($request);
-         return view('backend.layouts.booking.all_booking',compact('request'));
+         return view('backend.layouts.booking.all_booking',compact('request',));
     }
   //delete here
   public function delete($id)

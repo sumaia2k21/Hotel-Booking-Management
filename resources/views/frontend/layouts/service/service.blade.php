@@ -18,7 +18,7 @@
 <!--  services section -->
 <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
-    <h2 style="text-align: center;">Facilities</h2>
+    <h2 style="text-align: center;">Services</h2>
         <div class="container py-lg-5 py-sm-4">
             <div class="features-with-17-top_sur">
                 <div class="row">
@@ -105,43 +105,52 @@
         </div>
     </div>
 </section> -->
-<section class="w3l-feature-2">
-    <div class="grid top-bottom py-5">
-        <div class="container py-md-5">
-            <h3 class="title-big text-center">Our Rooms are beautifully designed</h3>
-            <div class="middle-section row mt-lg-5 pt-md-3">
-                <div class="three-grids-columns col-lg-4 col-md-6">
-                    <img src="assets/images/slide1.jpg" alt="" class="img-fluid">
-                    <div class="info">
-                        <h4><a href="#url"> Restaurant and Bar</a></h4>
-                        <p>Vestibulum ante ipsum primis in orci luctus et ultrices posuere cubilia Curae; Nulla
-                            mollis dapibus nunc.</p>
-                        <a href="services.html" class="btn mt-4">Read More </a>
+<section class="w3l-stats">
+    <div class="main-w3 py-5">
+        <div class="container py-lg-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 title">
+                    <h3 class="title-big">Our Hotel Facilities</h3>
+                    <img src="assets/images/facilities.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 main-cont-wthree-fea text-center">
+                    <div class="row">
+                        <div class="col-6 pr-2 mt-4">
+                            <div class="grids-speci1">
+                                <span class="fa fa-television"></span>
+                                <h3 class="title-spe">Tv</h3>
+                                <p> Satellite</p>
+                            </div>
+                        </div>
+                        <div class="col-6 pl-2 mt-4">
+                            <div class="grids-speci1">
+                                <span class="fa fa-motorcycle"></span>
+                                <h3 class="title-spe">Bike</h3>
+                                <p>Rental</p>
+                            </div>
+                        </div>
+                        <div class="col-6 pr-2 mt-4">
+                            <div class="grids-speci1">
+                                <span class="fa fa-cutlery"></span>
+                                <h3 class="title-spe">housekeeping</h3>
+                                <p>Included</p>
+                            </div>
+                        </div>
+                        <div class="col-6 pl-2 mt-4">
+                            <div class="grids-speci1">
+                                <span class="fa fa-bed"></span>
+                                <h3 class="title-spe">Bed</h3>
+                                <p>King size</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="three-grids-columns col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <img src="assets/images/slide2.jpg" alt="" class="img-fluid">
-                    <div class="info">
-                        <h4> <a href="#url"> Meetings and Events </a></h4>
-                        <p>Vestibulum ante ipsum primis in orci luctus et ultrices posuere cubilia Curae; Nulla
-                            mollis dapibus nunc.</p>
-                        <a href="services.html" class="btn mt-4">Read More </a>
-                    </div>
-                </div>
-                <div class="three-grids-columns col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <img src="assets/images/slide3.jpg" alt="" class="img-fluid">
-                    <div class="info">
-                        <h4> <a href="#url"> Spa and Wellness </a></h4>
-                        <p>Vestibulum ante ipsum primis in orci luctus et ultrices posuere cubilia Curae; Nulla
-                            mollis dapibus nunc.</p>
-                        <a href="services.html" class="btn mt-4">Read More </a>
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </div>
 </section>
+
 
 
 

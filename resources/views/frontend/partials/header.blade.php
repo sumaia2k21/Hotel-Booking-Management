@@ -4,6 +4,8 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 {{$hotels->name}}
+                
+                
                 <!-- <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" /> -->
                
             </a>
@@ -27,12 +29,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('survice')}}">Facilities</a>
                     </li>
-                    @if(auth()->user())
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('contact')}}">Contact</a>
-                    </li>
-
-                   
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,9 +37,13 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="{{route('room')}}">Room Types</a>
 							<a class="dropdown-item" href="{{route('all.room.view')}}"> All Room</a>
-                            
 						</div>
 					</li>
+                    
+                    @if(auth()->user())
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('contact')}}">Contact</a>
+                    </li>                 
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,7 +67,7 @@
                         
                         @endif
                     
-                    <li class="nav-item @@services__active">
+                        <li class="nav-item active">
                         <a class="nav-link" href="{{route('gallary')}}">Gallary</a>
 
                     </li>

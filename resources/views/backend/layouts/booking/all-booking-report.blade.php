@@ -7,9 +7,27 @@
 <div id="printableArea">
 
 <div>
+
     <h1>
-<img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" />  {{$hotels->name}}
+    <!-- <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" />  -->
+ {{$hotels->name}}
 </h1>
+<h4>{{$hotels->name}} </h4>
+                <br>
+                <div>
+                    <ul>
+                        <h6 class="footer-title-29">Address</h6>
+                        <p> {{$hotels->address}}</p>
+                    </ul>
+                </div>
+
+                <div style="text-align: right;">
+                    <h6 class="footer-title-29">Contact us</h6>
+                    <ul>
+                        <li><a href=""><span class="fa fa-phone"></span> {{$hotels->contact_no}}</a></li>
+                        <a href=""><span class="fa fa-phone"></span> {{$hotels->email}}</a>
+                    </ul>
+                </div>
 
     
 </div>

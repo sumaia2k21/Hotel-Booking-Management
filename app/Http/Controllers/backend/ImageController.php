@@ -19,22 +19,23 @@ class ImageController extends Controller
         $request->validate([
           'images' => 'required',
         ]);
-
+        $fileName='';
         if ($request->hasfile('images')) {
             $images = $request->file('images');
 
             foreach($images as $image) {
-                $name = $image->getClientOriginalName();
-                $path = $image->storeAs('uploads', $name, 'public');
+                $fileName=date('Ymdhms').'.'.$image->getClientOriginalExtension();
+                $image->storeAs('/uploads',$fileName);
+                }
 
-              Multipleimage::create([
-                    'name' => $name,
-                    'path' => '/storage/'.$path
+                Multipleimage::create([
+                  'images'=>$fileName,
+                    
                   ]);
-            }
+            
          }
 
-         return redirect()->route('images.table')->with('success', 'Images uploaded successfully');
+        return redirect()->route('images.table')->with('success', 'Images uploaded successfully');
     }
     
     public function images_table()

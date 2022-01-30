@@ -49,13 +49,5 @@ class Hotel_Controller extends Controller
          ]);
      }
          return redirect()->back();
-        }
-
-   
-        
-
-
-
-
-
+     }
 }

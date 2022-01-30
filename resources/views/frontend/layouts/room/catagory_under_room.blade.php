@@ -1,10 +1,39 @@
 @extends('frontend.index')
 @section('content')
+<!-- category -->
+<!-- <section class="w3l-servicesblock1" id="service">
+    <div class="features-with-17_sur py-5">
+        <div class="container py-lg-5 py-sm-4">
+            <h2 style="text-align: center;"> Room Type</h2>
+            <div class="features-with-17-top_sur">
+                <div class="row">
+                @foreach($room as $showcatagory)
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                        <div class="features-with-17-right-tp_sur">
+                            <div class="features-with-17-left1">
+                            <h6><a href="{{route('catagory-under-room',$showcatagory->id)}}">{{$showcatagory->catagory_title}}</a></h6>
+                            </div>
+                            <div class="features-with-17-left2">
+                            <a href="{{route('catagory-under-room',$showcatagory->id)}}" > 
+                          
+                            <h6>price# {{$showcatagory->price}}</h6>
+                           
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
+                            tempora voluptates?</p>
+                           
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- end category -->
 
 
-<body>
 
-<!-- //w3l-header -->
 <section class="w3l-breadcrumb">
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
@@ -15,84 +44,80 @@
         </div>
     </div>
 </section>
+<!--Section: Block Content-->
 <section class="w3l-roomsingleblock1 py-5">
-
     <div class="best-rooms w3l-blog py-5">
-    
         <div class="container py-lg-5 py-sm-4">
-        
-            <div class="ban-content-inf row">
-            @foreach($catagory_room_view->rooms as $data)
-                <div class="maghny-gd-1 col-lg-4 col-md-6">
-                
-                    <div class="maghny-grid">
-                        <a href="{{route('single.room.view',$data->id)}}">
-                        <figure class="effect-lily">
-                            <img class="img-fluid" src="{{url('uploads/'.$data->image)}}" alt="">
-                            <figcaption>
-                                <div>
-                                    <h4 class="top-text">{{$data->catagory->catagory_title}} room
-                                        <ul>
-                                            <li> <span class="fa fa-star"></span></li>
-                                            <li> <span class="fa fa-star"></span></li>
-                                            <li> <span class="fa fa-star"></span></li>
-                                            <li> <span class="fa fa-star"></span></li>
-                                            <li> <span class="fa fa-star-o"></span></li>
-                                        </ul>
-                                    </h4>
-                                    <p>{{$data->Price}} </p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                        
-                        <div class="room-info">
-                            
-                            <h3 class="room-title">{{$data->catagory->catagory_title}}</a></h3>
-                           <hr>
-                            <ul class="mb-3">
-                                <li><span class="fa fa-users"></span>{{$data->max_adult}}</li>
-                                <li><span class="fa fa-bed"></span> {{$data->no_of_bed}}</li>
-                                <li><span class="fa fa-bed"></span>  {{$data->room_number}}</li>
-                                
-                            </ul>
-                            
-                            <li>Max_adult:  {{$data->max_adult}}</li>
-                                <li>  No_of_bed:  {{$data->no_of_bed}}</li>
-                                <li> Room_number : {{$data->room_number}} </li>
-                                <li> Price : {{$data->price}} </li>
-                                <li> room_description : {{$data->room_description}} </li>
-                            
-
-                            <h4></h4>
-                            <a href="{{route('bookingform',$data->id)}}" class="btn mt-sm-4 mt-3">Book Now</a>
-                            <div class="room-info-bottom">
-                                <ul class="room-amenities">
-                                    <li><a href="#url"><span class="fa fa-bed" title="Beds"></span></a></li>
-                                    <li><a href="#url"><span class="fa fa-television" title="Television"></span></a>
-                                    </li>
-                                    <li><a href="#url"><span class="fa fa-bath" title="Private Bathroom"></span></a>
-                                    </li>
-                                    <li><a href="#url"><span class="fa fa-motorcycle" title="Bike Rental"></span></a>
-                                    </li>
-                                </ul>
-                                <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
+            @foreach($catagory_room_view as $data)
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="mdb-lightbox">
+                        <div class="row product-gallery mx-1">
+                            <div class="col-12 mb-0">
+                                <figure class="view overlay rounded z-depth-1 main-img">
+                                    <img src="{{url('uploads/'.$data->image)}}" class="img-fluid z-depth-1"
+                                        width="450px">
+                                </figure>
                             </div>
+
+
                         </div>
                     </div>
-                 
                 </div>
-                @endforeach
-            </div> 
-           
-        </div>
-           
-    </div>
-     
+                <div class="col-md-6">
+                    <h3>{{$data->catagory->catagory_title}}</h3>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Room_number:</strong></th>
+                                    <td>{{$data->room_number}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Max_adult:</strong></th>
+                                    <td>{{$data->max_adult}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Max_child:</strong></th>
+                                    <td>{{$data->max_child}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>No_of_bed:</strong></th>
+                                    <td>{{$data->no_of_bed}}</td>
+                                </tr>
+                                <th class="pl-0 w-25" scope="row"><strong>price:</strong></th>
+                                <td>{{$data->price}} TAKA</td>
+                                </tr>
+                                <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount:</strong></th>
+                                <td>{{$data->discount}} %</td>
+                                </tr>
+                                <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
+                                <td>{{$data->discount_price}} TAKA</td>
+                                </tr>
+                                
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <a href="{{route('home',$data->id)}}" type="button"
+                        class="btn btn-primary btn-md mr-1 mb-2">book now</a>
+                    <a href="{{route('single.room.view',$data->id)}}" type="button"
+                        class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>
+                    <!-- <button type="button" class="btn btn-light btn-md mr-1 mb-2"><iclass="fas fa-shopping-cart pr-2"></i>Add to cart</button> -->
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            @endforeach
 </section>
+<!--Section: Block Content-->
+<script>
 
-
-
-</body>
+</script>
 
 
 @endsection

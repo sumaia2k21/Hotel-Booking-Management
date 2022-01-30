@@ -1,126 +1,143 @@
 @extends('frontend.index')
 @section('content')
 
+<section class="w3l-contact-1 py-5">
+    <div class="contacts-9 py-lg-5 py-sm-4">
+        <div class="container">
+             <div id="printableArea">
+                 <br>
+                <h4>{{$hotels->name}} </h4>
+                <br>
+                <div>
+                    <ul>
+                        <h6 class="footer-title-29">Address</h6>
+                        <p> {{$hotels->address}}</p>
+                    </ul>
+                </div>
+                <div style="text-align: right;">
+                    <h6 class="footer-title-29">Contact us</h6>
+                    <ul>
+                        <li><a href=""><span class="fa fa-phone"></span> {{$hotels->contact_no}}</a></li>
+                        <a href=""><span class="fa fa-phone"></span> {{$hotels->email}}</a>
+                    </ul>
+                </div>
+                <h1 style="text-align: center;">Invoice</h1>
+                <hr>
+                <div class="col-md-6">
+                    @foreach($user as $list)
+                    <h5> User details</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                    <tr>
+                                        <th class="pl-0 w-25" scope="row"><strong>User name</strong></th>
+                                        <td>{{$list->name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-0 w-25" scope="row"><strong>Mobile_no</strong></th>
+                                        <td>{{$list->mobile_no}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-0 w-25" scope="row"><strong>email</strong></th>
+                                        <td>{{$list->email}}</td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                    @endforeach
+                </div>
+                <br>
+                <div class="card">
+                    <h5 style="text-align: center;"> booking details</h5>
+                     <table class="table table-bordered">
+                        <thead>
+                            <th scope="col">Booking number</th>
+                            <th scope="col">From date</th>
+                            <th scope="col">To date</th>
+                            <th scope="col">  Discount Ammount</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                        </thead>
+                        <tbody>
+                            @foreach($bookinginfo as $list)
+                            <tr>
+                                <td>{{$list->id}}</td>
+                                <td>{{$list->from_date}}</td>
+                                <td>{{$list->to_date}}</td>
+                                <td>{{$list->discount_price}}</td>
+                                <td>{{$list->status}}</td>
+                                <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
+                                <td></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: center;"> Room information</h5>
+                    <table class="table table-bordered">
+                        <thead>
 
-<div id="printableArea">
-
-    <br>
-    <h4>{{$hotels->name}} hotel</h4>
-    <br>
-    <div>
-            <ul>
-                <h6 class="footer-title-29">Address</h6>
-                <p> {{$hotels->address}}</p>
-          </ul>
-    </div>
-
-     <div style="text-align: right;" >
-          <h6 class="footer-title-29" >Contact us</h6>
-          <ul>
-            <li><a href=""><span class="fa fa-phone"></span> {{$hotels->contact_no}}</a></li>
-            <li><a href=""><span class="fa fa-phone"></span> {{$hotels->email}}</a></li> 
-          </ul>
+                            <!-- <th scope="col">room Type or category</th> -->
+                            <th scope="col">Room number</th>
+                            <th scope="col">Room name</th>
+                            <th scope="col">Maximum_adult</th>
+                            <th scope="col">Maximum_child</th>
+                            <th scope="col">no_of_bed</th>
+                            <th scope="col">Image</th>
+                        </thead>
+                        <tbody>
+                            @foreach($bookinginfo as $list)
+                            <tr>
+                                <!-- <td>{{$list->catagory_title}}</td> -->
+                                <td>{{$list->room->room_number}}</td>
+                                <td>{{$list->room->room_name}}</td>
+                                <td>{{$list->room->max_adult}}</td>
+                                <td>{{$list->room->max_child }}</td>
+                                <td>{{$list->room->no_of_bed}}</td>
+                                <td><img src="{{url('/uploads/'.$list->room->image)}}" width="40px" alt="image"></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                    @foreach($pay as $pays)
+                    <h5>Payment details</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
+                                    <td><del>{{$pays->total_ammount}}</del> /=</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
+                                    <td>{{$pays->discount_price}} /=</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Pay Amount:</strong></th>
+                                    <td>{{$pays->pay_ammount}} /=</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Due:</strong></th>
+                                    <td>{{$pays->due}} /=</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @endforeach
+                </div>
+                </div>
+            </div>
         </div>
-    
-    <h1 style="text-align: center;">invoice</h1>
-    <br>
-
-    <div class="card">
-
-      <h5 style="text-align: center;"> User details</h5> 
-        <table class="table table-bordered">
-            <thead>
-                <!-- <th scope="col">S.No</th> -->
-                <th scope="col">User Name</th>
-                <th scope="col">Mobile_no</th>
-                <th scope="col">Email</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-
-
-            </thead>
-            <tbody>
-                @foreach($bookstatus as $list)
-                <tr>
-                    <!-- <td>{{$loop->iteration}}</td> -->
-                    <td>{{$list->name}}</td>
-                    <td>{{$list->mobile_no}}</td>
-                    <td>{{$list->email}}</td>
-                    <td> </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-        <h5 style="text-align: center;"> booking details</h5> 
-        
-        <table class="table table-bordered">
-            <thead>
-             
-                <th scope="col">Booking number</th>
-                <th scope="col">From date</th>
-                <th scope="col">to date</th>
-                <th scope="col">Status</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-
-            </thead>
-            <tbody>
-                @foreach($bookstatus as $list)
-                <tr>
-                    
-                    <td>{{$list->id}}</td>
-                    <td>{{$list->from_date}}</td>
-                    <td>{{$list->to_date}}</td>
-                    <td>{{$list->status}}</td>
-                    <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
-                    <td></td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-         <h5 style="text-align: center;"> Room information</h5> 
-        <table class="table table-bordered">
-            <thead>
-                
-                <!-- <th scope="col">room Type or category</th> -->
-                <th scope="col">Room number</th>
-                <th scope="col">Room name</th>
-                <th scope="col">max_adult</th>
-                <th scope="col">max_child</th>
-                <th scope="col">no_of_bed</th>
-                <th scope="col">image</th>
-
-                </tr>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($bookstatus as $list)
-                <tr>
-                    
-                    <!-- <td>{{$list->catagory_title}}</td> -->
-                    <td>{{$list->room->room_number}}</td>
-                    <td>{{$list->room->room_name}}</td>
-                    <td>{{$list->room->max_adult}}</td>
-                    <td>{{$list->room->max_child }}</td>
-                    <td>{{$list->room->no_of_bed}}</td>
-
-                    <td><img src="{{url('/uploads/'.$list->room->image)}}" width="40px" alt="image"></td>
-
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
     </div>
-</div>
-<div>
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary" onclick="printDiv('printableArea')">
-        <i class="bi bi-printer"></i> Print
-    </button>
+    </div>
+</section>
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary" onclick="printDiv('printableArea')">
+    <i class="bi bi-printer"></i> Print
+</button>
 </div>
 <script type="text/javascript">
     function printDiv(divName) {
@@ -138,6 +155,5 @@
 <br>
 <br>
 <br>
-
 
 @endsection

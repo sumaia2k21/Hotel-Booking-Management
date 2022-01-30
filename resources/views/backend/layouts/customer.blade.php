@@ -28,7 +28,7 @@
       <td>{{$data->role}}</td>
       <td>
      
-      <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger">delect</a>
+      <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger">delet</a>
       </td>
     </tr>
     

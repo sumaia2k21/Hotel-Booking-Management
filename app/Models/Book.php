@@ -23,6 +23,10 @@ public function book()
 {
     return $this->belongsTo(Book::class);
 }
+public function pay()
+{
+    return $this->belongsTo(Payment::class);
+}
 
 }
 

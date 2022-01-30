@@ -16,7 +16,7 @@
     @endif
 
     <form method="post" action="{{ route('images.store') }}" enctype="multipart/form-data">
-      @csrf
+    @csrf
       <div class="form-group">
           <input type="file" name="images[]" multiple class="form-control" accept="image/*">
           @if ($errors->has('files'))

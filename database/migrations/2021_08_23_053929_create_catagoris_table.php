@@ -16,13 +16,11 @@ class CreateCatagorisTable extends Migration
         Schema::create('catagoris', function (Blueprint $table) {
             $table->id();
             $table->string('catagory_title')->unique();
-            // $table->string('max_adult')->nullable();
-            // $table->string('max_child')->nullable();
-            // $table->string('no_of_bed')->nullable();
-            
+            $table->integer('discount')->default(0);
             $table->string('image');
-            $table->string('description');
-            $table->string('price')->nullable();
+            $table->string('description')->nullable();
+            $table->string('price');
+            $table->string('discount_price')->nullable();
             $table->timestamps();
         });
     }

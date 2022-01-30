@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Catagory;
 use App\Models\Facility;
+use App\Models\Roomamenities;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -12,16 +13,17 @@ class Room_controller extends Controller
 {
     public function add_room()
     {
+
          $catagory=Catagory::all();
-//     dd($catagory->all());
-         return view('backend.layouts.newroom.add_room',compact('catagory'));
+         $amenities=Facility::all();
+          return view('backend.layouts.newroom.add_room',compact('catagory','amenities'));
     }
     
 
      public function manage_room()
      {
-          $newroomlist=Room::with('catagory')->paginate(6);
-          
+          $newroomlist=Room::with('catagory','roomamenities')->paginate(8);
+          // $amenities = Roomamenities::with('roomamenities')->paginate(8);
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
 
@@ -30,8 +32,10 @@ class Room_controller extends Controller
 
 public function roomlist(Request $newroomlist){
      
-     // dd($newroomlist->all());
-     // dd(date('Ymdhms').'.'.$newroomlist->file('image')->getClientOriginalExtension());
+   
+     $discount=Catagory::find($newroomlist->catagory_title);
+     //dd($discount);
+  
      $fileName='';
      if($newroomlist->hasFile('image'))
      {
@@ -43,7 +47,7 @@ public function roomlist(Request $newroomlist){
           $file->storeAs('/uploads',$fileName);
      }
 
-     Room::Create([
+    $room = Room::Create([
           'catagory_id'=>$newroomlist->catagory_title,
           'room_name'=>$newroomlist->room_name,
           'room_number'=>$newroomlist->room_number,
@@ -52,11 +56,23 @@ public function roomlist(Request $newroomlist){
           'room_description'=>$newroomlist->room_description,
           'no_of_bed'=>$newroomlist->no_of_bed,
           'image'=>$fileName,
-          'price'=>$newroomlist-> price,
+          'price'=>$discount-> price ,
+          'discount_price'=>$discount-> price-$discount-> discount/100*$discount-> price ,
+          'discount'=>$discount-> discount,
           'status'=>$newroomlist-> status
           
 
      ]);
+
+     foreach($newroomlist->facilities_id as $am)
+     {
+       
+     Roomamenities::create([
+         'room_id'=>$room->id,
+         'facilities_id'=>$am
+       ]);
+
+     }
      return redirect()->route('manage_room');
      }
      //delete here
@@ -82,18 +98,24 @@ public function roomlist(Request $newroomlist){
      }
      public function update(Request $newroomlist,$id)
      {
+          
           $room=Room::find($id);
           $room->update([
                'room_name'=>$newroomlist->room_name,
-          'room_number'=>$newroomlist->room_number,
-          'max_adult'=>$newroomlist->max_adult,
-          'max_child'=>$newroomlist->max_child,
-          'room_description'=>$newroomlist->room_description,
-          'no_of_bed'=>$newroomlist->no_of_bed,
-        'price'=>$newroomlist-> price, 
-        'status'=>$newroomlist-> status 
+               'room_number'=>$newroomlist->room_number,
+               'max_adult'=>$newroomlist->max_adult,
+               'max_child'=>$newroomlist->max_child,
+               'room_description'=>$newroomlist->room_description,
+               'no_of_bed'=>$newroomlist->no_of_bed,
+               
+               'status'=>$newroomlist-> status 
 
           ]);
+
+          
+
+      
+
 
        return redirect()->route('manage_room')->with('message','room update sucessfully');  
           
