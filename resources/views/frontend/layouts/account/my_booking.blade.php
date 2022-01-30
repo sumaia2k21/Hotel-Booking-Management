@@ -4,12 +4,12 @@
 <section class="w3l-breadcrumb">
         <div class="breadcrum-bg py-sm-5 py-4">
             <div class="container py-lg-3">
-                <h2>ghjk</h2>    
+                <h2>My Booking Details</h2>    
             </div>
         </div>
     </section>
     <br>
-    <h1 style="text-align: center;">My Hotel Booking Detail</h1>
+    <!-- <h1 style="text-align: center;">My Hotel Booking Detail</h1> -->
     <br>
 <div class="card">
     <table class="table table-bordered">
@@ -52,7 +52,7 @@
         </tbody>
     </table>    
 </div>
-<!-- <a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a> -->
+<a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a>
 <br>
 <br>
 <br>

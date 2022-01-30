@@ -63,9 +63,10 @@
                             <th scope="col">From date</th>
                             <th scope="col">to date</th>
                             <th scope="col">Total Ammount</th>
+                            <th scope="col">Total Discount Price</th>
                             <th scope="col">Status</th>
-                            
-                            <th scope="col"></th>
+                            <th scope="col">Payment Status</th>
+                           
 
                         </thead>
                         <tbody>
@@ -79,10 +80,12 @@
                                 <td>{{$list->id}}</td>
                                 <td>{{$list->from_date}}</td>
                                 <td>{{$list->to_date}}</td>
+                                <td>{{$list->total_ammount}}</td>
                                 <td>{{$list->discount_price}}</td>
                                 <td>{{$list->status}}</td>
+                                <td>{{$list->payment_status}}</td>
                                 <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
-                                <td></td>
+                                
 
                                 @php
                                 $roomPrice = $list->discount_price;
@@ -104,8 +107,8 @@
                             <th scope="col">no_of_bed</th>
                             <th scope="col">image</th>
 
-                            </tr>
-                            </tr>
+                           
+                            
                         </thead>
                         <tbody>
                             @foreach($bookinginfo as $list)
@@ -140,11 +143,11 @@
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total </strong></th>
-                                    <td>ff</td>
+                                    <td>aa</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>qqq</strong></th>
-                                    <td>{{$list->email}}</td>
+                                    <td>aa</td>
                                 </tr>
 
                                 </tr>
