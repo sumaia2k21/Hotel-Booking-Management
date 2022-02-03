@@ -21,7 +21,6 @@
                 <!-- <td>{{$loop->iteration}}</td> -->
                 <td>{{$data->id}}</td>
                 <td>{{$data->Catagory->catagory_title}}</td>
-                
                 <td>{{$data->room_number}}</td>
 
             </tr>

@@ -41,9 +41,9 @@
 					</li>
                     
                     @if(auth()->user())
-                    <li class="nav-item active">
+                    <!-- <li class="nav-item active">
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
-                    </li>                 
+                    </li>                  -->
                     <li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,7 +82,10 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('admin.login')}}">Admin</a>
                     </li>
-                   
+                
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('cart.get')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}}) </a>
+                    </li>
                 </ul>
 
             </div>

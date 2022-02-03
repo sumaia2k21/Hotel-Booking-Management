@@ -8,6 +8,15 @@
 <section class="w3l-roomsingleblock1 py-5">
     <div class="best-rooms w3l-blog py-5">
         <h5 class=" title-lg text-center">Search result from {{$from_date}} to {{$to_date}}</h5>
+      <div >
+      @if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+    </span>
+    @endif
+
+      </div>  
+            
         <div class="container py-lg-5 py-sm-4">
             @foreach($available as $data)
             <div class="row">
@@ -49,7 +58,7 @@
                                 </tr>
                                 <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
-                                <td>{{$data->discount}} %</td>
+                                <td>{{$data->catagory->discount}}%</td>
                                 </tr>
                                 <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
@@ -61,11 +70,15 @@
                         </table>
                     </div>
                     <hr>
-                    <a href="{{route('bookingform',$data->id)}}" type="button"
-                        class="btn btn-primary btn-md mr-1 mb-2">book now</a>
+                    
+                    <a href="{{route('cart.add',$data->id)}}" type="button"
+                        class="btn btn-primary btn-md mr-1 mb-2">add booking</a>
+
+                    <!-- <a href="{{route('bookingform',$data->id)}}" type="button"
+                        class="btn btn-primary btn-md mr-1 mb-2">book now</a> -->
                     <a href="{{route('single.room.view',$data->id)}}" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>
-                    <!-- <button type="button" class="btn btn-light btn-md mr-1 mb-2"><iclass="fas fa-shopping-cart pr-2"></i>Add to cart</button> -->
+                    
                 </div>
             </div>
             <br>

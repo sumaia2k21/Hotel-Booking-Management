@@ -39,11 +39,9 @@
         <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
           <h6 class="footer-title-29">About Us</h6>
        
-        <li><p>fdghfgjmhdffhgfgghghjhfgghgjhjh</p></li> 
-          <!-- <form action="#" class="subscribe" method="post">
-            <input type="email" name="email" placeholder="Your Email Address" required="">
-            <button><span class="fa fa-envelope-o"></span></button>
-          </form> -->
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus veritatis incidunt iste totam,
+           consequuntur minus assumenda commodi sint asperiores. Voluptatibus incidunt alias.</p></li> 
+          
         </div>
       </div>
     </div>

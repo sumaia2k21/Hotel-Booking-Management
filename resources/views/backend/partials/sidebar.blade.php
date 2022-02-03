@@ -18,6 +18,16 @@
                         </a>
                         
                     </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-h-square" aria-hidden="true"></i>
+                            <span class="nav-text">Hotel Information</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li> 
+                        </ul>
+                    </li> 
+
                     
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -74,22 +84,14 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('all_booking')}}">All Booking List</a></li>
                             <li><a href="{{route('new.booking.list')}}">New Booking List</a></li>
-                            <li><a href="{{route('approved.booking.list')}}">Approve Booking List</a></li>
-                            <li><a href="{{route('cancel.booking.list')}}">Cancel Booking List</a></li>
+                            <!-- <li><a href="{{route('approved.booking.list')}}">Approve Booking List</a></li>
+                            <li><a href="{{route('cancel.booking.list')}}">Cancel Booking List</a></li> -->
+                          
                            
                         </ul>
                     </li>
                    
-                    <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-h-square" aria-hidden="true"></i>
-                            <span class="nav-text">Hotel Information</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('hotelinfo')}}">Add hotel Info</a></li> 
-                        </ul>
-                    </li> 
-                
+                   
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="fa fa-list" aria-hidden="true"></i>
@@ -290,8 +292,8 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('all_booking')}}">All Booking List</a></li>
                             <li><a href="{{route('new.booking.list')}}">New Booking List</a></li>
-                            <li><a href="{{route('approved.booking.list')}}">Approve Booking List</a></li>
-                            <li><a href="{{route('cancel.booking.list')}}">Cancel Booking List</a></li>
+                            <!-- <li><a href="{{route('approved.booking.list')}}">Approve Booking List</a></li>
+                            <li><a href="{{route('cancel.booking.list')}}">Cancel Booking List</a></li> -->
                            
                         </ul>
                     </li>

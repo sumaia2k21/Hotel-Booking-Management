@@ -1,6 +1,11 @@
 @extends('backend.master')
 @section('content')
 
+@if(session()->has('message'))
+    <span class="alert alert-success">
+        {{ session()->get('message') }}
+    </span>
+    @endif
 <h2>Catagory/<small>add catagory</small></h2>
 <div class="card">
     <div class="card-body">
@@ -9,7 +14,7 @@
             @csrf
             <div class="form-group">
                 <label for="largeSelect">Category Title</label>
-                <select class="form-control form-control-lg" name="catagory_title" id="Catagory Title">
+                <select class="form-control form-control-lg" name="catagory_title" id="Catagory Title" required>
                     <option>Standard </option>
                     <option>Deluxe</option>
                     <option>Superior Deluxe </option>
@@ -28,14 +33,10 @@
                 <textarea type="text" class="form-control form-control" name="description" id="Description"
                     placeholder="Description"></textarea>
             </div>
-            <!-- <div class="form-group">
-                <label for="smallInput">Discount</label>
-                <input type="number" class="form-control form-control-sm" name="discount" id="Price" placeholder="discount">
-            </div>
-             -->
+           
                     <div class="form-group">
                         <label for="largeInput">price</label>
-                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
+                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="" required>
                     </div>
             <div class="card-action">
                 <button type="submit" class="btn btn-success">Add</button>

@@ -22,7 +22,7 @@ class Room_controller extends Controller
 
      public function manage_room()
      {
-          $newroomlist=Room::with('catagory','roomamenities')->paginate(8);
+          $newroomlist=Room::with('catagory','roomamenities')->paginate(4);
           // $amenities = Roomamenities::with('roomamenities')->paginate(8);
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
@@ -31,49 +31,54 @@ class Room_controller extends Controller
 
 
 public function roomlist(Request $newroomlist){
-     
+
+     $newroomlist->validate([
+          'room_number'=> 'required',
+          'room_number'=> 'required|unique:rooms',   
+
+      ]);
    
      $discount=Catagory::find($newroomlist->catagory_title);
      //dd($discount);
   
-     $fileName='';
-     if($newroomlist->hasFile('image'))
-     {
+          $fileName='';
+          if($newroomlist->hasFile('image'))
+          {
 
-          $file=$newroomlist->file('image');
-          // dd($file);
-          //generate file name
-          $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
-          $file->storeAs('/uploads',$fileName);
-     }
+               $file=$newroomlist->file('image');
+               // dd($file);
+               //generate file name
+               $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+               $file->storeAs('/uploads',$fileName);
+          }
 
-    $room = Room::Create([
-          'catagory_id'=>$newroomlist->catagory_title,
-          'room_name'=>$newroomlist->room_name,
-          'room_number'=>$newroomlist->room_number,
-          'max_adult'=>$newroomlist->max_adult,
-          'max_child'=>$newroomlist->max_child,
-          'room_description'=>$newroomlist->room_description,
-          'no_of_bed'=>$newroomlist->no_of_bed,
-          'image'=>$fileName,
-          'price'=>$discount-> price ,
-          'discount_price'=>$discount-> price-$discount-> discount/100*$discount-> price ,
-          'discount'=>$discount-> discount,
-          'status'=>$newroomlist-> status
+           $room = Room::Create([
+               'catagory_id'=>$newroomlist->catagory_title,
+               'room_name'=>$newroomlist->room_name,
+               'room_number'=>$newroomlist->room_number,
+               'max_adult'=>$newroomlist->max_adult,
+               'max_child'=>$newroomlist->max_child,
+               'room_description'=>$newroomlist->room_description,
+               'no_of_bed'=>$newroomlist->no_of_bed,
+               'image'=>$fileName,
+               'price'=>$discount-> price ,
+               'discount_price'=>$discount-> price-$discount-> discount/100*$discount-> price ,
+               'discount'=>$discount-> discount,
+               'status'=>$newroomlist-> status
+               
+
+           ]);
+
+          foreach($newroomlist->facilities_id as $am)
+               {
           
+               Roomamenities::create([
+               'room_id'=>$room->id,
+               'facilities_id'=>$am
+               ]);
 
-     ]);
-
-     foreach($newroomlist->facilities_id as $am)
-     {
-       
-     Roomamenities::create([
-         'room_id'=>$room->id,
-         'facilities_id'=>$am
-       ]);
-
-     }
-     return redirect()->route('manage_room');
+               }
+          return redirect()->route('manage_room');
      }
      //delete here
      public function delete($id)
@@ -111,11 +116,6 @@ public function roomlist(Request $newroomlist){
                'status'=>$newroomlist-> status 
 
           ]);
-
-          
-
-      
-
 
        return redirect()->route('manage_room')->with('message','room update sucessfully');  
           

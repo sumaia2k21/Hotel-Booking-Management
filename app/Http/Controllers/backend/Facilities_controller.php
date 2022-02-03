@@ -15,26 +15,24 @@ class Facilities_controller extends Controller
     }
     public function manage_facilities()
     {
-     $facilitylist=Facility::paginate(7);
+     $facilitylist=Facility::paginate(4);
      
 
      return view('backend.layouts.facility.manage_facilities',compact('facilitylist'));
     }
 
-
-
 //     facility_list
     public function facility_list(Request $facilitylist)
     {
-     //    dd($facilitylist->all());
-     // dd($newroomlist->all());
-     // dd(date('Ymdhms').'.'.$newroomlist->file('imaje')->getClientOriginalExtension());
+     $facilitylist->validate([
+               
+          'facility_title'=> 'required|unique:facilities',
+      ]);
+
      $fileName='';
      if($facilitylist->hasFile('imaje'))
      {
-
           $file=$facilitylist->file('imaje');
-          // dd($file);
           //generate file name
           $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
           $file->storeAs('/uploads',$fileName);
@@ -44,9 +42,6 @@ class Facilities_controller extends Controller
           'imaje'=>$fileName,
           'facility_title'=>$facilitylist->facility_title,
           'description'=>$facilitylist->description
-                    
-     
-     
           ]);
           return redirect()->route('manage_facilities');
      }
@@ -54,7 +49,6 @@ class Facilities_controller extends Controller
           //delete here
      public function delete($id)
      {
-          // dd($id);
           // Room::destroy($id);
           $facility=Facility::find($id);
           if($facility)
@@ -93,7 +87,7 @@ class Facilities_controller extends Controller
 
 
            ]);
-           return redirect()->route('manage_facilities')->with('message','update facilities');
+           return redirect()->route('manage_facilities')->with('message','Successfully update facilities');
        }
 
 }

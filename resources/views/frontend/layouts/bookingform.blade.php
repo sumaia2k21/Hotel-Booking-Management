@@ -70,10 +70,7 @@
                                 // dd($diff_in_days);
                                 $days=$diff_in_days->days;
                                 // dd($days);
-                                $p=(int)$room->price;
-                                $total=$days*$p;
-                                $discount= $total-$room->discount/100*$total;
-                                //dd($discount);
+                             
                                 @endphp
 
                                 <div class="twice">

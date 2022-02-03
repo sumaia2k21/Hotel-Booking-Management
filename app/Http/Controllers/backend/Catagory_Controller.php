@@ -22,32 +22,34 @@ class Catagory_Controller extends Controller
     }
     
 
-public function catagory_list(Request $catagorylist){
-     $fileName='';
-     if($catagorylist->hasFile('image'))
+     public function catagory_list(Request $catagorylist)
      {
-           $file=$catagorylist->file('image');
-          //generate file name
-          $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
-          $file->storeAs('/uploads',$fileName);
-     }
-     // dd($catagorylist->all());
-     Catagory::Create([
-          'catagory_title'=>$catagorylist->catagory_title,
-               // 'discount'=>$catagorylist->discount,
-               'image'=>$fileName,
-               'description'=>$catagorylist->description,
-               'price'=>$catagorylist-> price ,
-               'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
-               // 'max_adult'=>$catagorylist->max_adult,
-               // 'max_child'=>$catagorylist->max_child,
-               // 'no_of_bed'=>$catagorylist->no_of_bed,
-               // 'price'=>$catagorylist-> price ,
-               // 'status'=>$catagorylist-> status ,
-     ]);
+          $catagorylist->validate([
+               
+               'catagory_title'=> 'required|unique:catagoris',
+               'price'=> 'required',   
+     
+           ]);
+          $fileName='';
+          if($catagorylist->hasFile('image'))
+          {
+               $file=$catagorylist->file('image');
+               //generate file name
+               $fileName=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+               $file->storeAs('/uploads',$fileName);
+          }
+     
+          Catagory::Create([
+                    'catagory_title'=>$catagorylist->catagory_title,
+                    'image'=>$fileName,
+                    'description'=>$catagorylist->description,
+                    'price'=>$catagorylist-> price ,
+                    'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
+                    
+          ]);
 
-     return redirect()->route('manage_catagory');
-}
+          return redirect()->route('manage_catagory');
+     }
 
 public function allRoom($id)
     {
@@ -72,8 +74,15 @@ public function allRoom($id)
           $category=Catagory::find($id);
           return view('backend.layouts.catagory.edit',compact('category'));
      }
+
      public function update(Request $catagorylist, $id)
      {
+          $catagorylist->validate([
+               
+               'discount'=> 'required',
+               'price'=> 'required',   
+     
+           ]);
          
           $category=Catagory::find($id);  
           $category->update([

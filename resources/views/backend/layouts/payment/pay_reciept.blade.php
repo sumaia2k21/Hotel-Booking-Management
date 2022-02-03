@@ -30,24 +30,24 @@
                     </ul>
                 </div>
                 <h1 style="text-align: center;">Money reciept</h1>
-                <hr>
+              
                 <div class="col-md-6">
-                    @foreach($user as $list)
+                    @foreach($payment as $list)
                     <h5> User details</h5>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>User name</strong></th>
-                                    <td>{{$list->name}}</td>
+                                    <td>{{$list->book->name}}</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Mobile_no</strong></th>
-                                    <td>{{$list->mobile_no}}</td>
+                                    <td>{{$list->book->mobile_no}}</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>email</strong></th>
-                                    <td>{{$list->email}}</td>
+                                    <td>{{$list->book->email}}</td>
                                 </tr>
 
                                 </tr>
@@ -58,7 +58,7 @@
                 </div>
 
                 <br>
-
+                <hr>
                 <div class="card">
                     <h5 style="text-align: center;"> booking details</h5>
 
@@ -75,14 +75,14 @@
 
                         </thead>
                         <tbody>
-                            @foreach($bookinginfo as $list)
+                            @foreach($payment as $list)
                             <tr>
 
-                                <td>{{$list->id}}</td>
-                                <td>{{$list->from_date}}</td>
-                                <td>{{$list->to_date}}</td>
-                                <td>{{$list->discount_price}}</td>
-                                <td>{{$list->status}}</td>
+                                <td>{{$list->book->id}}</td>
+                                <td>{{$list->book->from_date}}</td>
+                                <td>{{$list->book->to_date}}</td>
+                                <td>{{$list->book->discount_price}}</td>
+                                <td>{{$list->book->status}}</td>
                                 <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
                                 <td></td>
                             </tr>
@@ -107,22 +107,20 @@
                         <tbody>
                             @foreach($bookinginfo as $list)
                             <tr>
-
-                                <!-- <td>{{$list->catagory_title}}</td> -->
                                 <td>{{$list->room->room_number}}</td>
                                 <td>{{$list->room->room_name}}</td>
                                 <td>{{$list->room->max_adult}}</td>
                                 <td>{{$list->room->max_child }}</td>
                                 <td>{{$list->room->no_of_bed}}</td>
 
-                                <td><img src="{{url('/uploads/'.$list->room->image)}}" width="40px" alt="image"></td>
+                                <td><img src="{{url('/uploads/'.$list->image)}}" width="40px" alt="image"></td>
 
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
 
-                    <table class="table table-striped table-bordered">
+                    <!-- <table class="table table-striped table-bordered">
                         <thead>
 
                             <tr>
@@ -154,7 +152,7 @@
                         </thead>
 
 
-                    </table>
+                    </table> -->
 
 
                 </div>

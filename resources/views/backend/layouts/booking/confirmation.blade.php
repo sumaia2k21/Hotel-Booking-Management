@@ -38,47 +38,35 @@
     <table class="table table-bordered">
         <thead>
             <th scope="col">S.No</th>
-            
             <th scope="col">Room name</th>
             <th scope="col">Room number</th>
-            <th scope="col">Name</th>
-            <th scope="col">Mobile_no</th>
-            <th scope="col">Total Paid</th>
-            <th scope="col">Total_Ammount</th>
-            <th scope="col">discount_price</th>
-            <th scope="col">from_date</th>
-            <th scope="col">to_date</th>
-            <th scope="col">Payment Status</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col">price</th>
+            <th scope="col">Status </th>
+            <th scope="col">Payment Status </th>
+            <th >subtotal </th>
+           
              
         </thead>
         <tbody>
-            
+        @foreach($book as $request)
             <tr>
-                <td>{{$request->id}}</td>
-           
-                <td>{{$request->room->room_name}}</td>
-                <td>{{$request->room->room_number}}</td>
-                <td>{{$request->name}}</td>
-                <td>{{$request->mobile_no}}</td>
-                <td>{{$request->total_paid}}</td>
-                <td>{{$request->total_ammount}}</td>
-                <td>{{$request->discount_price}}</td>
-                <td>{{$request->from_date}}</td>
-                <td>{{$request->to_date}}</td>
-                <td>{{$request->payment_status}}</td>
-                <td>{{$request->status}}</td>
-                <td>
-                <a href="{{route('payment.form',$request->id)}}" class="btn btn-success">payment</a>
-                    <a href="{{route('book.approve',$request->id)}}" class="btn btn-success">approve</a>
-                    <a href="{{route('book.cancel',$request->id)}}" class="btn btn-danger">cancel</a>
-
-                </td>
+               <td>{{$request->id }}</td>
+                <td>{{$request->room->room_name }}</td>
+                <td>{{$request->room->room_number }}</td>
+                <td>{{$request->room->price}}</td>
+                <td>{{$request->book->status}}</td>
+                <td>{{$request->book->payment_status}}</td>
+                
+                <td >{{$request->subtotal}}</td>
+                <!-- <td>
+                <a href="{{route('booking.delete',$request->id)}}" class="btn btn-danger">delete</a>
+                </td> -->
+          
             </tr>
-           
+            @endforeach       
         </tbody>
     </table>
+    
 </div>
 
 @endsection

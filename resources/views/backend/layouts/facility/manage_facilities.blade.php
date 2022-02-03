@@ -37,7 +37,7 @@
                 <td>{{$fy->description}}</td>
                  <td>
                     
-                    <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('facility.edit',$fy->id)}}" class="btn btn-success">edit</a>
+                    <a onclick="return confirm('Are you sure you want to edit this item?');" href="{{route('facility.edit',$fy->id)}}" class="btn btn-success">edit</a>
                     <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('facility.delete',$fy->id)}}" class="btn btn-danger">delect</a>
 
                 </td>

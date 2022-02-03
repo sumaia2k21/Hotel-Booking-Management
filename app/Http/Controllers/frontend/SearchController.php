@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend\RoomController;
 use App\Models\Book;
+use App\Models\BookDetails;
 use App\Models\Catagory;
 use App\Models\Discount;
 use App\Models\Gallary;
@@ -28,16 +29,18 @@ class SearchController extends Controller
       ]);
       // end
 
-      $rooms=Book::select('room_id')->whereBetween('from_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
+    $book=Book::select('id')->whereBetween('from_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
       ->orWhereBetween('to_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
       ->get();
 
-      $room_ids=collect($rooms)->pluck('room_id')->toArray();
+      $book_ids=collect($book)->pluck('id')->toArray();
 
-      $available=Room::whereNotIn('id',$room_ids)->get();
-      
-      
-     
+      $rooms=BookDetails::select('room_id')->whereIn('book_id',$book_ids)->get();
+      $room_ids=array_unique(collect($rooms)->pluck('room_id')->toArray());
+      // dd(array_unique($room_ids));
+        $available=Room::whereNotIn('id',$room_ids)->get();
+    
+
       return view('frontend.layouts.search-result',compact('available', 'from_date','to_date','request'));
       
      

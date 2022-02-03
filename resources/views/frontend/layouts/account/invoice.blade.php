@@ -24,6 +24,7 @@
                 <h1 style="text-align: center;">Invoice</h1>
                 <hr>
                 <div class="col-md-6">
+                  
                     @foreach($user as $list)
                     <h5> User details</h5>
                     <div class="table-responsive">
@@ -54,20 +55,23 @@
                             <th scope="col">Booking number</th>
                             <th scope="col">From date</th>
                             <th scope="col">To date</th>
+                            
                             <th scope="col">  Discount Ammount</th>
                             <th scope="col">Status</th>
                             <th scope="col"></th>
                         </thead>
                         <tbody>
-                            @foreach($bookinginfo as $list)
+                            @foreach($book as $list)
                             <tr>
-                                <td>{{$list->id}}</td>
-                                <td>{{$list->from_date}}</td>
-                                <td>{{$list->to_date}}</td>
-                                <td>{{$list->discount_price}}</td>
-                                <td>{{$list->status}}</td>
+                                <td>{{$list->book->id}}</td>
+                               
+                                <td>{{$list->book->from_date}}</td>
+                                <td>{{$list->book->to_date}}</td>
+                                
+                                <td>{{$list->subtotal}}</td>
+                                <td>{{$list->book->status}}</td>
                                 <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
-                                <td></td>
+                               
                             </tr>
                             @endforeach
                         </tbody>
@@ -85,7 +89,7 @@
                             <th scope="col">Image</th>
                         </thead>
                         <tbody>
-                            @foreach($bookinginfo as $list)
+                            @foreach($book as $list)
                             <tr>
                                 <!-- <td>{{$list->catagory_title}}</td> -->
                                 <td>{{$list->room->room_number}}</td>
@@ -100,33 +104,50 @@
                     </table>
                     </div>
                     <br>
-                    <div class="col-md-6">
-                    @foreach($pay as $pays)
-                    <h5>Payment details</h5>
-                    <div class="table-responsive">
-                        <table class="table table-sm table-borderless mb-0">
+
+
+                    <!-- subtotal -->
+                    @foreach($payment as $list)
+                    <h4>Payment details</h4>
+                    <hr>
+                    <br>
+                    <div class="table-responsive" >
+                        <table class="table table-sm table-borderless mb-0" >
                             <tbody>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
-                                    <td><del>{{$pays->total_ammount}}</del> /=</td>
+                                    
+                                    <td> <del>{{$list->book->total_ammount}}</del> </td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
-                                    <td>{{$pays->discount_price}} /=</td>
+                                    
+                                    <td>{{$list->discount_price}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Pay Amount:</strong></th>
-                                    <td>{{$pays->pay_ammount}} /=</td>
+                                    <th class="pl-0 w-25" scope="row"><strong>Total Paid:</strong></th>
+                                    
+                                    <td>{{$list->book->total_paid}}</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Due:</strong></th>
-                                    <td>{{$pays->due}} /=</td>
+                                    <th class="pl-0 w-25" scope="row"><strong>Payment Status:</strong></th>
+                                    
+                                    <td>{{$list->payment_status}}</td>
                                 </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Payment Date:</strong></th>
+                                    
+                                    <td>{{$list->payment_date}}</td>
+                                </tr>
+                                
+                               
+                               
                             </tbody>
                         </table>
                     </div>
                     @endforeach
-                </div>
+                     <!-- subtotal -->
+                
                 </div>
             </div>
         </div>

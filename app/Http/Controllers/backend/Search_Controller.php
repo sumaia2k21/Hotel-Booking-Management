@@ -14,10 +14,11 @@ class Search_Controller extends Controller
         $from_date = $request->from_date;
        $to_date = $request->to_date;
 
-       $room_ids=Book::pluck('room_id')->toArray();
+    //    $room_ids=Book::pluck('room_id')->toArray();
        
-       $book=Book::whereIn('room_id',$room_ids)->WhereBetween('to_date',[$from_date,$to_date])
+       $book=Book::WhereBetween('from_date',[$from_date,$to_date])
        ->get();
+    //    dd($book);
     //    $room_ids=collect($book)->pluck('room_id')->toArray();
 
     //    $book=Book::whereNotIn('id',$room_ids)->get();

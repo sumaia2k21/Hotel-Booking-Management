@@ -36,8 +36,8 @@
             <tr>
                 <td>{{$list->id}}</td>
               
-                <td>{{$list->room->room_name}}</td>
-                <td>{{$list->room->room_number}}</td>
+                <td>{{optional($list->room)->room_name ?? 'check details'}}</td>
+                <td>{{optional($list->room)->room_number ?? 'check details'}}</td>
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>
                 <td>{{$list->email}}</td>

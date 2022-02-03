@@ -16,9 +16,6 @@
     <table class="table table-bordered">
         <thead>
             <th scope="col">S.No</th>
-            
-            <th scope="col">Room name</th>
-            <th scope="col">Room number</th>
             <th scope="col">Name</th>
             <th scope="col">Mobile_no</th>
             <th scope="col">Email</th>
@@ -34,9 +31,6 @@
             @foreach($request as $list)
             <tr>
                 <td>{{$list->id}}</td>
-              
-                <td>{{$list->room->room_name}}</td>
-                <td>{{$list->room->room_number}}</td>
                 <td>{{$list->name}}</td>
                 <td>{{$list->mobile_no}}</td>
                 <td>{{$list->email}}</td>

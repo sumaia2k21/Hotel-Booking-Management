@@ -67,14 +67,13 @@ class User_Controller extends Controller
 
              return redirect()->route('home');
         }
-        
-
          return redirect()->back()->with('message','invalid user info');
         
     }
 
     public function guestlogout()
     {
+        session()->forget('cart');
         Auth::logout();
         return redirect()->route('home');
     }

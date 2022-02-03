@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\BookDetails;
 use App\Models\Hotel;
 use App\Models\Payment;
 use App\Models\Room;
@@ -42,6 +43,7 @@ $payment->update([
 
     Payment::Create([
         'book_id'=>$pay->book_id,
+        'user_id'=>$pay->user_id,
         'total_ammount'=>$pay->total_ammount,
         'discount_price'=>$pay->discount_price,
         'pay_ammount'=>$pay->pay_ammount,
@@ -66,7 +68,7 @@ $payment->update([
 
         ]);
     }
-    return redirect()->route('all_booking');
+    return redirect()->route('payment.list')->with('message','room cancel sucessfully');
 }
 public function edit($id)
     {
@@ -113,10 +115,11 @@ public function edit($id)
 
     public function report($id)
     {
+     
         $user=Book::where('user_id',Auth::id())->get()->take(1);
-        $bookinginfo=Book::where('id',$id)->get();
+        $bookinginfo=BookDetails::where('id',$id)->get();
        $pay=Payment::where('book_id',$id)->get();
-       $payment=Payment::where('id',$id)->get();
+       $payment=Payment::with('book','room')->where('id',$id)->get();
         return view('backend.layouts.payment.pay_reciept',compact('bookinginfo','user','pay','payment'));
     }
 

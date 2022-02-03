@@ -192,10 +192,10 @@
                 <input type="email" name="guest_email" class="input-field" placeholder="Email">
                 <input type="password" name="guest_password" class="input-field" placeholder="password">
                 <input type="text" name="guest_mobile_no" class="input-field" placeholder="Mobile no">
-                <select class="input-field" id="type" name="type">
+                <!-- <select class="input-field" id="type" name="type">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                </select>
+                </select> -->
 
 
                 <!-- <input type="checkbox" class="check-box"><span>I am agree to terms and condition</span> -->

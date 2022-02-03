@@ -17,11 +17,11 @@
     
     <hr>
     <br>
-<!-- @if(session()->has('message'))
+@if(session()->has('message'))
     <span class="alert alert-success">
         {{ session()->get('message') }}
 	</span>
-@endif  -->
+@endif 
      
 <div class="card">
         <table class="table table-striped table-hover">
@@ -49,7 +49,7 @@
                 <td>{{$data->book->room_id}}</td>
                 <td>{{$data->book->name}}</td>
                 <td>{{$data->book->mobile_no}}</td>
-                <td>{{$data->total_ammount}}</td>
+                <td>{{$data->book->total_ammount}}</td>
                 <td>{{$data->book->total_paid}}</td>
                 <td>{{$data->discount_price}}</td>
                 <td>{{$data->pay_ammount}}</td>

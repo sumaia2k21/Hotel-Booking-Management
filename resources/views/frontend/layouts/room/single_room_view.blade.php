@@ -23,9 +23,9 @@
                                     <p> Per night</p>
                                    
                                 </div>
-                                <div class="book-btn px-2">
-                                    <a href="{{route('bookingform',$singleroom->id)}}" class="btn btn-style btn-secondary mt-3">Book Now</a>
-                                </div>
+                                <!-- <div class="book-btn px-2">
+                                    <a href="{{route('cart.add',$singleroom->id)}}" class="btn btn-style btn-secondary mt-3">Add Booking</a>
+                                </div> -->
                             </div>
                             <ul class="room-amenities">
                                 <li><a href="#url"><span class="fa fa-beer"></span>{{$singleroom->room_number}}</a></li>

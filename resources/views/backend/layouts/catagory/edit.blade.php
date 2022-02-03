@@ -10,11 +10,11 @@
         @csrf
             <div class="form-group">
                 <label for="smallInput">Discount</label>
-                <input type="number"  value="{{$category->discount}}" class="form-control form-control-sm" name="discount" id="Price" placeholder="Price">
+                <input type="number"  value="{{$category->discount}}" class="form-control form-control-sm" name="discount" id="Price" placeholder="Price" required>
             </div>
             <div class="form-group">
                         <label for="largeInput">price</label>
-                        <input type="text"value="{{$category->price}}" class="form-control form-control"name="price" id="Description" placeholder="" readonly>
+                        <input type="text"value="{{$category->price}}" class="form-control form-control"name="price" id="Description" placeholder="" >
                     </div>
             <div class="card-action">
                 <button type="submit" class="btn btn-success">update</button>

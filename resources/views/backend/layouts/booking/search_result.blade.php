@@ -28,9 +28,6 @@
                 <table class="table table-bordered">
                     <thead>
                         <th scope="col">S.No</th>
-
-                        <th scope="col">Room number</th>
-
                         <th scope="col">Name</th>
                         <th scope="col">Mobile_no</th>
                         <th scope="col">Email</th>
@@ -46,8 +43,6 @@
                         @foreach($book as $list)
                         <tr>
                             <td>{{$list->id}}</td>
-
-                            <td>{{$list->room->room_number}}</td>
                             <td>{{$list->name}}</td>
                             <td>{{$list->mobile_no}}</td>
                             <td>{{$list->email}}</td>
@@ -55,7 +50,6 @@
                             <td>{{$list->from_date}}</td>
                             <td>{{$list->to_date}}</td>
                             <td>{{$list->status}}</td>
-
 
                         </tr>
                         @endforeach

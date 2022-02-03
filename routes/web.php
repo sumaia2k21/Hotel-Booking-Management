@@ -101,16 +101,22 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/all_booking_report',[Booking_controller::class,'all_booking_report'])->name('all.booking.report');
      Route::get('/all_booking',[Booking_controller::class,'all_booking'])->name('all_booking');
      Route::get('/booking/delete/{id}',[Booking_controller::class,'delete'])->name('booking.delete');
-     Route::get('/confirmation/{id}',[Booking_controller::class,'confirmation'])->name('book.confirmation');
+     Route::get('/confirmation_list/{id}',[Booking_controller::class,'confirmation_list'])->name('book.confirmation');
      Route::get('/approve/{id}',[Booking_controller::class,'approve'])->name('book.approve');
      Route::get('/cancel/{id}',[Booking_controller::class,'cancel'])->name('book.cancel');
      Route::get('/approve_list',[Booking_controller::class,'approved_booking_list'])->name('approved.booking.list');
      Route::get('/cancel_list',[Booking_controller::class,'cancel_booking_list'])->name('cancel.booking.list');
      Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
 
+     Route::get('/booking_details',[Booking_controller::class,'booking_details'])->name('booking_details');
+
+     //single view
+     Route::get('/booking_single_view/{id}',[Booking_controller::class,'single_view'])->name('backend.single.view');
+
+    
 
      Route::get('/booking_search',[Search_Controller::class,'booking_search'])->name('booking.search');
-     Route::get('/bookingno_search',[Search_Controller::class,'bookingno_search'])->name('booking.search.no');
+     // Route::get('/bookingno_search',[Search_Controller::class,'bookingno_search'])->name('booking.search.no');
 
 
      //hotelinfo form start
@@ -214,8 +220,18 @@ Route::post('/booking/store',[BookingController::class,'bookingstore'])->name('b
 Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybooking.status');
 
 Route::get('/invoice/{id}',[BookingController::class,'invoice'])->name('invoice');
-Route::get('/testinvoice',[BookingController::class,'testinvoice'])->name('testinvoice');
+
 Route::get('/approveinvoice/{id}',[BookingController::class,'approve_invoice'])->name('invoice.approve');
+
+//cart
+Route::get('/add-to-card/{id}',[BookingController::class,'add_to_cart'])->name('cart.add');
+Route::get('/get_cart',[BookingController::class,'getCart'])->name('cart.get');
+Route::get('/clearcart',[BookingController::class,'clearCart'])->name('cart.clear');
+Route::post('/checkout',[BookingController::class,'checkout'])->name('cart.checkout');
+Route::get('/checkoutform',[BookingController::class,'checkoutform'])->name('cart.checkout.form');
+
+Route::get('/cart/delete/{id}',[BookingController::class,'cart_delete'])->name('cart.delete');
+
 
 //catagory under room (frontend)
 Route::get('/category_wise-room/{id}',[RoomController::class,'catagory_under_room'])->name('catagory-under-room');

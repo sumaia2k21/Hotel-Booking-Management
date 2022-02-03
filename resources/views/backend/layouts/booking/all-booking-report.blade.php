@@ -38,12 +38,11 @@
         <thead>
             <th scope="col">S.No</th>
             
-            <th scope="col">Room name</th>
-            <th scope="col">Room number</th>
+         
             <th scope="col">Name</th>
-            <th scope="col">Mobile_no</th>
+           
             <th scope="col">Email</th>
-            <th scope="col">address</th>
+           
             <th scope="col">from_date</th>
             <th scope="col">to_date</th>
             <th scope="col">Status</th>
@@ -55,13 +54,12 @@
             @foreach($request as $list)
             <tr>
                 <td>{{$list->id}}</td>
-                <!-- <td>Booking Number</td> -->
-                <td>{{$list->room->room_name}}</td>
-                <td>{{$list->room->room_number}}</td>
-                <td>{{$list->name}}</td>
-                <td>{{$list->mobile_no}}</td>
-                <td>{{$list->email}}</td>
-                <td>{{$list->address}}</td>
+               
+               
+                <td>{{$list->user->name}}</td>
+               
+                <td>{{$list->user->email}}</td>
+               
                 <td>{{$list->from_date}}</td>
                 <td>{{$list->to_date}}</td>
                 <td>{{$list->status}}</td>

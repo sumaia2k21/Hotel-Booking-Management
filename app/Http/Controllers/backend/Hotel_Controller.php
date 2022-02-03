@@ -17,6 +17,17 @@ class Hotel_Controller extends Controller
      
      public function hotelinfopost(Request $request)
      {
+          $request->validate([
+               
+               'name'=> 'required',
+               'email'=> 'required',
+               'address'=> 'required',
+               'contact_no'=> 'required',   
+     
+           ]);
+         
+
+
           $fileName='';
           if($request->hasFile('logo'))
           {

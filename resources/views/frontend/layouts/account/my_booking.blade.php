@@ -14,45 +14,49 @@
 <div class="card">
     <table class="table table-bordered">
         <thead>
-              <!-- <th scope="col">S.No</th> -->
-            <th scope="col">Booking number</th>
-            <th scope="col">Room number</th>
-            <th scope="col">Room name</th>
-            <th scope="col">Name</th>
-            <th scope="col">Mobile_no</th>
-            <th scope="col">Email</th>
-            <th scope="col">from date</th>
-            <th scope="col">to date</th>
-            <th scope="col">Total ammount</th>
-           <th scope="col">Status</th>
-           <th scope="col">action</th>
-            </tr>
-            </tr>
+            
+        <!-- <th scope="col">S.No</th> -->
+        <th scope="col">Book Id</th>
+            <th scope="col">name</th>
+            <th scope="col">from_date</th>
+            <th scope="col">to_date</th>
+            <th scope="col">total_ammount</th>
+            <th scope="col">discount_price</th>
+            <th scope="col">payment_status</th>
+            <th scope="col">subtotal</th>
+            <th scope="col">Status</th>
+            <!-- <th scope="col">Action</th> -->
+            
         </thead>
         <tbody>
-            @foreach($bookstatus as $list)
+        @foreach($book as $request)
             <tr>
-            <!-- <td>{{$loop->iteration}}</td>  -->
-            <!-- <td>{{$list->id}}</td> -->
-            <td>{{$list->id}}</td>
-                <td>{{$list->room->room_number}}</td>
-                <td>{{$list->room->room_name}}</td>
-                <td>{{$list->name}}</td>
-                <td>{{$list->mobile_no}}</td>
-                <td>{{$list->email}}</td>
-                <td>{{$list->from_date}}</td>
-                <td>{{$list->to_date}}</td>
-                <td>{{$list->discount_price}}</td>
-                <td>{{$list->status}}</td>
+                <!-- <td>{{$request->id}}</td> -->
                 
-                <td><a href="{{route('invoice',$list->id)}}" type="button" class="btn btn-primary">booking details</a>
-                   </td>    
+                <td>{{$request->id }}</td>
+                <td>{{$request->name }}</td>
+                <td>{{$request->from_date }}</td>
+                <td>{{$request->to_date}}</td>
+                <td>{{$request->total_ammount}}</td>
+                <td>{{$request->discount_price}}</td>
+                <td>{{$request->payment_status}}</td>
+                   <td>{{$request->status}}</td>
+                
+               
+                <td>
+                 <a href="{{route('invoice',$request->id)}}" type="button" class="btn btn-primary">booking details</a> 
+                </td>
             </tr>
-           @endforeach
+           
+
+            @endforeach
+          
+            
+          
         </tbody>
     </table>    
 </div>
-<a href="{{route('testinvoice')}}" type="button" class="btn btn-primary">Print</a>
+
 <br>
 <br>
 <br>

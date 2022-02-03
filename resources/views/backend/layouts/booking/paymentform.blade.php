@@ -11,8 +11,12 @@
                     placeholder="book_id" readonly>
             </div>
             <div class="form-group">
-                <label for="smallInput">Total Ammount</label>
-                <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount" readonly>
+                <input type="hidden" value="{{$book->id}}" class="form-control" name="user_id" id=""
+                    placeholder="user_id" readonly>
+            </div>
+            <div class="form-group">
+                <label for="smallInput">Total Paid</label>
+                <input type="text"  value="{{$book->total_paid}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount" readonly>
             </div>
            
             <div class="form-group">

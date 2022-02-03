@@ -14,7 +14,7 @@
 
                     <div class="form-group">
                         <label for="largeSelect">Catagory Title</label>
-                        <select class="form-control form-control-lg"name="catagory_title" id="Catagory Title">
+                        <select class="form-control form-control-lg"name="catagory_title" id="Catagory Title" required>
                             @foreach($catagory as $cat)
                             <option value="{{$cat->id}}">{{$cat->catagory_title}} </option>
                             @endforeach
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="roomNumber">Room Number</label>
-                        <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number">
+                        <input type="text" class="form-control "name="room_number" id="Description" placeholder="Room Number" required>
                     </div>
                     
                     <div class="form-group">
@@ -61,11 +61,7 @@
                             <option>5</option>
                         </select>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="largeInput">price</label>
-                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="">
-                    </div> -->
-
+                   
                    
                     <div class="form-group">
                         <label for="largeInput">Room Description</label>
@@ -73,15 +69,6 @@
                         </textarea>
                     </div>
 
-                   
-                    <!-- <div class="form-group">
-                        <label for="name">Select Amenities</label>
-                        <select multiple="multiple"  class="form-control" name="facilities_id[]" id="">
-                        @foreach($amenities as $data)
-                        <option value="{{$data->id}}">{{$data->facility_title}}</option>
-                        @endforeach
-                        </select>
-                    </div> -->
                     <div class="form-group">
                         <label for="name">Select Amenities</label>
                         @foreach($amenities as $data)
@@ -105,7 +92,7 @@
                     <div class="form-group">
                         <label for="squareSelect">status</label>
                         <select class="form-control input-square" name="status"id="squareSelect">
-                            <option selected>Active</option>   
+                            <option selected>available</option>   
                         </select>
                     </div>
 

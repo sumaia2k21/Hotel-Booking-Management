@@ -7,10 +7,7 @@
 
 <h2 style="background: #cccccc">Add Facilities</h2>
 <div class="card">
-    <!-- <div class="card-header">
-											<div class="card-title">Add Facilities</div>
-										</div> -->
-
+    
     <div class="card-body">
         <form action="{{route('facility_list')}}"method="post"enctype="multipart/form-data" >
             @csrf
@@ -21,7 +18,7 @@
         
         <div class="form-group">
             <label for="smallInput">Facilities title</label>
-            <input type="text" class="form-control form-control-sm" name='facility_title' id="Price" placeholder="facilities">
+            <input type="text" class="form-control form-control-sm" name='facility_title' id="Price" placeholder="facilities" required>
         </div>
         
         <div class="form-group">
