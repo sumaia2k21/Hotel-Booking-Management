@@ -19,9 +19,9 @@
     <table class="table table-border">
         <thead>
 
-            <th scope="col">sl</th>
+            <th scope="col">Sl</th>
             <th scope="col">Category title</th>
-            <th scope="col">Room Name</th>
+            <!-- <th scope="col">Room Name</th> -->
             <th scope="col">Room Number</th>
             <th scope="col">Maximum Adult</th>
             <th scope="col">Maximum Child</th>
@@ -31,7 +31,7 @@
             <th scope="col">Image</th>
             <th scope="col">Price</th>
             <th scope="col">Discount</th>
-            <th scope="col">Status</th>
+           
             <th scope="col">Action</th>
             </tr>
             </tr>
@@ -43,7 +43,7 @@
             <td>{{$newroom->id}}</td>        
             <!-- <td>{{$loop->iteration}}</td>  -->
                 <td>{{$newroom->catagory->catagory_title}}</td>
-                <td>{{$newroom->room_name}}</td>
+                <!-- <td>{{$newroom->room_name}}</td> -->
                 <td>{{$newroom->room_number}}</td>
                 <td>{{$newroom->max_adult}}</td>
                 <td>{{$newroom->max_child}}</td>
@@ -57,9 +57,9 @@
                 <td>
                     <img src="{{url('/uploads/'.$newroom->image)}}"width="40px" alt="image">
                 </td>
-                <td>{{$newroom->catagory->price}}</td>
-                <td>{{$newroom->catagory->discount}}%</td>
-                <td>{{$newroom->status}}</td>
+                <td>{{$newroom->price}}</td>
+                <td>{{$newroom->discount}}%</td>
+                <!-- <td>{{$newroom->status}}</td> -->
                 <td>
                   
                     <a href="{{route('room.edit',$newroom->id)}}" class="btn btn-light"><i class="material-icons">edit</i></a>

@@ -2,7 +2,7 @@
 @extends('frontend.index')
 @section('content')
 
-@if(auth()->user())
+
 
 
     <section class="w3l-breadcrumb">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="cont-right">
                             <h6>Call Us</h6>
-                            <p><a href="tel:+44 99 555 42">+123 45 67 89</a></p>
+                            <p><a href="tel:+44 99 555 42"> {{$hotels->contact_no}}</a></p>
                         </div>
                     </div>
                     <div class="cont-top margin-up">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="cont-right">
                             <h6>Email Us</h6>
-                            <p><a href="mailto:example@mail.com" class="mail">example@mail.com</a></p>
+                            <p><a href=""  class="mail"> {{$hotels->email}}</a></p>
                         </div>
                     </div>
                     <div class="cont-top margin-up">
@@ -45,22 +45,26 @@
                         </div>
                         <div class="cont-right">
                             <h6>Address</h6>
-                            <p>Address here, 208 Trainer Avenue street, Illinois, UK - 62617.</p>
+                            <p>{{$hotels->address}}</p>
                         </div>
+                       
                     </div>
+                    
                 </div>
+                
                 <div class="map-content-9 mt-lg-0 mt-4">
-                    @if(session()->has('message'))
-                    <span class="alert alert-success">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
                         {{ session()->get('message') }}
-                    </span>
-                    @endif
+                    </div>
+                @endif
                     <form action="{{route('readenquiry')}}" method="post">
                         @csrf
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="name" value="{{$contact->name}}" id="w3lName" placeholder="Name"
+                            <input type="text" class="form-control" value="{{$contact->name}}" readonly name="name" id="w3lName" placeholder="Name"
                                 required="">
-                            <input type="email" class="form-control" name="email" value="{{$contact->email}}" id="w3lSender" placeholder="Email"
+                               
+                            <input type="email" class="form-control" value="{{$contact->name}}" readonly name="email"  id="w3lSender" placeholder="Email"
                                 required="">
                         </div>
                         <!-- <div class="twice">
@@ -68,7 +72,7 @@
                                 placeholder="Subject" required="">
                         </div> -->
                         <div class="twice">
-                            <input type="number" class="form-control" name="mobile_no" value="{{$contact->mobile}}" id="w3lName"
+                            <input type="number" class="form-control" value="{{$contact->mobile}}" readonly name="mobile_no"  id="w3lName"
                                 placeholder="Mobile No" required="">
                         </div>
                         <textarea name="message" class="form-control" id="w3lMessage" placeholder="Message"
@@ -77,27 +81,13 @@
                     </form>
                 </div>
             </div>
+            <a href="{{route('home')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to  Home</a>
         </div>
         </div>
+        
     </section>
     <!-- /contact1 -->
-    @else
-        <!-- <a href="{{route('user.signup')}}" type="button" class="btn btn-primary">login</a> -->
-        <h5 style="color: red;"> Please Login..................... </h5 > 
-       
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-        
-       
-        @endif   
-
+   
 
 
     @endsection

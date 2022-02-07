@@ -6,15 +6,16 @@
       <div class="col-lg-2 col-md-6 col-sm-4 footer-list-29 footer-2 mt-sm-0 mt-5">
 
           <ul>
-            <h6 class="footer-title-29">Address</h6>
+            <h6 class="footer-title-29"><a href="" >Address</a></h6>
            <p> {{$hotels->address}}</p>
           </ul>
         </div>
         
         <div class="col-lg-3 col-md-6 col-sm-8 footer-list-29 footer-1">
-          <h6 class="footer-title-29">Contact us</h6>
+          <h6 class="footer-title-29"><a href="" >Contact Us</a></h6>
           <ul>
             <li>
+         
              
             </li>
             <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> {{$hotels->contact_no}}</a></li>
@@ -37,8 +38,7 @@
             
         </div> -->
         <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
-          <h6 class="footer-title-29">About Us</h6>
-       
+          <h6 class="footer-title-29"><a href="{{route('about')}}" >About Us</a></h6>
         <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus veritatis incidunt iste totam,
            consequuntur minus assumenda commodi sint asperiores. Voluptatibus incidunt alias.</p></li> 
           

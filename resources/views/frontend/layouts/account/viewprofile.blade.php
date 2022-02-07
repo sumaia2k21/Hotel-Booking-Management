@@ -44,11 +44,11 @@
                                     placeholder="Mobile No" required="">
                             </div>
 
-                            <!-- <div class="twice">
+                            <div class="twice">
 
-                                <input type="date" class="form-control" name="reg_date" id="w3lSubject"
+                                <input type="date" class="form-control" name="reg_date" value="{{$profile->created_at}}" id="w3lSubject"
                                     placeholder="Registration Date" required="">
-                            </div> -->
+                            </div>
 
 
                             <button type="submit" class="btn btn-primary">profile</button>

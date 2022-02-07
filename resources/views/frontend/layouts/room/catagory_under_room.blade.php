@@ -103,7 +103,7 @@
                     </div>
                     <hr>
                     <a href="{{route('home',$data->id)}}" type="button"
-                        class="btn btn-primary btn-md mr-1 mb-2">book now</a>
+                        class="btn btn-primary btn-md mr-1 mb-2">Check Availability</a>
                     <a href="{{route('single.room.view',$data->id)}}" target="_blank" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>
                     <!-- <button type="button" class="btn btn-light btn-md mr-1 mb-2"><iclass="fas fa-shopping-cart pr-2"></i>Add to cart</button> -->

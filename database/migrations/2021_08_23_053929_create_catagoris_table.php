@@ -19,8 +19,6 @@ class CreateCatagorisTable extends Migration
             $table->integer('discount')->default(0);
             $table->string('image');
             $table->string('description')->nullable();
-            $table->string('price');
-            $table->string('discount_price')->nullable();
             $table->timestamps();
         });
     }

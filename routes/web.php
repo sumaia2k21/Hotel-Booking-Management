@@ -91,6 +91,7 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/room/edit/{id}',[Room_controller::class,'edit'])->name('room.edit');
      Route::put('/room/update/{id}',[Room_controller::class,'update'])->name('room.update');
       Route::get('/manage_room',[Room_controller::class,'manage_room'])->name('manage_room');
+     
       
      //page start
      Route::get('/about_us',[Page_controller::class,'about_us'])->name('about_us');
@@ -109,6 +110,8 @@ Route::group(['prefix'=>'/admin','middleware'=>'auth'],function(){
      Route::get('/new_booking',[Booking_controller::class,'new_booking_list'])->name('new.booking.list');
 
      Route::get('/booking_details',[Booking_controller::class,'booking_details'])->name('booking_details');
+
+     Route::get('/bookingdetails/report',[Booking_controller::class,'details_report'])->name('booking.details.report');
 
      //single view
      Route::get('/booking_single_view/{id}',[Booking_controller::class,'single_view'])->name('backend.single.view');
@@ -212,6 +215,7 @@ Route::get('/signup',[User_Controller::class,'signupform'])->name('user.signup')
 Route::post('/signup/store',[User_Controller::class,'signupformpost'])->name('user.signup.store');
 Route::post('/dologin',[User_Controller::class,'dologin'])->name('user.do.login');
 Route::get('/viewprofile',[User_Controller::class,'viewprofile'])->name('viewprofile');
+// Route::get('/viewprofile/post',[User_Controller::class,'viewprofile_post'])->name('viewprofile.post');
 
 //booking form start
 Route::get('/bookingform/{id}',[BookingController::class,'bookingform'])->name('bookingform');
@@ -222,6 +226,7 @@ Route::get('/my_booking',[BookingController::class,'mybooking'])->name('mybookin
 Route::get('/invoice/{id}',[BookingController::class,'invoice'])->name('invoice');
 
 Route::get('/approveinvoice/{id}',[BookingController::class,'approve_invoice'])->name('invoice.approve');
+Route::get('/cancelbooking/{id}',[BookingController::class,'cancel'])->name('user.cancel');
 
 //cart
 Route::get('/add-to-card/{id}',[BookingController::class,'add_to_cart'])->name('cart.add');

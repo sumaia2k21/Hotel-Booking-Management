@@ -10,12 +10,13 @@
         <h5 class=" title-lg text-center">Search result from {{$from_date}} to {{$to_date}}</h5>
       <div >
       @if(session()->has('message'))
-    <span class="alert alert-success">
-        {{ session()->get('message') }}
-    </span>
-    @endif
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
-      </div>  
+      </div> 
+      
             
         <div class="container py-lg-5 py-sm-4">
             @foreach($available as $data)
@@ -53,16 +54,16 @@
                                     <th class="pl-0 w-25" scope="row"><strong>No_of_bed</strong></th>
                                     <td>{{$data->no_of_bed}}</td>
                                 </tr>
-                                <th class="pl-0 w-25" scope="row"><strong>price</strong></th>
+                                <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
                                 <td>{{$data->price}} TK</td>
                                 </tr>
                                 <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount</strong></th>
                                 <td>{{$data->catagory->discount}}%</td>
                                 </tr>
                                 <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>discount</strong></th>
-                                <td><del>{{$data->price}} TK</del>     {{$data->discount_price}} TK</td>
+                                <th class="pl-0 w-25" scope="row"><strong>Discount Price</strong></th>
+                                <td><del>{{$data->price}} TK</del>{{$data->discount_price}} TK</td>
                                 </tr>
                                
                                

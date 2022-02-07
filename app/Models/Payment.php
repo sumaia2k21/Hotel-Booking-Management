@@ -19,5 +19,9 @@ class Payment extends Model
     {
         return $this->belongsTo(Room::class,'room_id','id');
     }
+    public function bookdetails()
+    {
+        return $this->belongsTo(BookDetails::class,'room_id','id');
+    }
   
 }

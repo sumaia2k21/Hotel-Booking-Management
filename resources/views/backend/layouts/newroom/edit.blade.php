@@ -70,10 +70,15 @@
                     </div>
                     
                    
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="largeInput">price</label>
-                        <input type="text" class="form-control form-control" value="{{$room->catagory->price}}" name="price" id="Description" placeholder="">
-                    </div> -->
+                        <input type="text" class="form-control form-control" value="{{$room->price}}" name="price" id="Description" placeholder="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="smallInput">Discount</label>
+                        <input type="number"  value="{{$room->discount}}" class="form-control form-control-sm" name="discount" id="Price" placeholder="Price" >
+                    </div>
                    
                      <div class="form-group">
                         <label for="squareSelect">status</label>

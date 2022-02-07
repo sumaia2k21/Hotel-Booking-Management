@@ -17,6 +17,12 @@ class SearchController extends Controller
 
   public function search(Request $request)
     {
+
+      $request->validate([
+        'from_date'=>'required',
+        'to_date'=>['after:from_date,required'],
+
+      ]);
       // dd(auth()->user());
       
         $from_date = $request->from_date;
@@ -29,9 +35,11 @@ class SearchController extends Controller
       ]);
       // end
 
-    $book=Book::select('id')->whereBetween('from_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
+    $book=Book::select('id')->where('status','!=','cancel')->whereBetween('from_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
       ->orWhereBetween('to_date',[date('Y-m-d',strtotime($request->from_date)),date('Y-m-d',strtotime($request->to_date))])
       ->get();
+
+   
 
       $book_ids=collect($book)->pluck('id')->toArray();
 
@@ -40,7 +48,7 @@ class SearchController extends Controller
       // dd(array_unique($room_ids));
         $available=Room::whereNotIn('id',$room_ids)->get();
     
-
+        // where('status','available')
       return view('frontend.layouts.search-result',compact('available', 'from_date','to_date','request'));
       
      

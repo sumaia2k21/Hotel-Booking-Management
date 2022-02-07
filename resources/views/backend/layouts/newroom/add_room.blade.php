@@ -6,6 +6,13 @@
 
 </div>
 <br>
+
+
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <p class="alert alert-danger">{{$error}}</p>
+    @endforeach
+@endif
 <div class="col-md-6">
     <div class="card">
                 <div class="card-body">
@@ -18,6 +25,13 @@
                             @foreach($catagory as $cat)
                             <option value="{{$cat->id}}">{{$cat->catagory_title}} </option>
                             @endforeach
+
+                            @if(session()->has('message'))
+                            <span class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </span>
+                            @endif
+
                         </select>
 
                     </div>
@@ -87,14 +101,17 @@
                     </div>
                    
                    
-                    
-
                     <div class="form-group">
+                        <label for="largeInput">price</label>
+                        <input type="text" class="form-control form-control"name="price" id="Description" placeholder="" required>
+                    </div>
+
+                    <!-- <div class="form-group">
                         <label for="squareSelect">status</label>
                         <select class="form-control input-square" name="status"id="squareSelect">
                             <option selected>available</option>   
                         </select>
-                    </div>
+                    </div> -->
 
                     <div class="card-action">
                         <button class="btn btn-success">Add</button>

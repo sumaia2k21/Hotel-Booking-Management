@@ -18,7 +18,10 @@
                 <label for="smallInput">Total Paid</label>
                 <input type="text"  value="{{$book->total_paid}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount" readonly>
             </div>
-           
+            <div class="form-group">
+                <label for="smallInput">Total Amount</label>
+                <input type="text"  value="{{$book->total_ammount}}"class="form-control"  name="total_ammount" id="Price" placeholder="total_ammount" readonly>
+            </div>
             <div class="form-group">
                 <label for="smallInput">discount_price</label>
                 <input type="text"  value="{{$book->discount_price}}"class="form-control"  name="discount_price" id="Price" placeholder="total_ammount" readonly>
@@ -38,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="smallInput">payment date</label>
-                <input type="date" class="form-control" name="payment_date" id="payment_date"
+                <input type="date" id="date1"  class="form-control" name="payment_date" id="payment_date"
                     placeholder="payment_date" required>
             </div>
 
@@ -49,4 +52,13 @@
         </form>
     </div>
 </div>
+
+<script>
+    var today = new Date().toISOString().split('T')[0];
+document.getElementById("date1").setAttribute('min', today);
+
+// alert("min Data " + today)
+</script>
+
+
 @endsection

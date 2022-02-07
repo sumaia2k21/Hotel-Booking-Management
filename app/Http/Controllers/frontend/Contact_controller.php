@@ -12,8 +12,13 @@ class Contact_controller extends Controller
 {
     public function contact()
     {
+        if (auth()->user()) 
+        {  
         $contact=Auth::user();
         return view('frontend.layouts.contact.contact',compact('contact'));
+    } else {
+        return redirect()->back()->with('message','You need to login first');
+      }
     }
     public function read_enquiry()
     {

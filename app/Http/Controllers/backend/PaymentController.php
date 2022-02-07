@@ -41,21 +41,33 @@ $payment->update([
 
 ]);
 
-    Payment::Create([
-        'book_id'=>$pay->book_id,
-        'user_id'=>$pay->user_id,
-        'total_ammount'=>$pay->total_ammount,
-        'discount_price'=>$pay->discount_price,
-        'pay_ammount'=>$pay->pay_ammount,
-        'due'=>$pay->discount_price-$payment->total_paid,
-        'payment_type'=>$pay->payment_type,
-        'transection'=>$pay->transection,
-        'payment_date'=>$pay->payment_date,
-        
-        
+
+Payment::updateOrCreate([
+    'book_id'=>$pay->book_id,
+    'user_id'=>$pay->user_id,
+    'total_ammount'=>$pay->total_ammount,
+    'discount_price'=>$pay->discount_price,
+    'pay_ammount'=>$pay->pay_ammount,
+    'due'=>$pay->discount_price-$payment->total_paid,
+    'payment_type'=>$pay->payment_type,
+    'transection'=>$pay->transection,
+    'payment_date'=>$pay->payment_date,
+]);
 
 
-    ]);
+// $payment=Payment::find($id);  
+// $payment->update([
+//     'book_id'=>$pay->book_id,
+//     'user_id'=>$pay->user_id,
+//     'total_ammount'=>$pay->total_ammount,
+//     'discount_price'=>$pay->discount_price,
+//     'pay_ammount'=>$pay->pay_ammount,
+//     'due'=>$pay->discount_price-($pay->pay_ammount+$payment->total_paid),
+//     'payment_type'=>$pay->payment_type,
+//     'transection'=>$pay->transection,
+//     'payment_date'=>$pay->payment_date,
+   
+//     ]);
     if($payment->total_paid>=$payment->discount_price || $payment-> total_paid==$payment->discount_price )
     {
         $payment->update([
@@ -68,7 +80,7 @@ $payment->update([
 
         ]);
     }
-    return redirect()->route('payment.list')->with('message','room cancel sucessfully');
+    return redirect()->route('payment.list')->with('message','Payment update  sucessfully');
 }
 public function edit($id)
     {
@@ -98,17 +110,19 @@ public function edit($id)
         
         ]);
         
-        $payment=Payment::find($id);
+        $payment=Payment::find($id);  
         $payment->update([
-            'discount_price'=>$pay->discount_price,
-            'pay_ammount'=>$pay->pay_ammount,
-            'due'=>$pay->discount_price-$pay->pay_ammount,
-            'payment_type'=>$pay->payment_type,
-            'transection'=>$pay->transection,
-            'payment_date'=>$pay->payment_date,
+                'book_id'=>$pay->book_id,
+                'user_id'=>$pay->user_id,
+                'total_ammount'=>$pay->total_ammount,
+                'discount_price'=>$pay->discount_price,
+                'pay_ammount'=>$pay->pay_ammount,
+                'due'=>$payment->discount_price-$payment->total_paid,
+                'payment_type'=>$pay->payment_type,
+                'transection'=>$pay->transection,
+                'payment_date'=>$pay->payment_date,
            
-
-        ]);
+            ]);
         return redirect()->route('payment.list');
 
     }
@@ -116,21 +130,21 @@ public function edit($id)
     public function report($id)
     {
      
-        $user=Book::where('user_id',Auth::id())->get()->take(1);
-        $bookinginfo=BookDetails::where('id',$id)->get();
+    //     $user=Book::where('user_id',Auth::id())->get()->take(1);
        $pay=Payment::where('book_id',$id)->get();
+        $bookinginfo=BookDetails::with('book','room')->where('book_id',$id)->get();
+
        $payment=Payment::with('book','room')->where('id',$id)->get();
-        return view('backend.layouts.payment.pay_reciept',compact('bookinginfo','user','pay','payment'));
+        return view('backend.layouts.payment.pay_reciept',compact('bookinginfo','payment','pay'));
     }
+ 
 
    
     public function search()
     {
         // dd($_GET['search']);
-
           $key=request()->search;
           $payment=Book::where('name','LIKE',"%{$key}%")->get(); 
-        //   dd($payment);
         return view('backend.layouts.payment.payment_search_result',compact('payment'));
     }
 

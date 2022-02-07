@@ -144,9 +144,10 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
-
+            <a href="{{route('home')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to  Home</a>
         </div>
     </div>
 </section>

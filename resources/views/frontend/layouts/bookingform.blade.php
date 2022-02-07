@@ -73,29 +73,7 @@
                              
                                 @endphp
 
-                                <div class="twice">
-                                    <label>Total Ammount</label>
-                                    <input value="{{$total}}" class="form-control" type="number" name="total_ammount"
-                                        required="" readonly>
-                                </div>
-                                <div class="twice">
-                                    <label>Discount %</label>
-                                    <input value="{{$room->discount}}"   class="form-control" type="number" name="discount"
-                                        required="" readonly>
-                                </div>
-                               
-                                <div class="twice">
-                                    <label>Discount price</label>
-                                    <input readonly class="form-control" type="number" name="discount_price"
-                                        required="" value="{{$discount}}" >
-                                </div>
-
-                                <div class="twice">
-                                    <label for="squareSelect">status</label>
-                                    <select readonly class="form-control" name="status">
-                                        <option >pending</option>
-                                    </select>
-                                </div>
+                                
 
                                
                                 <br>

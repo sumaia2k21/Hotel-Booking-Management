@@ -10,8 +10,6 @@
                 
                     <div class="content-photo-1 d-grid">
                         <div class="content-photo-left text-center">
-                            
-                        
                             <h4>{{$singleroom->catagory->catagory_title}} Room</h4>
                             
                             <h6>{{$singleroom->catagory->catagory_title}} </h6>
@@ -32,8 +30,7 @@
                                 <li><a href="#url"><span class="fa fa-users"></span>{{$singleroom->max_adult}} </a></li>
                                 <li><a href="#url"><span class="fa fa-bed"></span> </a> {{$singleroom->no_of_bed}}</li>
                             </ul>
-                            <a href="{{route('search')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to  available room
-                                rooms</a>
+                            <a href="{{route('home')}}" class="back"> <span class="fa fa-long-arrow-left"></span> Back to  Home</a>
                         </div>
                         <div class="content-photo-right">
                             <div class="csslider infinity" id="slider1">
@@ -72,8 +69,6 @@
                             </div>
                         </div>
                     </div>
-                
-
                 </div>
             </div>
         </section>

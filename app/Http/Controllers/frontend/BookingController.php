@@ -14,7 +14,74 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
+       //single booking
+    //    public function bookingform($id)
+    // { 
        
+       
+    //      $bookingform=Auth::user();
+    //     $room = Room::find($id);
+    //     $payment=Book::all();
+    //     $value = session()->all(); 
+      
+    //      return view('frontend.layouts.bookingform',compact('room','bookingform','payment','value'));
+        
+    // }
+    
+    // public function bookingstore(Request $request)
+    // {
+        
+    //     if (auth()->user()) {  
+           
+            
+    //     $isBooked=Book::where('room_id',$request->room_id)
+    //     ->where('from_date','<=',$request->from_date)
+    //     ->where('to_date','>=',$request->from_date)
+    //     ->first();
+
+    //     $from_date = \Carbon\Carbon::createFromFormat('Y-m-d', $request->from_date);
+    //     $to_date = \Carbon\Carbon::createFromFormat('Y-m-d',$request->to_date );
+        
+    //     $diff_in_days = $to_date->diffInDays($from_date);
+
+    //     $room=Room::find($request->room_id);
+    //     if(auth()->user()->id !=1)
+    //     {
+
+    //             if(!$isBooked )
+    //             {
+    //             Book::Create([ 
+    //             'room_id'=>$request->room_id,
+    //             'name'=>$request->name,
+    //             'user_id'=>Auth::id(),
+    //             'mobile_no'=>$request->mobile_no,
+    //             'email'=>$request->email,
+    //             'address'=>$request->address,
+    //             'from_date'=>$request->from_date,
+    //             'to_date'=>$request->to_date,
+    //             'total_ammount'=>$diff_in_days*$room->price,
+               
+    //             'discount'=>$request->discount,
+    //             'discount_price'=>$request->discount_price,
+    //             'status'=>$request->status
+    //                 ]);
+    //                 return redirect()->route('mybooking.status')->with('message','booking successful.');
+    //             }else{
+    //                 return redirect()->back()->with('message','Room not available on this dates.');
+    //              }
+        
+    //         }else{
+    //      return redirect()->back()->with('message','Admin can not book room ');
+    //     }
+    // } else {
+    //     return redirect()->back()->with('message','You need to login first');
+    //   }
+    // }
+    
+
+
+        
+       //single booking
   
     public function mybooking()
     {
@@ -27,10 +94,23 @@ class BookingController extends Controller
     public function invoice($id)
     {
        $book=BookDetails::with ('room','book')->where('book_id',$id)->get();
+    //  $booking=Book::where('user_id',Auth::id())->get();
+     
         $user=Book::where('id',$id)->get();
-        $payment=Payment::with('book')->where('id',$id)->get();
+        $payment=Payment::with('book')->where('book_id',$id)->get();
         return view('frontend.layouts.account.invoice',compact('book','user','payment') ); 
     }
+
+     //user cancel booking
+    public function  cancel($id)
+    {
+        $book = Book::where('id',$id)->first();
+        $book->update([
+         'status'=>'cancel'
+         ]);
+          return redirect()->back()->with('message','room cancel sucessfully'); 
+        }
+    //end cancel booking
 
 
    
@@ -39,12 +119,18 @@ class BookingController extends Controller
     public function checkoutform()
     {
 
+        if (auth()->user()) 
+        {
         $bookingform=Auth::user();
         $payment=Book::all();
         $value = session()->all();
         $rooms = session()->get('cart');
         // dd($rooms);
         return view('frontend.layouts.cart.checkoutform',compact('bookingform','payment','value','rooms') ); 
+
+    } else {
+        return redirect()->back()->with('message','You need to login first');
+      }
     }
 
   
@@ -158,10 +244,10 @@ class BookingController extends Controller
 
            session()->put('cart', $cartExist);
 
-           return redirect()->back()->with('message', 'room Added to Cart.');
+           return redirect()->back()->with('message', 'Room Added to Cart.');
            
        }
-        return redirect()->back()->with('message', 'Room Added to Cart.');
+        return redirect()->back()->with('message', 'Already Room Added to Cart.');
 
     }
     

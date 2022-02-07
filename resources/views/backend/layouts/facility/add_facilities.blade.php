@@ -4,7 +4,11 @@
 	<h1><strong>Hotel Booking Management System/</strong>facilities</h1>	
 </div> -->
 <br>
-
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <p class="alert alert-danger">{{$error}}</p>
+    @endforeach
+@endif
 <h2 style="background: #cccccc">Add Facilities</h2>
 <div class="card">
     

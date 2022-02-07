@@ -23,6 +23,7 @@
             <th scope="col">from_date</th>
             <th scope="col">to_date</th>
             <th scope="col">Status</th>
+            <th scope="col">Details</th>
             <th scope="col">Action</th>
             </tr>
             </tr>
@@ -39,7 +40,10 @@
                 <td>{{$list->to_date}}</td>
                 <td>{{$list->status}}</td>
                 <td>
-                    <a href="{{route('book.confirmation',$list->id)}}" class="btn btn-success">view</a>
+                <a href="{{route('book.confirmation',$list->id)}}" class="btn btn-success">details</a>
+                </td>
+                <td>
+                <a href="{{route('backend.single.view',$list->id)}}" class="btn btn-primary">view</a>
                     <a href="{{route('booking.delete',$list->id)}}" class="btn btn-danger">delete</a>
 
                 </td>

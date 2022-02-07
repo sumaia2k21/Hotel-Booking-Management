@@ -17,11 +17,14 @@
                     </div>
                     <div class="form-right-inf">
                         <div class="booking-form-content">
+                            <div>
                             @if(session()->has('message'))
                             <span class="alert alert-success">
                                 {{ session()->get('message') }}
                             </span>
                             @endif
+                            </div>
+                           
                             <h2>Book Your Room</h2>
                             
                             <br>
@@ -30,20 +33,17 @@
                                @csrf
                                 <div class="twice">
                                   
-                                    <input type="text" name="name" id="firstName" placeholder="Full Name"
+                                    <input type="text"value="{{$bookingform->name}}" name="name" id="firstName" placeholder="Full Name"
                                          class="form-control" required>
                                 </div>
-                                <!-- <div class="twice">
-                                    <input  type="text" id="firstName"
-                                        class="form-control"  required>
-                                </div> -->
+                              
                                 <div class="twice">
-                                    <input type="number" name="mobile_no"  id="firstName" placeholder="Mobile_no"
+                                    <input type="number" name="mobile_no" value="{{$bookingform->mobile}}" id="firstName" placeholder="Mobile_no"
                                          class="form-control" required>
                                 </div>
                                 <div class="twice">
 
-                                    <input type="email" name="email" id="email" placeholder="Email"
+                                    <input type="email"  value="{{$bookingform->email}}" name="email" id="email"  placeholder="Email"
                                        class="form-control" required>
                                 </div>
                                 <div class="twice">
@@ -52,12 +52,12 @@
                                 </div>
                                 <div class="twice">
                                     <label>From date</label>
-                                    <input value="{{$value[1]}}" type=""  id="date1"  class="form-control" name="from_date"
+                                    <input value="{{$value[1]}}" readonly type=""  id="date1"  class="form-control" name="from_date"
                                         placeholder="Date" required="" />
                                 </div>
                                 <div class="twice">
                                     <label>To date</label>
-                                    <input value="{{$value[3]}}" type="" id="date2"  class="form-control" name="to_date"
+                                    <input value="{{$value[3]}}" readonly type="" id="date2"  class="form-control" name="to_date"
                                         placeholder="Date" required=""/>
                                 </div>
 

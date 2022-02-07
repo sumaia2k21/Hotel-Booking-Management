@@ -95,7 +95,7 @@
                     
                     <div class="room-info">
                         <h3 class="room-title">{{$showcatagory->catagory_title}}</a></h3>
-                        <h6 class="room-title"> Discount {{$showcatagory->discount}}%</a></h6>
+                        <!-- <h6 class="room-title"> Discount {{$showcatagory->discount}}%</a></h6> -->
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A recusandae, illum sequi numquam
                             tempora voluptates?</p>
                        

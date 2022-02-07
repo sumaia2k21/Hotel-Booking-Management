@@ -16,14 +16,14 @@
         <thead>
             
         <!-- <th scope="col">S.No</th> -->
-        <th scope="col">Book Id</th>
-            <th scope="col">name</th>
-            <th scope="col">from_date</th>
-            <th scope="col">to_date</th>
-            <th scope="col">total_ammount</th>
-            <th scope="col">discount_price</th>
-            <th scope="col">payment_status</th>
-            <th scope="col">subtotal</th>
+        <th scope="col">Booking number</th>
+            <th scope="col">Name</th>
+            <th scope="col">From_date</th>
+            <th scope="col">To_date</th>
+            <th scope="col">Total_ammount</th>
+            <th scope="col">Discount_price</th>
+            <th scope="col">Payment_status</th>
+            <th scope="col">Subtotal</th>
             <th scope="col">Status</th>
             <!-- <th scope="col">Action</th> -->
             
@@ -44,7 +44,9 @@
                 
                
                 <td>
-                 <a href="{{route('invoice',$request->id)}}" type="button" class="btn btn-primary">booking details</a> 
+                 <a href="{{route('invoice',$request->id)}}" type="button" class="btn btn-primary">booking details</a>
+                 
+                 <a href="{{route('user.cancel',$request->id)}}" class="btn btn-danger">cancel</a>
                 </td>
             </tr>
            

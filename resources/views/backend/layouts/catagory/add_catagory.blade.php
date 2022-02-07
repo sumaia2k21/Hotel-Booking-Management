@@ -6,6 +6,12 @@
         {{ session()->get('message') }}
     </span>
     @endif
+
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
 <h2>Catagory/<small>add catagory</small></h2>
 <div class="card">
     <div class="card-body">
@@ -21,7 +27,7 @@
                     <option>Premier Deluxe</option>
                     <option>Single</option>
                     <option>Double</option>
-                    <option>Twin</option>
+                   
                 </select>
              </div>
             <div class="form-group">
@@ -33,11 +39,15 @@
                 <textarea type="text" class="form-control form-control" name="description" id="Description"
                     placeholder="Description"></textarea>
             </div>
+                    <!-- <div class="form-group">
+                        <label for="largeInput">Discount</label>
+                        <input type="text" class="form-control form-control" name="discount" id="Description" placeholder="">
+                    </div> -->
            
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="largeInput">price</label>
                         <input type="text" class="form-control form-control"name="price" id="Description" placeholder="" required>
-                    </div>
+                    </div> -->
             <div class="card-action">
                 <button type="submit" class="btn btn-success">Add</button>
 

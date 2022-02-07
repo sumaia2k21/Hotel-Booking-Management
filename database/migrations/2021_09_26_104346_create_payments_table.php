@@ -21,7 +21,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('discount_price');
             $table->integer('pay_ammount');
             $table->string('payment_type');
-            $table->string('transection');
+            $table->string('transection')->nullable();
             $table->string('payment_date');
             $table->integer('due')->default(0);
             $table->string('payment_status')->default('unpaid');

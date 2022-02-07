@@ -22,7 +22,7 @@
 </div> -->
 
 <div>
-    <h2><strong>Booking/</strong>confirmation</h2>
+    <h2><strong>Booking/</strong>details</h2>
 </div>
 
 
@@ -38,7 +38,8 @@
     <table class="table table-bordered">
         <thead>
             <th scope="col">S.No</th>
-            <th scope="col">Room name</th>
+            <!-- <th scope="col">Room name</th> -->
+            <th scope="col">Room category</th>
             <th scope="col">Room number</th>
             <th scope="col">price</th>
             <th scope="col">Status </th>
@@ -51,7 +52,8 @@
         @foreach($book as $request)
             <tr>
                <td>{{$request->id }}</td>
-                <td>{{$request->room->room_name }}</td>
+               <td>{{$request->room->catagory->catagory_title }}</td>
+                <!-- <td>{{$request->room->room_name }}</td> -->
                 <td>{{$request->room->room_number }}</td>
                 <td>{{$request->room->price}}</td>
                 <td>{{$request->book->status}}</td>

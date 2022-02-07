@@ -8,9 +8,9 @@
 <br>
 
 @if(session()->has('message'))
-<span class="alert alert-success">
-    {{ session()->get('message') }}
-</span>
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
 @endif
 <div class="card">
     <table class="table table-bordered">
@@ -19,7 +19,7 @@
             <th scope="col">Category Title</th>
             <th scope="col">Image</th>
             <th scope="col">Description</th>
-            <th scope="col">Discount</th>
+            <!-- <th scope="col">Discount</th> -->
             
             <th scope="col">Action</th>
         </thead>
@@ -33,14 +33,14 @@
                     <img src="{{url('/uploads/'.$catagory->image)}}" width="40px" alt="image">
                 </td>
                 <td>{{$catagory->description}}</td>
-                <td>{{$catagory->discount}}%</td>
+                <!-- <td>{{$catagory->discount}}%</td> -->
                 
                 <td>
                 <!-- <a href="{{route('discount.confirmation',$catagory->id)}}" class="btn btn-success">discount</a> -->
-                <a href="{{route('catagory.edit',$catagory->id)}}" class="btn btn-primary">discount</a>
-                       <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success">view</a>
+                <!-- <a href="{{route('catagory.edit',$catagory->id)}}" class="btn btn-primary">discount</a> -->
+                       <a href="{{route('catagory.room',$catagory->id)}}" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a onclick="return confirm('Are you sure you want to delete this item?');"
-                        href="{{route('catagory.delete',$catagory->id)}}" class="btn btn-danger">delete</a>
+                        href="{{route('catagory.delete',$catagory->id)}}"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
             @endforeach()

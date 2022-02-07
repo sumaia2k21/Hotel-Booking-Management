@@ -14,7 +14,7 @@
         <table class="table table-striped table-hover">
         <thead >
 
-                    <th scope="col">sl</th>
+                    <th scope="col">SL</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Mobile Number</th>
@@ -33,7 +33,7 @@
                 <td>{{$enquiry->message}}</td>
                 
                 <td>
-                    <a type="button" class="btn btn-warning">view</a>
+                    
                     
                     <a href="{{route('enquiry.delete',$enquiry->id)}}" class="btn btn-danger">delect</a>
 

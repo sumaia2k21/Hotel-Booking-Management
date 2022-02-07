@@ -26,7 +26,8 @@
                 <div class="col-md-6">
                   
                     @foreach($user as $list)
-                    <h5> User details</h5>
+                    <h5> <strong> User Information</strong></h5>
+                    <br>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
@@ -49,34 +50,35 @@
                 </div>
                 <br>
                 <div class="card">
-                    <h5 style="text-align: center;"> booking details</h5>
+                
+                    <h5 style="text-align: center;"> Booking Information</h5>
+                    <br>
                      <table class="table table-bordered">
                         <thead>
                             <th scope="col">Booking number</th>
                             <th scope="col">From date</th>
                             <th scope="col">To date</th>
-                            
                             <th scope="col">  Discount Ammount</th>
-                            <th scope="col">Status</th>
-                            <th scope="col"></th>
+                            <th scope="col">Booking Status</th>
+                            <th scope="col">Payment Status</th>
+                            <th scope="col">Total Paid</th>
                         </thead>
                         <tbody>
-                            @foreach($book as $list)
+                            @foreach($user as $list)
                             <tr>
-                                <td>{{$list->book->id}}</td>
-                               
-                                <td>{{$list->book->from_date}}</td>
-                                <td>{{$list->book->to_date}}</td>
+                                <td>{{$list->id}}</td>
+                               <td>{{$list->from_date}}</td>
+                                <td>{{$list->to_date}}</td>
+                                <td>{{$list->discount_price}}</td>
+                                <td>{{$list->status}}</td>
+                                <td>{{$list->payment_status}}</td>
+                                <td>{{$list->total_paid}}</td>
                                 
-                                <td>{{$list->subtotal}}</td>
-                                <td>{{$list->book->status}}</td>
-                                <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
-                               
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <h5 style="text-align: center;"> Room information</h5>
+                    <h5 style="text-align: center;"> Room Information</h5>
                     <table class="table table-bordered">
                         <thead>
 
@@ -86,17 +88,20 @@
                             <th scope="col">Maximum_adult</th>
                             <th scope="col">Maximum_child</th>
                             <th scope="col">no_of_bed</th>
+                            <th scope="col">Subtotal</th>
                             <th scope="col">Image</th>
                         </thead>
                         <tbody>
                             @foreach($book as $list)
                             <tr>
-                                <!-- <td>{{$list->catagory_title}}</td> -->
+                                <!-- <td>{{$list->room->catagory->catagory_title}}}</td> -->
                                 <td>{{$list->room->room_number}}</td>
                                 <td>{{$list->room->room_name}}</td>
                                 <td>{{$list->room->max_adult}}</td>
                                 <td>{{$list->room->max_child }}</td>
                                 <td>{{$list->room->no_of_bed}}</td>
+                                <td>{{$list->subtotal}}</td>
+
                                 <td><img src="{{url('/uploads/'.$list->room->image)}}" width="40px" alt="image"></td>
                             </tr>
                             @endforeach
@@ -117,17 +122,17 @@
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
                                     
-                                    <td> <del>{{$list->book->total_ammount}}</del> </td>
+                                    <td> <del>{{$list->book->total_ammount}}/=</del> </td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
                                     
-                                    <td>{{$list->discount_price}}</td>
+                                    <td>{{$list->discount_price}} /=</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total Paid:</strong></th>
                                     
-                                    <td>{{$list->book->total_paid}}</td>
+                                    <td>{{$list->book->total_paid}} /=</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Payment Status:</strong></th>
@@ -150,15 +155,19 @@
                 
                 </div>
             </div>
+            <button class="btn btn-primary" onclick="printDiv('printableArea')">
+    <i class="bi bi-printer"></i> Print
+</button>
         </div>
+        
     </div>
     </div>
 </section>
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary" onclick="printDiv('printableArea')">
+<!-- <button class="btn btn-primary" onclick="printDiv('printableArea')">
     <i class="bi bi-printer"></i> Print
-</button>
+</button> -->
 </div>
 <script type="text/javascript">
     function printDiv(divName) {

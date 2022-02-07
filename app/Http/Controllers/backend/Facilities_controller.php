@@ -27,6 +27,8 @@ class Facilities_controller extends Controller
      $facilitylist->validate([
                
           'facility_title'=> 'required|unique:facilities',
+          'description'=> 'required',   
+
       ]);
 
      $fileName='';

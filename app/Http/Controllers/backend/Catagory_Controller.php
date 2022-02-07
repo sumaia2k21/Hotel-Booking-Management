@@ -27,7 +27,7 @@ class Catagory_Controller extends Controller
           $catagorylist->validate([
                
                'catagory_title'=> 'required|unique:catagoris',
-               'price'=> 'required',   
+                 
      
            ]);
           $fileName='';
@@ -43,12 +43,13 @@ class Catagory_Controller extends Controller
                     'catagory_title'=>$catagorylist->catagory_title,
                     'image'=>$fileName,
                     'description'=>$catagorylist->description,
-                    'price'=>$catagorylist-> price ,
-                    'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
+                    // 'price'=>$catagorylist-> price ,
+                    
+                    // 'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
                     
           ]);
 
-          return redirect()->route('manage_catagory');
+          return redirect()->route('manage_catagory')->with('message', 'Room Category added successfully.');
      }
 
 public function allRoom($id)
@@ -77,31 +78,32 @@ public function allRoom($id)
 
      public function update(Request $catagorylist, $id)
      {
-          $catagorylist->validate([
-               
-               'discount'=> 'required',
-               'price'=> 'required',   
+          // $catagorylist->validate([
      
-           ]);
+          //      'price'=> 'required',   
+          //  ]);
          
           $category=Catagory::find($id);  
           $category->update([
                'discount'=>$catagorylist->discount,
-               'price'=>$catagorylist-> price ,
-               'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
-
-
+               // 'price'=>$catagorylist-> price ,
+               // 'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
           ]);
-          $room=Room::find($id);  
+
+          $room=Room::find($id); 
           $room->update([
                'discount'=>$catagorylist->discount,
-               'price'=>$catagorylist-> price ,
-               'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
+               // 'price'=>$catagorylist-> price ,
+               // 'discount_price'=>$catagorylist-> price-$catagorylist-> discount/100*$catagorylist-> price ,
                
 
 
           ]);
-          return redirect()->route('manage_catagory')->with('message','update discount');
+
+
+
+          
+          return redirect()->route('manage_catagory')->with('message','Successfully update discount');
       }
 
       public function confirmation($id)

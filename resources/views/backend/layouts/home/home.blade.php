@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
+    <!-- <div class="col-lg-3 col-sm-6">
         <div class="card gradient-4">
             <div class="card-body">
                 <h3 class="card-title text-white">Total Booking</h3>
@@ -73,7 +73,7 @@
                                     
                 </div>
                 <span class="float-right display-5 opacity-5">
-                    <!-- <i class="fa fa-heart"></i> -->
+                  
                 </span>
             </div>
         </div>
@@ -90,11 +90,11 @@
                                     
                 </div>
                 <span class="float-right display-5 opacity-5">
-                    <!-- <i class="fa fa-heart"></i> -->
+                  
                 </span>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-lg-3 col-sm-6">
         <div class="card gradient-4">
             <div class="card-body">
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
+    <!-- <div class="col-lg-3 col-sm-6">
         <div class="card gradient-3">
             <div class="card-body">
                 <h3 class="card-title text-white">Enquiry</h3>
@@ -118,11 +118,11 @@
                                     
                 </div>
                 <span class="float-right display-5 opacity-5">
-                    <!-- <i class="fa fa-users"></i> -->
+                   
                 </span>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-lg-3 col-sm-6">
         <div class="card gradient-2">
             <div class="card-body">

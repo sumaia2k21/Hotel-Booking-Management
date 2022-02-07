@@ -55,14 +55,12 @@ class Booking_controller extends Controller
           'status'=>'Booked'
           ]);
          
-          $book->bookingdetails->each(function($details){
+     //      $book->bookingdetails->each(function($details){
 
-               $details->room->each(function($room){
-                    $room->update([
-                         'status' => 'cancel'
-                    ]);
-               });
-         });
+     //           $details->room->update([
+     //                     'status' => 'cancel'
+     //                ]);
+     //     });
           return redirect()->route('all_booking')->with('message','room approved sucessfully'); 
      }
     
@@ -72,14 +70,14 @@ class Booking_controller extends Controller
          $book->update([
           'status'=>'cancel'
           ]);
+     
 
-         $book->bookingdetails->each(function($details){
-               $details->room->each(function($room){
-                    $room->update([
-                         'status' => 'available'
-                    ]);
-               });
-         });
+     //     $book->bookingdetails->each(function($details){
+     //           $details->room->update([
+     //                     'status' => 'available'
+     //                ]);
+               
+     //     });
 
 
 
@@ -128,7 +126,11 @@ class Booking_controller extends Controller
           return view('backend.layouts.booking.booking_details',compact('request'));
      }
      
-    
+     public function details_report()
+     {
+          $book=BookDetails::with('room','book')->get();
+          return view('backend.layouts.booking.confirmation',compact('book'));
+     }
 
      
 }

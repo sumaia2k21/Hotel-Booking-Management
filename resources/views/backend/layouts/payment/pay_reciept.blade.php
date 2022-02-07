@@ -30,7 +30,8 @@
                     </ul>
                 </div>
                 <h1 style="text-align: center;">Money reciept</h1>
-              
+                <hr>
+                <div class="card">
                 <div class="col-md-6">
                     @foreach($payment as $list)
                     <h5> User details</h5>
@@ -58,139 +59,92 @@
                 </div>
 
                 <br>
-                <hr>
-                <div class="card">
-                    <h5 style="text-align: center;"> booking details</h5>
-
-                    <table class="table table-bordered">
-                        <thead>
-
-                            <th scope="col">Booking number</th>
-                            <th scope="col">From date</th>
-                            <th scope="col">To date</th>
-                            <th scope="col"> Discount Ammount</th>
-                            <th scope="col">Status</th>
-
-                            <th scope="col"></th>
-
-                        </thead>
-                        <tbody>
-                            @foreach($payment as $list)
-                            <tr>
-
-                                <td>{{$list->book->id}}</td>
-                                <td>{{$list->book->from_date}}</td>
-                                <td>{{$list->book->to_date}}</td>
-                                <td>{{$list->book->discount_price}}</td>
-                                <td>{{$list->book->status}}</td>
-                                <td><img src="{{url('uploads/'.$list->image)}}" alt=""></td>
-                                <td></td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <h5 style="text-align: center;"> Room information</h5>
-                    <table class="table table-bordered">
-                        <thead>
-
-                            <!-- <th scope="col">room Type or category</th> -->
-                            <th scope="col">Room number</th>
-                            <th scope="col">Room name</th>
-                            <th scope="col">Maximum_adult</th>
-                            <th scope="col">Maximum_child</th>
-                            <th scope="col">no_of_bed</th>
-                            <th scope="col">Image</th>
-
-                            </tr>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($bookinginfo as $list)
-                            <tr>
-                                <td>{{$list->room->room_number}}</td>
-                                <td>{{$list->room->room_name}}</td>
-                                <td>{{$list->room->max_adult}}</td>
-                                <td>{{$list->room->max_child }}</td>
-                                <td>{{$list->room->no_of_bed}}</td>
-
-                                <td><img src="{{url('/uploads/'.$list->image)}}" width="40px" alt="image"></td>
-
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    <!-- <table class="table table-striped table-bordered">
-                        <thead>
-
-                            <tr>
-                                <th scope="col">Sl</th>
-                                <th scope="col">Total Price</th>
-                                <th scope="col">Discount Price</th>
-                                <th scope="col">Total Paid</th>
-                                <th scope="col">Current payment</th>
-                                <th scope="col">Due</th>
-                                <th scope="col">Transection</th>
-                                <th scope="col">Payment date</th>
-                                <th scope="col">Payment status</th>
-                            </tr>
-                            @foreach($payment as $data)
-                            <tr>
-                                <td>{{$data->id}}</td>
-
-                                <td>{{$data->total_ammount}}</td>
-                                <td>{{$data->discount_price}}</td>
-                                <td>{{$data->book->total_paid}}</td>
-                                <td>{{$data->pay_ammount}}</td>
-                                <td>{{$data->discount_price-$data->book->total_paid}}</td>
-                                <td>{{$data->transection}}</td>
-                                <td>{{$data->payment_date}}</td>
-                                <td>{{$data->payment_status}}</td>
-                                <td>
-                            </tr>
-                            @endforeach
-                        </thead>
-
-
-                    </table> -->
-
-
+              
+                
+                    
+                
+                   
+                 
+                    <div class="col-md-6">
+                    @foreach($payment as $pays)
+                    <h5>Booking Details</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                <!-- <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
+                                    <td><del>{{$pays->book->total_ammount}}</del> /=</td>
+                                </tr> -->
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Booking number:</strong></th>
+                                    <td>{{$list->book->id}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>From date:</strong></th>
+                                    <td>{{$list->book->from_date}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>to_date:</strong></th>
+                                    <td>{{$list->book->to_date}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>price:</strong></th>
+                                    <td>{{$list->book->discount_price}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Status:</strong></th>
+                                    <td>{{$list->book->status}}</td>
+                                </tr>
+                                
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @endforeach
+                
                 </div>
+
+                
                 <br>
                 <div class="col-md-6">
-                    @foreach($pay as $pays)
+                    @foreach($payment as $pays)
                     <h5>Payment details</h5>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Total Amount:</strong></th>
-                                    <td><del>{{$pays->total_ammount}}</del> /=</td>
-                                </tr>
+                                    <td><del>{{$pays->book->total_ammount}}</del> /=</td>
+                                </tr> -->
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Discount Price:</strong></th>
                                     <td>{{$pays->discount_price}} /=</td>
                                 </tr>
                                 <tr>
-                                    <th class="pl-0 w-25" scope="row"><strong>Pay Amount:</strong></th>
-                                    <td>{{$pays->pay_ammount}} /=</td>
+                                    <th class="pl-0 w-25" scope="row"><strong>Total paid:</strong></th>
+                                    <td>{{$pays->book->total_paid}} /=</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong> Status:</strong></th>
+                                    <td>{{$pays->payment_status}} /=</td>
                                 </tr>
                                 <tr>
                                     <th class="pl-0 w-25" scope="row"><strong>Due:</strong></th>
                                     <td>{{$pays->due}} /=</td>
                                 </tr>
-
+                                
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     @endforeach
                 </div>
+
+                </div>
             </div>
         </div>
         <button class="btn btn-danger" onclick="printDiv('printableArea')">
-    <i class="bi bi-printer"></i> Print
-</button>
+    <i class="bi bi-printer"></i> Print</button>
     </div>
     </div>
     </div>
@@ -198,7 +152,7 @@
 
 <!-- Button trigger modal -->
 
-<button class="btn btn-succees">vvvv</button>
+<button class="btn btn-succees">Print</button>
 </div>
 <script type="text/javascript">
     function printDiv(divName) {

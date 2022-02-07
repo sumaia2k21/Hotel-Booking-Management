@@ -35,8 +35,8 @@
 </div>
 
 
-<a href="{{route('all.booking.report')}}" type="button" class="btn btn-primary">Print</a>
-
+<!-- <a href="{{route('all.booking.report')}}" type="button" class="btn btn-primary">Print</a>
+<a href="{{route('booking.details.report')}}" type="button" class="btn btn-primary">Print details</a> -->
 <hr>
 <br>
 
@@ -49,7 +49,7 @@
 <div class="card">
     <table class="table table-bordered">
         <thead>
-            <th scope="col">book.no</th>
+            <th scope="col">Book.no</th>
             <th scope="col">Name</th>
             <th scope="col">Mobile_no</th>
             <th scope="col">From_date</th>
@@ -97,6 +97,11 @@
             @endforeach
         </tbody>
     </table>
+    
+</div>
+<div style="text-align: right;">
+<!-- <a href="{{route('booking.details.report')}}" type="button" class="btn btn-primary">Room details</a> -->
+<a href="{{route('all.booking.report')}}" type="button" class="btn btn-primary">Print</a>
 </div>
 
 

@@ -14,33 +14,33 @@
                                     <div class="form-right">
                                         <div class="form-inner-cont">
                                             <h3 class="title-small">Check Availability</h3>
+                                            @if ($errors->any())
+                                                @foreach ($errors->all() as $error)
+                                                    <p class="alert alert-danger">{{$error}}</p>
+                                                @endforeach
+                                            @endif
                                             <form action="{{route('search')}}" method="get">
                                                     @if(session()->has('message'))
-                                                        <div class="alert alert-danger">
+                                                        <div class="alert alert-success">
                                                             {{ session()->get('message') }}
                                                         </div>
                                                     @endif
                                                 <div class="row book-form">
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>From Date</label>
-                                                        <input type="date" id="date1"  required="" name="from_date"/> 
+                                                        <input type="date" id="date1"  required name="from_date"/> 
                                                                                   
                                                     </div>
 
                                                     <div class="form-input col-md-4 col-sm-6 mt-3">
                                                         <label>To Date</label>
-                                                        <input type="date" id="date2"  required="" name="to_date"/>
-                                                        
-
+                                                        <input type="date" id="date2"  required name="to_date"/>
                                                     </div>
-
-                                                    
-                                                    <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                                     <div class="bottom-btn col-md-4 col-sm-6 mt-3">
                                                         <button type="submit"
                                                             class="btn btn-style btn-primary w-100 px-2">Check
                                                             Availability</button>
-                                                    </div>
-                                                    
+                                                    </div>    
                                                 </div>
                                             </form>
                                         </div>
@@ -64,7 +64,7 @@
                     </div>
                 </li>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <li>
                     <div class="slider-info  banner-view banner-top1 bg bg2">
                         <div class="banner-info">
@@ -79,30 +79,52 @@
                     </div>
                 </li>
             </div>
-            <div class="item">
-                <li>
-                    <div class="slider-info banner-view banner-top2 bg bg2">
-                        <div class="banner-info">
-                            <div class="container">
-                                <div class="banner-info-bg">
-                                    <h5>Most hotels train their people with the booklets. We take ours to the ballet.
-                                    </h5>
-                                    <a class="btn btn-style transparent-btn mt-sm-5 mt-4" href="services.html"> Our
-                                        Services</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </div>
+           -->
             <div class="item">
                 <li>
                     <div class="slider-info banner-view banner-top3 bg bg2">
+                    <div class="card">
+                            <div class="container pt-lg-3 pb-lg-5">
+                                <div class="forms-top">
+                                    <div class="form-right">
+                                        <div class="form-inner-cont">
+                                            <h3 class="title-small">Check Availability</h3>
+                                            <form action="{{route('search')}}" method="get">
+                                                    @if(session()->has('message'))
+                                                        <div class="alert alert-danger">
+                                                            {{ session()->get('message') }}
+                                                        </div>
+                                                    @endif
+                                                <div class="row book-form">
+                                                    <div class="form-input col-md-4 col-sm-6 mt-3">
+                                                        <label>From Date</label>
+                                                        <input type="date" id="date1"  required="" name="from_date"/> 
+                                                                                  
+                                                    </div>
+
+                                                    <div class="form-input col-md-4 col-sm-6 mt-3">
+                                                        <label>To Date</label>
+                                                        <input type="date" id="date2"  required="" name="to_date"/>
+
+                                                    </div>
+                                                    <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                                        <button type="submit"
+                                                            class="btn btn-style btn-primary w-100 px-2">Check
+                                                            Availability</button>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="banner-info">
                             <div class="container">
                                 <div class="banner-info-bg">
                                     <h5>Good tourism will follow good hotels. Experience our luxury hotel rooms</h5>
-                                    <a class="btn btn-style transparent-btn mt-sm-5 mt-4" href="services.html"> Our
+                                    <a class="btn btn-style transparent-btn mt-sm-5 mt-4" href="{{route('survice')}}"> Our
                                         Services</a>
                                 </div>
                             </div>
@@ -116,7 +138,7 @@
     
 </section>
 <!-- /main-slider -->
-<section class="w3l-servicesblock1" id="service">
+<!-- <section class="w3l-servicesblock1" id="service">
     <div class="features-with-17_sur py-5">
         <div class="container py-lg-5 py-sm-4">
             <h2 style="text-align: center;"> Our Services</h2>
@@ -126,7 +148,7 @@
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                         <div class="features-with-17-right-tp_sur">
                             <div class="features-with-17-left1">
-                                <span class="fa fa-bed" aria-hidden="true"></span>
+                             
                             </div>
                             <div class="features-with-17-left2">
                                 <h5>Fitness Zone</h5>
@@ -134,14 +156,22 @@
                                 <p>Lorem ipsum dolor sit amet elit. Id, minima. It is a long fact that a reader will be
                                     distracted by the readable.</p>
                             </div>
+                            
                         </div>
+                        
                     </div>
                     @endforeach
+                    
                 </div>
+                <div style="text-align: right;">
+                        <a href="{{route('survice')}}" class="btn btn-style btn-primary mt-sm-5 mt-4">more..</a>
+                    </div>  
             </div>
+           
+           
         </div>
     </div>
-</section>
+</section> -->
 <!-- about -->
 <section class="best-rooms py-5">
     <div class="container py-sm-4">
@@ -217,8 +247,8 @@
                         <h4></h4>
                       
                         <div class="room-info-bottom">
-                            <a href="{{route('bookingform',$data->id)}}" class="btn view">Book Now</a>
-                            <a href="{{route('single.room.view',$data->id)}}" class="btn view">Full Info →</a>
+                            <a href="{{route('home',$data->id)}}" class="btn view">Book Now</a>
+                            <a href="{{route('single.room.view',$data->id)}}" target="_blank" class="btn view">Full Info →</a>
                         </div>
                     </div>
 
@@ -275,8 +305,12 @@ document.getElementById("date1").setAttribute('min', today);
 // alert("min Data " + today)
 </script>
 <script>
-    var today = new Date().toISOString().split('T')[0];
-document.getElementById("date2").setAttribute('min', today);
+    
+    var a = new Date();
+    var tomorrow = new Date();
+tomorrow.setDate(a.getDate()+1);
+var tomorrow =tomorrow.toISOString().split('T')[0];
+document.getElementById("date2").setAttribute('min', tomorrow);
 
 // alert("min Data " + today)
 </script>

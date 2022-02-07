@@ -22,7 +22,7 @@ class Room_controller extends Controller
 
      public function manage_room()
      {
-          $newroomlist=Room::with('catagory','roomamenities')->paginate(4);
+          $newroomlist=Room::with('catagory','roomamenities')->paginate(6);
           // $amenities = Roomamenities::with('roomamenities')->paginate(8);
            return view('backend.layouts.newroom.manage_room',compact('newroomlist'));
           }
@@ -40,7 +40,7 @@ public function roomlist(Request $newroomlist){
    
      $discount=Catagory::find($newroomlist->catagory_title);
      //dd($discount);
-  
+     
           $fileName='';
           if($newroomlist->hasFile('image'))
           {
@@ -61,13 +61,14 @@ public function roomlist(Request $newroomlist){
                'room_description'=>$newroomlist->room_description,
                'no_of_bed'=>$newroomlist->no_of_bed,
                'image'=>$fileName,
-               'price'=>$discount-> price ,
-               'discount_price'=>$discount-> price-$discount-> discount/100*$discount-> price ,
-               'discount'=>$discount-> discount,
-               'status'=>$newroomlist-> status
+               'price'=>$newroomlist->price ,
+               // 'discount'=>$discount->discount,
+               'discount_price'=>$newroomlist-> price-$discount->discount/100*$newroomlist->price ,
+               // 'status'=>$newroomlist-> status
                
 
            ]);
+         
 
           foreach($newroomlist->facilities_id as $am)
                {
@@ -103,6 +104,7 @@ public function roomlist(Request $newroomlist){
      }
      public function update(Request $newroomlist,$id)
      {
+          $discount=Catagory::find($newroomlist->catagory_title);
           
           $room=Room::find($id);
           $room->update([
@@ -112,20 +114,22 @@ public function roomlist(Request $newroomlist){
                'max_child'=>$newroomlist->max_child,
                'room_description'=>$newroomlist->room_description,
                'no_of_bed'=>$newroomlist->no_of_bed,
-               
+               'price'=>$newroomlist->price,
+               'discount'=>$newroomlist->discount,
+               'discount_price'=>$newroomlist-> price-$newroomlist->discount/100*$newroomlist->price ,
                'status'=>$newroomlist-> status 
 
           ]);
 
-       return redirect()->route('manage_room')->with('message','room update sucessfully');  
+       return redirect()->route('manage_room')->with('message','Room update sucessfully');  
           
        
 
      }
 
-     
 
-
+ 
+    
 
 
 

@@ -12,8 +12,8 @@
     <!-- <img src="{{url('/uploads/'. $hotels->logo)}}" alt="Your logo" style="height:35px;" />  -->
  {{$hotels->name}}
 </h1>
-<h4>{{$hotels->name}} </h4>
-                <br>
+
+           
                 <div>
                     <ul>
                         <h6 class="footer-title-29">Address</h6>

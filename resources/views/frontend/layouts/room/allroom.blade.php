@@ -72,18 +72,19 @@
                                 </tr>
                                 <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>Discount</strong></th>
-                                <td>{{$data->catagory->discount}}%</td>
+                                <td>{{$data->discount}}%</td>
                                 </tr>
                                 <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>Discount Price</strong></th>
-                                <td><del>{{$data->price}} TK</del>   {{$data->catagory->discount_price}} TAKA</td>
+                                <td><del>{{$data->price}} TK</del>   {{$data->discount_price}} TAKA</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <hr>
                     <a href="{{route('home',$data->id)}}" type="button"
-                        class="btn btn-primary btn-md mr-1 mb-2">book now</a>
+                        class="btn btn-primary btn-md mr-1 mb-2">Check availability</a>
+                        
                     <a href="{{route('single.room.view',$data->id)}}" target="_blank" type="button"
                         class="btn btn-primary btn-md mr-1 mb-2">Full info-></a>
                     <!-- <button type="button" class="btn btn-light btn-md mr-1 mb-2"><iclass="fas fa-shopping-cart pr-2"></i>Add to cart</button> -->

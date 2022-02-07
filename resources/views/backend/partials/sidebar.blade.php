@@ -42,7 +42,7 @@
                    
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-h-square" aria-hidden="true"></i>
+                        <i class="fa fa-snowflake-o" aria-hidden="true"></i>
                              <span class="nav-text">Facilities</span>
                         </a>
                         <ul aria-expanded="false">
@@ -53,8 +53,8 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <!-- <i class="fa fa-bed" aria-hidden="true"></i> -->
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                        <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
                             <span class="nav-text">New Room</span>
                         </a>
                         <ul aria-expanded="false">
@@ -141,7 +141,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('customer.list')}}">Customer</a></li>
-                            <li><a href="{{route('user.list')}}">User</a></li>
+                            <!-- <li><a href="{{route('user.list')}}">User</a></li> -->
                           
                         </ul>
                     </li>
